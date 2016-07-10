@@ -1,0 +1,52 @@
+---
+layout: post
+title: PHP basics, are you sure? So tell me how to use octal system!
+date: 2015-01-27 11:25:14.000000000 -02:00
+type: post
+published: true
+status: publish
+categories:
+- php
+tags:
+- octal
+- php
+- php basics
+- zce
+meta:
+  _edit_last: '1'
+  _oembed_6e08186d724f585be2497a8670205d3c: '{{unknown}}'
+  _yoast_wpseo_focuskw: octal
+  _yoast_wpseo_title: PHP basics, are you sure? So tell me how to use octal system!
+  _yoast_wpseo_linkdex: '89'
+  _yoast_wpseo_metadesc: The program language PHP is a weak typing program language
+    and with that comes a few tricks and the octal system is one of them. Do you know
+    how to use it ?
+  _yoast_wpseo_opengraph-image: http://marabesi.com/wp-content/uploads/2015/01/PHP_Logo.png
+  _yoast_wpseo_twitter-image: http://marabesi.com/wp-content/uploads/2015/01/PHP_Logo.png
+author:
+  - Matheus Marabesi
+
+
+
+
+---
+<p>The program language PHP is a weak typing program language and with that comes a few tricks.</p>
+<p>The first one is the octal format, can you guess how to write a octal representation in PHP ?</p>
+<pre class="lang:php decode:true" title="Octal representation in PHP">&lt;?php echo 01234;</pre>
+<h1 class="entry-title">What the code above will output ?</h1>
+<p>For our surprise the code will output <strong>668</strong>! It is because in PHP the octal format is represented adding in the begining of the string a simple 0 (zero). Doing that the PHP will convert the given string in this case <strong>1234</strong> to <strong>668</strong> decimal. You can find further information about that in the <a href="http://php.net/manual/en/language.types.integer.php" target="_blank">PHP documentation</a>.</p>
+<h1 class="entry-title">Octal system</h1>
+<p>The octal system works with 8 numbers starting from 0 and ending with 7</p>
+<p>{ 0, 1, 2, 3, 4, 5, 6, 7 }.</p>
+<h1 class="entry-title">Converting</h1>
+<p>Converting to decimal format is really simple, let's have a look in the same example <strong>1234<sub>8</sub></strong>.</p>
+<p>1×8³ + 2×8² + 3×8¹ + 4×8⁰ = 668<sub>10</sub></p>
+<p>The first thing first, so if you have look in the expression above is simple to deduce that we are spliting the numbers and then applying times 8. So the right question is why are we using ³, ², ¹ and ⁰ ?</p>
+<p>It comes from { 0, 1, 2, 3, 4, 5, 6, 7 }, do you remember that ? So for each number in the expression you'll use these numbers <strong> from right to left</strong>.</p>
+<p>1×8<span style="text-decoration: underline;"><strong>³</strong></span> + 2×8<span style="text-decoration: underline;"><strong>²</strong></span> + 3×8<span style="text-decoration: underline;"><strong>¹</strong></span> + 4×8<span style="text-decoration: underline;"><strong>⁰</strong></span> = 668<sub>10</sub></p>
+<h1 class="entry-title">Breaking down into peaces and then stick together again</h1>
+<p>1×8³ = 512</p>
+<p>2×8² = 128</p>
+<p>3×8¹ = 24</p>
+<p>4×8⁰ = 4</p>
+<p>512 + 128 + 24 + 4 = <strong>668<sub>10</sub></strong></p>

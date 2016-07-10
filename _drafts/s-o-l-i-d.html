@@ -1,0 +1,108 @@
+---
+layout: post
+title: S.O.L.I.D
+date: 
+type: post
+published: false
+status: draft
+categories:
+- OOP
+tags: []
+meta:
+  _edit_last: '1'
+  _login_radius_meta: '0'
+  _yoast_wpseo_focuskw: solid
+  _yoast_wpseo_linkdex: '56'
+  _yoast_wpseo_focuskw_text_input: solid
+  _yoast_wpseo_primary_category: ''
+author:
+  login: matheusmarabesi
+  email: matheus.marabesi@gmail.com
+  display_name: Matheus Marabesi
+  first_name: Matheus
+  last_name: Marabesi
+---
+<p>Being able to write better is a achieveament that every programmer want to. SOLID is a great thing to start to and particularly one of the best things to be followed by TDD.</p>
+<h1>Single responsability</h1>
+<blockquote><p>a class should have only a single responsibility (i.e. only one potential change in the software's specification should be able to affect the specification of the class)</p></blockquote>
+<p>&nbsp;</p>
+<pre class="lang:php decode:true" title="Class with too many responsabilities">class Upload {
+
+    private $file;
+
+    public function __construct($file)
+    {
+        $this-&gt;file = $file;
+    }
+
+    public function validate($data)
+    {
+        // apply validation rules
+    }
+       
+    public function moveFile()
+    {
+        // move file
+    }
+
+    public function rename()
+    {
+        // rename file
+    }
+}</pre>
+<p>We have our class Upload doing too many things at once</p>
+<ul>
+<li>Validates the file</li>
+<li>Move the file</li>
+<li>Renaming the file</li>
+<li>Lack of file object</li>
+</ul>
+<p>A better approach to it is to create a new class to validate it, to move it and finally to handle it to a new place, let's see some code</p>
+<pre class="lang:default decode:true ">class File {}
+
+class ValidateFile {}
+
+class MoveFile {}
+
+class TransformFile {}
+
+
+class Upload {
+
+    private $file;
+
+    public function __construct(File $file)
+    {
+        $this-&gt;file = $file;
+    }
+
+    public function validate($data)
+    {
+        // apply validation rules
+    }
+       
+    public function moveFile()
+    {
+        // move file
+    }
+
+    public function rename()
+    {
+        // rename file
+    }
+}</pre>
+<p>&nbsp;</p>
+<h1>Open/Close</h1>
+<blockquote><p>software entities … should be open for extension, but closed for modification.</p></blockquote>
+<p>&nbsp;</p>
+<h1>Liskov Substitution</h1>
+<blockquote><p>Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program</p></blockquote>
+<p>&nbsp;</p>
+<h1>Interface Segregation</h1>
+<blockquote>
+<h2>Many client-specific interfaces are better than one general-purpose interface.</h2>
+</blockquote>
+<p>&nbsp;</p>
+<h1>Dependency inversion</h1>
+<blockquote><p>One should “Depend upon Abstractions. Do not depend upon concretions</p></blockquote>
+<p>&nbsp;</p>

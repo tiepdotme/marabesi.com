@@ -1,0 +1,111 @@
+---
+layout: post
+title: Software engineering, in the developer's hand ?
+date: 2015-12-07 21:27:30.000000000 -02:00
+type: post
+published: true
+status: publish
+categories:
+- OOP
+- Software Engineering
+tags:
+- engineering
+- graph
+- software
+- uml
+- use case
+meta:
+  _edit_last: '1'
+  _login_radius_meta: '0'
+  _yoast_wpseo_opengraph-image: http://marabesi.com/wp-content/uploads/2015/11/u11.png
+  _yoast_wpseo_twitter-image: http://marabesi.com/wp-content/uploads/2015/11/u11.png
+  _yoast_wpseo_focuskw: software
+  _yoast_wpseo_title: Software engineering, in the developer's hand ?
+  _yoast_wpseo_linkdex: '80'
+  _oembed_e8b60ce1621a6a22aa5280da199daf17: '{{unknown}}'
+  _oembed_13314f8d17cf545adbd66eaec58e3c36: '{{unknown}}'
+author:
+  - Matheus Marabesi
+
+
+
+
+---
+<p>If you're a programmer, analyst or something related to I.T (Information Technology) you probably already have heard about software engineering. What is that ? What can engineering do for software ? Great part of people who heard "engineering" thought about numbers, equations, formulas and crazy people. Therefore software engineering is about practices, techniques to build a great software with quality, security. maintainability and so on.</p>
+<p><b>Software engineering</b> is the study and an application of <b>engineering</b> to the design, development and maintenance of <b>software</b>. (<a href="http://www.webopedia.com/TERM/S/software_engineer.html">Webopedia</a>)</p>
+<p><em>Software engineering</em> is the study and an application of <em>engineering</em> to the design, development and maintenance of <em>software</em>. (<a href="https://en.wikipedia.org/wiki/Software_engineering">Wikipedia</a>)</p>
+<p>Software engineering (SE) is concerned with developing and maintaining software systems that behave reliably and efficiently, are affordable to develop and maintain, and satisfy all the requirements that customers have defined for them. (<a href="http://computingcareers.acm.org/?page_id=12">Computing Degrees  &amp; Careers</a>)</p>
+<p>Inside of Software engineering we have a couple of subjects Requirements engineering, software design, configuration management, tests, deployment management, architecture to name a few. Modeling also is a subject of software development and is where <a href="http://www.uml.org/">UML</a> comes up.</p>
+<p>Since I started my software engineering degree I've been thinking in how we can make the software development painless,  I found two amazing topics : Planing and Modeling.</p>
+<h1>Use case diagram</h1>
+<p>Use case diagram is one of the UML diagrams used to help to understand scenarios of the software, this diagram has a main purpose to expose the user point of view.</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2015/11/u11.png"><img class="alignnone wp-image-646 " src="{{ site.baseurl }}/assets/u11.png" alt="" width="349" height="125" /></a></p>
+<p>Above we can see the simplest use case possible. On left side we have an actor that can represents a regular user or even another system and in the right side we have the use case, in other words what the actor does.</p>
+<p>Our first step to get into the software rules and in the mind of our users (it is a good deal, isn't it ?)</p>
+<h1>It is not just about images</h1>
+<p>Going further with use case diagram we can document each of use case. Here I  present a standard document to use thus you can adapt it to satisfy your need</p>
+<table>
+<thead>
+<tr>
+<th>Use case name</th>
+<td>Do something</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Actor</strong></td>
+<td> Actor</td>
+</tr>
+<tr>
+<td><strong>Resume</strong></td>
+<td>An actor should do something when he is asked for</td>
+</tr>
+<tr>
+<td><strong>Pre-condition</strong></td>
+<td>The actor should be registered</td>
+</tr>
+<tr>
+<td><strong>Main-flow</strong></td>
+<td>
+<ul>
+<li>Actor click on the button to do something</li>
+<li>System shows up a popup with the response, it is possible to go to <strong>alternateive-flow</strong> 1 if something goes wrong</li>
+<li>System close the popup and close the window</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>Alternative-flow</strong></td>
+<td>1) Display a message within error</td>
+</tr>
+<tr>
+<td><strong>Post-condition</strong></td>
+<td>The actor should have done at least one thing</td>
+</tr>
+</tbody>
+</table>
+<p>The problem with this approch is time. Above we have a graph comparing between creating a diagram before code and not create a diagram</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2015/12/chart1.png"><img class="  wp-image-664 aligncenter" src="{{ site.baseurl }}/assets/chart1.png" alt="Planing chart" width="611" height="407" /></a></p>
+<p>As we can see it takes longer but as you can imagine the quality grows. Why should we start to draw or planing before do code ?</p>
+<ul>
+<li>It improves quality</li>
+<li>It improves maintenance</li>
+<li>It makes easy to integrate a new member to the code base</li>
+<li>As the time goes its cheaper to maitain the source code</li>
+</ul>
+<h1>Start to think then act</h1>
+<p>The conclusion here is don't wait for someone to do the right thing in your project. Here we have a example in how to use a simple UML diagram to our project and start to thing in software engineering and everything made by a developer.</p>
+<p>As a regular developer we always want to get our hands dirty but if you want to step up in your career stop doing and start thinking.</p>
+<p>We have thousands of sites who try to explain why software fails being successful</p>
+<ul>
+<li><a href="https://www.outsource2india.com/software/SoftwareProjectFailure.asp" target="_blank">outsource2india</a></li>
+<li><a href="http://www.infoq.com/articles/software-failure-reasons" target="_blank">InfoQ</a></li>
+<li><a href="http://stackoverflow.com/questions/528221/why-do-many-software-projects-fail-today" target="_blank">Stackoverflow</a></li>
+</ul>
+<p>The most commons are bad management, lack of knowlegde about the business, stakeholders not interested, lack of time, pressure and so on. But let's have a look at <a href="http://www.ksg.harvard.edu/m-rcbg/ethiopia/Publications/Top%2010%20Reasons%20Why%20Systems%20Projects%20Fail.pdf" target="_blank">Dr. Paul Dorsey paper</a> he has more to tells us about it.</p>
+<div style="text-align: right;" data-canvas-width="513.2415345359999"><em>If a bunch of electricians, plumbers, carpenters and contractors meet in a field, talk for a few hours and then start building, the building will be unstable if it even gets built at all. At one of my presentations, an audience member shared the quip</em></div>
+<div style="text-align: right;" data-canvas-width="1007.0802864000001"><em>that “If building engineers built buildings with the same care as software engineers build systems, the first woodpecker to come along would be the end</em></div>
+<div style="text-align: right;" data-canvas-width="305.40912132000005"><em>of civilization as we know it.” </em>(Dr. Paul Dorsey)<em><br />
+</em></div>
+<div data-canvas-width="305.40912132000005"></div>
+<div data-canvas-width="305.40912132000005">Indeed its true, in I.T industry as usual project managers or any member of the management team think that is like a manufacturing to build software, just like add one more on the team if the dead line is close and then make it on time, unfortunatelly it is not. Another good point he gave to us is about developers who just got interested in programming or related subjects.</div>

@@ -1,0 +1,277 @@
+---
+layout: post
+title: Raspberry Pi + PHP socket
+date: 2015-05-09 13:58:04.000000000 -03:00
+type: post
+published: true
+status: publish
+categories:
+- IoT
+tags:
+- apache
+- codepen
+- html5
+- keyboard
+- monitor
+- nginx
+- php
+- raspberry
+- ratchet
+- sockets
+- web
+- wipi
+meta:
+  _edit_last: '1'
+  _yoast_wpseo_focuskw: raspberry pi
+  _yoast_wpseo_title: Raspberry Pi + PHP socket
+  _yoast_wpseo_linkdex: '64'
+  _yoast_wpseo_focuskw_text_input: raspberry pi
+  _login_radius_meta: '0'
+  _yoast_wpseo_primary_category: '21'
+author:
+  - Matheus Marabesi
+
+
+
+
+---
+<p>Recently I did a post about <a href="http://marabesi.com/php/websocket-html5/">HTML5 WebSockets</a> and it had a purpose. I was preparing the material of my <a href="http://www.meetup.com/THT-Things-Hacker-Team/events/221699738/">talk at Samsung Ocean</a> and my goal was create a RC car with an Hybrid application to control it and not use java as a server-side language.</p>
+<p>The final result you can check on my <a href="https://github.com/marabesi/brasilino4">github</a> and play around with the code.</p>
+<p>The following steps are to getting the socket working in your raspberry, here I'm going to use the <a href="https://www.raspberrypi.org/products/model-b-plus/">model B+</a>.</p>
+<h1>First of all</h1>
+<p>We need to to access our Pi trough the SSH, for this example I'm going to use the WiPi (wireless adapter for raspberry Pi)</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2015/05/wipidongle.jpg"><img class="aligncenter wp-image-343" src="{{ site.baseurl }}/assets/wipidongle.jpg" alt="WiPi" width="250" height="250" /></a>But you can use the RJ-45 to access it or use a little monitor with a keyboard on the Pi, fell free to choose your option just make sure you will have this access.</p>
+<p>obs: In this tutorial I don't cover how to set up wireless on your pi, refer to <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md">https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md</a> to get it done</p>
+<h1> Getting started</h1>
+<p>For this example we are going to use only the php without any web server, it is interesting isn't it ? Let's update our Pi and install the php</p>
+<pre class="lang:sh decode:true" title="Updating the Pi">sudo rpi-update</pre>
+<p>After a few minutes the pi will be up to date and then we can finally install PHP</p>
+<pre class="lang:sh decode:true" title="Installing PHP">sudo apt-get install php5</pre>
+<h1> Setting up the socket</h1>
+<p>Choose a directory and create a <strong>socket.php</strong> file with the content below, I'm going to use my own directory called <strong>/home/marabesi</strong></p>
+<pre class="height-set:true height:300 lang:php decode:true" title="socket.php">&lt;?php
+
+$host = 'localhost';
+$port = '9002';
+$null = NULL;
+
+$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+
+socket_set_option($socket, SOL_SOCKET, SO_REUSEADDR, 1);
+
+socket_bind($socket, 0, $port);
+
+socket_listen($socket);
+
+$clients = array($socket);
+
+echo 'Socket listening on host: ' . $host . ' port: ' . $port . PHP_EOL;
+
+while (true)
+{
+	$changed = $clients;
+
+	socket_select($changed, $null, $null, 0, 10);
+
+	if (in_array($socket, $changed))
+    {
+		$socket_new = socket_accept($socket);
+		$clients[] = $socket_new;
+
+		$header = socket_read($socket_new, 1024);
+		perform_handshaking($header, $socket_new, $host, $port);
+
+		socket_getpeername($socket_new, $ip);
+		$response = mask(json_encode(array('server' =&gt; $ip . ' connected')));
+		send_message($response);
+
+		$found_socket = array_search($socket, $changed);
+		unset($changed[$found_socket]);
+	}
+
+	foreach ($changed as $changed_socket)
+    {
+		while(socket_recv($changed_socket, $buf, 1024, 0) &gt;= 1)
+		{
+			$received_text = unmask($buf);
+			$jsonObject = json_decode($received_text);
+
+                        $createResponse = json_encode(array('server' =&gt; $ip . ' : ' . utf8_encode($received_text)));
+
+                        echo $received_text . PHP_EOL;
+
+			$response_text = mask($createResponse);
+			send_message($response_text);
+
+			break 2;
+		}
+
+		$buf = @socket_read($changed_socket, 1024, PHP_NORMAL_READ);
+
+		if ($buf === false)
+        {
+			$found_socket = array_search($changed_socket, $clients);
+			socket_getpeername($changed_socket, $ip);
+			unset($clients[$found_socket]);
+
+			$response = mask(json_encode(array('server' =&gt; $ip . ' disconnected')));
+			send_message($response);
+		}
+	}
+}
+
+socket_close($sock);
+
+function send_message($msg)
+{
+	global $clients;
+	foreach($clients as $changed_socket)
+	{
+		@socket_write($changed_socket,$msg,strlen($msg));
+	}
+	return true;
+}
+
+function unmask($text)
+{
+	$length = ord($text[1]) &amp; 127;
+	if($length == 126) {
+		$masks = substr($text, 4, 4);
+		$data = substr($text, 8);
+	}
+	elseif($length == 127) {
+		$masks = substr($text, 10, 4);
+		$data = substr($text, 14);
+	}
+	else {
+		$masks = substr($text, 2, 4);
+		$data = substr($text, 6);
+	}
+	$text = "";
+	for ($i = 0; $i &lt; strlen($data); ++$i) {
+		$text .= $data[$i] ^ $masks[$i%4];
+	}
+	return $text;
+}
+
+function mask($text)
+{
+	$b1 = 0x80 | (0x1 &amp; 0x0f);
+	$length = strlen($text);
+
+	if($length &lt;= 125)
+		$header = pack('CC', $b1, $length);
+	elseif($length &gt; 125 &amp;&amp; $length &lt; 65536)
+		$header = pack('CCn', $b1, 126, $length);
+	elseif($length &gt;= 65536)
+		$header = pack('CCNN', $b1, 127, $length);
+	return $header.$text;
+}
+
+function perform_handshaking($receved_header,$client_conn, $host, $port)
+{
+	$headers = array();
+	$lines = preg_split("/\r\n/", $receved_header);
+	foreach($lines as $line)
+	{
+		$line = chop($line);
+		if(preg_match('/\A(\S+): (.*)\z/', $line, $matches))
+		{
+			$headers[$matches[1]] = $matches[2];
+		}
+	}
+
+	$secKey = $headers['Sec-WebSocket-Key'];
+	$secAccept = base64_encode(pack('H*', sha1($secKey . '258EAFA5-E914-47DA-95CA-C5AB0DC85B11')));
+	$upgrade  = "HTTP/1.1 101 Web Socket Protocol Handshake\r\n" .
+	"Upgrade: websocket\r\n" .
+	"Connection: Upgrade\r\n" .
+	"WebSocket-Origin: $host\r\n" .
+	"WebSocket-Location: ws://$host:$port/demo/shout.php\r\n".
+	"Sec-WebSocket-Accept:$secAccept\r\n\r\n";
+	socket_write($client_conn,$upgrade,strlen($upgrade));
+}
+</pre>
+<p>Now we have to create a simple HTML file to interact with our socket and see it working, from now on we have two path to take the first is to create an HTML file on the Pi and then access it, and the second is to create a simple HTML in our own PC and just make the connection to our socket into the Pi.</p>
+<p>Just make sure you execute the <strong>socket.php</strong> file in the Pi to be able to listen on port 9000</p>
+<pre class="lang:default decode:true" title="Executing socket.php">php /home/marabesi/socket.php</pre>
+<p>If everything goes well you'll see the following message</p>
+<pre class="lang:default decode:true" title="Socket listening on port 9000">Socket listening on host: localhost port: 9000</pre>
+<p>IMPORTANT : You must keep the <strong>socket.php</strong> executing otherwise it won't let you connect through the socket.</p>
+<p>To simplify this post I'm going to go with the second option, but you can install a web server such as nginx in your pi and try it yourself!</p>
+<p>As a alternative you can use the <a href="https://github.com/ratchetphp/Ratchet">Ratchet</a> to create you socket in a much easier way and with a amazing use of Object Oriented Programming you should check it out.</p>
+<h1>Creating the HTML page to interact with</h1>
+<p>Now we can save the following code in a file called <strong>index.html</strong></p>
+<pre class="height-set:true height:300 lang:xhtml decode:true" title="web socket client">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;WebSocket - Raspberry Pi&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Test your websocket connection!&lt;/h1&gt;
+        &lt;h3&gt;Just type and press enter ;)&lt;/h3&gt;
+        &lt;div id="container"&gt;&lt;/div&gt;
+        &lt;input type="text" placeholder="Write your message to the WebSocket!" id="message" /&gt;
+        &lt;script&gt;
+            (function () {
+                var url = 'ws://raspberryIp:raspberryPort';
+                var mySocket = new WebSocket(url);
+                var container = document.getElementById('container');
+
+                var key = document.onkeypress = function (event) {
+                    event = event || window.event;
+
+                    if (event.which == 13) {
+                        var message = document.getElementById('message');
+
+                        container.innerHTML += '&lt;div&gt;&lt;span&gt;Me :&lt;/span&gt;&lt;span&gt;' + message.value + '&lt;/span&gt;&lt;/div&gt;';
+                        console.log('me: ' + message.value);
+                        mySocket.send(message.value);
+                        message.value = '';
+                    }
+
+                    return event.which;
+                };
+
+                mySocket.onopen = function () {
+                    console.log('opened !');
+                    container.innerHTML += '&lt;h2&gt;Connection established : ' + url + '&lt;/h2&gt;';
+                };
+
+                mySocket.onmessage = function (e) {
+                    console.log('server: ' + e.data);
+                    container.innerHTML += '&lt;div&gt;&lt;span&gt;Server: &lt;/span&gt;&lt;span&gt;' + e.data + '&lt;/span&gt;&lt;/div&gt;';
+                };
+
+                mySocket.onclose = function () {
+                    console.log('closed !');
+                    container.innerHTML += '&lt;h2&gt;Connection closed&lt;/h2&gt;';
+                };
+            }());
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>Here we have to modify two thing to get the things done.</p>
+<p>1) Where you see <strong>raspberryIp</strong> you should change to you raspberry IP</p>
+<p>2) And where you see <strong>raspberryPort</strong> you should also change to the port where the socket is running and in this example the port is 9002</p>
+<p>The HTML code was originally made on codepen.io and you can see the working example above, with the bootstrap style.</p>
+<p><iframe width="300" height="300" style="width: 100%;" scrolling="no" src="//codepen.io/marabesi/embed/OPrBPO/?height=300&amp;theme-id=0&amp;default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="allowfullscreen">See the Pen <a href="http://codepen.io/marabesi/pen/OPrBPO/">WebSocket !</a> by Matheus Marabesi (<a href="http://codepen.io/marabesi">@marabesi</a>) on <a href="http://codepen.io">CodePen</a>.<br />
+</iframe></p>
+<p>Suggestions ? please let me know!</p>
+<h1>Edit: 17/03/2016 - Setting up Apache virtual host</h1>
+<p>If you don't have apache installed just type</p>
+<pre class="lang:default decode:true " title="Installing apache">sudo apt-get install apache2</pre>
+<p>You can install it on raspberry pi or anywhere you want to.</p>
+<p>After that we need create a virtual host.</p>
+<pre class="lang:default decode:true " title="Creating file to our virtual host">touch /etc/apache2/sites-available/websocket.conf</pre>
+<p>and with the file created just copy and paste the following code</p>
+<pre class="lang:default decode:true ">&lt;VirtualHost *:80&gt;
+        ServerName websocket
+
+        DocumentRoot /var/www/websocket
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;</pre>
+<p>As you can see our root directory is <strong>/var/www/websocket</strong> and is the place where you should save the HTML we created to manipulate our socket connection.</p>

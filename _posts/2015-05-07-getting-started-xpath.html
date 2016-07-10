@@ -1,0 +1,122 @@
+---
+layout: post
+title: Getting started with Xpath
+date: 2015-05-07 11:12:05.000000000 -03:00
+type: post
+published: true
+status: publish
+categories:
+- php
+tags:
+- '@'
+- /
+- //
+- dom
+- nodes
+- php
+- simplexml
+- W3C
+- web
+- xpath
+meta:
+  _edit_last: '1'
+  _yoast_wpseo_focuskw: xpath
+  _yoast_wpseo_title: Getting started with Xpath
+  _yoast_wpseo_linkdex: '80'
+  _yoast_wpseo_opengraph-image: http://marabesi.com/wp-content/uploads/2015/05/215.jpg
+  _yoast_wpseo_twitter-image: http://marabesi.com/wp-content/uploads/2015/05/215.jpg
+author:
+  - Matheus Marabesi
+
+
+
+
+---
+<p>Its been a long time since my last post and now I came up with a new subject interesting to me because I could find around me people that know and understand Xpath, so here I'm going to show what I've found about Xpath and the little particularities on it in PHP.</p>
+<h1> A little bit of history</h1>
+<p>The <a href="http://www.w3.org/TR/xpath/">first version (1.0)</a> of Xpath was released in 1999 and the <a href="http://www.w3.org/TR/xpath20/">second version (2.0) </a>came in 2011 and nowadays we have the <a href="http://www.w3.org/TR/xpath-30/">Xpath 3.0</a> released in 2014.</p>
+<p>Xpath was created to be able to easily navigate between nodes in a XML document and be able to find specific node as well by criteria using a query language.</p>
+<h1>Xpath sintax</h1>
+<p>The Xpath became famous for its light sintax and facilities of manipulating nodes on XML documents. Xpath sintax queries are alike URL's, for example you can use a common XPath such as "/rootNode/child/lastchild" to refer to lastchild directly, let's see the example bellow and make the things cleaner.</p>
+<pre class="lang:default decode:true" title="XML file example">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;library&gt;
+  &lt;book id="1"&gt;
+    &lt;author&gt;Author 1&lt;/author&gt;
+    &lt;summary&gt;Summary 1&lt;/summary&gt;
+  &lt;/book&gt;
+  &lt;book id="2"&gt;
+    &lt;author&gt;Author 2&lt;/author&gt;
+    &lt;summary&gt;Summary 2&lt;/summary&gt;
+  &lt;/book&gt;
+  &lt;book id="3"&gt;
+    &lt;author&gt;Author 3&lt;/author&gt;
+    &lt;summary&gt;Summary 3&lt;/summary&gt;
+  &lt;/book&gt;
+&lt;/library&gt;</pre>
+<p>Following our thoughts to reach the tag &lt;book&gt; we can do "/library/book" so this way we are going to have three elements. We can also be more specific with our document, let's say that we want to have just the book with the id 1, this way we can use "/library/book[@id=1]"</p>
+<p>*tip: Google for <strong>xpath tester</strong> and try out the examples in this post</p>
+<table>
+<tbody>
+<tr>
+<th>Expression</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>/</td>
+<td>Selects from the root node</td>
+</tr>
+<tr>
+<td>//</td>
+<td>Selects nodes in the document from the current node that<br />
+match the selection no matter where they are</td>
+</tr>
+<tr>
+<td>.</td>
+<td>Selects the current node</td>
+</tr>
+<tr>
+<td>..</td>
+<td>Selects the parent of the current node</td>
+</tr>
+<tr>
+<td>@</td>
+<td>Selects attributes</td>
+</tr>
+</tbody>
+</table>
+<p><small>Example from w3schools : http://www.w3schools.com/xpath/xpath_syntax.asp</small></p>
+<h1>Xpath and PHP</h1>
+<p>Now we have the basics of Xpath we can play around with PHP and see how it interacts with Xpath. The first thing we must have in mind is that PHP have two alternatives to accomplish this task and one is using simplexml family functions or we have also the DOMXpath family.</p>
+<pre class="lang:php decode:true" title="simplexml_load_file example">$xml = simplexml_load_file('library.xml');
+
+$xml-&gt;xpath('/library/book[@id=1]');
+
+</pre>
+<p>Using simplexml the function will return to us all matched elements inside an array with SimpleXMLElement on it.</p>
+<pre class="lang:php decode:true " title="simplexml result node">Array
+(
+    [0] =&gt; SimpleXMLElement Object
+        (
+            [@attributes] =&gt; Array
+                (
+                    [id] =&gt; 1
+                )
+
+            [author] =&gt; Author 1
+            [summary] =&gt; Summary 1
+        )
+
+)</pre>
+<p>Otherwise we can use the DOMXpath to complete or task but we will need a few more lines but we have a OOP approach.</p>
+<pre class="lang:php decode:true " title="DOMXpath example">$dom = new DOMDocument();
+$dom-&gt;load('library.xml');
+
+$xpath = new DOMXpath($dom);</pre>
+<p>Therefore the return change as well</p>
+<pre class="lang:php decode:true">DOMNodeList Object
+(
+    [length] =&gt; 1
+)
+</pre>
+<h1>Try it yourself</h1>
+<p>We have many possibilities when we are using Xpath and also we can do a lot of things with it, the only way to get know is getting your hands dirty and try different queries in different files!</p>

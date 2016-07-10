@@ -1,0 +1,131 @@
+---
+layout: post
+title: ZCPE 5.5 here we go – PHP Basics (Language constructs)
+date: 2015-08-26 01:01:47.000000000 -03:00
+type: post
+published: true
+status: publish
+categories:
+- php
+- ZCPE
+tags:
+- die
+- echo
+- empty
+- eval
+- exit
+- include
+- include_once
+- isset
+- language construct
+- list
+- php
+- print
+- require
+- require_once
+- return
+- unset
+- zcpe
+meta:
+  _edit_last: '1'
+  _login_radius_meta: '0'
+  _oembed_41ad45de4bfcf265cf443e72fe37a4fe: '{{unknown}}'
+  _oembed_375f0e90d040c50de41faceebaf894fb: '{{unknown}}'
+  _oembed_f174fb68554ae0d902d25605df6080e1: '{{unknown}}'
+  _yoast_wpseo_opengraph-image: http://marabesi.com/wp-content/uploads/2015/02/zcpd-logo.jpg
+  _yoast_wpseo_twitter-image: http://marabesi.com/wp-content/uploads/2015/02/zcpd-logo.jpg
+  _yoast_wpseo_focuskw: language construct
+  _yoast_wpseo_title: ZCPE 5.5 here we go – PHP Basics (Language constructs)
+  _yoast_wpseo_linkdex: '68'
+author:
+  - Matheus Marabesi
+
+
+
+
+---
+<p>Zend divided language constructs in three main categories <strong>output construct</strong>, <strong>evaluation construct</strong> and <strong>others constructs</strong>, you can find this division in zend <a href="http://www.zend.com/en/services/certification/php-certification-study-guide" target="_blank">study guide for PHP 5.5 exam</a>.</p>
+<h1>Output</h1>
+<table>
+<thead>
+<tr>
+<th>Construct</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>die / exit</td>
+<td>Used to output a result and then terminate the running script</td>
+</tr>
+<tr>
+<td>echo / print</td>
+<td>Used to output a result</td>
+</tr>
+<tr>
+<td>return</td>
+<td>Used to halt a execution of a function or a script</td>
+</tr>
+</tbody>
+</table>
+<h1>Evaluation</h1>
+<table>
+<thead>
+<tr>
+<th>Construct</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>empty</td>
+<td>Used to identify if an variable is empty (without an value)</td>
+</tr>
+<tr>
+<td>eval</td>
+<td>Used to evaluate string content</td>
+</tr>
+<tr>
+<td>include/include_once</td>
+<td>Used to include a file (using this just a warning is thrown if the file not exists)</td>
+</tr>
+<tr>
+<td>require/require_once</td>
+<td>Used to include a file (using this a fatal error is thrown)</td>
+</tr>
+</tbody>
+</table>
+<h1>Others</h1>
+<table>
+<thead>
+<tr>
+<th>Construct</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isset</td>
+<td>Used to identify if a variable exists</td>
+</tr>
+<tr>
+<td>unset</td>
+<td>Used to unset("delete") an existing variable</td>
+</tr>
+<tr>
+<td>list</td>
+<td>Used to make easier to use an array values</td>
+</tr>
+</tbody>
+</table>
+<h1>What is the difference ?</h1>
+<p>You can argue that those language constructs are just regular functions and they haven't anything in special, but actually they have. In PHP language constructs can be used with or without parentheses, so let's illustrate:</p>
+<pre class="lang:php decode:true " title="Example of language construct">require 'foo/bar.php';   //valid
+require ('foo/bar.php'); //valid</pre>
+<p>Both are correct to use, but it is recommended to do not use with parentheses for the sake of good practice. Therefore we aren't allowed to use any function provided by PHP without parentheses:</p>
+<pre class="lang:php decode:true">$a = [];
+$b = [];
+
+array_merge($a, $b); //valid
+array_merge $a, $b;  //invalid</pre>
+<p>Some posts in the internet said language constructs are faster than built-in functions, but we must remember that it is a matter of microseconds and I think it is worthless to bother about it.</p>

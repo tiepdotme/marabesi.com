@@ -1,0 +1,81 @@
+---
+layout: post
+title: Continuous PHP
+date: 2016-04-04 01:20:14.000000000 -03:00
+type: post
+published: true
+status: publish
+categories:
+- php
+tags:
+- CI
+- continuous delivery
+- continuousphp
+- php
+meta:
+  _edit_last: '1'
+  _login_radius_meta: '0'
+  _yoast_wpseo_primary_category: '47'
+  _yoast_wpseo_opengraph-image: http://marabesi.com/wp-content/uploads/2016/04/continuous-php-logo.png
+  _yoast_wpseo_twitter-image: http://marabesi.com/wp-content/uploads/2016/04/continuous-php-logo.png
+  _yoast_wpseo_focuskw_text_input: continuous php
+  _yoast_wpseo_focuskw: continuous php
+  _yoast_wpseo_linkdex: '81'
+  _thumbnail_id: '738'
+author:
+  - Matheus Marabesi
+
+
+
+
+---
+<p>Continuous PHP is a amazing CI tool which provides a easy and quick way to run tests and automate deploy, at some point of our application regardless of it's field you will need a CI server to automate things to you and then comes Continuous PHP.</p>
+<p>I confess I used travis CI for a long time and jenkins as well but the problem with those tools is that no one is specifically for PHP projects. Jenkins is a great example of that to use with PHP we need to install a couple of plugins, Travis CI is more flexible with it, therefore neither were built with PHP in mind.</p>
+<h1>Meeting continuous PHP</h1>
+<p>To see how is easy to use <strong>Continuous PHP</strong> I'm going to use it in a simple personal project(<a href="https://github.com/marabesi/use-case-management" target="_blank">https://github.com/marabesi/use-case-management</a>) which consist of a simple PHPUnit test suit.</p>
+<p>To follow this post you need to have :</p>
+<ol>
+<li>You must have a Github account</li>
+<li>You must have a project with PHPUnit tests</li>
+</ol>
+<p>The first step is to click in the login button on the right as you can see in the image below:</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp1.png" rel="attachment wp-att-734"><img class="size-full wp-image-734 aligncenter" src="{{ site.baseurl }}/assets/cp1.png" alt="Continuous PHP" width="1268" height="699" /></a></p>
+<p>After click in login chose Connect with Github and then <strong>Continuous PHP</strong> will sync all your repositories and show to you a list with all your Github repositories.</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp2.png" rel="attachment wp-att-741"><img class="size-full wp-image-741 aligncenter" src="{{ site.baseurl }}/assets/cp2.png" alt="cp2" width="1181" height="585" /></a></p>
+<p>As you can see in the image above I have one repository called <strong>marabesi/gnrephp</strong> configured with <strong>Continuous PHP</strong> and for my happiness everything is fine (you can see a green bar indicating that all tests passed since last build). For this post I'm going to do the same thing but with the repository <strong>marabesi/use-case-management</strong>.</p>
+<p>For each repository that is not configured with <strong>Continuous PHP</strong> we see a blue button in the right side "Setup", we just need to click on that to start our configuration.</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp3.png" rel="attachment wp-att-744"><img class="size-full wp-image-744 aligncenter" src="{{ site.baseurl }}/assets/cp3.png" alt="cp3" width="1187" height="408" /></a></p>
+<p>The "+" signal is to add a new step into the pipeline, click on that and you will see a list of branches of the repository and you can chose in which branch the item of the pipeline is going to be executed, as the project we are using don't have any special branch just chose <strong>master</strong>. Then have a look below where we have some fields to configure our build properties, here we can chose as many versions of PHP as we want, and if in your project you have Phing you can specify a specific targets to be executed.</p>
+<p>On the right side there are credential settings and dependencies. For our dependencies we are using composer so we just need to specify the path of our composer.json file.</p>
+<p>&nbsp;</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp4.png" rel="attachment wp-att-747"><img class="size-full wp-image-747 aligncenter" src="{{ site.baseurl }}/assets/cp4.png" alt="cp4" width="1041" height="670" /></a></p>
+<p>A good notice here is that Continuous PHP has four main steps:</p>
+<ol>
+<li><strong>Build</strong> - is where we configure the environment properties like PHP version, targets from Phing, composer file and credentials (if needed)</li>
+<li><strong>Testing</strong> - here we configure our unit tests to be run when is just it, nothing new. Continuous PHP supports many test frameworks such as  PHPUnit, Behat, Phpspec and so on.</li>
+<li><strong>Package</strong> - We can chose in which format we would like to have the result deployed to. Imagine it as a snapshot of our whole application with all its dependencies ready to be send to any server or have it as a tar ball. Continuous PHP offers to you a bunch of options such as Generic tarball, AWS CodeDeploy, AWS ElasticBeanstalk and Zend Server.</li>
+<li><strong>Deploy</strong> - Finally Continuous PHP give to us a way to easily deploy to a server. This step is directly connected with the previous one, in other words, you must to chose the correct package in order to deploy.</li>
+</ol>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp5.png" rel="attachment wp-att-754"><img class="size-full wp-image-754" src="{{ site.baseurl }}/assets/cp5.png" alt="Continuous PHP pileline" width="1154" height="156" /></a> Continuous PHP pileline[/caption]</p>
+<p>We just passed the Build step in Continuous PHP and now we can configure our tests. Continuous PHP is smart enough to know which framework you're using, of course the framework must be in the list of supported frameworks and you can see the list in <a href="https://continuousphp.com/documentation/testing/" target="_blank">https://continuousphp.com/documentation/testing</a>.</p>
+<p>The great thing is that you can select if your suit test will be blocking or not, which means that you can decide if the build goes on if the suit fails or not.</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp7.png" rel="attachment wp-att-755"><img class="size-full wp-image-755" src="{{ site.baseurl }}/assets/cp7.png" alt="Continuous PHP testing" width="1123" height="375" /></a> Continuous PHP testing[/caption]</p>
+<p>For our simple post we're going to stop here. If you see the image above you will note that we have two more steps in the pipeline but they're specially for packaging and deploy, by now we are ready to see our project running and receive notifications by email if anything fails. Just click in Next in the <strong>Packaging</strong> and <strong>Deploy</strong> steps and in the end click in the play button as the image below shows</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp8.png" rel="attachment wp-att-758"><img class="size-full wp-image-758" src="{{ site.baseurl }}/assets/cp8.png" alt="Play button to start new build" width="1085" height="63" /></a> Play button to start new build[/caption]</p>
+<p>Then a popup will appears asking which branch you would like to execute the build, just chose the branch you want to (usually is the master branch) and a build will start. To see whats is going on in the build you can follow the icon that looks like a console in the right side where is written <strong>Execution details</strong></p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp9-1.png" rel="attachment wp-att-760"><img class="wp-image-761 size-full" src="{{ site.baseurl }}/assets/cp9-1.png" alt="Build status" width="1182" height="191" /></a> Build status[/caption]</p>
+<p>Doing that we will see our build running and what went wrong or what went ok like our next image</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp10.png" rel="attachment wp-att-764"><img class="size-full wp-image-764" src="{{ site.baseurl }}/assets/cp10.png" alt="Build details" width="1190" height="897" /></a> Build details[/caption]</p>
+<p>As you can see something went wrong in my build but its because some unit tests are failing, it need to be fixed in order to have a clean build with all green.</p>
+<h1>Badge</h1>
+<p>Usually we see a lot of badges in Github to inform us if the build is passing or falling, how many downloads the repository had, the quality of code and so on. Continuous PHP also has it's own badge that you can use in your repository.</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp-badge.png" rel="attachment wp-att-775"><img class="size-full wp-image-775" src="{{ site.baseurl }}/assets/cp-badge.png" alt="Continuous PHP badge" width="499" height="223" /></a> Continuous PHP badge[/caption]</p>
+<p>To achieve that is really simple, just click in Status image and a list of options will appear to you. You can select between URL, HTML and Markdown and use it wherever you want to.</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/cp-badge-img.png" rel="attachment wp-att-776"><img class="size-full wp-image-776" src="{{ site.baseurl }}/assets/cp-badge-img.png" alt="Continuous PHP badge button" width="1094" height="73" /></a> Continuous PHP badge button[/caption]</p>
+<p>&nbsp;</p>
+<h1>Conclusion</h1>
+<p>The main difference that I noted compared to others CI's is the simplicity that Continuous PHP offer to us. We do everything in a nice GUI and no configuration file is needed.</p>
+<p>Continuous PHP still implementing new features and is production ready, so you can taste it right now !</p>
+<h1>Further reading</h1>
+<p><a href="https://continuousphp.com/tutorial/introduction-continuous-delivery/" target="_blank">Introduction to continuous delyvering</a></p>
+<p><a href="https://continuousphp.com/tutorial/create-and-set-up-your-project-on-continuousphp/" target="_blank">Set uo your project with continuous PHP</a></p>
