@@ -8,8 +8,8 @@ status: publish
 categories:
 - php
 tags:
-- '&gt;&gt;'
-- '&lt;&lt;'
+- '>>'
+- '<<'
 - '~'
 - bitwise
 - php
@@ -26,24 +26,30 @@ meta:
   _login_radius_meta: '0'
 author:
   - Matheus Marabesi
-
-
-
-
 ---
 <p>If you didn't see the first part of this post click <a href="http://marabesi.com/php/bitwise-operators-journey/" target="_blank">here </a>and enjoy !</p>
-<h1>The &lt;&lt; (Shift left) operator</h1>
+<h1>The << (Shift left) operator</h1>
 <p>Do you remember of our bitwise table in part I? We are not going to need it anymore. What we are going to do here is simple math, so let's start with the left shift operator that uses multiplication ( * ). The full definition from php is : "Shift the bits of <var class="varname"><var class="varname">$a</var></var> <var class="varname"><var class="varname">$b</var></var> steps to the left (each step means "multiply by two")"</p>
 <p>The formula is : bit leftmost *  2 ^ bit rightmost</p>
-<pre class="lang:php decode:true" title="shitf right operator">echo ( 7 &lt;&lt; 9 );</pre>
+
+{% highlight php %}
+<?php
+echo ( 7 << 9 );
+{% endhighlight %}
+
 <p>bit leftmost = 7;</p>
 <p>bit rightmost = 9;</p>
 <p>7 * 2 ^ 9 = ? (2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2)</p>
 <p>2 ^ 9 = 512</p>
 <p>7 * 512 =3584</p>
-<h1>The &gt;&gt; (Shift right) operator</h1>
+<h1>The >> (Shift right) operator</h1>
 <p>"Shift the bits of <var class="varname"><var class="varname">$a</var></var> <var class="varname"><var class="varname">$b</var></var> steps to the right (each step means "divide by two")". Even easy, isn't it ? Let's try an example!</p>
-<pre class="lang:php decode:true" title="shitf left operator">echo ( 4 &gt;&gt; 6 );</pre>
+
+{% highlight php %}
+<?php
+echo ( 4 >> 6 );
+{% endhighlight %}
+
 <p>Can you guess what will be the output ?</p>
 <p>Our formula this time will by : bit leftmost / 2 ^ bit rightmost</p>
 <p>bit leftmost = 4;</p>
@@ -53,7 +59,12 @@ author:
 <p>4 / 64 = 0</p>
 <h1>The ~ (Not) operator</h1>
 <p>Finally we have got the last operator and of course the easiest one. To achieve the NOT operator we must follow the formula ~x = -x -1 (To further information please <a href="http://php.net/manual/en/language.operators.bitwise.php#105821" target="_blank">click here</a>).</p>
-<pre class="lang:php decode:true" title="NOT operator">echo ~9;</pre>
+
+{% highlight php %}
+<?php
+echo ~9;
+{% endhighlight %}
+
 <p>What we have to do is simply apply the formula swifting the X by 9.</p>
 <p>~x = ~9;</p>
 <p>-x = -9;</p>

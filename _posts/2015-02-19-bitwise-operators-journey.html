@@ -31,10 +31,6 @@ meta:
     me is easier and faster to understant bitwise , I hope it will help you either.
 author:
   - Matheus Marabesi
-
-
-
-
 ---
 <p>If you are trying to search about bitwise operators on web you will find loads of information, although, when I was learning about bitwise none of those in the web could clarify my mind. But finally I have got a way to me is easier and faster to understant bitwise , I hope it will help you either.</p>
 <h1>The bitwise table</h1>
@@ -119,9 +115,14 @@ author:
 </tbody>
 </table>
 <p>is it easier with the table ? What we did is really simple we caught a random number between 0 and 255 and applied to the table to see its representation in binary. Now we know 5 in binary is <strong>101</strong> and 10 is <strong>1010</strong>.</p>
-<h1>The &amp; (AND) operator</h1>
-<p>Here our table become a amazing tool to use. The operator &amp; by definition says : "Bits that are set in both <var class="varname"><var class="varname">$a</var></var> and <var class="varname"><var class="varname">$b</var></var> are set." (<a href="http://php.net/manual/en/language.operators.bitwise.php">source</a>) . With that definition what will be the result of  the following expression:</p>
-<pre class="lang:php decode:true" title="AND (&amp;) bitwise operator">echo (5 &amp; 3);</pre>
+<h1>The & (AND) operator</h1>
+<p>Here our table become a amazing tool to use. The operator & by definition says : "Bits that are set in both <var class="varname"><var class="varname">$a</var></var> and <var class="varname"><var class="varname">$b</var></var> are set." (<a href="http://php.net/manual/en/language.operators.bitwise.php">source</a>) . With that definition what will be the result of  the following expression:</p>
+
+{% highlight php %}
+<?php
+echo (5 & 3);
+{% endhighlight %}
+
 <p>Let's start with the table where now we have on the leftmost the bitwise operator and in the rightmost the result.</p>
 <table>
 <tbody>
@@ -138,7 +139,7 @@ author:
 <td><strong>Result</strong></td>
 </tr>
 <tr style="color: #333;">
-<td style="text-align: center;" bgcolor="#F1F1F1">&amp;</td>
+<td style="text-align: center;" bgcolor="#F1F1F1">&</td>
 <td bgcolor="FF9999">0</td>
 <td bgcolor="FF9999">0</td>
 <td bgcolor="FF9999">0</td>
@@ -150,7 +151,7 @@ author:
 <td bgcolor="#F1F1F1">5</td>
 </tr>
 <tr style="color: #333;">
-<td style="text-align: center;" bgcolor="#F1F1F1"> &amp;</td>
+<td style="text-align: center;" bgcolor="#F1F1F1"> &</td>
 <td bgcolor="FF9999">0</td>
 <td bgcolor="FF9999">0</td>
 <td bgcolor="FF9999">0</td>
@@ -163,10 +164,15 @@ author:
 </tr>
 </tbody>
 </table>
-<p>Using the operador AND the result of our operation (5 &amp; 3) results in 1</p>
+<p>Using the operador AND the result of our operation (5 & 3) results in 1</p>
 <h1>The | (OR) operator</h1>
 <p>To use the OR operator we will take the same example we used in the AND operator to understand the diference. By definition we have : "Bits that are set in either <var class="varname"><var class="varname">$a</var></var> or <var class="varname"><var class="varname">$b</var></var> are set."</p>
-<pre class="lang:php decode:true" title="OR ( | ) bitwise operator">echo (5 | 3);</pre>
+
+{% highlight php %}
+<?php
+echo (5 | 3);
+{% endhighlight %}
+
 <table>
 <tbody>
 <tr>
@@ -210,7 +216,12 @@ author:
 <p>This time the result is 7</p>
 <h1>The ^ (XOR) operator</h1>
 <p>Finally we are in the XOR operator. It is close of OR operator but with a big difference, let's see what the definition say : "Bits that are set in $a or $b but not both are set. "</p>
-<pre class="lang:php decode:true" title="XOR ( ^ ) bitwise operator">echo (5 ^ 3)</pre>
+
+{% highlight php %}
+<?php
+echo (5 ^ 3);
+{% endhighlight %}
+
 <table>
 <tbody>
 <tr>

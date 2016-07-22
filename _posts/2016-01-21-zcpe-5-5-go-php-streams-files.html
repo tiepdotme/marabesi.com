@@ -22,61 +22,96 @@ meta:
   _yoast_wpseo_primary_category: ''
 author:
   - Matheus Marabesi
-
-
-
-
 ---
 <p>PHP has a great section about stream which is not used frequently by developers. Streams as the PHP documentation says :</p>
 <p style="text-align: right;"><em> "In its simplest definition, a stream is a resource object which exhibits streamable behavior. That is, it can be read from or written to in a linear fashion"</em> (<a href="http://php.net/manual/en/intro.stream.php">php.net</a>)</p>
 <p style="text-align: left;">In many cases streams are used  unconsciously when handling a file for example</p>
-<pre class="lang:php decode:true" title="Example using wrapper http://">print file_get_contents('http://www.marabesi.com/my_file.php');</pre>
+
+{% highlight php %}
+<?php
+print file_get_contents('http://www.marabesi.com/my_file.php');
+{% endhighlight %}
+
 <p>Look the code above where we are using the <strong>http://</strong> wrapper. Wrapper is what we use to handle a stream in PHP and there are a couple of wrappers in PHP <strong>file://</strong>, <strong>http://</strong>,<strong> ftp://</strong>,<strong> php://</strong>, <strong>zlib://</strong>, <strong>data://</strong>, <strong>glob://</strong>, <strong>phar://</strong>, <strong>ssh2://</strong>, <strong>rar://</strong>,<strong> ogg://</strong>, <strong>expect://</strong>. Each wrapper is used for a specific purpose in our example we used http because we are reading a file in a server, to access a file in a FTP server instead we might use <strong>ftp://</strong> or to find files in a given pattern we might use <strong>glob://</strong> and so on.</p>
 <p>By default when no one is spefied PHP uses <strong>file://</strong></p>
-<pre class="lang:php decode:true" title="Default wrapper">print file_get_contents('/foo/bar/file.txt');
+
+{% highlight php %}
+<?php
+print file_get_contents('/foo/bar/file.txt');
 
 print file_get_contents('file:///foo/bar/file.txt');
-</pre>
+{% endhighlight %}
+
 <p>Both reproduce the same result.</p>
 <p>A interesting point is you can use PHP with any function that handles I/O</p>
-<pre class="lang:php decode:true" title="fopen with wrapper">$file = fopen('file:///foo/bar/file.txt', 'r');
 
-print fgets($file);</pre>
+{% highlight php %}
+<?php
+$file = fopen('file:///foo/bar/file.txt', 'r');
+
+print fgets($file);
+{% endhighlight %}
+
 <p>Write to is very simple with streams as well</p>
-<pre class="lang:php decode:true" title="Writing with stream">print file_put_contents('file:///foo/bar/file.txt', 'text data');</pre>
+
+{% highlight php %}
+<?php
+print file_put_contents('file:///foo/bar/file.txt', 'text data');
+{% endhighlight %}
+
 <h1>Adding context</h1>
 <p>Some times when using <strong>http://</strong> wrapper we need to add some context such as headers in the request and to achieve that we need to use <a href="http://php.net/manual/en/function.stream-context-create.php" target="_blank"><strong>stream_context_create</strong></a>.</p>
-<pre class="lang:default decode:true " title="Example of context">$http= [
-  'http' =&gt; [
-    'method' =&gt; 'GET',
-    'header'=&gt; 'Token: my_token'
+
+{% highlight php %}
+<?php
+$http = [
+  'http' => [
+    'method' => 'GET',
+    'header'=> 'Token: my_token'
   ]
 ];
 
-$context = stream_context_create($http);</pre>
+$context = stream_context_create($http);
+{% endhighlight %}
+
 <p>Think about context as our scenario, something that we need to have to complete an action.</p>
 <p>Once created our context we just need apply it to a stream</p>
-<pre class="lang:php decode:true" title="Using context within stream">print file_get_contents('http://marabesi.com/file.txt', false, $context);</pre>
+
+{% highlight php %}
+<?php
+print file_get_contents('http://marabesi.com/file.txt', false, $context);
+{% endhighlight %}
+
 <p>In our example we are trying to read a file protected by a token. To read the file successfully we pass the token through the header in the request using our context, if we didn't pass the token we weren't able to read the file.</p>
 <p>If you aren't convinced yet, lets move to the next example where we need to read a file over HTTP protocol within a proxy. How would you do that ?</p>
-<pre class="lang:default decode:true" title="Reading file behind proxy">$context = stream_context_create([
-    'http' =&gt; [
-        'timeout' =&gt; 10,
-        'proxy' =&gt; 'tcp://my_proxy:3128',
-        'request_fulluri' =&gt; true,
+
+{% highlight php %}
+<?php
+$context = stream_context_create([
+    'http' => [
+        'timeout' => 10,
+        'proxy' => 'tcp://my_proxy:3128',
+        'request_fulluri' => true,
     ]
-]);</pre>
+]);
+{% endhighlight %}
+
 <p>With streams we just created a context to apply in or <strong>file_get_contents</strong> function. But in our proxy settings we don't use any authentication, to do that we need to add  a header in our context</p>
-<pre class="lang:php decode:true " title="Reading file behind proxy with authentication">$auth = base64_encode('user:password');
+
+{% highlight php %}
+<?php
+$auth = base64_encode('user:password');
 
 $context = stream_context_create([
-    'http' =&gt; [
-        'timeout' =&gt; 10,
-        'proxy' =&gt; 'tcp://my_proxy:3128',
-        'header' =&gt; "Proxy-Authorization: Basic $auth",
-        'request_fulluri' =&gt; true,
+    'http' => [
+        'timeout' => 10,
+        'proxy' => 'tcp://my_proxy:3128',
+        'header' => "Proxy-Authorization: Basic $auth",
+        'request_fulluri' => true,
     ]
-]);</pre>
+]);
+{% endhighlight %}
+
 <h1>Consider to use streams</h1>
 <p>Streams are powerful and help us to build more robust PHP programs, in the past I used to use CURL to consume a simple web service, until I discover streams. Just look how good streams are:</p>
 <ol>

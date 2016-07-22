@@ -26,10 +26,6 @@ meta:
   _yoast_wpseo_twitter-image: http://marabesi.com/wp-content/uploads/2015/01/PHP_Logo.png
 author:
   - Matheus Marabesi
-
-
-
-
 ---
 <p>The Hexadecimal system work in base 16 which  means that we have 15 (fifteen) numbers as shown bellow.</p>
 <p>&nbsp;</p>
@@ -118,7 +114,12 @@ author:
 <p>&nbsp;</p>
 <h1>PHP and Hex</h1>
 <p>In the table above we have 16 numbers and its corresponding values, the highest is 15 and the lowest is 0. Knowing this rule what will the code bellow will output ?</p>
-<pre class="lang:php decode:true" title="Hexdecimal the highest value">echo 0xFF;</pre>
+
+{% highlight php %}
+<?php
+echo 0xFF;
+{% endhighlight %}
+
 <p>The right answer is <strong>255</strong> !</p>
 <p>When I first saw this expression I thought, it will output 1515. No doubts! If in the content table above the F represents 15 it is easy, with two F it will concatenate.</p>
 <p>But be careful with that ! It is wrong thinking, the conversion is made as the same way as octal conversion (<a href="http://marabesi.com/php/php-basics-sure-tell-use-octal-system/">you can see the octal post conversion here</a>).</p>

@@ -24,10 +24,6 @@ meta:
   _yoast_wpseo_twitter-image: http://marabesi.com/wp-content/uploads/2015/08/logo.gif
 author:
   - Matheus Marabesi
-
-
-
-
 ---
 <h1>What is Phing ?</h1>
 <p>Phing is a tool based on Apache ant to automate tasks. Sometimes we as developers do repetitive tasks such as copy from a host to another, checkout new branches even deploying to a new server, in this scenario Phing comes to stage to help us to automate everything.</p>
@@ -41,26 +37,38 @@ author:
 <h1>Getting started</h1>
 <h3>First of all, we must have Phing installed. Please go ahead and check <a href="https://www.phing.info/trac/wiki/Users/Installation" target="_blank">here</a> to installation process through pear, composer or phar.</h3>
 <p>Phing uses XML to compose tasks. Every build.xml file must have an root node called <strong>project</strong>, with an atributte called <strong>default</strong>(you have to fill <strong>default</strong> with your default task you would like to run when Phing is activated, you can see in the example below I use <strong>dist</strong>, it must be the same name of one <strong>target</strong>) and at least one child node called <strong>target</strong>.</p>
-<pre class="lang:default decode:true " title="Simplest buid.xml file">&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;project name="Basic Task" default="dist"&gt;
-  &lt;target name="dist"&gt;
-  &lt;/target&gt;
-&lt;/project&gt;</pre>
-<p>Output :</p>
-<pre class="lang:default decode:true " title="Phing output">Warning: target 'dist' has no tasks or dependencies
 
-Basic Task &gt; dist:
+{% highlight php %}
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Basic Task" default="dist">
+  <target name="dist">
+  </target>
+</project>
+{% endhighlight %}
+
+<p>Output :</p>
+
+{% highlight sh %}
+Warning: target 'dist' has no tasks or dependencies
+
+Basic Task > dist:
 
 
 BUILD FINISHED
 
-Total time: 0.1204 seconds</pre>
+Total time: 0.1204 seconds
+{% endhighlight %}
+
 <p>Actually our build.xml doesn't do anything but you can read Phing documentation  to find out core tasks and how to create your own as well.</p>
 <h1>Running Phing, a little trick</h1>
 <p>Phing assumes by default a build.xml  to run. In other words if you don't specify with -f what file you want to run, Phing will run build.xml automatically.</p>
-<pre class="lang:default decode:true" title="Phing's default">phing                //will assume build.xml
 
-phing -f myfile.xml  //will run myfile.xml</pre>
+{% highlight sh %}
+phing                //will assume build.xml
+
+phing -f myfile.xml  //will run myfile.xml
+{% endhighlight %}
+
 <h1>Going further</h1>
 <p>I would like to recommend you dear reader, to have a quickly view <a href="https://www.phing.info/docs/guide/stable/app.coretasks.html" target="_blank">here</a>, in the core tasks. They are really important, because with core tasks (<strong>MkdirTask</strong> to create directories, <strong>DeleteTask</strong> to remove directories, <strong>EchoTask</strong> to show an message, <strong>CopyTask</strong> to copy files)you have many tasks already in Phing, you just have to use it, and you don't have to re-create it.</p>
 <p>Also looking further you will need optional tasks. Optional tasks are tasks not related with the core of Phing but it can help you a lot. To name a few Phing has optional task called <strong>PhpLintTask</strong> which provide a easy way to check <a href="http://php.net" target="_blank">PHP</a> sintax through files (Phing has an javascript version of this task called <strong>JslLintTask</strong>), <strong>TarTask</strong> to create tarballs from files or directories, <strong>ZipTask</strong> to create .zip files from files or directories and much more. Go ahead and check Phing <a href="https://www.phing.info/docs/guide/stable/index.html" target="_blank">documentation</a> for more information.</p>
