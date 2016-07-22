@@ -17,3 +17,6 @@ github_username:  marabesi
 
 # Build settings
 markdown: kramdown
+
+kramdown:
+  syntax_highlighter: rouge

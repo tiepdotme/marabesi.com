@@ -34,7 +34,9 @@ author:
 <p>Recently I've been around IoT with PHP and I made some small projects suchs as LED blink, sensor management and so on. Therefore I chose PHP to be my main language to dig into IoT's world, for my surprise it was a tough decision.</p>
 <p>Unfortunately we have few libraries written in PHP to deal with I/O and this kind of components, at first its normal the lack of content because PHP was built to be used in the web therefore we can make it better. Here I'm going to use PHP to connect with Arduino and turn on a LED.</p>
 <p>So let's have a look in our sketch (the code goes into Arduino board)</p>
-<pre class="lang:c decode:true " title="Arduino skecth">int led = 13;
+
+{% highlight c %}
+int led = 13;
 String input = "";
 
 void setup() {
@@ -57,7 +59,9 @@ void loop() {
 
     Serial.println(input);
   }
-}</pre>
+}
+{% endhighlight %}
+
 <p>I uploaded the same code on Autodesk 123D Circuits and you can try it yourself, just click on "Start Simulation".</p>
 <h1>Simulation</h1>
 <p>Probably if you are trying to simulate you will see nothing happening in the simulation and looks a bit strange, but it is exactly what it should do, nothing.</p>
@@ -68,13 +72,23 @@ void loop() {
 <h1>Finally, the PHP</h1>
 <p>Ok, now we understand how to run code in our simulator and we need to interact with PHP. To achieve that we are going to use PHP streams.</p>
 <p>The functions used here are known to C developers and might be for PHP as well, let's see some code and after a explanation</p>
-<pre class="lang:php decode:true" title="PHP code to interact with Arduino">$resource = fopen('/dev/ttyUSB0', '+r');
 
-fwrite($resource, 'ON');</pre>
+{% highlight php %}
+<?php
+$resource = fopen('/dev/ttyUSB0', '+r');
+
+fwrite($resource, 'ON');
+{% endhighlight %}
+
 <p>The first thing we do is use the <strong>fopen</strong> function in a old known entry on linux, <strong>ttyUSB0</strong> under <strong>/dev</strong> directory means an USB device connected in one port in your computer/laptop, if you have more than one USB device connected the number 0 at the end will increase to USB1, USB2 and so on.</p>
 <p>If no one USB were connected PHP will through an error like the following (so make sure your USB is connected both on Arduino and on your computer)</p>
-<pre class="lang:vim decode:true " title="fopen error">PHP Warning:  fopen(/dev/ttyUSB0): failed to open stream: Inappropriate ioctl for device in /home/marabesi/fopen.php on line 3
-</pre>
+
+{% highlight php %}
+<?php
+PHP Warning:  fopen(/dev/ttyUSB0): failed to open stream:
+Inappropriate ioctl for device in /home/marabesi/fopen.php on line 3
+{% endhighlight %}
+
 <p><img title="Arduino connected to the laptop" src="{{ site.baseurl }}/assets/connected-arduino-uno.jpg" alt="Image from Safari books - https://www.safaribooksonline.com/blog/2013/07/16/javascript-powered-arduino-with-johnny-five/" width="650" height="366" /></p>
 <p>Then just be happy, if your Arduino is connected and you run the script in PHP the LED should turn on, to turn it off just change ON in the PHP script to OFF.</p>
 <p>&nbsp;</p>
