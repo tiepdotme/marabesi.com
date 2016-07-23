@@ -4,8 +4,8 @@ cd ./_site && \
 remote_repo=${GITHUB_URL:-`git config remote.origin.url`} && \
 remote_branch="gh-pages" && \
 git init && \
-git config user.name "Travis CI" && \
-git config user.email "nobody@nobody.org" && \
+git config user.name "marabesi" && \
+git config user.email "matheus.marabesi@gmail.com" && \
 git add . && \
 git commit -m'build' && \
 git push --force --quiet $remote_repo master:$remote_branch > /dev/null 2>&1 && \
