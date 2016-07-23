@@ -2,6 +2,19 @@ language: ruby
 rvm:
 - 2.1
 script: "bundle exec jekyll build"
+
 branches:
   only:
   - gh-pages
+
+env:
+  global:
+  - GH_REPO="marabesi/marabesi.com"
+
+before_deploy:
+  - chmod +x deploy.sh
+
+deploy:
+  provider: script
+  script: ./deploy.sh
+  skip_cleanup: true
