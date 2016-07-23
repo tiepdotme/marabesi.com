@@ -27,10 +27,6 @@ meta:
   _yoast_wpseo_twitter-image: http://marabesi.com/wp-content/uploads/2015/02/zcpd-logo.jpg
 author:
   - Matheus Marabesi
-
-
-
-
 ---
 <p>PHP Basics is the first topic of ZCPE where is covered many topics and one of them is variable variables.</p>
 <p>Variable variables in PHP is useful but must be used with careful. In this post I'll try to explain to you how to use the simplest form of variable variables.</p>
@@ -43,20 +39,45 @@ author:
 <p>I guess you have noticed a weird notation in the given example as I did when I first see that. The option 4 has a strange notation with two dollars sign in the name of the variable, is that possible ? is it a normal notation in PHP ? When should I use this ?</p>
 <p>Yes! We can do that in PHP but we should take care when use it.</p>
 <p>The easiest way to understand is giving you an simple example, probably you'll read this twice before completely get that but it is normal and I'd recommend you play around with variable variables as well.</p>
-<pre class="lang:php decode:true" title="Variable variables">$hello = 'world';
+
+{% highlight php %}
+<?php
+$hello = 'world';
 
 $a = 'hello';
 
-print $$a;</pre>
+print $$a;
+{% endhighlight %}
+
 <p>PHP will try to interpreter what we have inside $a as a variable, so when we use $$a PHP expects that we have an variable with the same name of the content inside $a, in this case 'hello', otherwise PHP will throw a notice (Undefined variable).</p>
-<pre class="lang:default decode:true" title="Step 1 - Variable variables">$hello = 'world';</pre>
+
+{% highlight php %}
+<?php
+$hello = 'world';
+{% endhighlight %}
+
 <p>Nothing new just a normal variable in PHP within a string.</p>
-<pre class="lang:default decode:true" title="Step 2 - Variable variables">$a = 'hello';</pre>
+
+{% highlight php %}
+<?php
+$a = 'hello';
+{% endhighlight %}
+
 <p>Now we can pay attention to the variable $a that has the string <span style="text-decoration: underline;">hello</span> which is the same name of our variable $hello with <span style="text-decoration: underline;">world</span> inside. In the next step PHP will expects an existing variable called $hello.</p>
-<pre class="lang:default decode:true" title="Step 3 - Variable variables">print $$a;</pre>
+
+{% highlight php %}
+<?php
+print $$a;
+{% endhighlight %}
+
 <p>Here is where the magic happens $$a in this context means $hello because PHP will interpreter the content of $a as a variable in this case <span style="text-decoration: underline;">hello.</span></p>
 <p>$hello has a string <span style="text-decoration: underline;">world</span> inside resulting in the output <span style="text-decoration: underline;">world</span>.</p>
 <h1>is it a mistake ?</h1>
 <p>Without any knowledge of variable variables in PHP you could think that the guy how left the the code made a mistake or just typed twice the dollar sign. To be more specific with that kind of code PHP allows us to use curly braces with that.</p>
-<pre class="lang:default decode:true " title="Curly braces with variable variables">print ${$a};</pre>
+
+{% highlight php %}
+<?php
+print ${$a};
+{% endhighlight %}
+
 <p>Using curly braces the result is the same and you re-force that you want to use variable variables and also turns it more readable to the guy who is going to maintain your code.</p>
