@@ -1,13 +1,8 @@
 language: ruby
 rvm:
 - 2.1
+
 script: "bundle exec jekyll build"
-
-all_branches: true
-
-env:
-  global:
-  - GH_REPO="marabesi/marabesi.com"
 
 before_deploy:
   - chmod +x ./deploy.sh

@@ -21,4 +21,8 @@ markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
 
-exclude: [vendor]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .travis.yml
