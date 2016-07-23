@@ -5,5 +5,3 @@ script: "bundle exec jekyll build"
 branches:
   only:
   - gh-pages
-exclude: [vendor]
-sudo: false

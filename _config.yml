@@ -20,3 +20,5 @@ markdown: kramdown
 
 kramdown:
   syntax_highlighter: rouge
+
+exclude: [vendor]
