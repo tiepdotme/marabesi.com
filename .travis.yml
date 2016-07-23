@@ -10,7 +10,7 @@ env:
   - GH_REPO="marabesi/marabesi.com"
 
 before_deploy:
-  - chmod u+x ./deploy.sh
+  - chmod +x ./deploy.sh
 
 deploy:
   provider: script
