@@ -31,8 +31,12 @@ meta:
 author:
   - Matheus Marabesi
 ---
-<p>Recently I've been around IoT with PHP and I made some small projects suchs as LED blink, sensor management and so on. Therefore I chose PHP to be my main language to dig into IoT's world, for my surprise it was a tough decision.</p>
-<p>Unfortunately we have few libraries written in PHP to deal with I/O and this kind of components, at first its normal the lack of content because PHP was built to be used in the web therefore we can make it better. Here I'm going to use PHP to connect with Arduino and turn on a LED.</p>
+<p>Recently I've been around IoT with PHP and I made some small projects such as LED blink,
+  sensor management and so on. Therefore I chose PHP to be my main language to dig into IoT's world,
+  for my surprise it was a tough decision.</p>
+<p>Unfortunately we have few libraries written in PHP to deal with I/O and this kind of components,
+  at first it is normal the lack of content because PHP was built to be used in the web, therefore we can make it better.
+  Here I'm going to use PHP to connect with Arduino and turn on a LED.</p>
 <p>So let's have a look in our sketch (the code goes into Arduino board)</p>
 
 {% highlight c %}
@@ -64,8 +68,12 @@ void loop() {
 
 <p>I uploaded the same code on Autodesk 123D Circuits and you can try it yourself, just click on "Start Simulation".</p>
 <h1>Simulation</h1>
-<p>Probably if you are trying to simulate you will see nothing happening in the simulation and looks a bit strange, but it is exactly what it should do, nothing.</p>
-<p>If we take a look inside the sketch we'll see a lot of interaction with Serial port and there is the reason why the Arduino does nothing. The Serial port is the way out of Arduino and the path to go to communicate with another devices or programming languages, we can see a few tutorials on Arduino <a href="http://playground.arduino.cc/" target="_blank">playground</a> to get a better idea.</p>
+<p>Probably if you are trying to simulate you will see nothing happening in the simulation and it looks a bit strange,
+  but it is exactly what it should do, nothing.</p>
+<p>If we take a look inside the sketch we'll see a lot of interaction with Serial port and there is a reason why the
+  Arduino does nothing. The Serial port is the way out of Arduino and the path to communicate with another devices
+  or programming languages, we can see a few tutorials at Arduino
+  <a href="http://playground.arduino.cc/" target="_blank">playground</a> to get a better idea.</p>
 <p>Go ahead and after you click on "Start Simulation", click on "Code Editor" the console will show up with the core running on Arduino and in the right side there is a tab named "Serial Monitor", click on that as well. On the right panel will show up you can type any command to interact with, if you have any idea in what our sketch does, you see we must type "<strong>ON</strong>" to turn the LED on, and "<strong>OFF</strong>" to turn it off.</p>
 <p><iframe width="100%" height="448" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="https://123d.circuits.io/circuits/497523-devmedia-php-iot/embed#breadboard"></iframe></p>
 <p>The PHP world will interact with Serial port on Arduino and send exactly the same command (ON, OFF) to turn the LED <strong>ON</strong> and <strong>OFF</strong>.</p>
