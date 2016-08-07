@@ -15,24 +15,22 @@ meta:
   _yoast_wpseo_linkdex: '56'
   _yoast_wpseo_focuskw_text_input: solid
   _yoast_wpseo_primary_category: ''
-author:
-  login: matheusmarabesi
-  email: matheus.marabesi@gmail.com
-  display_name: Matheus Marabesi
-  first_name: Matheus
-  last_name: Marabesi
+author: Matheus Marabesi
 ---
-<p>Being able to write better is a achieveament that every programmer want to. SOLID is a great thing to start to and particularly one of the best things to be followed by TDD.</p>
+<p>Being able to write better is a achieveament that every programmer want to. SOLID is a great thing to start to
+    and particularly one of the best things to be followed by TDD.</p>
 <h1>Single responsability</h1>
 <blockquote><p>a class should have only a single responsibility (i.e. only one potential change in the software's specification should be able to affect the specification of the class)</p></blockquote>
-<p>&nbsp;</p>
-<pre class="lang:php decode:true" title="Class with too many responsabilities">class Upload {
+
+{% highlight php %}
+<?php
+class Upload {
 
     private $file;
 
     public function __construct($file)
     {
-        $this-&gt;file = $file;
+        $this->file = $file;
     }
 
     public function validate($data)
@@ -49,7 +47,9 @@ author:
     {
         // rename file
     }
-}</pre>
+}
+{% endhighlight %}
+
 <p>We have our class Upload doing too many things at once</p>
 <ul>
 <li>Validates the file</li>
@@ -58,7 +58,9 @@ author:
 <li>Lack of file object</li>
 </ul>
 <p>A better approach to it is to create a new class to validate it, to move it and finally to handle it to a new place, let's see some code</p>
-<pre class="lang:default decode:true ">class File {}
+{% highlight php %}
+<?php
+class File {}
 
 class ValidateFile {}
 
@@ -73,7 +75,7 @@ class Upload {
 
     public function __construct(File $file)
     {
-        $this-&gt;file = $file;
+        $this->file = $file;
     }
 
     public function validate($data)
@@ -90,19 +92,36 @@ class Upload {
     {
         // rename file
     }
-}</pre>
-<p>&nbsp;</p>
+}
+{% endhighlight %}
+
 <h1>Open/Close</h1>
 <blockquote><p>software entities … should be open for extension, but closed for modification.</p></blockquote>
-<p>&nbsp;</p>
 <h1>Liskov Substitution</h1>
+
 <blockquote><p>Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program</p></blockquote>
-<p>&nbsp;</p>
+
+
+
 <h1>Interface Segregation</h1>
 <blockquote>
-<h2>Many client-specific interfaces are better than one general-purpose interface.</h2>
+Many client-specific interfaces are better than one general-purpose interface.
 </blockquote>
-<p>&nbsp;</p>
+
+<p>This I think is the easier one to understand, the quote above is really clear. So let' dive into the source code
+and get our hands dirty.</p>
+
+{% highlight php %}
+<?php
+interface Bird {
+
+    public function fly();
+
+    public function eat();
+}
+
+{% endhighlight %}
+
 <h1>Dependency inversion</h1>
 <blockquote><p>One should “Depend upon Abstractions. Do not depend upon concretions</p></blockquote>
 <p>&nbsp;</p>
