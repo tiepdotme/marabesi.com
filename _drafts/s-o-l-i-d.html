@@ -122,6 +122,60 @@ interface Bird {
 
 {% endhighlight %}
 
+<p>The interface above has two methods to our Bird, and we can implement this interface really easy and well, as the code below shows</p>
+
+{% highlight php %}
+<?php
+class ConcreteBird implements Bird {
+
+    public function fly()
+    {
+        print 'I can fly';
+    }
+
+    public function eat()
+    {
+        print 'I can eat';
+    }
+}
+
+{% endhighlight %}
+
+<p>This kind of generalization works fine and there is just one problem with it, what if I have a bird who doesn't fly or doesn't eat ?
+We do not have many options though, we have to implement all methods, therefore what we can do to identify when a bird can't fly or eat is thrown an exception.</p>
+
+{% highlight php %}
+<?php
+class ConcreteBirdWithoutFly implements Bird {
+
+    public function fly()
+    {
+        throw new \Exception('I cannot fly');
+    }
+
+    public function eat()
+    {
+        print 'I can eat';
+    }
+}
+
+class ConcreteBirdWithoutEat implements Bird {
+
+    public function fly()
+    {
+        print 'I can fly';
+    }
+
+    public function eat()
+    {
+        throw new \Exception('I cannot eat');
+    }
+}
+{% endhighlight %}
+
+<p>For many of us its just ok to do this, but the true is that we are implementing a method that we don't need.</p>
+
+
 <h1>Dependency inversion</h1>
 <blockquote><p>One should “Depend upon Abstractions. Do not depend upon concretions</p></blockquote>
 <p>&nbsp;</p>
