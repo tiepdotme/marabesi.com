@@ -97,9 +97,69 @@ class Upload {
 
 <h1>Open/Close</h1>
 <blockquote><p>software entities … should be open for extension, but closed for modification.</p></blockquote>
+
+
+<p>This principle is followed by many vendors to allow developers extend features without change the original source code. Lets first understand the problem
+we want to solve. lets imagine we have a class to send data through a webservice and at the time we have only the XML handler to send this but you client requested you to
+implement the feature to support JSON, what would you do ?</p>
+
+{% highlight php %}
+<?php
+class Webservice {
+
+    public function sendXml($data) {
+        // handle the send here
+    }
+}
+{% endhighlight %}
+
+<p>In the code above we have unfortunately only one choice, add a method <strong>sendJson</strong>, but that would not follow the Open/Close principle. With this action we
+would had to change the original source code to add a new feature (should be open for extension, but <strong>closed for modification</strong>). How can we fix this code ?</p>
+
+{% highlight php %}
+<?php
+abstract class Type {}
+
+class XML extends Type {}
+
+class XML extends Json {}
+
+class Webservice {
+
+    public function send(Type $data) {
+        // handle the send here
+    }
+}
+{% endhighlight %}
+
+To easily refactor this code accordinly with open/close principle we would first to create a new generic class called <strong>Type</strong>, this class will abstract
+the XMl and JSON type, which we can then give to the send date as a parameter.
+
+{% highlight php %}
+<?php
+
+$type = new Json();
+
+$webservice = new Webservice();
+$webservice->send($json);
+
+{% endhighlight %}
+
+This approach is much cleaner and easier to create a new extension to it, we can extend the <strong>Type</strong> class and create as many types as we want.
+
+
 <h1>Liskov Substitution</h1>
 
 <blockquote><p>Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program</p></blockquote>
+
+<p>This principle is connected with inheritance one of the most features used in the Object Oriented Programming. The principle says
+that the subtype should not alter the result of the program.</p>
+
+
+{% highlight php %}
+<?php
+
+{% endhighlight %}
 
 
 
@@ -174,8 +234,64 @@ class ConcreteBirdWithoutEat implements Bird {
 {% endhighlight %}
 
 <p>For many of us its just ok to do this, but the true is that we are implementing a method that we don't need.</p>
+<p>Then comes Interface Segregation to save us, "Many client-specific interfaces are better than one general-purpose interface.". To deal with that we simply create  a new
+interface with the method eat.</p>
 
+{% highlight php %}
+<?php
+interface Bird {
+
+    public function fly();
+}
+
+interface Eatable {
+
+    public function eat();
+}
+{% endhighlight %}
+
+With this approach we can finally implements the specific interface instead of jus throw exceptions if the class doesn't support the contract. The following code supports both
+<strong>Bird</strong> and <strong>Eatable</strong>
+
+{% highlight php %}
+<?php
+
+class ConcreteBirdWithoutEat implements Bird, Eatable {
+
+    public function fly()
+    {
+        print 'I can fly';
+    }
+
+    public function eat()
+    {
+        print 'I can eat';
+    }
+}
+{% endhighlight %}
+
+This code is more flexible as well, we just implement what we are going to need.
 
 <h1>Dependency inversion</h1>
 <blockquote><p>One should “Depend upon Abstractions. Do not depend upon concretions</p></blockquote>
-<p>&nbsp;</p>
+
+<p>The following code just clarify the idea of abstraction and how to depend on it instead of a concrete instance.</p>
+
+{% highlight php %}
+<?php
+
+abstract class Drivable {}
+
+class Driver extends Drivable {}
+
+class Car {
+
+    public function run(Drivable $driver) {}
+}
+{% endhighlight %}
+
+<p>The following approach allow us to implement as many drivers as we want and give it as a parameter to the run method. </p>
+<p>You can complain that we could easy depend directly on <strong>Driver</strong>, but if we do that we will block the flexibility of the code.</p>
+
+<h1>References</h1>
+
