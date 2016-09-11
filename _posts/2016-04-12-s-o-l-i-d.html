@@ -1,7 +1,7 @@
 ---
 layout: post
 title: S.O.L.I.D
-date: 2016-04-01 01:06:05.000000000 -03:00
+date: 2016-04-12 01:06:05.000000000 -03:00
 type: post
 published: true
 status: published
@@ -19,7 +19,9 @@ author: Matheus Marabesi
 ---
 <p>Being able to write better is a achieveament that every programmer want to. SOLID is a great thing to start to
     and particularly one of the best things to be followed by TDD.</p>
-<h1>Single responsability</h1>
+
+<section class="post-section">
+<h1 class="post-title">Single responsability</h1>
 <blockquote><p>a class should have only a single responsibility (i.e. only one potential change in the software's specification should be able to affect the specification of the class)</p></blockquote>
 
 {% highlight php %}
@@ -94,8 +96,10 @@ class Upload {
     }
 }
 {% endhighlight %}
+</section>
 
-<h1>Open/Close</h1>
+<section class="post-section">
+<h1 class="post-title">Open/Close</h1>
 <blockquote><p>software entities … should be open for extension, but closed for modification.</p></blockquote>
 
 
@@ -146,24 +150,106 @@ $webservice->send($json);
 {% endhighlight %}
 
 This approach is much cleaner and easier to create a new extension to it, we can extend the <strong>Type</strong> class and create as many types as we want.
+</section>
 
+<section class="post-section">
 
-<h1>Liskov Substitution</h1>
+<h1 class="post-title">Liskov Substitution</h1>
 
 <blockquote><p>Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program</p></blockquote>
 
 <p>This principle is connected with inheritance one of the most features used in the Object Oriented Programming. The principle says
 that the subtype should not alter the result of the program.</p>
 
+<p>In the following example we have a class called <strong>Door</strong>, inside what we have is a simple method
+that tell us when the door is open or not.</p>
 
 {% highlight php %}
 <?php
 
+class Door {
+
+    protected $open = true;
+
+    public function isOpen()
+    {
+        return $open;
+    }
+
+    public function open()
+    {
+        $this->open = true;
+    }
+
+    public function close()
+    {
+        $this->open = false;
+    }
+}
+
 {% endhighlight %}
 
+<p>
+    A simply class and easy to use, then we have our client code, who uses that class
+</p>
 
+{% highlight php %}
+<?php
 
-<h1>Interface Segregation</h1>
+class Client {
+
+    public function execute(Door $door)
+    {
+        if ($door->isOpen()) {
+            $door->close();
+        }
+    }
+}
+
+$client = new Client();
+$client->execute(new Door());
+
+{% endhighlight %}
+
+<p>Now let' say we have other door but this time this door is a decorated one.</p>
+
+{% highlight php %}
+<?php
+
+class DecoratedDoor extends Door {
+
+    public function isOpen()
+    {
+        if (!parent::isOpen()) {
+            throw new \Exception('Door is closed');
+        }
+    }
+}
+{% endhighlight %}
+
+<p>The code above is valid but if the client diced to use the <strong>DecoratedDoor</strong> his code will break. We are not following
+the Liskov principle "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program".</p>
+
+{% highlight php %}
+<?php
+
+// Original code
+$client = new Client();
+$client->execute(new Door());
+
+/**
+ * The client can' use the DecoratedDoor because it throws an Exception
+ */
+$client = new Client();
+$client->execute(new DecoratedDoor());
+{% endhighlight %}
+
+<p>In other words to fix this problem and follow the Liskov principle we need just provide for the client class
+the same result that he expects from the <strong>Door</strong> class, true or false.</p>
+</section>
+
+<section class="post-section">
+<h1 class="post-title">Interface Segregation</h1>
 <blockquote>
 Many client-specific interfaces are better than one general-purpose interface.
 </blockquote>
@@ -250,8 +336,8 @@ interface Eatable {
 }
 {% endhighlight %}
 
-With this approach we can finally implements the specific interface instead of jus throw exceptions if the class doesn't support the contract. The following code supports both
-<strong>Bird</strong> and <strong>Eatable</strong>
+<p>With this approach we can finally implements the specific interface instead of jus throw exceptions if the class doesn't support the contract. The following code supports both
+<strong>Bird</strong> and <strong>Eatable</strong></p>
 
 {% highlight php %}
 <?php
@@ -271,8 +357,10 @@ class ConcreteBirdWithoutEat implements Bird, Eatable {
 {% endhighlight %}
 
 This code is more flexible as well, we just implement what we are going to need.
+</section>
 
-<h1>Dependency inversion</h1>
+<section class="post-section">
+<h1 class="post-title">Dependency inversion</h1>
 <blockquote><p>One should “Depend upon Abstractions. Do not depend upon concretions</p></blockquote>
 
 <p>The following code just clarify the idea of abstraction and how to depend on it instead of a concrete instance.</p>
@@ -292,6 +380,14 @@ class Car {
 
 <p>The following approach allow us to implement as many drivers as we want and give it as a parameter to the run method. </p>
 <p>You can complain that we could easy depend directly on <strong>Driver</strong>, but if we do that we will block the flexibility of the code.</p>
+</section>
 
-<h1>References</h1>
+<section class="post-section">
+<h1 class="post-title">References</h1>
 
+<ul>
+    <li><a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)" target="_blank">https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)</a></li>
+    <li><a href="https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design" target="_blank">https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design</a></li>
+    <li><a href="http://www.codemag.com/article/1001061" target="_blank">http://www.codemag.com/article/1001061</a></li>
+</ul>
+</section>
