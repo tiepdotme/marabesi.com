@@ -2,7 +2,10 @@ language: ruby
 rvm:
 - 2.1
 
-script: "bundle exec jekyll build"
+script:
+  - "npm install -g bower"
+  - "bower install"
+  - "bundle exec jekyll build"
 
 before_deploy:
   - chmod +x ./deploy.sh

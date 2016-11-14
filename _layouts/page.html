@@ -1,14 +1,9 @@
 ---
 layout: default
 ---
-<article class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
-
-  <div class="post-content">
+<paper-card heading="{{ page.title }}">
+  <div class="card-content">
     {{ content }}
   </div>
-
-</article>
+</paper-card>
