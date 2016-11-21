@@ -22,7 +22,9 @@
         {% for my_page in site.pages %}
           {% if my_page.title %}
             <a class="paper-item-link" href="{{ my_page.url | prepend: site.baseurl }}">
-              <paper-item>{{ my_page.title }}</paper-item>
+              <paper-item>
+                {{ my_page.title }}
+              </paper-item>
             </a>
           {% endif %}
         {% endfor %}
