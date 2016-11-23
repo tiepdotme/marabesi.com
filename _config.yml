@@ -15,6 +15,11 @@ url: "http://marabesi.com" # the base hostname & protocol for your site
 twitter_username: MatheusMarabesi
 github_username:  marabesi
 
+# Custom settings
+collections:
+  newbies:
+    output: true
+
 # Build settings
 markdown: kramdown
 
