@@ -1,0 +1,61 @@
+---
+layout: post
+title: Laration - A simple way to visualize your configs
+date: 2016-11-26 01:06:05.000000000 -03:00
+type: post
+published: true
+status: published
+categories:
+- Post
+tags: []
+author:
+  login: matheusmarabesi
+  email: matheus.marabesi@gmail.com
+  display_name: Matheus Marabesi
+  first_name: Matheus
+  last_name: Marabesi
+---
+
+<h1>Laration - A simple way to visualize your configs</h1>
+
+<p>
+    Some times during our development work we need to check wheter a config has been defined, and
+    in most of the times we just jump to the file, which means to seek the file, open it and
+    change it (or just see the value and leave it as it was).
+
+    Laravel provide us a really simple way to find the configs. This is because Laravel uses
+    the dot file pattern, where the configuration needed will be inside of an .env file in the 
+    root of the project.    
+</p>
+
+{% highlight env %}
+APP_ENV=local
+APP_KEY=base64:IYCeNxLZFcUKLn6IoeCzKFiW0WmVjt6gU36kCBOfr9A=
+APP_DEBUG=true
+APP_LOG_LEVEL=debug
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+{% endhighlight %}
+
+<p>
+    This solution is the basic one and there is nothing wrong with it, let's resume the needed steps
+    to get where we want:
+
+    <ul>
+        <li>1 - Go to the root of your project</li>
+        <li>2 - Find the variable that you want</li>
+        <li>3 - Change it or just check it's value</li>
+    </ul>
+</p>
+
+<p>
+    Laravel also provide us with some defaults, when the Laravel engine don't find the needed
+    configuration it will assume a default. The default values are defined inside the <strong>configs/</strong> 
+    folder.
+</p>
