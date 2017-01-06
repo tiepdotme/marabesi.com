@@ -2,25 +2,20 @@
 layout: default
 ---
 
-{% for post in site.posts %}
+<div class="container">
 
-    {% capture thecycle %}{% cycle '1', '2' %}{% endcapture %}
-    {% if thecycle == '1' %}
-        <div class="column">
-    {% endif %}
-
-        <paper-card alt="{{ post.title }}" image="{{ post.image }}">
-            <div class="card-content">
-                <a href="{{ post.url | prepend: site.baseurl }}">
-                    <paper-item>
-                        {{ post.title }} - {{ post.date | date: "%b %-d, %Y" }}
-                    </paper-item>
-                </a>
-            </div>
-        </paper-card>
-
-    {% if thecycle == '2' %}
+    {% for post in site.posts %}
+        <div class="block">
+            <paper-card alt="{{ post.title }}" image="{{ post.image }}">
+                <div class="card-content">
+                    <a href="{{ post.url | prepend: site.baseurl }}">
+                        <paper-item>
+                            {{ post.title }} - {{ post.date | date: "%b %-d, %Y" }}
+                        </paper-item>
+                    </a>
+                </div>
+            </paper-card>
         </div>
-    {% endif %}
-{% endfor %}
+    {% endfor %}
 
+</div>
