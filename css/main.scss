@@ -28,7 +28,10 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-
+.right-with-margin-bottom {
+  margin-bottom: 15px;
+  text-align: right;
+}
 
 // Use media queries like this:
 // @include media-query($on-palm) {

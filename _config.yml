@@ -9,7 +9,7 @@
 title: Marabesi
 email: matheus.marabesi@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  The knowledge must be shared
+  Trying to isnpire people through software
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://marabesi.com" # the base hostname & protocol for your site
 twitter_username: MatheusMarabesi
@@ -18,6 +18,8 @@ github_username:  marabesi
 # Custom settings
 collections:
   newbies:
+    output: true
+  tests:
     output: true
 
 # Build settings

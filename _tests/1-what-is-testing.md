@@ -26,7 +26,11 @@ through a series of tests, such as the material resistance, durability, life tim
 > 2. the trial of the quality of something: to put to the test.
 > 3. a particular process or method for trying or assessing.
 
-<small align="right">http://www.dictionary.com/browse/tested</small>
+<div class="right-with-margin-bottom">
+    <small>
+        <a href="http://www.dictionary.com/browse/tested">dictionary.com</a>
+    </small>
+</div>
 
 The essence of a test is simply to guarantee that a given element does what it supposed to do, not more or less 
 just what it needs to do.
@@ -35,7 +39,7 @@ In software development is the same, software out there need to go through a bat
 the software works in different environments, different programming language versions or even different browsers 
 if we are talking about web software(could be different devices to mobile software).
  
- 
+[Go back](/tests)
  
  
  
