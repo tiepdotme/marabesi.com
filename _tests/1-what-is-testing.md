@@ -45,6 +45,14 @@ if we are talking about web software(could be different devices to mobile softwa
 > process of executing a program or application with the intent of finding software bugs (errors or other defects), 
 > and to verify that the software product is fit for use.
  
+<div class="right-with-margin-bottom">
+    <small>
+        <a href="https://en.wikipedia.org/wiki/Software_testing">wikipedia.org</a>
+    </small>
+</div>
+
+Often the testing part is done by a QA(Quality Assurance) area, the purpose is guarantee the quality of
+the software before submit to the client.
 
  
 [Go back](/tests)
