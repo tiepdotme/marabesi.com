@@ -42,9 +42,7 @@ I've uploaded my own [image on google drive](https://drive.google.com/file/d/0B8
 The next step will be to create a bootable SD Card within the Debian image, as Intel provide us a good tutorial to achieve this
  I' not going to focus on installing the image. Visit this [link](https://software.intel.com/en-us/get-started-galileo-linux-step1) to instructions in how to setup the image.
 
-
 ## Issues found while using Debian on Intel Galileo
-
 
 ### Issue 1 (unsolved)
 
@@ -63,7 +61,7 @@ The easiest way to fix this issue was to execute the following commands in the s
 ifconfig eth0 up && dhclient eth0
 ```
 
-To automate the initialization a script has been placed at /etc/rc.local with the same statements.
+To automate the initialization a script has been placed at **/etc/rc.local** with the same statements.
 
 
 
