@@ -25,7 +25,7 @@ setup, pins and LED.
 
 I used Arduino Uno to keep the things as simple as possible, but any Arduino family board is supported.
 
-## Understanding a bit of streams
+## Arduino and PHP
 
 The first thing that came to my mind at least was to use the command line to interact with the serial port in the 
 Arduino board. It could have worked as expected but for sure is not the best approach, since we are using a workaround.
@@ -54,4 +54,26 @@ shell_exec("echo '1' >> /dev/cu.wchusbserial1410");
 
 The PHP script above does the job well, but its not elegant. The error handling is terrible.
 
-Comes in place PHP streams, I' sure you'e used them before. PHP developers are used to streams and don' know that. 
+Comes in place PHP streams, I'm sure you've used them before. PHP developers are used to streams and don' know that. 
+
+## Understanding a bit of streams
+
+PHP.net has a entire section dedicated to streams, from there we can grab the following definition
+
+> Streams are the way of generalizing file, network, data compression, and other operations which share a common set 
+of functions and uses. In its simplest definition, a stream is a resource object which exhibits streamable behavior. 
+That is, it can be read from or written to in a linear fashion, and may be able to fseek() to an arbitrary locations 
+within the stream.
+
+Despite fseek, we can resume streams as a generalization of data being read and written. The PHP world provide us
+functions like **fopen**, **file**, **fseek**, **fstats** and so on to interact with streams in the daily basis.
+
+``` php
+<?php
+print file_get_contents('/foo/bar/my_file.txt');
+```
+
+The source code above represents the simplest use of streams in PHP, reading a file content. Though PHP allow us to use
+wrappers such as **http://**, **ftp://**, **php://**, **phar://** and so on (a full list is given at [PHP official 
+documentation](http://php.net/manual/en/wrappers.http.php)).
+
