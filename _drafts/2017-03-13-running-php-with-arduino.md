@@ -76,4 +76,26 @@ print file_get_contents('/foo/bar/my_file.txt');
 The source code above represents the simplest use of streams in PHP, reading a file content. Though PHP allow us to use
 wrappers such as **http://**, **ftp://**, **php://**, **phar://** and so on (a full list is given at [PHP official 
 documentation](http://php.net/manual/en/wrappers.http.php)).
+ 
+### Streams
+
+Streams are accessible by any function that handles files on PHP, such as fopen and file_get_contents. The magic happens when
+we use what is known as **wrappers** to handle different resources. Wrappers allow SSH connection, FTP handling or even 
+read zipped files content without extracting them.
+
+PHP comes with 12 wrappers ready to use as shown in the list bellow, and if is needed something specific that PHP does not 
+has is possible to create custom streams using the function **stream_wrapper_register**.
+
+1. file://
+2. http://
+3. ftp://
+4. php://
+5. zlib://
+6. data://
+7. glob://
+8. phar://
+9. ssh2://
+10. rar://
+11. ogg://
+12. expect://
 
