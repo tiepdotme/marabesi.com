@@ -79,9 +79,9 @@ documentation](http://php.net/manual/en/wrappers.http.php)).
  
 ### Streams
 
-Streams are accessible by any function that handles files on PHP, such as fopen and file_get_contents. The magic happens when
+Streams are accessible by any function that handles files on PHP, such as *fopen* and file_get_contents. The magic happens when
 we use what is known as **wrappers** to handle different resources. Wrappers allow SSH connection, FTP handling or even 
-read zipped files content without extracting them.
+read zipped files without extracting them.
 
 PHP comes with 12 wrappers ready to use as shown in the list bellow, and if is needed something specific that PHP does not 
 has is possible to create custom streams using the function **stream_wrapper_register**.
@@ -98,4 +98,7 @@ has is possible to create custom streams using the function **stream_wrapper_reg
 10. rar://
 11. ogg://
 12. expect://
+
+PHP developers are used to fetch content websites using those functions and the *http://* wrapper, but PHP can go a lot further.
+We can extend the PHP  to build our own wrapper.
 
