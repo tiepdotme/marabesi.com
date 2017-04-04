@@ -19,10 +19,10 @@ author:
 ## 1.Unit tests
 
 * Websites
-    - [https://phpunit.de/](PHP Unit documentation)
+    - [PHP Unit documentation](https://phpunit.de/)
 * Books
     - [Test Driven Development: By Example: Kent Beck](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
-    - [http://www.cs.umss.edu.bo/doc/material/mat_gral_137/The%20Art%20of%20Unit%20Testing%20with%20Examples%20in%20.NET%20(Manning%202009).pdf](The art of Unit testing)
+    - [The art of Unit testing](http://www.cs.umss.edu.bo/doc/material/mat_gral_137/The%20Art%20of%20Unit%20Testing%20with%20Examples%20in%20.NET%20(Manning%202009).pdf)
 
 ## 2.PHP
 
