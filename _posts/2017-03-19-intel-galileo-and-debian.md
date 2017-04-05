@@ -40,7 +40,7 @@ Grab the latest link from the image list, download the image called **galileo.im
 I've uploaded my own [image on google drive](https://drive.google.com/file/d/0B8eXZIvTLcpjdlNKRDdYVGVWRWs/view?usp=sharing).
 
 The next step will be to create a bootable SD Card within the Debian image, as Intel provide us a good tutorial to achieve this
- I' not going to focus on installing the image. Visit this [link](https://software.intel.com/en-us/get-started-galileo-linux-step1) to instructions in how to setup the image.
+ I'm not going to focus on installing the image. Visit this [link](https://software.intel.com/en-us/get-started-galileo-linux-step1) to instructions in how to setup the image.
 
 ## Issues found while using Debian on Intel Galileo
 
@@ -63,6 +63,8 @@ ifconfig eth0 up && dhclient eth0
 
 To automate the initialization a script has been placed at **/etc/rc.local** with the same statements.
 
+## EDIT: April 5 2017
 
+I changed the approach, so now I' trying to have node red working on the intel Galileo. The first challenge is to update the node version to at least 4.*.
 
 
