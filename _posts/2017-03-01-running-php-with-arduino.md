@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Running PHP with Arduino
-date: 2017-03-13 01:06:05.000000000 -03:00
+date: 2017-03-01 01:06:05.000000000 -03:00
 type: post
 published: true
 status: published
@@ -252,6 +252,7 @@ in PHP which uses a custom wrapper to store data in the cloud.
 With S3 wrapper to download a file is a matter of calling the function file_get_contents
 
 ```php
+<?php
 $data = file_get_contents('s3://bucket/key'); 
 ```
 
