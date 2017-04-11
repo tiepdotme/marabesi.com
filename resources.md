@@ -33,10 +33,12 @@ author:
 
 * Websites
     - [Laracast](https://laracasts.com/)
+    - [Laravel documentation](https://laravel.com/docs/)
     
 ## 4.Podcasts
 
 * [Fullstack radio](http://www.fullstackradio.com/)
+* [PHP Round table](https://www.phproundtable.com/)
 
 ## Software engineering
 
@@ -46,4 +48,4 @@ author:
 ## People
 
 * [Patrick Kua](https://www.thekua.com/atwork/2014/11/the-definition-of-a-tech-lead/)
-* [https://adamwathan.me/](Adam Wathan)
+* [Adam Wathan](https://adamwathan.me/)
