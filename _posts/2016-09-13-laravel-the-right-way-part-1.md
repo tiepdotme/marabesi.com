@@ -5,6 +5,7 @@ date: 2016-09-13 01:06:05.000000000 -03:00
 type: post
 published: true
 status: published
+image: https://cdn.worldvectorlogo.com/logos/laravel.svg
 categories:
 - php
 tags:
