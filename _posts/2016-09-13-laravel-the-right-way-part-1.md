@@ -70,17 +70,44 @@ logic from the interactions with the underlying data source or Web service.
 As our application grows is normal to have a lot of files, a lot of classes and many assets to handle.
 It is not different with our models, in the MVC pattern we use the models to store the business logic.
 
-<!-- add here an example of business rule inside a model -->
+![Business rules inside a model](/assets/laravel-the-right-way-part-1/model-rules.png "Business rules inside a model")
 
 There is nothing to fear when dealing with small applications, but if you have a application a little bit
-bigger you are giong to start to have many methods inside a single file. Don't believe me ? Let's have a look
+bigger you are going to start to have many methods inside a single file. Don't believe me? Let's have a look
 at a real application
 
-<!-- add here an example of model with many methods -->
+![Too many methods](/assets/laravel-the-right-way-part-1/methods.png "Too many methods")
 
 What's the problem with that? It seems perfect, right? The first problem here is the coupled access
-to the data in the dabase, this is tighten into the models's method. The second problem is that
-if we need to reuse the code in a other method, let's say only the where clause it would be impossible,
-we sould have to write a new method.
+to the data in the database, this is tighten into the models's method. The second problem is that
+if we need to reuse the code in a other method, let's say only the where clause it would be impossible.
+
+Besides the persistence layer we have coupled a few business into our models as figure above show us. We have got at
+least 8 methods and by their names we can see that there are rules behind it.
+
+## Introducing services
+
+My point of view in doing all of this is, ok, you have got the MVC pattern and can build your application really fine, but
+there are a few gaps. The first is the project organization (should I always add the business rule inside a model? What if I have the
+same rule but in a different kind? How would you use polymorphism?). The second is the size of the project, with
+three main folders model-view-controller it will get too many files really quick and the last is the modularity
+how would you use modules?
+
+![regular MVC](/assets/laravel-the-right-way-part-1/mvc.png "regular MVC")
+
+For those reasons we could start using the service layer. The service layer is where all the business rules lives.
+
+The basic approach is to build the services and the service is going to use the models, and the controllers will use
+the service. This must by single direction, which means that services doesn't uses controller otherwise there is
+no point to have a layer specific to it.
+
+![MVC and service layer](/assets/laravel-the-right-way-part-1/mvc-service-layer.png "MVC and service layer")
+
+The good point of using a layer service is the flexibility that i gives to you, is possible to concentrate 
+the business rules inside of this layer and consume them.
+
+Imagine two different controllers one, needs to return JSON to the client and the other XML, in the regular MVC
+you could have two different methods inside your model, call in each controller the methods needed and everything just 
+works. But one of the problems is the testability and the S.O.L.I.D violation.
 
 
