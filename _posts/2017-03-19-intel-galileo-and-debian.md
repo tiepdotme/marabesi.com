@@ -39,6 +39,8 @@ and a few references to read about assembling the image and expand the SD Card s
 Grab the latest link from the image list, download the image called **galileo.img_v.1.0.0.7z**, in case of not found or any error
 I've uploaded my own [image on google drive](https://drive.google.com/file/d/0B8eXZIvTLcpjdlNKRDdYVGVWRWs/view?usp=sharing).
 
+> Use the credential "user" and the password "user"
+
 The next step will be to create a bootable SD Card within the Debian image, as Intel provide us a good tutorial to achieve this
  I'm not going to focus on installing the image. Visit this [link](https://software.intel.com/en-us/get-started-galileo-linux-step1) to instructions in how to setup the image.
 
@@ -67,4 +69,8 @@ To automate the initialization a script has been placed at **/etc/rc.local** wit
 
 I changed the approach, so now I' trying to have node red working on the intel Galileo. The first challenge is to update the node version to at least 4.*.
 
+## EDIT: April 16 2017
+
+As a final word, I gave up on Galileo Debian image, I decide to step back and try again the Yocto image. There are many issues
+to work when using Debian such as the MRAA library, SSH and even the network some times doesn't work.
 
