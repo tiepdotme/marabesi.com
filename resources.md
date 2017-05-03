@@ -49,3 +49,5 @@ author:
 
 * [Patrick Kua](https://www.thekua.com/atwork/2014/11/the-definition-of-a-tech-lead/)
 * [Adam Wathan](https://adamwathan.me/)
+* [Taylor Otwell](https://medium.com/@taylorotwell)
+* [Fabien Potencier](http://fabien.potencier.org/)
