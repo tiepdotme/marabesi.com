@@ -32,5 +32,5 @@ last_name: Marabesi
 
 ## Modules
 
-<p>Modules are always required by many applications and its not different in PHP, but again, to take this decision
-there are things to think about.</p>
+Modules are always required by many applications and its not different in PHP, but again, to take this decision
+there are things to think about.
