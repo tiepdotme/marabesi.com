@@ -40,6 +40,7 @@ author:
 * [Fullstack radio](http://www.fullstackradio.com/)
 * [PHP Round table](https://www.phproundtable.com/)
 * [Shop Talk](http://shoptalkshow.com/)
+* [Javascript Jabber](https://devchat.tv/js-jabber)
 
 ## Software engineering
 
