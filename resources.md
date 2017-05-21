@@ -53,3 +53,4 @@ author:
 * [Adam Wathan](https://adamwathan.me/)
 * [Taylor Otwell](https://medium.com/@taylorotwell)
 * [Fabien Potencier](http://fabien.potencier.org/)
+* [Matthew Weier O'Phinney](https://mwop.net/)
