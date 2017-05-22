@@ -54,3 +54,4 @@ author:
 * [Taylor Otwell](https://medium.com/@taylorotwell)
 * [Fabien Potencier](http://fabien.potencier.org/)
 * [Matthew Weier O'Phinney](https://mwop.net/)
+* [Martin Fowler](https://martinfowler.com/)
