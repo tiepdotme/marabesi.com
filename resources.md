@@ -34,6 +34,7 @@ author:
 * Websites
     - [Laracast](https://laracasts.com/)
     - [Laravel documentation](https://laravel.com/docs/)
+    - [Laranews](https://laravel-news.com/)
     
 ## 4.Podcasts
 
