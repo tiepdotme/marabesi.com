@@ -18,7 +18,7 @@ last_name: Marabesi
 ---
 
 1. [What is testing?](/tests/1-what-is-testing.html)
-2. Should you test?
+2. [Should you test?](/tests/2-should-i-test.html)
 3. Types of test
     * 3.1 Unit test
     * 3.2 Functional test
