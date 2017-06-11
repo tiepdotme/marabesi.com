@@ -42,6 +42,7 @@ author:
 * [PHP Round table](https://www.phproundtable.com/)
 * [Shop Talk](http://shoptalkshow.com/)
 * [Javascript Jabber](https://devchat.tv/js-jabber)
+* [Laranews podcast](https://laravel-news.com/podcast)
 
 ## Software engineering
 

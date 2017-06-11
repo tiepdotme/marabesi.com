@@ -29,4 +29,16 @@ and explains in his first paragraph:
     </small>
 </div>
 
-The piramyd defines that UI tests are expensive in it's execution and unit test are faster.
+The pyramid defines that UI tests are expensive in it's execution and unit test are faster.
+
+## Unit tests
+
+-
+
+## Integration tests
+
+-
+
+## Acceptance tests
+
+-
