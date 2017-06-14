@@ -8,7 +8,13 @@ type: page
 published: true
 status: publish
 categories: []
-tags: []
+tags:
+- calendar, 
+- conferences, 
+- php, 
+- fullstack, 
+- meetup, 
+- community
 author: Matheus Marabesi
 login: matheusmarabesi
 email: matheus.marabesi@gmail.com
@@ -19,11 +25,12 @@ last_name: Marabesi
 
 # Coming soon
 
-- 06/10/2017
-  - [PHPDay - Curitiba](https://www.sympla.com.br/php-day-curitiba__136236)
+Nothing
  
 # Past due
 
+- 06/10/2017
+  - [PHPDay - Curitiba](https://www.sympla.com.br/php-day-curitiba__136236)
 - 06/03/2017
   - [Programando na Baleia ( iniciando Docker na Prática )](https://www.meetup.com/pt-BR/THT-Things-Hacker-Team/events/239853023/)
   - [Hack in Sampa](https://www.eventbrite.com.br/e/hack-in-sampa-registration-34727938198)
