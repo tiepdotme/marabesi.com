@@ -21,6 +21,8 @@ collections:
     output: true
   tests:
     output: true
+  conferences:
+    output: true
 
 # Build settings
 markdown: kramdown
