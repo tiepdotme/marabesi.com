@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Queues and slow jobs with Laravel
-date: 2017-06-17 01:06:05.000000000 -03:00
+date: 2017-06-21 01:06:05.000000000 -03:00
 type: post
 published: true
 status: published
@@ -35,7 +35,7 @@ The first thing to notice is how Laravel handles the configuration part,
 as usual the configuration part is in the **config** folder, the file queue.php
 is the place to set up the details of our service.
 
-´´´php
+```php
 <?php
 
 return [
@@ -121,8 +121,7 @@ return [
     ],
 
 ];
-
-´´´ 
+```
 
 The dotenv approach used is the best thing of it, as you could see
 the configuration file is almost enteirely driven by it. sync is the default
@@ -132,27 +131,60 @@ just run the code synchronously as it runs normally.
 The first change is not in this file, it is in the .env file, created automatically 
 when Laravel is installed, we are going to use the database drive.
 
-´´´
+```
  QUEUE_DRIVER=database
-´´´
+```
 
 Cool, the next thing to do is to create the necessary tables to handle the queue.
 Laravel has a Artisan helper to make it for us, with the database properly configured
 go in your terminal and run
 
-´´´
+```
 php artisan queue:table
-´´´
+```
 
 The Artisan command will genenra a migration file, which  contains the table struture,
 then we need to execute the migrate command to create the table in our database
 
-´´´
+```
 php artisan migrate
-´´´
+```
 
 ## Creating services
 
 The monst common example is to send an email through the queue system. If you are wondering
-why that, the answer is simple. Queues gives a friedly feedback to the user as fast as possible.
+why that, the answer is simple. Queues gives a friedly feedback to the user, which means that 
+they will receive an answer as fast as possible while the application still working in the background.
+ 
+For this reason Laravel has a few methods that works great with sending email 
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class EmailController extends Controller
+{
+    public function send()
+    {
+        Mail::later(10, 'welcome.blade', ['data' => 'Email sent!'], function($message) {
+            $message->to('my@email.com');
+        });  
+        
+        return 'Email has been sent successfully!';      
+    }
+}
+```
+
+The code above ilustrates how would be to send an email using the queue, usually to send emails we invoke the method
+**send**, but the Laravel documentation give to us a good reason to queue: 
+
+"Since sending email messages can drastically lengthen the response time of your application, many developers choose to 
+queue email messages for background sending. Laravel makes this easy using its built-in unified queue API." [Laravel docs](https://laravel.com/docs/5.4/mail#configuring-the-view)
+
+If you didn't notice, the method invoked here is the later, and it' first argument is how many seconds it should be delayed.
+In or case we are going to send the email after 10 seconds, but if you run this code you will see the message 
+"Email has been sent successfully!" immediately.
 
