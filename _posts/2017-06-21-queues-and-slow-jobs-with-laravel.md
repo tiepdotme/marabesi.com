@@ -182,7 +182,7 @@ The code above ilustrates how would be to send an email using the queue, usually
 **send**, but the Laravel documentation give to us a good reason to queue: 
 
 "Since sending email messages can drastically lengthen the response time of your application, many developers choose to 
-queue email messages for background sending. Laravel makes this easy using its built-in unified queue API." [Laravel docs](https://laravel.com/docs/5.4/mail#configuring-the-view)
+queue email messages for background sending. Laravel makes this easy using its built-in unified queue API." - [Laravel docs](https://laravel.com/docs/5.4/mail#configuring-the-view)
 
 If you didn't notice, the method invoked here is the later, and it' first argument is how many seconds it should be delayed.
 In or case we are going to send the email after 10 seconds, but if you run this code you will see the message 
