@@ -20,13 +20,12 @@ author:
   last_name: Marabesi
 ---
 
-Queues are common in the daily bases of software development, even the IoT world
+Queues are commonly used on a daily basis of software development, even the IoT world
 has an specific protocol that implements this concept. Laravel does
-the same providing developers with an amazing API to use queues and
-the best part, with different vendors out-of-box.
+the same providing developers with an amazing API.
 
 Here, we are going to focus on the theory and practice itself being
-independently of any vendor such as Amazon or Beanstalkd, for that
+independent of any vendor such as Amazon or Beanstalkd, for that
 you can check [Laravel's documentation](https://laravel.com/docs/queues).
 
 ## Basics
@@ -136,14 +135,14 @@ when Laravel is installed, we are going to use the database drive.
 ```
 
 Cool, the next thing to do is to create the necessary tables to handle the queue.
-Laravel has a Artisan helper to make it for us, with the database properly configured
-go in your terminal and run
+Laravel has an Artisan helper to make it for us, when the database is properly configured,
+go in your terminal and run the folowing code:
 
 ```
 php artisan queue:table
 ```
 
-The Artisan command will genenra a migration file, which  contains the table struture,
+The Artisan command will genenrate a migration file, which  contains the table struture,
 then we need to execute the migrate command to create the table in our database
 
 ```
@@ -152,11 +151,11 @@ php artisan migrate
 
 ## Creating services
 
-The monst common example is to send an email through the queue system. If you are wondering
-why that, the answer is simple. Queues gives a friedly feedback to the user, which means that 
-they will receive an answer as fast as possible while the application still working in the background.
+The most common example is to send an email through the queue system. If you are wondering
+why, the answer is simple. Queues give a friedly feedback to the user, which means that 
+they will receive an answer as fast as possible while the applicationis still working in the background.
  
-For this reason Laravel has a few methods that works great with sending email 
+For this reason Laravel has a few methods that work great with sending email 
 
 ```php
 <?php
@@ -178,13 +177,12 @@ class EmailController extends Controller
 }
 ```
 
-The code above ilustrates how would be to send an email using the queue, usually to send emails we invoke the method
-**send**, but the Laravel documentation give to us a good reason to queue: 
+The code above ilustrates how would it be to send an email using the queue, usually to send emails we invoke the method
+**send**, but the Laravel documentation gives to us a good reason to queue: 
 
 "Since sending email messages can drastically lengthen the response time of your application, many developers choose to 
 queue email messages for background sending. Laravel makes this easy using its built-in unified queue API." - [Laravel docs](https://laravel.com/docs/5.4/mail#configuring-the-view)
 
-If you didn't notice, the method invoked here is the later, and it' first argument is how many seconds it should be delayed.
-In or case we are going to send the email after 10 seconds, but if you run this code you will see the message 
-"Email has been sent successfully!" immediately.
-
+If you didn't notice, the method invoked here is the later, and its first argument is how many seconds it should be delayed.
+In our case we are going to send the email after 10 seconds, but if you run this code you will immediately see the message: 
+"Email has been sent successfully!".
