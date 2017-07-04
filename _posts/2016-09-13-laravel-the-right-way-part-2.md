@@ -64,26 +64,30 @@ Modules/
       ├── composer.json
       ├── module.json
       ├── start.php
-```  
+```
 
 The example above was taken from [nWidart/laravel-modules](https://github.com/nWidart/laravel-modules). I believe that
 it is the most used packaged in the Laravel community, and the important part here is to notice that with it we have
 one mini-laravel inside the **Modules** folder.
 
-The folder **Modules** is where all modules in your application will leave, and the name **Modules** is configurable, which 
+The folder **Modules** is where all modules in your application will leave, and the name **Modules** is configurable, which
 means that if you don't like it you can change to the name you want to.
 
 ## Custom modules
 
-In case you don' want to use any solution provided by the community there is the option to implement your own modular
-system using the service provider that Laravel has.
+In case you don't want to use any solution provided by the community there is the option to implement your own modular
+system using the service provider that Laravel has, and for that, we have a couple of examples  distributed in the web:
+
+- [kamranahmed.info](http://kamranahmed.info/blog/2015/12/03/creating-a-modular-application-in-laravel)
+- [ziyahanalbeniz](https://ziyahanalbeniz.blogspot.com.br/2015/03/modular-structure-in-laravel-5.html)
 
 I would't recommend this approach for two reasons, the first is the lack of support that you will get and the second
-is the extra work to maintain the modular system.
+is the extra work to maintain the modular system. Besides that the good part is that you have the power to decide
+which struture to use or what should your folders be called (far way more customizable).
 
 ## Conclusion
 
-In general all enterprise applications should use a modular system. It gives all the good parts described here and 
+In general all enterprise applications should use a modular system. It gives all the good parts described here and
 also the ability to split your team to focus on a specific module.
 
 Although the decision to use or not a modular system must be taken in the beginning of the project, otherwise will
