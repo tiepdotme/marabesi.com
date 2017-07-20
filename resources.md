@@ -35,7 +35,7 @@ author:
     - [Laracast](https://laracasts.com/)
     - [Laravel documentation](https://laravel.com/docs/)
     - [Laranews](https://laravel-news.com/)
-    
+
 ## 4.Podcasts
 
 * [Fullstack radio](http://www.fullstackradio.com/)

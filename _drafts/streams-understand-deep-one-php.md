@@ -49,7 +49,7 @@ $resource = fopen('file.txt', 'r+');
 fwrite($resource, 'my string');
 ```
 
-The second family handles the content directly, the most common function used is called file_get_contents
+The second family handles the content directly, the most common function used is called **file_get_contents**
 
 ```php
 <?php
