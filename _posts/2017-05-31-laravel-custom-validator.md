@@ -14,8 +14,8 @@ tags:
 - models,
 - framework,
 - laracast,
-- laranews
-- validator
+- laranews,
+- validator,
 - custom validator
 author:
 login: matheusmarabesi
