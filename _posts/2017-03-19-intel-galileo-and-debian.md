@@ -8,7 +8,13 @@ published: true
 status: published
 categories:
 - Post
-tags: []
+tags:
+- iot,
+- galileo,
+- gen2,
+- debian,
+- yocto,
+- linux
 author:
   login: matheusmarabesi
   email: matheus.marabesi@gmail.com

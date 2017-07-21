@@ -16,13 +16,6 @@ tags:
 - framework,
 - laracast,
 - laranews
-meta:
-_edit_last: '1'
-_login_radius_meta: '0'
-_yoast_wpseo_primary_category: '47'
-_yoast_wpseo_focuskw_text_input: stream
-_yoast_wpseo_focuskw: stream
-_yoast_wpseo_linkdex: '31'
 author:
 login: matheusmarabesi
 email: matheus.marabesi@gmail.com

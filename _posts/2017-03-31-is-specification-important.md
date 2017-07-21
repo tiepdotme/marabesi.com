@@ -7,7 +7,10 @@ published: true
 status: published
 categories:
 - php
-tags: []
+tags:
+- specification,
+- business,
+- software
 author:
 login: matheusmarabesi
 email: matheus.marabesi@gmail.com

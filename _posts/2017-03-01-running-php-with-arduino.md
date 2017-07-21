@@ -7,7 +7,12 @@ published: true
 status: published
 categories:
 - Post
-tags: []
+tags:
+- arduino,
+- php,
+- serial,
+- iot,
+- wrapper
 author:
   login: matheusmarabesi
   email: matheus.marabesi@gmail.com
