@@ -2,6 +2,7 @@
 layout: post
 title: Intel Galileo and Debian
 date: 2017-03-13 01:06:05.000000000 -03:00
+image: /assets/intel-galileo-and-debian/cover.jpg
 type: post
 published: true
 status: published

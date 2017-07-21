@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Queues and slow jobs with Laravel
+image: /assets/Laravel-5.png
 date: 2017-06-21 01:06:05.000000000 -03:00
 type: post
 published: true
@@ -8,9 +9,9 @@ status: published
 categories:
 - php
 tags:
-- queues
-- laravel
-- quickbooks
+- queues,
+- laravel,
+- quickbooks,
 - php
 author:
   login: matheusmarabesi
