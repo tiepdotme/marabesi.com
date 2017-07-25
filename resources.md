@@ -7,10 +7,15 @@ published: true
 status: published
 categories:
 - php
-tags: []
+tags:
+- resources,
+- php,
+- software,
+- laravel,
+- websites,
+- unit tests,
+- books
 author:
-  login: matheusmarabesi
-  email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi
   first_name: Matheus
   last_name: Marabesi
@@ -46,6 +51,8 @@ author:
 
 ## Software engineering
 
+* Links
+    - [Object calisthenics](http://williamdurand.fr/2013/06/03/object-calisthenics/)
 * Books
     - [Software Engineering - A Practitioner’s Approach](http://www.vumultan.com/Books/CS605-Software%20Engineering%20Practitioner%E2%80%99s%20Approach%20%20by%20Roger%20S.%20Pressman%20.pdf)
     
