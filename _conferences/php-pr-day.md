@@ -18,3 +18,5 @@ author:
 # PHPPR Day 2017
 
 <h1><a href="https://www.sympla.com.br/php-day-curitiba__136236" target="_blank">PHPPRDay 2017</a></h1>
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/6KlcelXytBI" frameborder="0" allowfullscreen></iframe>
