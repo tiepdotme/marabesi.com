@@ -13,7 +13,7 @@ tags:
 - data,
 - wrappers,
 - fopen,
-- file_get_contents,
+- file_get_contents
 author:
   login: matheusmarabesi
   email: matheus.marabesi@gmail.com
