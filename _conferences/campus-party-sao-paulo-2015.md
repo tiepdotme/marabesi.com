@@ -1,6 +1,6 @@
 ---
 layout: page
-title: PHPPRDDay
+title: Campus Party 2015 São Paulo
 date: 2017-06-15 01:06:05.000000000 -03:00
 type: page
 published: true

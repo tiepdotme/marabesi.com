@@ -1,13 +1,17 @@
 ---
 layout: page
-title: PHPPRDDay
+title: CK 6 (Connecting Knowledge) + 7COMM
 date: 2017-06-15 01:06:05.000000000 -03:00
 type: page
 published: true
 status: publish
 categories: []
 tags:
-- phpprday
+- ck,
+- 7comm,
+- design patterns,
+- php,
+- clean code
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi

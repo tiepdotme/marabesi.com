@@ -1,6 +1,6 @@
 ---
 layout: page
-title: PHPPRDDay
+title: CK (Connecting Knowledge) 8 + Samsung
 date: 2017-06-15 01:06:05.000000000 -03:00
 type: page
 published: true
