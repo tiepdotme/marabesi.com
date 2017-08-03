@@ -11,7 +11,8 @@ tags:
 - 7comm,
 - design patterns,
 - php,
-- clean code
+- clean code,
+- tht
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi

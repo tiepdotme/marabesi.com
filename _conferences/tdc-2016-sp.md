@@ -7,7 +7,15 @@ published: true
 status: publish
 categories: []
 tags:
-- phpprday
+- tdc,
+- são paulo,
+- 2016,
+- the,
+- developers,
+- conferences,
+- php,
+- trilha,
+- architecture
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi

@@ -7,7 +7,10 @@ published: true
 status: publish
 categories: []
 tags:
-- phpprday
+- ck,
+- samsung,
+- tht,
+- meetup
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi

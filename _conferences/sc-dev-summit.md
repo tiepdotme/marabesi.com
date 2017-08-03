@@ -7,7 +7,11 @@ published: true
 status: publish
 categories: []
 tags:
-- phpprday
+- SCDEVSUMMIT,
+- php,
+- joinville,
+- streams,
+- jedi
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi

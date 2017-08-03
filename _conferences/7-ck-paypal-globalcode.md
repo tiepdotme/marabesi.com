@@ -7,7 +7,10 @@ published: true
 status: publish
 categories: []
 tags:
-- phpprday
+- ck,
+- global code,
+- tht,
+- paypal
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi

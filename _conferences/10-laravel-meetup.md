@@ -7,7 +7,10 @@ published: true
 status: publish
 categories: []
 tags:
-- phpprday
+- laravel,
+- meetup,
+- slides,
+- best practices
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi

@@ -7,7 +7,11 @@ published: true
 status: publish
 categories: []
 tags:
-- phpprday
+- arduino,
+- ufabc,
+- pt-br,
+- brasilino,
+- slides
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi

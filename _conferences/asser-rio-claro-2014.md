@@ -7,7 +7,10 @@ published: true
 status: publish
 categories: []
 tags:
-- phpprday
+- asser,
+- robots,
+- rio claro,
+- info week
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi

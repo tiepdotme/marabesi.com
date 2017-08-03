@@ -8,9 +8,9 @@ status: published
 categories:
 - php
 tags:
-- javascript
-- tests
-- jquery
+- javascript,
+- tests,
+- jquery,
 - qunit
 meta:
 author:

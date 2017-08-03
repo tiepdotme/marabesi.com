@@ -7,7 +7,10 @@ published: true
 status: publish
 categories: []
 tags:
-- phpprday
+- senai,
+- internet of things,
+- php,
+- iot
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi

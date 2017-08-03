@@ -7,7 +7,14 @@ published: true
 status: publish
 categories: []
 tags:
-- phpprday
+- tdc,
+- são paulo,
+- 2015,
+- the,
+- developers,
+- conferences,
+- wearables,
+- iot
 author:
   email: matheus.marabesi@gmail.com
   display_name: Matheus Marabesi
