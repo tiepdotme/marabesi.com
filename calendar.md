@@ -25,7 +25,8 @@ last_name: Marabesi
 
 # Coming soon
 
-Nothing
+- 08/12/2017
+  - [NerdZão Day #1 - 6 Trilhas Tech Simultâneas - São Paulo](https://www.meetup.com/pt-BR/Nerdzao/events/241571883/)
  
 # Past due
 
