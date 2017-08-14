@@ -25,11 +25,17 @@ last_name: Marabesi
 
 # Coming soon
 
-- 08/12/2017
-  - [NerdZão Day #1 - 6 Trilhas Tech Simultâneas - São Paulo](https://www.meetup.com/pt-BR/Nerdzao/events/241571883/)
+- 10/06/2017
+  - [PHPeste - Fortaleza](http://phpeste.net)
+
+- 11/17/2017
+  - [Laraconf Brasil - São Paulo](http://laraconfbrasil.com.br)
  
 # Past due
 
+- 08/12/2017
+  - [NerdZão Day #1 - 6 Trilhas Tech Simultâneas - São Paulo](https://www.meetup.com/pt-BR/Nerdzao/events/241571883/)
+  
 - 06/10/2017
   - [PHPDay - Curitiba](https://www.sympla.com.br/php-day-curitiba__136236)
 - 06/03/2017
