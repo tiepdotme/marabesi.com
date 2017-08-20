@@ -25,7 +25,7 @@ author:
   last_name: Marabesi
 ---
 
--
+- [NerdZão Day #1 - 6 Trilhas Tech Simultâneas - São Paulo](/conferences/nerdzao)
 - [PHPPRDay 2017 ](/conferences/php-pr-day)
 - [PHPExperience 2017](/conferences/php-experience-2017)
 - [SENAI 2016](/conferences/senai-2016)
