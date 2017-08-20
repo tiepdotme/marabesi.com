@@ -14,7 +14,7 @@ tags:
 - phpconf,
 - ufabc,
 - phpexperience,
-- 2014, 
+- 2014,
 - 2015,
 - 2016,
 - 2017
@@ -25,6 +25,7 @@ author:
   last_name: Marabesi
 ---
 
+-
 - [PHPPRDay 2017 ](/conferences/php-pr-day)
 - [PHPExperience 2017](/conferences/php-experience-2017)
 - [SENAI 2016](/conferences/senai-2016)

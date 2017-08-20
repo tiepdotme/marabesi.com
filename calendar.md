@@ -9,11 +9,11 @@ published: true
 status: publish
 categories: []
 tags:
-- calendar, 
-- conferences, 
-- php, 
-- fullstack, 
-- meetup, 
+- calendar,
+- conferences,
+- php,
+- fullstack,
+- meetup,
 - community
 author: Matheus Marabesi
 login: matheusmarabesi
@@ -30,12 +30,12 @@ last_name: Marabesi
 
 - 11/17/2017
   - [Laraconf Brasil - São Paulo](http://laraconfbrasil.com.br)
- 
+
 # Past due
 
 - 08/12/2017
   - [NerdZão Day #1 - 6 Trilhas Tech Simultâneas - São Paulo](https://www.meetup.com/pt-BR/Nerdzao/events/241571883/)
-  
+
 - 06/10/2017
   - [PHPDay - Curitiba](https://www.sympla.com.br/php-day-curitiba__136236)
 - 06/03/2017
@@ -45,5 +45,5 @@ last_name: Marabesi
   - [Curso Laravel - Novatec](http://ctnovatec.com.br/cursos/php/laravel-2/)
 - 05/11/2017
   - [Laravel Full-stack](http://ctnovatec.com.br/cursos/php/laravel-full-stack-palestra/)
-  
+
 [Home](/)
