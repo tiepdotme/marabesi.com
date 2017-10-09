@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PHPUnit coverage on vagrant
-image: 
+image: https://cdn.tutsplus.com/net/uploads/2013/06/phpunit-400.jpg
 date: 2017-09-08 01:06:05.000000000 -03:00
 type: post
 published: true
