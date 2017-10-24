@@ -27,7 +27,7 @@ last_name: Marabesi
 - 11/03/2017
   - [Campus Party - Minas Gerais](https://campuse.ro/events/campus-party-minas-gerais-2017/workshop/programando-na-baleia-iniciando-docker-na-pratica-cpmg2/)
 
-- 11/17/2017
+- 11/17/2017 - 11/18/2017
   - [Laraconf Brasil - São Paulo](http://laraconfbrasil.com.br)
 
 # Past due
