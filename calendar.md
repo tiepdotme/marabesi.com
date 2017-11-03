@@ -24,14 +24,15 @@ last_name: Marabesi
 
 # Coming soon
 
-- 11/03/2017
-  - [Campus Party - Minas Gerais](https://campuse.ro/events/campus-party-minas-gerais-2017/workshop/programando-na-baleia-iniciando-docker-na-pratica-cpmg2/)
-
 - 11/17/2017 - 11/18/2017
   - [Laraconf Brasil - São Paulo](http://laraconfbrasil.com.br)
 
 # Past due
--
+
+- 11/03/2017
+  - [Campus Party (Workshop) - Minas Gerais](https://campuse.ro/events/campus-party-minas-gerais-2017/workshop/programando-na-baleia-iniciando-docker-na-pratica-cpmg2/)
+  - [Campu Party (Talk)](http://bint2za.m.attendify.com/app/sessions/9Q3VcyskzO7YVtFWIG/details)
+  
 - 08/12/2017
   - [NerdZão Day #1 - 6 Trilhas Tech Simultâneas - São Paulo](https://www.meetup.com/pt-BR/Nerdzao/events/241571883/)
 
