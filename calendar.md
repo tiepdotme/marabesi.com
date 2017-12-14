@@ -24,9 +24,12 @@ last_name: Marabesi
 
 # Coming soon
 
-- 
+- None
 
 # Past due
+
+- 12/09/2017
+  - [CODE /PIZZA > IN '013' - Santos](https://www.eventbrite.com.br/e/i-code-pizza-in-013-tickets-40172895211)
 
 - 11/17/2017 - 11/18/2017
   - [Laraconf Brasil - São Paulo](http://laraconfbrasil.com.br)
