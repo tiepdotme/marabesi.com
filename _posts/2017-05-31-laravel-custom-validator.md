@@ -80,11 +80,13 @@ class MyCustomRule extends Validator
 Notice that we are under the namespace `App\Validators` which means that for this example we have a folder to store
 all validators.
 
+The Laravel Framework itself uses this approach, the class [Validator](https://laravel.com/api/5.2/Illuminate/Validation/Validator.html) brings the core validation from the Framework such as, require, between a value, min value, max value and so on.
+
 Second thing to have a look is the convention name of each method. You must use the *validate* prefix, this is a way
 to tell Laravel that this method can be used to validate data.
 
 Now before we use the validator class that we just created, one more step is needed. Laravel doesn't know about our 
-validation class, adn we tell it using a ServiceProvider.
+validation class, and we tell it using a ServiceProvider.
 
 ```php
 <?php
@@ -110,7 +112,7 @@ class AppServiceProvider extends ServiceProvider
 ```
 
 All parameters that are required by the constructor are from the Laravel validator class base, so as we are
-extending it we must pass all arguments as well(Thanks Laravel D.i).
+extending it we must pass all arguments as well(Thanks Laravel D.I).
 
 So now we are all set to use our custom validation, and in order to do that is a matter of adding the rule we've 
 created into the array rules given to the validate method.
@@ -136,8 +138,7 @@ class BookController extends Controller
 }
 ```
 
-Here we'e changed the required rule by the one we've created. The name is the same of our method, but in snake case and
-without the *validate* prefix.
+Here we'e changed the required rule by the one we've created. The name is the same of our method, but in [snake case](https://en.wikipedia.org/wiki/Snake_case) and without the *validate* prefix.
 
 ## Important tips to be aware of
 
