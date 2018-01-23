@@ -64,3 +64,4 @@ author:
 * [Fabien Potencier](http://fabien.potencier.org/)
 * [Matthew Weier O'Phinney](https://mwop.net/)
 * [Martin Fowler](https://martinfowler.com/)
+* [Simon Brown](http://www.codingthearchitecture.com/authors/sbrown/)
