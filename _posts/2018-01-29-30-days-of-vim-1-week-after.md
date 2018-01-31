@@ -3,7 +3,7 @@ layout: post
 title: 30 days of VIM - One week after
 date: 2018-01-29 20:30:18.000000000 -02:00
 type: post
-published: false
+published: true
 status: publish
 categories:
 - Thoughts
@@ -34,4 +34,9 @@ Besides Drew's book, vimtutor, [vim adventures](https://vim-adventures.com/) and
 As I can't use the home row to navigate yet, to search a string in a file, I would say, is one of the
 best things to use in vim (which I've been using a lot). VScode uses the combination of `CMD + F`
 on MAC, while Vim uses the `/` followed by the desired string.
+
+The second type of search is a bit trickier compared to searching for a string in the current file.
+Vim has different approachs to search a string through files and directories, for me, `vimgrep`
+is the one I ended up using the most. VScode turns it simpler than vim though, you just
+type `CMD + SHIFT + F`.
 
