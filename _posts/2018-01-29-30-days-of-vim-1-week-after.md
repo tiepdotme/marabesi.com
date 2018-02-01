@@ -31,12 +31,35 @@ chapter 8 says that using those keys improves the productivity as your hand won'
 Besides Drew's book, vimtutor, [vim adventures](https://vim-adventures.com/) and
 [A byte of vim](https://vim.swaroopch.com/) encorages the same approach.
 
+## Searching
+
 As I can't use the home row to navigate yet, to search a string in a file, I would say, is one of the
 best things to use in vim (which I've been using a lot). VScode uses the combination of `CMD + F`
 on MAC, while Vim uses the `/` followed by the desired string.
 
+In the normal mode, just press the key `/` and type what you want, once finished type enter to confirm
+the serach. Vim will send the cursor to the first ocurrence in the file. To go through the next occurence
+just press `n`.
+
 The second type of search is a bit trickier compared to searching for a string in the current file.
-Vim has different approachs to search a string through files and directories, for me, `vimgrep`
-is the one I ended up using the most. VScode turns it simpler than vim though, you just
-type `CMD + SHIFT + F`.
+Vim has different approachs to search a string through files and directories, for me, [vimgrep](http://vim.wikia.com/wiki/Find_in_files_within_Vim) is the one I ended up using the most.
+
+VScode turns it simpler than vim though, you just type `CMD + SHIFT + F`.
+
+## Workspaces and vim GUI
+
+Vim runs directly from the terminal, just open a new window and that's it. Though it can be a bit
+limitating, so for every new project a new window is required. As I don't like to have a bunch of
+terminals openend I jus tried to find something that would fit for me.
+
+The first shot was to find a Mac GUI for vim. The projec [Mac vim](https://github.com/macvim-dev/macvim) is the most popular, with more than 3k stars but unfortunatelly I couldn't stick with it.
+
+The second solution that I found is [TMUX](https://github.com/tmux/tmux/wiki), which I am using right now.
+The good part is that I can divide my terminal in as many part as I want and create new windows
+inside the existing one.
+
+## Conclusion
+
+For now the biggest change is the workspace shift. Which on VScode I was used to just drag as many folders
+as I want, save the workspace, and open it again later.
 
