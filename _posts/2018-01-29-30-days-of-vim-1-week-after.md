@@ -61,5 +61,10 @@ inside the existing one.
 ## Conclusion
 
 For now the biggest change is the workspace shift. Which on VScode I was used to just drag as many folders
-as I want, save the workspace, and open it again later.
+as I want, save the workspace, and open it again later. The second thing I miss the most is the auto complete.
+Vim has plugins to auto complete as you type, but at least in my case it was a bit slow, I decided to
+go without it.
 
+It turns out that is a good way to test your knowledge in the language that you are familiar with, I haven't
+had any major problems. If I am not sure about a function in PHP for example, I just go to php.net, the same
+applies to Javascript, I just go to the MDN documentation and find what I need.
