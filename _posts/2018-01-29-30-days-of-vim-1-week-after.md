@@ -58,6 +58,9 @@ The second solution that I found is [TMUX](https://github.com/tmux/tmux/wiki), w
 The good part is that I can divide my terminal in as many part as I want and create new windows
 inside the existing one.
 
+Finally the [recording](http://vim.wikia.com/wiki/Recording_keys_for_repeated_jobs) feature is amazing.
+It allows you to record a sequence of commands to repeat it later.
+
 ## Conclusion
 
 For now the biggest change is the workspace shift. Which on VScode I was used to just drag as many folders
