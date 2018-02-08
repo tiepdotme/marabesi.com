@@ -50,10 +50,10 @@ show the pin name (from the GPS NEO 6) and where it should go on the Raspberry P
 The table below was build looking at the [pi4j](http://pi4j.com/pins/model-b-plus.html) project, which has an
 image to better illustrate the pins. For now the figure below should do the work.
 
-![test](/assets/setting-up-gps-neo6-sensor/wires.png)
+![GPS NEO 6 wires](/assets/setting-up-gps-neo6-sensor/wires.png)
 
 If you follow everything as described in the table and in the figure, you should see a green light on
-the GPS NEO 6. This means that at least the power was plugged correctly. THe next step
+the GPS NEO 6. This means that at least the power was plugged correctly. The next step
 is to check the RX and TX connections which will send to use the data through the serial port.
 
 The first test doesn't need any special software, we are going to connect using the cat command
@@ -71,6 +71,44 @@ If everything is correct you should see the following response:
 [![Font: Waveshare.com](https://www.waveshare.com/w/upload/b/bb/UART-GPS-NEO-6M-User-Manual-2.png)](https://www.waveshare.com/wiki/UART_GPS_NEO-6M)
 
 <small>Font: Waveshare.com</small>
+
+The serial port `/dev/serial0` is an alias to the real one `/dev/ttyAMA0`. If for some reason your serial
+port is not the same as this post, first find it and replace the serial with the correct one.
+
+Finally we have everything done to use the GPS daemon and client. If you have a look at the raw
+logs from the serial port, the text has an pattern but is difficult to understand and difficult
+to interact with (parse and use the data for an application). For that reason the project
+[GPSD](http://www.catb.org/gpsd/) exists, which is a library to help to communicate with the GPS sensor (
+not to mention the amazing interface between the sensor and the client).
+
+To use it, just run the `apt-get` command as the following:
+
+```
+sudo apt-get install gpsd gpsd-clients
+```
+
+`gpsd` is the deamon that runs in the backgroud to fill up the GPS client, without the deamon
+is not possible to fetch the data that comes from the GPS. Even if you try to access the client
+with the command `cgps` it will give you a error message.
+
+```shell
+pi@raspberrypi:~ $ cgps
+cgps: no gpsd running or network error: -6, can't connect to host/port pair
+```
+
+`cgps` is the client that comes from the package `gpsd-clients` that we've installed.
+
+To prevent the error we need to start the deamon passing as an argument the serial
+port in which our GPS is connected to.
+
+```shell
+gpsd /dev/serial0
+```
+
+The command `cgps` should work as a spected now. The picture below ilustrates the result
+after invoking the command.
+
+![cgps client response](/assets/setting-up-gps-neo6-sensor/cgps.png)
 
 ## Gotchas
 
