@@ -6,7 +6,8 @@ type: post
 published: true
 status: publish
 categories:
-- Thoughts
+- post
+- raspberry
 tags:
 - gps
 - neo 6
@@ -14,6 +15,8 @@ tags:
 - pi
 - gpsd
 - serial
+- uart
+- gpio
 author:
   - Matheus Marabesi
 ---
@@ -23,13 +26,20 @@ The decision was to work with the Raspberry board over the arduino based on the 
 that arduino would use.
 
 To get start with we would need a Wi-Fi(or GSM) shield, which on raspberry is just an adapter. The
-second point was the MQTT protocol and the code maintenability. Whereas on arduino is just plain C
+second point was the MQTT protocol and the code maintenability. Whereas on arduino is just plain C,
 with Raspberry we have more options. One could argue that we can use the standard firmata
 to avoid using C, but just for clarity this wasn't the crucial point.
 
 After deciding which board to use the time was to gather the GPS. As you might have guesses the GPS
 NEO 6 was the chose one (most of NEO6 comes with an external antena, but here I used one
 with a internal antena).
+
+In this post you will see the following:
+
+1. Wiring up the components
+2. How to configure the Raspberry Pi and read data from the GPS
+3. Enable the UART mode in a specific GPIO
+4. Gotchas, a few tricks and tips to help you mitigate problems
 
 ## Wiring up
 
@@ -42,8 +52,8 @@ show the pin name (from the GPS NEO 6) and where it should go on the Raspberry P
 
 |GPS NEO 6|Raspberry Pi|
 |---------|------------|
-| `RX   ->` | TX - GPIO 8 |
-| `TX   ->` | RX - GPIO 10 |
+| `RX   ->` | TX - GPIO 15 |
+| `TX   ->` | RX - GPIO 16 |
 | `VCC  ->` | 3.3v or 5v |
 | `GND  ->` | GND |
 
@@ -58,6 +68,20 @@ is to check the RX and TX connections which will send to use the data through th
 
 The first test doesn't need any special software, we are going to connect using the cat command
 directly to the serial port.
+
+>
+>
+> *IMPORTANT*: Before testing the signal from the sensor is needed to convert the GPIO from IN to
+> UART in order to do that we need the GPIO numbers that we connected our GPS, in our case
+> it is 15 and 16.
+>
+> Next just type the following command to switch the GPIO mode:
+>
+> ```shell gpio mode 15 ALT0; gpio mode 16 ALT0 ```
+>
+> Doing that will the work, but keep in mind that once you restart the Pi the default configuration
+> will be restored. The ideal step here is to add this command into the `/etc/rc.local`, so
+> everytime the Pi restarts it will run this command automatically.
 
 Access your Raspberry Pi through SSH or plugin an keyboard and monitor to get to the shell. Once
 you are in, type the following command:
@@ -110,8 +134,17 @@ after invoking the command.
 
 ![cgps client response](/assets/setting-up-gps-neo6-sensor/cgps.png)
 
+obs: The response given by the `cgps` is a JSON, to understand the content of each key
+check out the [official documentation](http://www.catb.org/gpsd/gpsd_json.html).
+
 ## Gotchas
 
 In my experience the GPS NEO 6 takes a long time to start receiving signal from the satellites accross the earth.
 It takes from 30 minutes to 2 hours, when it suposed to be less than 1 minute. Keep in mind that it can happen
 to you as well but don't worry, just wait and keep an eye in the logs.
+
+## References
+
+* [RASPBERRY PI & THE NEO 6M GPS](http://www.instructables.com/id/Raspberry-Pi-the-Neo-6M-GPS)
+* [gpsd — a GPS service daemon](http://www.catb.org/gpsd)
+
