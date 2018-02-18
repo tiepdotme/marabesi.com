@@ -4,42 +4,40 @@
   {% include head.html %}
 
   <body>
+    <app-toolbar>
+      <paper-icon-item>
+        <iron-icon icon="menu"></iron-icon>
+      </paper-icon-item>
+    </app-toolbar>
+
     <app-drawer-layout>
-      <app-toolbar>
-        <paper-icon-item>
-          <iron-icon icon="menu"></iron-icon>
-        </paper-icon-item>
-      </app-toolbar>
+      <app-drawer swipe-open slot="drawer">
 
-      <sample-content size="100">
-        {{ content }}
-      </sample-content>
+        <a href="{{ site.url }}" tabindex="-1">
+          <iron-image src="/images/marabesi.svg"></iron-image>
+        </a>
 
-    <app-drawer swipe-open>
-      <a href="{{ site.url }}" tabindex="-1">
-        <iron-image src="/images/marabesi.svg"></iron-image>
-      </a>
+        <paper-menu>
+          {% for my_page in site.pages %}
+            {% if my_page.title %}
+              {% unless my_page.url contains 'bower_components' %}
+                <a class="paper-item-link" href="{{ my_page.url | prepend: site.baseurl }}">
+                  <paper-item>
+                    {{ my_page.title }}
+                  </paper-item>
+                </a>
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+        </paper-menu>
+      </app-drawer>
 
-      <paper-menu>
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-            {% unless my_page.url contains 'bower_components' %}
-              <a class="paper-item-link" href="{{ my_page.url | prepend: site.baseurl }}">
-                <paper-item>
-                  {{ my_page.title }}
-                </paper-item>
-              </a>
-            {% endunless %}
-          {% endif %}
-        {% endfor %}
-      </paper-menu>
-    </app-drawer>
+      {{ content }}
+    </app-drawer-layout>
 
-  </app-drawer-layout>
+    {% include analytics.html %}
 
-  {% include analytics.html %}
-
-  <script async src="/src/main.js"></script>
-  <script async src="https://static.addtoany.com/menu/page.js"></script>
-</body>
+    <script async src="/src/main.js"></script>
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+  </body>
 </html>

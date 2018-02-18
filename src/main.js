@@ -23,7 +23,6 @@
         document.querySelector('paper-icon-item').addEventListener('click', function() {
             drawer.toggle();
         });
-
     };
 
     onload();
