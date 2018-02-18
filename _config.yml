@@ -35,3 +35,4 @@ exclude:
   - Gemfile.lock
   - vendor
   - .travis.yml
+  - node_modules

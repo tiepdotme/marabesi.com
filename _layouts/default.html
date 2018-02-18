@@ -4,16 +4,18 @@
   {% include head.html %}
 
   <body>
-    <app-toolbar>
-      <paper-icon-button icon="menu"></paper-icon-button>
-    </app-toolbar>
+    <app-drawer-layout>
+      <app-toolbar>
+        <paper-icon-item>
+          <iron-icon icon="menu"></iron-icon>
+        </paper-icon-item>
+      </app-toolbar>
 
-    <sample-content size="100">
-      {{ content }}
-    </sample-content>
+      <sample-content size="100">
+        {{ content }}
+      </sample-content>
 
     <app-drawer swipe-open>
-
       <a href="{{ site.url }}" tabindex="-1">
         <iron-image src="/images/marabesi.svg"></iron-image>
       </a>
@@ -22,27 +24,22 @@
         {% for my_page in site.pages %}
           {% if my_page.title %}
             {% unless my_page.url contains 'bower_components' %}
-                <a class="paper-item-link" href="{{ my_page.url | prepend: site.baseurl }}">
-                  <paper-item>
-                    {{ my_page.title }}
-                  </paper-item>
-                </a>
-              {% endunless %}
+              <a class="paper-item-link" href="{{ my_page.url | prepend: site.baseurl }}">
+                <paper-item>
+                  {{ my_page.title }}
+                </paper-item>
+              </a>
+            {% endunless %}
           {% endif %}
         {% endfor %}
       </paper-menu>
     </app-drawer>
 
-    <script>
-      var drawer = document.querySelector('app-drawer');
-      document.querySelector('paper-icon-button').addEventListener('tap', function() {
-        drawer.toggle();
-      });
-    </script>
+  </app-drawer-layout>
 
   {% include analytics.html %}
 
+  <script async src="/src/main.js"></script>
   <script async src="https://static.addtoany.com/menu/page.js"></script>
-  </body>
-
+</body>
 </html>
