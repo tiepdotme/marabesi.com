@@ -4,14 +4,19 @@
   {% include head.html %}
 
   <body>
-    <app-toolbar>
-      <paper-icon-item>
-        <iron-icon icon="menu"></iron-icon>
-      </paper-icon-item>
-    </app-toolbar>
-
     <app-drawer-layout>
-      <app-drawer swipe-open slot="drawer">
+      <app-header>
+        <app-toolbar>
+          <paper-icon-item>
+            <iron-icon icon="menu"></iron-icon>
+            {{ page.title }}
+          </paper-icon-item>
+        </app-toolbar>
+      </app-header>
+
+      {{ content }}
+
+      <app-drawer swipe-open>
 
         <a href="{{ site.url }}" tabindex="-1">
           <iron-image src="/images/marabesi.svg"></iron-image>
@@ -32,9 +37,7 @@
         </paper-menu>
       </app-drawer>
 
-      {{ content }}
     </app-drawer-layout>
-
     {% include analytics.html %}
 
     <script async src="/src/main.js"></script>

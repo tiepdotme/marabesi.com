@@ -2,27 +2,18 @@
 layout: default
 ---
 
-<paper-card heading="{{ page.title }}" class="block-element">
-  <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="padding: 20px;">
-    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-  </div>
-
+<paper-card class="block-element">
   <div class="card-content">
     {{ content }}
 
-    <script>
-      (function() {
-        var d = document, s = d.createElement('script');
+    <h2 class="share-this-post">Share this post</h2>
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_google_plus"></a>
+    </div>
 
-        s.src = '//marabesi.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-    </script>
     <noscript>Please enable JavaScript to view the
       <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
     </noscript>
