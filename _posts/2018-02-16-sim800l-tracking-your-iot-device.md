@@ -46,7 +46,7 @@ SIM900 comes with a antenna and a bigger board.
 Besides the board is needed to have a *micro SIM* card. In my case I had to use an adapter to transfor the nano SIM I
 have into the micro.
 
-[![Font: Mi.com](http://u01.appmifile.com/images/2016/10/30/6579cb3c-cbc0-44cb-99c5-71751fc0204f.jpeg)](http://c.mi.com/thread-46072-1-0.html)
+[![Font: Mi.com](/assets/sim800l-tracking-your-iot-device/sim-type.jpeg)](http://c.mi.com/thread-46072-1-0.html)
 
 <small>Fonte: Mi.com</small>
 
