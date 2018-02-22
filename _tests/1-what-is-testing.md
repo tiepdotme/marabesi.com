@@ -13,8 +13,6 @@ author:
 - Matheus Marabesi
 ---
 
-## 1. What is testing?
-
 Have you ever wondered what is test? Testing is between us everyday, when we wake up, when we go to work or even
 the act of opening a door. Does that work? how long it will last? Those are common questions that sellers needs
 to answer when costumers are buying any product.

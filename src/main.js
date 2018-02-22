@@ -16,11 +16,7 @@
 
         var drawer = document.querySelector('app-drawer');
 
-        document.querySelector('paper-icon-item').addEventListener('tap', function() {
-            drawer.toggle();
-        });
-
-        document.querySelector('paper-icon-item').addEventListener('click', function() {
+        document.querySelector('paper-icon-button').addEventListener('click', function() {
             drawer.toggle();
         });
 
