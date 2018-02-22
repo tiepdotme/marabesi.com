@@ -9,14 +9,15 @@ categories:
 - post
 - raspberry
 tags:
-- gps
-- neo 6
-- raspberry
-- pi
-- gpsd
-- serial
-- uart
-- gpio
+- gps,
+- neo 6,
+- raspberry,
+- pi,
+- gpsd,
+- serial,
+- uart,
+- gpio,
+- iot
 author:
   - Matheus Marabesi
 ---
