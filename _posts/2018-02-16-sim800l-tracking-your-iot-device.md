@@ -142,19 +142,31 @@ AT+SAPBR=3,1,"CONTYPE","GPRS"
 ```
 
 Next step is to authenticate the APN, we do that in four steps, first setting the APN, followed
-by the username, the password and finally activate the bearer.
+by the username, the password and finally activate the bearer. Each command should be executed
+separately and before execute the next one, macke sure to get an **OK** response from the serial.
+
+> There is an website with the possible APNS around the world, if you don't know which one
+> is yours, access this [link](https://www.hw-group.com/products/HWg-Ares/HWg-Ares_GSM_APN_en.html)
 
 ```
-AT+SAPBR=3,1,"APN",""
+AT+SAPBR=3,1,"APN","{here goes your APN}"
 ```
 
-```
-AT+SAPBR=3,1,"USER",""
-```
+After the APN replace the text `{here goes your APN}` with your APN provider.
 
 ```
-AT+SAPBR=3,1,"PWD",""
+AT+SAPBR=3,1,"USER","{here goes your username}"
 ```
+
+After the USER replace the text `{here goes your username}` with your APN username (sometimes it
+will be empty, so just leave as it is).
+
+```
+AT+SAPBR=3,1,"PWD","{here goes your password}"
+```
+
+After the PWD replace the text `{here goes your password}` with your password (sometimes it
+will be empty, so just leave as it is).
 
 ```
 AT+SAPBR=1,1
@@ -197,3 +209,5 @@ illustrates the response receive in the serial monitor.
 [AT commands](https://www.codeproject.com/Articles/85636/Introduction-to-AT-commands-and-its-uses)
 
 [SIMCOM AT commands PDF](https://www.elecrow.com/download/SIM800%20Series_AT%20Command%20Manual_V1.09.pdf)
+
+[APN providers worldwide](https://www.hw-group.com/products/HWg-Ares/HWg-Ares_GSM_APN_en.html)
