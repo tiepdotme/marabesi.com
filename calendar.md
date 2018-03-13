@@ -24,7 +24,8 @@ last_name: Marabesi
 
 # Coming soon
 
-- None
+- 28/03/2018
+  - [7 Masters - Laravel](https://setemasters.imasters.com.br/edicoes/laravel/)
 
 # Past due
 
