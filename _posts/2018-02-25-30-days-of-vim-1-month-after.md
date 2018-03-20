@@ -7,13 +7,26 @@ published: false
 status: publish
 categories:
 - Thoughts
+- Vim
 tags:
 - vim
 - text editor
+- productivity
+- plugins
 author:
   - Matheus Marabesi
 ---
 
 After one month using vim, I am clearly addicted to it. It has eveything I need and I can always find
-a plugin to make it even better.
+a plugin to make it even better. Though, it is true that depending on the plugin it makes vim to slow.
+
+To give an example, I tried to use the auto-save plugin, but it turns out to turn my vim slow when saving.
+That's because everytime I touched one keystroke it was saving the file. I just decided to go without the
+plugin and it is fine.
+
+## Productivity
+
+I feel that my fingers are faster while typing, and when possible I try to avoid repetition. Normally
+what I would do is just type 4x to erase a code spaced with 4 spaces, now I type `4` and the `x`, which
+produces the same output.
 
