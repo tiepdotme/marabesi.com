@@ -75,7 +75,11 @@ To make it easier to understand, the following image illustrates how the wiring 
 
 <small>[Arduino Uno Font: Nooelec](http://www.nooelec.com/store/arduino-uno-r3.html)</small>
 
-<!-- add here instructions to the voltage -->
+> If you are planning to use your device for a long time, it is good to mention that
+> there is an resistor to add and deliver the 4.2v instead of 5v. For that check this [repo](https://github.com/cristiansteib/Sim800l)
+> and make sure to wire up using the resistor.
+>
+> As this post has the goal to keep as simple as possible, I am not going to use the resitor.
 
 ## Sketch (commands AT 101)
 
