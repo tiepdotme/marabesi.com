@@ -24,13 +24,15 @@ last_name: Marabesi
 
 # Coming soon
 
+-
+
+# Past due
+
 - 03/27/2018
   - [Laravel SP - Meetup](https://www.meetup.com/pt-BR/Laravel-SP/events/248580709)
 - 03/28/2018
   - [7 Masters - Laravel](https://setemasters.imasters.com.br/edicoes/laravel)
-
-# Past due
-
+  
 - 12/09/2017
   - [CODE /PIZZA > IN '013' - Santos](https://www.eventbrite.com.br/e/i-code-pizza-in-013-tickets-40172895211)
 
