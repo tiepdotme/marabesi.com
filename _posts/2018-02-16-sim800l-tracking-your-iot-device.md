@@ -200,6 +200,11 @@ illustrates the response receive in the serial monitor.
 
 ![Response from SIM800L after requireing the current location](/assets/sim800l-tracking-your-iot-device/current-location.png)
 
+## Edit 04/03/2018
+
+During a few tests with the SIM, it turns out that the accuracy in the latitude and longitude is not so good as expected.
+Sometimes it gives the same location even with 10 meters of change.
+
 ## References
 
 [Tracking with GPS NEO 6](/post/raspberry/2018/02/07/setting-up-gps-neo6-sensor.html)
