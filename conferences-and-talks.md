@@ -25,6 +25,8 @@ author:
   last_name: Marabesi
 ---
 
+- [7Masters (Laravel) - São Paulo, 2018](/conferences/7masters-laravel-2018)
+- [Laravel meetup #16 - São Paulo, 2018](/conferences/16-laravel-meetup)
 - [NerdZão Day #1 - 6 Trilhas Tech Simultâneas - São Paulo](/conferences/nerdzao)
 - [PHPPRDay 2017 ](/conferences/php-pr-day)
 - [PHPExperience 2017](/conferences/php-experience-2017)
