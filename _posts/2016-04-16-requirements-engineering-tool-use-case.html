@@ -25,9 +25,9 @@ author:
 <p>Recently I've finished my MBA in software engineering and as a result my group and I ended up with and tool for use case management. We were aimed to develop something that helps teams build a better software and we founded in requirements a gap to be fill.</p>
 <p>As usual in Brazil software development is a big issue (I'm specifically talking about Brazil because is my country and where I have experience) with impossible dead lines, crap documentation and bosses even worse. In resume software here is just a matter of money and doesn't matter if you built it with quality or not, what matters is how much the company will earn with it.</p>
 <p>Software engineers should have the knowledge and power to change it. Therefore we also have a lack of tools to help us to build better software. Let's assume a waterfall model to build software:</p>
-<p><a href="http://www.maxwideman.com/papers/linearity/waterfall.jpg" target="_blank" rel="http://www.maxwideman.com/papers/linearity/waterfall.jpg"><img title="Waterfall model" src="{{ site.baseurl }}/assets/waterfall.jpg" alt="Waterfall model" width="546" height="334" /></a> Waterfall model[/caption]</p>
+<p><a href="http://www.maxwideman.com/papers/linearity/waterfall.jpg" target="_blank" rel="http://www.maxwideman.com/papers/linearity/waterfall.jpg"><img title="Waterfall model" src="{{ site.baseurl }}/assets/waterfall.jpg" alt="Waterfall model" width="546" height="334" /></a> Waterfall model</p>
 <p>Just looking to the diagram we identified that the problem is in the first three steps:</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2016/04/waterfall-problem.jpg" rel="attachment wp-att-767"><img class="size-full wp-image-767" src="{{ site.baseurl }}/assets/waterfall-problem.jpg" alt="Waterfall model and the problem" width="546" height="334" /></a> Waterfall model and the problem[/caption]</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/waterfall-problem.jpg" rel="attachment wp-att-767"><img class="size-full wp-image-767" src="{{ site.baseurl }}/assets/waterfall-problem.jpg" alt="Waterfall model and the problem" width="546" height="334" /></a> Waterfall model and the problem</p>
 <p>Assuming that we did a research to confirm our thesis and let's see what experts have to say to us:</p>
 <p style="text-align: right;">"Problems of scope. The boundary of the system is ill-defined or the customers/users specify unnecessary technical detail that may confuse, rather than clarify, overall system objectives."</p>
 <p style="text-align: right;">PRESSMAN, Software Engineering - A PRACTITIONER ’ S APPROACH (page 121)</p>
@@ -39,14 +39,14 @@ author:
 <li>The diagram and the description is really intuitive</li>
 <li>Once you learn how to create is really easy to repeat (in meetings where the user will be interviewed is common to use use case approach)</li>
 </ol>
-<p><img class="" src="{{ site.baseurl }}/assets/use-cases-newspapar.gif" alt="Use case diagram" width="371" height="287" /> Use case diagram[/caption]</p>
+<p><img class="" src="{{ site.baseurl }}/assets/use-cases-newspapar.gif" alt="Use case diagram" width="371" height="287" /> Use case diagram</p>
 <p>Of course the diagram is much easier to understand than the description one. Just looking to the image you know that you'll have a user with the journalist role and a reader, really easy isn't it ? Unfortunately what we have is not the diagram itself in our tool rather we have the description one</p>
-<p><img src="{{ site.baseurl }}/assets/Description-of-Use-Cases.jpg" alt="Description use case" width="667" height="489" /> Description use case[/caption]</p>
+<p><img src="{{ site.baseurl }}/assets/Description-of-Use-Cases.jpg" alt="Description use case" width="667" height="489" /> Description use case</p>
 <p>Usually Use case descriptions are created and stored in word documents and as you can imagine they can be very hard to maintain and even create them. Our solution provides a easily way to create and store use case description based on an application. You can see the tool here <a href="https://shielded-headland-1947.herokuapp.com" target="_blank">https://shielded-headland-1947.herokuapp.com</a>.</p>
 <p>The following section will introduce to the tool and give to a explanation in how we ported the use case description.</p>
 <h2>Application</h2>
 <p>Once you have visited the link you'll see the following image to create an application</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2016/04/application.png" rel="attachment wp-att-778"><img class="size-full wp-image-778" src="{{ site.baseurl }}/assets/application.png" alt="Use case management - Application" width="1907" height="603" /></a> Use case management - Application[/caption]</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/application.png" rel="attachment wp-att-778"><img class="size-full wp-image-778" src="{{ site.baseurl }}/assets/application.png" alt="Use case management - Application" width="1907" height="603" /></a> Use case management - Application</p>
 <p>The first screen is where you define your application, you can have as many application as you want. Usually when you are creating a use case you are creating it to a given application, for instance let's say you are developing requirements to a application called <strong>Fly Cotrol</strong>, so you should use the same name in this screen.</p>
 <p>To understand the flow we propose I drawled the following flow chart:</p>
 <p><a href="http://marabesi.com/wp-content/uploads/2016/04/flow.png"><img class="size-full wp-image-789 aligncenter" src="{{ site.baseurl }}/assets/flow.png" alt="Basic flow to create use case" width="524" height="344" /></a></p>
@@ -59,7 +59,7 @@ author:
 <p><a href="http://marabesi.com/wp-content/uploads/2016/04/version-1.png"><img class="wp-image-797 size-full aligncenter" src="{{ site.baseurl }}/assets/version-1.png" alt="Use case management - Version" width="1191" height="623" /></a></p>
 <h2>Use case</h2>
 <p>Finally we can now create our use case, here is where all we have done before get together. The first select box is where you select your application to create a use case:</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2016/04/use_case_-1.png"><img class="wp-image-799 size-full" src="{{ site.baseurl }}/assets/use_case_-1.png" alt="Use case management - Use case" width="1176" height="745" /></a> Use case management - Use case[/caption]</p>
+<p><a href="http://marabesi.com/wp-content/uploads/2016/04/use_case_-1.png"><img class="wp-image-799 size-full" src="{{ site.baseurl }}/assets/use_case_-1.png" alt="Use case management - Use case" width="1176" height="745" /></a> Use case management - Use case</p>
 <p>Then the select box of named Version comes, here is where you select which version your use case is going to use. Following the same idea you can select one or more actors to be in your use case.</p>
 <h2>Steps</h2>
 <p><a href="http://marabesi.com/wp-content/uploads/2016/04/steps.png"><img class="alignnone size-full wp-image-804" src="{{ site.baseurl }}/assets/steps.png" alt="Use case management - Version" width="1184" height="656" /></a></p>
@@ -72,4 +72,4 @@ author:
 <p>In the past we were addicted to word's document and Excel sheets but nowadays its more than that, simple text documents doesn't help us to delivery quality in our softwares. The Use Case management tool is a try to improve this field and prevent all issues in the software development.</p>
 <p>As a resume we learnt we HAVE TO elicit correctly requirements and Use Case Management toll helps a lot with that, storing all use cases need to a given application.</p>
 <h1>Edit: May 30, 2016</h1>
-<p>You can see the paper in PT-BR <a href="http://marabesi.com/wp-content/uploads/2016/03/CENTRO-UNIVERSITÁRIO-FUNDAÇÃO-SANTO-ANDRÉ.pdf" target="_blank">here</a></p>
+<p>You can see the paper in PT-BR <a href="https://drive.google.com/open?id=0B8eXZIvTLcpjQUtKNEtmLXdrQ2p2c19sR2Z2REo5SkI1dDRv" target="_blank">here</a></p>
