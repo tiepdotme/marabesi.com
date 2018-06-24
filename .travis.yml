@@ -3,8 +3,6 @@ rvm:
 - 2.1
 
 script:
-  - "npm install -g bower"
-  - "bower install"
   - "bundle exec jekyll build"
 
 before_deploy:
