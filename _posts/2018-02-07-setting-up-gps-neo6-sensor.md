@@ -2,6 +2,7 @@
 layout: post
 title: Setting up GPS NEO 6 sensor
 date: 2018-02-07 17:30:18.000000000 -02:00
+image: http://img.dxcdn.com/productimages/sku_394572_4.jpg
 type: post
 published: true
 status: publish

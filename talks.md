@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Conferences and Talks
+title: Talks
 date: 2015-08-13 01:06:05.000000000 -03:00
 type: page
 published: true
@@ -24,6 +24,8 @@ author:
   first_name: Matheus
   last_name: Marabesi
 ---
+
+# Talks
 
 - [7Masters (Laravel) - São Paulo, 2018](/conferences/7masters-laravel-2018)
 - [Laravel meetup #16 - São Paulo, 2018](/conferences/16-laravel-meetup)

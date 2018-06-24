@@ -2,6 +2,7 @@
 layout: post
 title: Is specification important?
 date: 2017-03-31 01:06:05.000000000 -03:00
+image: https://contentmgmt.quinstreet.com/imagesvr_ce/2804/software-engineer-word-cloud.jpg
 type: post
 published: true
 status: published

@@ -2,18 +2,26 @@
 layout: default
 ---
 
-<div class="container">
+<div class="page-container">
     {% for post in site.posts %}
-        <div class="block">
-            <paper-card alt="{{ post.title }}" image="{{ post.image }}">
-                <div class="card-content">
-                    <a href="{{ post.url | prepend: site.baseurl }}">
-                        <paper-item>
-                            {{ post.title }} - {{ post.date | date: "%b %-d, %Y" }}
-                        </paper-item>
-                    </a>
+        <div class="post-item">
+            <div class="post-content" alt="{{ post.title }}">
+                <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+                    <img class="post-image" height="100" width="100" src="{{ post.image }}"/>
+                </a>
+                <div class="post-details">
+                    <div class="post-date">
+                        <a href="{{ post.url | prepend: site.baseurl }}" class="link">
+                            {{ post.date | date: "%b %-d, %Y" }}
+                        </a>
+                    </div>
+                    <div class="post-description">
+                        <a href="{{ post.url | prepend: site.baseurl }}" class="link">
+                            {{ post.title }}
+                        </a>
+                    </div>
                 </div>
-            </paper-card>
+            </div>
         </div>
     {% endfor %}
 </div>

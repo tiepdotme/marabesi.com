@@ -3,6 +3,7 @@ layout: post
 title: SIM800L tracking your IoT device
 date: 2018-02-16 20:39:18.000000000 -02:00
 type: post
+image: http://www.alselectro.com/images/gsm_mini_3_thumb.jpg
 published: true
 status: publish
 categories:

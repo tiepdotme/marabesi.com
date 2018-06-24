@@ -2,6 +2,7 @@
 layout: post
 title: 30 days of VIM - One week after
 date: 2018-01-29 20:30:18.000000000 -02:00
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/1200px-Vimlogo.svg.png
 type: post
 published: true
 status: publish

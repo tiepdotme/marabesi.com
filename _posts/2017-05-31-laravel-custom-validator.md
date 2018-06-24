@@ -3,6 +3,7 @@ layout: post
 title: Custom validator with Laravel 5 +
 date: 2017-05-31 01:06:05.000000000 -03:00
 type: post
+image: https://upload.wikimedia.org/wikipedia/commons/3/3d/LaravelLogo.png
 published: true
 status: published
 categories:

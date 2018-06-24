@@ -4,39 +4,18 @@
   {% include head.html %}
 
   <body>
-    <app-header>
-      <app-toolbar>
-        <paper-icon-button icon="menu"></paper-icon-button>
-        <div main-title>{{ page.title }}</div>
-      </app-toolbar>
-    </app-header>
 
+    {% include menu.html %}
+
+    {% include highlight.html %}
+    
     {{ content }}
 
-    <app-drawer swipe-open>
-
-      <a href="{{ site.url }}" tabindex="-1">
-        <iron-image src="/images/marabesi.svg"></iron-image>
-      </a>
-
-      <paper-menu>
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-            {% unless my_page.url contains 'bower_components' %}
-              <a class="paper-item-link" href="{{ my_page.url | prepend: site.baseurl }}">
-                <paper-item>
-                  {{ my_page.title }}
-                </paper-item>
-              </a>
-            {% endunless %}
-          {% endif %}
-        {% endfor %}
-      </paper-menu>
-    </app-drawer>
+    {% include footer.html %}
 
     {% include analytics.html %}
 
-    <script async src="/src/main.js"></script>
-    <script async src="https://static.addtoany.com/menu/page.js"></script>
+    {% include javascript.html %}
+
   </body>
 </html>
