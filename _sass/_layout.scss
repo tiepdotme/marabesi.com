@@ -76,6 +76,7 @@
     display: flex;
     justify-content: center;
     flex-flow: column;
+    min-height: 100%;
 
     .post-item {
         margin: auto auto 20px auto;
@@ -121,10 +122,15 @@
     flex-flow: column;
     max-width: 70%;
     margin: auto;
+    min-height: 100%;
 
     h1, h2 {
         margin-top: 30px;
         margin-bottom: 10px;
+    }
+
+    p {
+        padding: 10px;
     }
 }
 
@@ -149,9 +155,7 @@
     .top-menu {
         display: none;
     }
-}
 
-@media (max-width: 800px) {
     .banner-highlight {
         .title {
             font-size: 1.8em;
@@ -159,7 +163,7 @@
     }
 }
 
-@media (max-width: 510px) {
+@media (max-width: 540px) {
     .banner-highlight {
         height: 150px;
         padding-bottom: 30px;

@@ -2,12 +2,12 @@
 layout: default
 ---
 
-<div class="page-container">
+<main class="page-container">
     {% for post in site.posts %}
         <div class="post-item">
             <div class="post-content" alt="{{ post.title }}">
                 <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
-                    <img class="post-image" height="100" width="100" src="{{ post.image }}"/>
+                    <img class="post-image" height="100" width="100" src="{{ post.image }}" alt="Image of {{ post.title }}"/>
                 </a>
                 <div class="post-details">
                     <div class="post-date">
@@ -24,4 +24,4 @@ layout: default
             </div>
         </div>
     {% endfor %}
-</div>
+</main>

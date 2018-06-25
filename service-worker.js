@@ -1,4 +1,4 @@
-var CACHE_NAME = 'marabesi.com_v7';
+var CACHE_NAME = 'marabesi.com_v8';
 var assetsToCache = [
     '/'
 ];
@@ -16,9 +16,9 @@ self.addEventListener('fetch', function (event) {
     event.respondWith(
         caches.match(event.request)
             .then(function (response) {
-                // if (response) {
-                //     return response;
-                // }
+                if (response) {
+                    return response;
+                }
 
                 var fetchRequest = event.request.clone();
 
