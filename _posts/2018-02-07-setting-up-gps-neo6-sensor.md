@@ -2,7 +2,7 @@
 layout: post
 title: Setting up GPS NEO 6 sensor
 date: 2018-02-07 17:30:18.000000000 -02:00
-image: http://img.dxcdn.com/productimages/sku_394572_4.jpg
+image: https://cdn.instructables.com/FKL/Q62O/ICJLZ1YR/FKLQ62OICJLZ1YR.LARGE.jpg
 type: post
 published: true
 status: publish
