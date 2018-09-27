@@ -2,11 +2,11 @@
     'use strict';
 
     var onload = function() {
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
+//         if ('serviceWorker' in navigator) {
+//             window.addEventListener('load', function() {
+//                 navigator.serviceWorker.register('/service-worker.js');
+//             });
+//         }
 
         if (document.getElementById('disqus_thread')) {
             var d = document, s = d.createElement('script');
