@@ -18,9 +18,6 @@ author:
   display_name: Matheus Marabesi
 ---
 
-
-# Homestead and Vagrant
-
 Vagrant is the official tool that Laravel supports in the development stage, 
 which means that you can use vagrant and Homestead to create a simple and 
 powerful environment.

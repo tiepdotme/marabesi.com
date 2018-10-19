@@ -26,8 +26,6 @@ first_name: Matheus
 last_name: Marabesi
 ---
 
-# Custom validator with Laravel 5+
-
 Laravel comes with powerful features to validate your data, the official documentation has tons of examples to used. 
 Usually the validation is really straight forward, it takes a request as parameter and the second parameter is an array
 with all the rules to be validated.
