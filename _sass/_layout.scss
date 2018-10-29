@@ -120,18 +120,25 @@
 .page-content {
     display: flex;
     flex-flow: column;
-    max-width: 70%;
     margin: auto;
     min-height: 100%;
+    max-width: 800px;
 
     h1, h2 {
         margin-top: 30px;
         margin-bottom: 10px;
+        text-transform: uppercase;
+        color: #ee3b57;
+        font-weight: lighter;
     }
 
     p {
         padding: 10px;
     }
+}
+
+.about-picture {
+    margin-top: -200px;
 }
 
 .footer {
