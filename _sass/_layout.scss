@@ -170,6 +170,13 @@
     }
 }
 
+.ads-style {
+    display: flex;
+    height: 90px;
+    justify-content: center;
+    padding: 20px;
+}
+
 @media (max-width: 540px) {
     .banner-highlight {
         height: 150px;
