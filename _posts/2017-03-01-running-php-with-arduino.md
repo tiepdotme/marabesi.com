@@ -2,7 +2,7 @@
 layout: post
 title: Running PHP with Arduino
 date: 2017-03-01 01:06:05.000000000 -03:00
-image: https://raw.githubusercontent.com/php-earth/PHP.earth/master/assets/images/community/elephpant.png
+image: https://cdn-learn.adafruit.com/assets/assets/000/003/199/medium800/learn_arduino_arduinounotop.jpg
 type: post
 published: true
 status: published
