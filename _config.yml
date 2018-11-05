@@ -15,6 +15,9 @@ url: "https://marabesi.com" # the base hostname & protocol for your site
 twitter_username: MatheusMarabesi
 github_username:  marabesi
 
+paginate: 10
+paginate_path: "/posts/page:num"
+
 # Custom settings
 collections:
   newbies:

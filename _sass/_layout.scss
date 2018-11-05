@@ -177,6 +177,22 @@
     padding: 20px;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    color: #8a24d9;
+    margin-top: 20px;
+
+    a, a:visited {
+        color: #5f139a;
+    }
+
+    .page_number {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
 @media (max-width: 540px) {
     .banner-highlight {
         height: 150px;
