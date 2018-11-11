@@ -89,13 +89,25 @@
         max-width: 500px;
         border-bottom: solid 1px #918f91;
 
+        .cover-image {
+            padding: 5px;
+            border: 3px solid #9717bb;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            border-bottom: 0;
+            height: 50px;
+        }
+
         .post-image {
-            clip-path: circle(50px at center);
-            margin-right: 20px;
+            border-radius: 50%;
+            border: 3px solid #9717bb;
+            min-width: 100px;
         }
 
         .post-link {
             padding: 10px;
+            height: 120px;
+            margin-right: 20px;
         }
 
         .post-details {
@@ -175,6 +187,7 @@
     height: 90px;
     justify-content: center;
     padding: 20px;
+    margin-top: 30px;
 }
 
 .pagination {
