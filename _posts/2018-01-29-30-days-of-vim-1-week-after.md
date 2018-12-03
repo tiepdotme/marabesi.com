@@ -19,7 +19,7 @@ author:
 ---
 
 It's been one week since I adopted vim as my main editor, and this is the second post about this journey.
-If you haven't read the [first](/thoughts/2018/01/21/30-days-of-vim.html) post yet, click here and be happy.
+If you haven't read the first post yet, click [here](/thoughts/2018/01/22/30-days-of-vim.html) and be happy.
 
 ## First impressions
 
