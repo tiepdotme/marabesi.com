@@ -3,7 +3,7 @@ rvm:
 - 2.3
 
 script:
-  - "bundle exec jekyll build"
+  - "bundle exec jekyll build --config _config.yml"
 
 before_deploy:
   - chmod +x ./deploy.sh
@@ -12,3 +12,6 @@ deploy:
   provider: script
   script: "./deploy.sh"
   skip_cleanup: true
+
+env:
+  - JEKYLL_ENV=production

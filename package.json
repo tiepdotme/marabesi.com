@@ -1,0 +1,25 @@
+{
+  "name": "marabesi.com",
+  "version": "1.0.0",
+  "description": "This is the source code of my personal website where you can find at [marabesi.com](http://marabesi.com)",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "bundle exec jekyll build --config _config.yml",
+    "watch": "bundle exec jekyll serve --config _config.yml,_config_local.yml",
+    "serve": "bundle exec jekyll build --config _config.yml,_config_local.yml && http-server -p 4000 ./_site"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marabesi/marabesi.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marabesi/marabesi.com/issues"
+  },
+  "homepage": "https://github.com/marabesi/marabesi.com#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
