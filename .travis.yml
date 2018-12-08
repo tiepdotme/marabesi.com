@@ -15,3 +15,7 @@ deploy:
 
 env:
   - JEKYLL_ENV=production
+
+os:
+  - linux
+  - osx
