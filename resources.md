@@ -21,7 +21,11 @@ author:
   last_name: Marabesi
 ---
 
-## 1.Unit tests
+## PHP
+* Websites
+    - [PHP Certification](http://www.zend.com/en/services/certification/php-certification)
+
+## Unit tests
 
 * Websites
     - [PHP Unit documentation](https://phpunit.de/)
@@ -29,25 +33,35 @@ author:
     - [Test Driven Development: By Example: Kent Beck](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
     - [The art of Unit testing](http://www.cs.umss.edu.bo/doc/material/mat_gral_137/The%20Art%20of%20Unit%20Testing%20with%20Examples%20in%20.NET%20(Manning%202009).pdf)
 
-## 2.PHP
+## Zend Framework
 
 * Books
-    - [Using Zend Framework 3](https://olegkrivtsov.github.io/using-zend-framework-3-book/html/)
+   - [Using Zend Framework 3](https://olegkrivtsov.github.io/using-zend-framework-3-book/html/)
 
-## 3.Laravel
+## Laravel
 
 * Websites
     - [Laracast](https://laracasts.com/)
     - [Laravel documentation](https://laravel.com/docs/)
     - [Laranews](https://laravel-news.com/)
 
-## 4.Podcasts
+## Symfony
+
+* Websites
+    - [Symfony documentation](https://symfony.com/doc/current/index.html)
+
+* Books
+    - [Mastering Symfony](https://www.packtpub.com/web-development/mastering-symfony)
+
+## Podcasts
 
 * [Fullstack radio](http://www.fullstackradio.com/)
 * [PHP Round table](https://www.phproundtable.com/)
 * [Shop Talk](http://shoptalkshow.com/)
 * [Javascript Jabber](https://devchat.tv/js-jabber)
 * [Laranews podcast](https://laravel-news.com/podcast)
+* [Syntax](https://syntax.fm)
+* [Software Engineering Daily](https://softwareengineeringdaily.com)
 
 ## Software engineering
 
@@ -55,6 +69,7 @@ author:
     - [Object calisthenics](http://williamdurand.fr/2013/06/03/object-calisthenics/)
 * Books
     - [Software Engineering - A Practitioner’s Approach](http://www.vumultan.com/Books/CS605-Software%20Engineering%20Practitioner%E2%80%99s%20Approach%20%20by%20Roger%20S.%20Pressman%20.pdf)
+    - [Software Engineering, Global Edition](https://www.amazon.com/Software-Engineering-Global-Ian-Sommerville/dp/1292096136)
     
 ## People
 
