@@ -37,6 +37,8 @@ body {
 img {
     max-width: 100%;
     vertical-align: middle;
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -195,4 +197,9 @@ pre {
             fill: $grey-color;
         }
     }
+}
+
+
+.hide {
+    display: none;
 }

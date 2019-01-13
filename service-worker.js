@@ -1,9 +1,9 @@
-var CACHE_NAME = 'marabesi.com_v8';
+var CACHE_NAME = 'marabesi.com_v14';
 var assetsToCache = [
-    '/'
+    '/',
 ];
 
-self.addEventListener('install', function(event){
+self.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(function(cache) {
@@ -12,11 +12,26 @@ self.addEventListener('install', function(event){
     );
 });
 
+self.addEventListener('activate', function (event) {
+    event.waitUntil(
+        caches.keys().then(function (cacheNames) {
+            return Promise.all(
+                cacheNames.filter(function (cacheName) {
+                    return cacheName.startsWith('marabesi.com_') &&
+                        cacheName != CACHE_NAME;
+                }).map(function (cacheName) {
+                    return caches.delete(cacheName);
+                })
+            );
+        })
+    );
+});
+
 self.addEventListener('fetch', function (event) {
     event.respondWith(
         caches.match(event.request)
             .then(function (response) {
-                if (response) {
+                 if (response) {
                     return response;
                 }
 
@@ -24,7 +39,7 @@ self.addEventListener('fetch', function (event) {
 
                 return fetch(fetchRequest).then(
                     function (response) {
-                        if (!response || response.status !== 200 || response.type !== 'basic') {
+                        if (!response) {
                             return response;
                         }
 
@@ -36,9 +51,13 @@ self.addEventListener('fetch', function (event) {
                             });
 
                         return response;
-                    }
-                );
-            }
-        )
+                    });
+            })
     );
+});
+
+self.addEventListener('message', function(event) {
+    if (event.data.action === 'skip') {
+        self.skipWaiting();
+    }
 });

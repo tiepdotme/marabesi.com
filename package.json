@@ -6,6 +6,7 @@
   "scripts": {
     "build": "bundle exec jekyll build --config _config.yml",
     "watch": "bundle exec jekyll serve --config _config.yml,_config_local.yml",
+    "watch-drafts": "bundle exec jekyll serve --drafts --config _config.yml,_config_local.yml",
     "serve": "bundle exec jekyll build --config _config.yml,_config_local.yml && http-server -p 4000 ./_site"
   },
   "repository": {
