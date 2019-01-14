@@ -125,16 +125,16 @@ if ('serviceWorker' in navigator) {
 ```
 
 As the approach described so far is an enhancement in the user experience it does 
-lack the user control and there is no way to force the cache to refresh. Which
-means that the service worker is going to serve the cached version
-automatically, even if there is a new version of the content in the server.
+lack the user control **[5]**, and there is no way to force the cache to refresh
+once a new verion is available. The user must leave the page and then come back
+to have the new version **[6]**.
 
 ![Service work lifecycle](/assets/udacity-pwa-service-workers/service_worker_flow.png)
 
 The only way to update the assets is to change the service worker code. The change
 can be as small as to change the cache version. In the snippet 1, for instance,
 the cache version is set to `marabesi.com_v1`, changing it to `marabesi.com_v2`
-would trigger an update event in the service worker and the content would be,
+would trigger an update event in the service worker and the content would be
 fetched again.
 
 The steps to have a site available offline is done, but with that approach the
@@ -212,7 +212,12 @@ in the register method.
 
     // setting up the service worker resgistration events
     window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        var registration = navigator.serviceWorker.register('/service-worker.js')
+
+        /**
+         * @var registration ServiceWorkerRegistration
+         */
+        registration.then(function(registration) {
             registration.addEventListener('updatefound', function() {
                 worker = registration.installing;
 
@@ -263,5 +268,5 @@ once the user leaves the site and comes back
 - [3] https://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement
 - [4] https://www.w3.org/TR/service-workers-1/#cache-objects
 - [5] https://deanhume.com/displaying-a-new-version-available-progressive-web-app
-- [6] https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_waiting
+- [6] https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#aguardando
 - [7] https://www.oreilly.com/library/view/building-progressive-web/9781491961643
