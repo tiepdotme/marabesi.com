@@ -23,29 +23,34 @@ author:
   display_name: Matheus Marabesi
 ---
 
+The following content is inspired by the udacity course with bits from [other
+sources as well](#03---references). The main goal is to identify what is a service worker
+and what it can offer to incorporate a progressive web app.
+
 # 01 - Offline and lie-fi problem
 
-Service workers were born to improve the user experience in the connectivity aspect.
+Service workers improves the user experience in the connectivity aspect.
 In the offline, which is the case when the user has no connection at all to the 
 internet and the lie-fi, which is a term related to bad connection and high 
 latency **[1]**.
 
-Therefore, once is not worse then the other, they are in essence bad for user
+Therefore, once is not worse than the other, they are in essence bad for user
 experience. Offline means that the user will not receive new data and lie-fi
-makes the user disapointed with responses responses that often tend to show 
+makes the user disapointed with responses that often tend to show 
 the loading progress bar forever.
 
 # 02 - Service workers
 
-Service workers is a script that sits between the request made by the browser
-and the response received by the user **[2]**.
+A service worker is a script that sits between the request made by the browser
+and the response received by the user **[2][7]**, like a proxy server.
 
 The characteritcs that define a service woker are:
 
 - A isolated script that can't access the DOM.
-- Intercepts requests and decides when to go over the network or send a cached version.
+- Intercept requests and decides when to go over the network or send a cached version.
 - Has a defined life cycle, installing, waiting and active.
-- Must have HTTPs, but it is allowed to use without on localhost
+- Must have HTTPs. Though, it is allowed to use without on localhost for
+development purposes.
 
 The simplest service worker can be installed and cache assets to decrease the
 bandwith usage. The first part is to define what should be cached,
@@ -75,14 +80,15 @@ self.addEventListener('install', function(event){
 ```
 
 The `cache` API was introduced along the service worker
-specification **[4]**, and it
-is correlated with the snippets found in the internet, which verify only
-if the brower has the serviceWorker features.
+specification **[4]**, and it is related with the snippets found in
+the internet, which verify only if the brower has the `serviceWorker`
+feature available **[8][9][10]**.
 
 Once the assets have beend cached, the service worker can start to serve the
-cached content. The event fired when a request is made and the
-service worker is active is called `fetch`, whithin this event we can
-send the cached content to the user, as in the snippet 2.
+cached content. The event `fetch` is fired when a request is made and the
+service worker is active. This event decides to send the
+cached content to the user or to go over the network and fetch the data,
+as in the snippet 2.
 
 ```javascript
 // snippet 2
@@ -111,7 +117,8 @@ self.addEventListener('fetch', function (event) {
 
 The last piece is to register the service worker in the browser, so it can
 start to do his job. The recommended is to follow the progressive enhancement approach **[3]**,
-checking if the browser that the user is using supports the service worker.
+checking if the browser that the user is using supports the service worker, if
+not the service worker is ignored.
 
 ```javascript
 //snippet 3
@@ -129,13 +136,13 @@ lack the user control **[5]**, and there is no way to force the cache to refresh
 once a new verion is available. The user must leave the page and then come back
 to have the new version **[6]**.
 
-![Service work lifecycle](/assets/udacity-pwa-service-workers/service_worker_flow.png)
-
 The only way to update the assets is to change the service worker code. The change
 can be as small as to change the cache version. In the snippet 1, for instance,
 the cache version is set to `marabesi.com_v1`, changing it to `marabesi.com_v2`
 would trigger an update event in the service worker and the content would be
-fetched again.
+fetched and refresh the cache with the new data.
+
+![Service work lifecycle](/assets/udacity-pwa-service-workers/service_worker_flow.png)
 
 The steps to have a site available offline is done, but with that approach the
 cache in the users browser would grow as every change made in the service worker.
@@ -162,8 +169,8 @@ self.addEventListener('activate', function (event) {
 
 To address this issue the service worker API offers methods to control it in a
 sofisticaded manner. Giving to the user the ability to decide when to
-update the local content with the new one. With that we achieve the offline
-first approach. Starting always serving the offline content and 
+update the local content with the new one. With that the approach used change, from
+online first to offline first, starting serving the cached content and 
 checking for updates in the background.
 
 # Letting the user take control
@@ -232,8 +239,7 @@ in the register method.
 }
 ```
 
-
-Besides that, service worker does not have access to the DOM in the page which
+Besides that, the service worker does not have access to the DOM in the page which
 makes the approach to interact with the user different. To communicate via 
 the current web page to the user the service worker provider a message based
 system.
@@ -257,16 +263,31 @@ should be applied. The following have been achieved:
 
 - The site data is cached in the service worker
 - The site is accessible in offline mode
-- The user has the control when to apply the update, but it happens autmatically
+- The user has the control when to apply the update, but it happens automatically
 once the user leaves the site and comes back
 
 
 # 03 - References
 
-- [1] https://eu.udacity.com/course/offline-web-applications--ud899
-- [2] https://developers.google.com/web/fundamentals/primers/service-workers
-- [3] https://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement
-- [4] https://www.w3.org/TR/service-workers-1/#cache-objects
-- [5] https://deanhume.com/displaying-a-new-version-available-progressive-web-app
-- [6] https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#aguardando
-- [7] https://www.oreilly.com/library/view/building-progressive-web/9781491961643
+**[1]** Michael Wales, 'Offline Web Applications byGoogle', 2016. [Online]. Available: [https://eu.udacity.com/course/offline-web-applications--ud899](https://eu.udacity.com/course/offline-web-applications--ud899){:target="_blank"}. [Accessed: 20 - Dec - 2018]
+
+**[2]** Matt Gaunt, 'Service Workers: An Introduction', 2018. [Online]. Available: [https://developers.google.com/web/fundamentals/primers/service-worker](https://developers.google.com/web/fundamentals/primers/service-workers){:target="_blank"}. [Accessed: 18 - Jan - 2019]
+
+**[3]** W3C, 'Graceful degradation versus progressive enhancement', 2015. [Online]. Available: [https://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement](https://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement){:target="_blank"}. [Accessed: 18 - Jan - 2019]
+
+**[4]** W3C, 'Service Workers 1 - 
+W3C Working Draft, 2 November 2017', 2017. [Online]. Available: [https://www.w3.org/TR/service-workers-1/#cache-objects](https://www.w3.org/TR/service-workers-1/#cache-objects){:target="_blank"}. [Accessed: 18 - Jan - 2019]
+
+**[5]** Dean Hume, 'How to display a "new version available" for a Progressive Web App', 2018. [Online]. Available: [https://deanhume.com/displaying-a-new-version-available-progressive-web-app](https://deanhume.com/displaying-a-new-version-available-progressive-web-app){:target="_blank"}. [Accessed: 18 - Jan - 2019]
+
+**[6]** Jake Archibald, 'The Service Worker Lifecycle', 2018. [Online]. Available: [https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#aguardando](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#aguardando){:target="_blank"}. [Accessed: 18 - Jan - 2019]
+
+**[7]** T. Ater, Building Progressive Web Apps. 2017, p. 22.
+
+**[8]** Google, 'Basic Service Worker Sample', 2016. [Online]. Available: [https://googlechrome.github.io/samples/service-worker/basic/#container](https://googlechrome.github.io/samples/service-worker/basic/#container){:target="_blank"}. [Accessed: 18 - Jan - 2019]
+
+**[9]** Mozilla, 'ServiceWorker', 2018. [Online]. Available: [https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker#Examples](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker#Examples){:target="_blank"}. [Accessed: 18 - Jan - 2019]
+
+**[10]** S. Amarasinghe, Service Worker Development Cookbook. 2016, p. 18.
+
+<!-- https://jakearchibald.com/2014/offline-cookbook/ -->
