@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Udacity progressive web apps notes
+title: Introduction to Service Workers
 date: 2018-12-02 01:06:05.000000000 -03:00
 image: https://cdn.freebiesupply.com/logos/large/2x/udacity-logo-png-transparent.png
 type: post
