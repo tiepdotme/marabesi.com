@@ -18,7 +18,9 @@ tags:
 - google,
 - HTML,
 - cache,
-- API
+- API,
+- offline,
+- udacity
 author:
   display_name: Matheus Marabesi
 ---
@@ -132,15 +134,19 @@ if ('serviceWorker' in navigator) {
 ```
 
 As the approach described so far is an enhancement in the user experience it does 
-lack the user control **[5]**, and there is no way to force the cache to refresh
-once a new verion is available. The user must leave the page and then come back
-to have the new version **[6]**.
+lack the user control **[5]**, and there is no way to remove the old cache
+once a new verion is available.
 
 The only way to update the assets is to change the service worker code. The change
 can be as small as to change the cache version. In the snippet 1, for instance,
 the cache version is set to `marabesi.com_v1`, changing it to `marabesi.com_v2`
 would trigger an update event in the service worker and the content would be
 fetched and refresh the cache with the new data.
+
+Therefore, the service worker does not show the new content automatically, to
+show the new content cached by the new service worker, all instances of the
+current one must be terminated **[2][6]**. In this context terminated means, to close the
+current page or navigate to a new URL and then come back.
 
 ![Service work lifecycle](/assets/udacity-pwa-service-workers/service_worker_flow.png)
 
