@@ -75,13 +75,15 @@ to use codeception. is recommended to follow the TDD metodology even with
 acceptance test, the flow would be resumed in:
 
 1. Write acceptance test
-2. Refactor the code
+2. Refactor the code to be possible to add unit test
 3. Execute the acceptance test
 
 The pro is to have a few testes which gives the developer confidence in
 refactoring in as many scenarios as possible, in the other hand acceptance test
 is slow to execute. Even a small change would take a few minutes to execute the
 suite.
+
+![TDD applied to acceptance](/assets/strategies-to-test-legacy-code/strategies-1.png)
 
 # Iterating over the strategy
 
@@ -105,13 +107,14 @@ test with the unit test doing refactoring, the recommended approach would be:
 The last part is to remove specific cases in the acceptance testing suite, and
 keep only the general ones, which covers the most basic flow.
 
+![Iterating over the strategy](/assets/strategies-to-test-legacy-code/strategies-2.png)
+
 It is possible to keep with all the acceptance test suite in place as well,
 just the execution approach would change from a developer point of view.
 
 Once the unit test suite is good enough to have confidence, the developer at
 each change would execute the suite to have feedback on the change. Whereas in
 the acceptance suite would be executed only once the refactor is done.
-
 
 # References
 
