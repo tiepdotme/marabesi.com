@@ -17,7 +17,13 @@ tags:
 - laracast,
 - laranews,
 - validator,
-- custom validator
+- custom validator,
+- laravel 5.2,
+- laravel 5.3,
+- laravel 5.4,
+- laravel 5.5,
+- laravel 5.6,
+- laravel 5.7
 author:
 login: matheusmarabesi
 email: matheus.marabesi@gmail.com
