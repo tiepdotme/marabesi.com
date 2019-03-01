@@ -17,7 +17,12 @@ tags:
 - laracast,
 - laranews,
 - validator,
-- custom validator
+- custom validator,
+- laravel validator extend,
+- laravel custom validator class,
+- laravel validation service provider,
+- laravel extend validator,
+- laravel validator::extend
 author:
 login: matheusmarabesi
 email: matheus.marabesi@gmail.com
