@@ -23,6 +23,12 @@ tags:
 - laravel validation service provider,
 - laravel extend validator,
 - laravel validator::extend
+- laravel 5.2,
+- laravel 5.3,
+- laravel 5.4,
+- laravel 5.5,
+- laravel 5.6,
+- laravel 5.7
 author:
 login: matheusmarabesi
 email: matheus.marabesi@gmail.com
@@ -38,7 +44,7 @@ Laravel framework:
 2. Using default validator rules.
 3. What is a service provider and how to use them.
 
-## Usingh built-in validator rules
+## Using built-in validator rules
 
 Laravel comes with powerful features to validate your data, the official documentation has tons of examples to use. Usually the validation is really straight forward, it takes a request as parameter and the second parameter is an array with all the rules to be validated.
 
@@ -104,7 +110,7 @@ Notice that we are under the namespace `App\Validators` which means that for thi
 
 Now before we use the validator class that we just created, one more step is needed. Laravel doesn't know about our validation class, and we tell it using a **ServiceProvider**.
 
-## Registring the new validator with Service Provider
+## Registering the new validator with Service Provider
 
 All parameters that are required by the constructor are from the Laravel validator class, so as we are
 extending it we must pass all arguments as well (Thanks Laravel D.I).
@@ -166,4 +172,3 @@ Here we have changed the required rule by the one we've created. The name is the
 ## Empty fields trap
 
 All custom validations do not accept empty fields by default. If you want to have it you must override the property `$implicitRules` otherwise your validation method will not be fired.
-
