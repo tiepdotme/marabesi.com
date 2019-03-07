@@ -21,11 +21,11 @@ tags:
 - injection
 author: Matheus Marabesi
 ---
-<p>Being able to write better is a achieveament that every programmer want to. SOLID is a great thing to start to
+<p>Being able to write better is a achievement that every programmer want to. SOLID is a great thing to start to
     and particularly one of the best things to be followed by TDD.</p>
 
 <section class="post-section">
-<h1 class="post-title">Single responsability</h1>
+<h1 class="post-title">Single responsibility</h1>
 <blockquote><p>a class should have only a single responsibility (i.e. only one potential change in the software's specification should be able to affect the specification of the class)</p></blockquote>
 
 {% highlight php %}
@@ -231,7 +231,7 @@ class DecoratedDoor extends Door {
 }
 {% endhighlight %}
 
-<p>The code above is valid but if the client diced to use the <strong>DecoratedDoor</strong> his code will break. We are not following
+<p>The code above is valid but if the client decided to use the <strong>DecoratedDoor</strong> his code will break. We are not following
 the Liskov principle "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program".</p>
 
 {% highlight php %}
