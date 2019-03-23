@@ -120,7 +120,7 @@ the acceptance suite would be executed only once the refactor is done.
 
 **[1]** M. Fowler, Improving the Design of Existing Code(2nd Edition). 2018, p. 22.
 
-**[2]** M. Cohn, SUCCEEDING WIT H AGILE. 2010, p. 312.
+**[2]** M. Cohn, SUCCEEDING WITH AGILE. 2010, p. 312.
 
 **[3]** Ham Vocke, 'The Practical Test Pyramid', 2018. [Online]. Available: [https://martinfowler.com/articles/practical-test-pyramid.html](https://martinfowler.com/articles/practical-test-pyramid.html){:target="_blank"}. [Accessed: 06 - Feb - 2019]
 
