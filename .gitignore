@@ -7,3 +7,4 @@ bower_components/
 *.swp
 .vscode/
 node_modules
+_sass/tailwind.scss
