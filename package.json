@@ -4,10 +4,11 @@
   "description": "This is the source code of my personal website where you can find at [marabesi.com](http://marabesi.com)",
   "main": "src/main.js",
   "scripts": {
-    "build": "bundle exec jekyll build --config _config.yml",
-    "watch": "bundle exec jekyll serve --config _config.yml,_config_local.yml",
-    "watch-drafts": "bundle exec jekyll serve --drafts --config _config.yml,_config_local.yml",
-    "serve": "bundle exec jekyll build --config _config.yml,_config_local.yml && http-server -p 4000 ./_site"
+    "build": "npm run build:tailwind && bundle exec jekyll build --config _config.yml",
+    "watch": "npm run build:tailwind && bundle exec jekyll serve --livereload --incremental --config _config.yml,_config_local.yml",
+    "watch-drafts": "npm run build:tailwind && bundle exec jekyll serve --livereload --incremental --drafts --config _config.yml,_config_local.yml",
+    "serve": "npm run build:tailwind && bundle exec jekyll build --config _config.yml,_config_local.yml && http-server -p 4000 ./_site",
+    "build:tailwind": "tailwind build src/tailwind.src.css -c tailwind.js -o _sass/tailwind.scss"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,9 @@
     "url": "https://github.com/marabesi/marabesi.com/issues"
   },
   "homepage": "https://github.com/marabesi/marabesi.com#readme",
-  "dependencies": {},
+  "dependencies": {
+    "tailwindcss": "^0.7.4"
+  },
   "devDependencies": {
     "http-server": "^0.11.1"
   }
