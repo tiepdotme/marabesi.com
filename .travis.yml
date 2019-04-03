@@ -3,6 +3,7 @@ rvm:
 - 2.3
 
 script:
+  - "npm install"
   - "npm run build"
 
 before_deploy:
