@@ -2,23 +2,24 @@
 layout: default
 ---
 
-<main class="page-container">
+<main class="page-container container m-auto lg:flex lg:flex-col">
     {% for post in paginator.posts %}
-        <div class="post-item">
+        <div class="p-5 w-4/5 m-auto lg:w-1/2">
             <div class="post-content" alt="{{ post.title }}">
-                <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+                <a href="{{ post.url | prepend: site.baseurl }}" class="post-link no-underline hidden sm:block">
                     <div class="cover-image">
-                        <img class="post-image" height="100" width="100" src="{{ post.image }}" alt="Image of {{ post.title }}"/>
+                        <img class="post-image rounded-full" height="100" width="100" src="{{ post.image }}" alt="Image of {{ post.title }}"/>
                     </div>
                 </a>
+
                 <div class="post-details">
                     <div class="post-date">
-                        <a href="{{ post.url | prepend: site.baseurl }}" class="link">
+                        <a href="{{ post.url | prepend: site.baseurl }}" class="link no-underline hover:underline">
                             {{ post.date | date: "%b %-d, %Y" }}
                         </a>
                     </div>
-                    <div class="post-description">
-                        <a href="{{ post.url | prepend: site.baseurl }}" class="link">
+                    <div class="post-description pt-2">
+                        <a href="{{ post.url | prepend: site.baseurl }}" class="link no-underline hover:underline">
                             {{ post.title }}
                         </a>
                     </div>
@@ -27,7 +28,7 @@ layout: default
         </div>
     {% endfor %}
 
-    <div class="pagination">
+    <div class="pagination p-5 w-4/5 m-auto lg:w-1/2">
         {% if paginator.previous_page %}
             <a href="{{ paginator.previous_page_path }}" class="previous">
                 Previous
