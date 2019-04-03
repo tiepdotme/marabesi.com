@@ -3,9 +3,9 @@ layout: default
 ---
 
 {% if page.title  == "About"%}
-  <img src="/images/about.jpg" class="about-picture"/>
+  <img src="/images/about.jpg" class="about-picture hidden md:block"/>
 {% endif %}
 
-<main class="page-content container p-5">
+<main class="page-content container m-auto p-5">
   {{ content }}
 </main>
