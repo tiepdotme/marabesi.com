@@ -55,14 +55,15 @@ author:
 
 ## Podcasts
 
-* [Fullstack radio](http://www.fullstackradio.com/)
-* [PHP Round table](https://www.phproundtable.com/)
-* [Shop Talk](http://shoptalkshow.com/)
+* [Fullstack radio](http://www.fullstackradio.com)
+* [PHP Round table](https://www.phproundtable.com)
+* [Shop Talk](http://shoptalkshow.com)
 * [Javascript Jabber](https://devchat.tv/js-jabber)
 * [Laranews podcast](https://laravel-news.com/podcast)
 * [Syntax](https://syntax.fm)
 * [Software Engineering Daily](https://softwareengineeringdaily.com)
 * [Software Engineering Radio](http://www.se-radio.net)
+* [Thoughtworks Radar](https://www.thoughtworks.com/radar)
 
 ## Software engineering
 
