@@ -99,6 +99,11 @@
     </ul>
   </nav>
 
+  <div class="flex flex-col items-center justify-center p-5">
+    <input type="text" id="search-input" placeholder="search" class="focus:outline-none border border-marabesi-pink text-marabesi-pink w-full p-3 mt-1 mb-2 container">
+    <ul id="results-container"></ul>
+  </div>
+
   <div class="banner-highlight">
     <h1 class="font-normal text-lg py-4 md:text-3xl lg:text-4xl">
       <span class="apostrophe">‘‘</span>
@@ -130,6 +135,7 @@
   </script>
   {% endif %}
 
+  <script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="/src/main.js"></script>
   <script async src="https://static.addtoany.com/menu/page.js"></script>

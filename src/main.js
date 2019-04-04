@@ -50,6 +50,15 @@
                 menuList.classList.add('open')
             }
         });
+
+        SimpleJekyllSearch({
+            searchInput: document.getElementById('search-input'),
+            resultsContainer: document.getElementById('results-container'),
+            searchResultTemplate: '<li class="list-reset p-2"><a href="{url}">{title}</a></li>',
+            json: '/search.json',
+            fuzzy: false,
+            noResultsText: 'No results found 😞'
+        })
     };
 
     onload();
