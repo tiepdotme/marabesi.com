@@ -275,7 +275,7 @@ once the user leaves the site and comes back
 
 # 03 - References
 
-**[1]** Michael Wales, 'Offline Web Applications byGoogle', 2016. [Online]. Available: [https://eu.udacity.com/course/offline-web-applications--ud899](https://eu.udacity.com/course/offline-web-applications--ud899){:target="_blank"}. [Accessed: 20 - Dec - 2018]
+**[1]** Michael Wales, 'Offline Web Applications by Google', 2016. [Online]. Available: [https://eu.udacity.com/course/offline-web-applications--ud899](https://eu.udacity.com/course/offline-web-applications--ud899){:target="_blank"}. [Accessed: 20 - Dec - 2018]
 
 **[2]** Matt Gaunt, 'Service Workers: An Introduction', 2018. [Online]. Available: [https://developers.google.com/web/fundamentals/primers/service-worker](https://developers.google.com/web/fundamentals/primers/service-workers){:target="_blank"}. [Accessed: 18 - Jan - 2019]
 
