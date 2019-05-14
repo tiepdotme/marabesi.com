@@ -68,36 +68,38 @@
 </head>
 
 <body class="font-sans overflow-x-hidden">
-  <button class="update-button hidden">Update found, click to update</button>
+  <button class="update-button w-full text-white bg-marabesi-pink p-2 m-auto fixed pin-t mb-5 hidden focus:outline-none">Update found, click to update</button>
 
-  <div class="w-full flex items-center h-12 pl-2 bg-white md:hidden">
-    <svg id="menu" class="cursor-pointer w-10 h-10 p-2 text-marabesi-pink fill-current" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24">
-      <path
-        style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"
-        d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"
-        font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible"></path>
-    </svg>
+  <div class="menu-wrapper">
+    <div class="w-full flex items-center h-12 pl-2 bg-white md:hidden">
+      <svg id="menu" class="cursor-pointer w-10 h-10 p-2 text-marabesi-pink fill-current" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24">
+        <path
+          style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"
+          d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"
+          font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible"></path>
+      </svg>
+    </div>
+
+    <nav class="top-menu flex justify-start container lg:justify-center md:m-auto md:pt-2 md:pb-2">
+      <a href="{{ site.url }}" class="hidden md:block">
+        <img class="logo w-18 p-1" src="/images/logo.png" width="100" />
+      </a>
+
+      <ul id="menu-list" class="container-menu hidden flex-col pl-5 md:flex md:pl-0 md:flex-row md:m-auto lg:m-0">
+        {% for my_page in site.pages %}
+        {% if my_page.title %}
+        {% unless my_page.url contains 'bower_components' %}
+        <li class="item pt-2 pb-2 md:p-2">
+          <a class="item-link no-underline" href="{{ my_page.url | prepend: site.baseurl }}">
+            {{ my_page.title }}
+          </a>
+        </li>
+        {% endunless %}
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
   </div>
-
-  <nav class="top-menu flex justify-start container lg:justify-center md:m-auto md:pt-2 md:pb-2">
-    <a href="{{ site.url }}" class="hidden md:block">
-      <img class="logo w-18 p-1" src="/images/logo.png" width="100" />
-    </a>
-
-    <ul id="menu-list" class="container-menu hidden flex-col pl-5 md:flex md:pl-0 md:flex-row md:m-auto lg:m-0">
-      {% for my_page in site.pages %}
-      {% if my_page.title %}
-      {% unless my_page.url contains 'bower_components' %}
-      <li class="item pt-2 pb-2 md:p-2">
-        <a class="item-link no-underline" href="{{ my_page.url | prepend: site.baseurl }}">
-          {{ my_page.title }}
-        </a>
-      </li>
-      {% endunless %}
-      {% endif %}
-      {% endfor %}
-    </ul>
-  </nav>
 
   <div class="flex flex-col items-center justify-center p-5">
     <input type="text" id="search-input" placeholder="search" class="focus:outline-none border border-marabesi-pink text-marabesi-pink w-full p-3 mt-1 mb-2 container">
@@ -136,17 +138,19 @@
   {% endif %}
 
   <script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="/src/main.js"></script>
   <script async src="https://static.addtoany.com/menu/page.js"></script>
+  
+  {% if jekyll.environment == "production" %}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-
-  <ins class="adsbygoogle ads-style" data-ad-client="ca-pub-4464092086775263" data-ad-slot="3786833122"
-    data-ad-format="auto" data-full-width-responsive="true">
-  </ins>
+    <ins class="adsbygoogle ads-style" data-ad-client="ca-pub-4464092086775263" data-ad-slot="3786833122"
+      data-ad-format="auto" data-full-width-responsive="true">
+    </ins>
+  {% endif %}
 </body>
 
 </html>
