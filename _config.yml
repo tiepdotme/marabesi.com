@@ -50,7 +50,5 @@ exclude:
   - .git
   - .vscode
   - .idea
-  - cv.pdf
   - .jekyll-metadata
   - .jekyll-cache
-  - feed.xml
