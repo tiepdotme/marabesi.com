@@ -51,8 +51,6 @@ exclude:
   - .vscode
   - .idea
   - cv.pdf
-  - manifest.json
   - .jekyll-metadata
   - .jekyll-cache
-  - google55ffda9e649e4470.html
   - feed.xml
