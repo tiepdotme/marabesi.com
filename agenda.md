@@ -29,6 +29,12 @@ last_name: Marabesi
 
 # Past due
 
+- 05/14/2019
+ - [MadridJs - Meetup](https://www.meetup.com/pt-BR/madridjs/events/261046807/)
+
+- 03/27/2019
+  - [PHPMad - Meetup](https://www.meetup.com/pt-BR/phpmad/events/259693882/)
+
 - 03/27/2018
   - [Laravel SP - Meetup](https://www.meetup.com/pt-BR/Laravel-SP/events/248580709)
 - 03/28/2018
@@ -49,11 +55,14 @@ last_name: Marabesi
 
 - 06/10/2017
   - [PHPDay - Curitiba](https://www.sympla.com.br/php-day-curitiba__136236)
+
 - 06/03/2017
   - [Programando na Baleia ( iniciando Docker na Prática )](https://www.meetup.com/pt-BR/THT-Things-Hacker-Team/events/239853023/)
   - [Hack in Sampa](https://www.eventbrite.com.br/e/hack-in-sampa-registration-34727938198)
+
 - 05/20/2017 / 05/21/2017
   - [Curso Laravel - Novatec](http://ctnovatec.com.br/cursos/php/laravel-2/)
+
 - 05/11/2017
   - [Laravel Full-stack](http://ctnovatec.com.br/cursos/php/laravel-full-stack-palestra/)
 
