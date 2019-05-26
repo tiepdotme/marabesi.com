@@ -9,12 +9,6 @@ published: true
 status: publish
 categories: []
 tags: []
-author: Matheus Marabesi
-login: matheusmarabesi
-email: matheus.marabesi@gmail.com
-display_name: Matheus Marabesi
-first_name: Matheus
-last_name: Marabesi
 ---
 
 # Tests

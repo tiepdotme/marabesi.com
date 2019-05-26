@@ -15,12 +15,6 @@ tags:
 - debian,
 - yocto,
 - linux
-author:
-  login: matheusmarabesi
-  email: matheus.marabesi@gmail.com
-  display_name: Matheus Marabesi
-  first_name: Matheus
-  last_name: Marabesi
 ---
 
 It's been a while since we have Intel Galileo board in the market as well as Intel Galileo Gen2, which is a version

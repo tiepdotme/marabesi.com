@@ -11,11 +11,6 @@ tags:
 - meetup,
 - slides,
 - best practices
-author:
-  email: matheus.marabesi@gmail.com
-  display_name: Matheus Marabesi
-  first_name: Matheus
-  last_name: Marabesi
 ---
 
 <h1><a href="http://www.meetup.com/pt-BR/Laravel-SP/events/233563455/" target="_blank">10 Laravel Meetup</a></h1>

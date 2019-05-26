@@ -18,11 +18,6 @@ tags:
 - 2015,
 - 2016,
 - 2017
-author:
-  email: matheus.marabesi@gmail.com
-  display_name: Matheus Marabesi
-  first_name: Matheus
-  last_name: Marabesi
 ---
 
 # Talks

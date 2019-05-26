@@ -15,10 +15,6 @@ tags:
 - websites,
 - unit tests,
 - books
-author:
-  display_name: Matheus Marabesi
-  first_name: Matheus
-  last_name: Marabesi
 ---
 
 ## PHP

@@ -21,8 +21,6 @@ tags:
 - API,
 - offline,
 - udacity
-author:
-  display_name: Matheus Marabesi
 ---
 
 The following content is inspired by the udacity course with bits from [other

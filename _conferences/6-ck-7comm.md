@@ -13,11 +13,6 @@ tags:
 - php,
 - clean code,
 - tht
-author:
-  email: matheus.marabesi@gmail.com
-  display_name: Matheus Marabesi
-  first_name: Matheus
-  last_name: Marabesi
 ---
 
 <h1><a href="http://www.meetup.com/pt/THT-Things-Hacker-Team/events/202789132/" target="_blank">CK 6 (Connecting Knowledge) + 7COMM</a></h1>

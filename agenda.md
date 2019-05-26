@@ -15,12 +15,6 @@ tags:
 - fullstack,
 - meetup,
 - community
-author: Matheus Marabesi
-login: matheusmarabesi
-email: matheus.marabesi@gmail.com
-display_name: Matheus Marabesi
-first_name: Matheus
-last_name: Marabesi
 ---
 
 # Coming soon
@@ -30,16 +24,17 @@ last_name: Marabesi
 # Past due
 
 - 05/14/2019
- - [MadridJs - Meetup](https://www.meetup.com/pt-BR/madridjs/events/261046807/)
+  - [MadridJs - Meetup](https://www.meetup.com/pt-BR/madridjs/events/261046807/)
 
 - 03/27/2019
   - [PHPMad - Meetup](https://www.meetup.com/pt-BR/phpmad/events/259693882/)
 
 - 03/27/2018
   - [Laravel SP - Meetup](https://www.meetup.com/pt-BR/Laravel-SP/events/248580709)
+
 - 03/28/2018
   - [7 Masters - Laravel](https://setemasters.imasters.com.br/edicoes/laravel)
-  
+
 - 12/09/2017
   - [CODE /PIZZA > IN '013' - Santos](https://www.eventbrite.com.br/e/i-code-pizza-in-013-tickets-40172895211)
 
@@ -66,4 +61,9 @@ last_name: Marabesi
 - 05/11/2017
   - [Laravel Full-stack](http://ctnovatec.com.br/cursos/php/laravel-full-stack-palestra/)
 
+- 03/28/2017
+  - [PHPExperience - IoT powered by PHP and Streams](https://joind.in/event/php-experience-2017/schedule/grid)
+
+- 05/11/2016
+  - [TDC 2016 | Florianópolis - Vá para o próximo nível - Dicas e truques para a certificação PHP](http://www.thedevelopersconference.com.br/tdc/2016/florianopolis/trilha-php)
 [Home](/)

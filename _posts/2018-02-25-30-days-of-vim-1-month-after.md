@@ -14,8 +14,6 @@ tags:
 - text editor
 - productivity
 - plugins
-author:
-  - Matheus Marabesi
 ---
 
 After one month using vim, I am clearly addicted to it. It has eveything I need and I can always find

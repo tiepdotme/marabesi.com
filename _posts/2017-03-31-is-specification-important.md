@@ -12,12 +12,6 @@ tags:
 - specification,
 - business,
 - software
-author:
-login: matheusmarabesi
-email: matheus.marabesi@gmail.com
-display_name: Matheus Marabesi
-first_name: Matheus
-last_name: Marabesi
 ---
 
 Recently during my daily work I started to think about software specifications. The development world

@@ -17,8 +17,6 @@ tags:
 - iot,
 - tracking,
 - serial
-author:
-  - Matheus Marabesi
 ---
 
 After a while testing the [GPS NEO6](/post/raspberry/2018/02/07/setting-up-gps-neo6-sensor.html) I ordered a new guy

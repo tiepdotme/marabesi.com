@@ -15,8 +15,6 @@ tags:
 - noSQL,
 - data,
 - developer,
-author:
-  - Matheus Marabesi
 ---
 
 

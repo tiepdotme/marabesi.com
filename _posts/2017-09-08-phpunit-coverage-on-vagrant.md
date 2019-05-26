@@ -14,8 +14,6 @@ tags:
 - environment,
 - php,
 - tip
-author:
-  display_name: Matheus Marabesi
 ---
 
 Vagrant is the official tool that Laravel supports in the development stage, 

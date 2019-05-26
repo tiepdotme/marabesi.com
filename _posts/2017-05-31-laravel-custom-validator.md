@@ -29,12 +29,6 @@ tags:
 - laravel 5.5,
 - laravel 5.6,
 - laravel 5.7
-author:
-login: matheusmarabesi
-email: matheus.marabesi@gmail.com
-display_name: Matheus Marabesi
-first_name: Matheus
-last_name: Marabesi
 ---
 
 Obs: This post assumes that you understand the following topics within the

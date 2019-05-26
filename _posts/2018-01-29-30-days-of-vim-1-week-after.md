@@ -9,10 +9,10 @@ status: publish
 categories:
 - Thoughts
 tags:
-- vim
-- text editor
-- a byte of vim
-- vim adventures
+- vim,
+- text editor,
+- a byte of vim,
+- vim adventures,
 - practical vim
 ---
 

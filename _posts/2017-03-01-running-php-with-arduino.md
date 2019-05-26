@@ -14,12 +14,6 @@ tags:
 - serial,
 - iot,
 - wrapper
-author:
-  login: matheusmarabesi
-  email: matheus.marabesi@gmail.com
-  display_name: Matheus Marabesi
-  first_name: Matheus
-  last_name: Marabesi
 ---
 
 Lately I'e been playing with Arduino and PHP to create simple demos and see how the interaction

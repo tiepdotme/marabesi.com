@@ -16,12 +16,6 @@ tags:
 - framework,
 - laracast,
 - laranews
-author:
-login: matheusmarabesi
-email: matheus.marabesi@gmail.com
-display_name: Matheus Marabesi
-first_name: Matheus
-last_name: Marabesi
 ---
 
 Recently I've been to the <a href="http://www.meetup.com/pt-BR/Laravel-SP/events/233563455/" target="_blank">Laravel meetup</a> and I had the pleasure to talk about good pratices and common
