@@ -8,12 +8,6 @@ status: published
 categories:
 - php
 tags: []
-author:
-login: matheusmarabesi
-email: matheus.marabesi@gmail.com
-display_name: Matheus Marabesi
-first_name: Matheus
-last_name: Marabesi
 ---
 
 ## IoT the big wave

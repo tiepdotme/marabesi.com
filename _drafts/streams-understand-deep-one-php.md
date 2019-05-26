@@ -14,12 +14,6 @@ tags:
 - wrappers,
 - fopen,
 - file_get_contents
-author:
-  login: matheusmarabesi
-  email: matheus.marabesi@gmail.com
-  display_name: Matheus Marabesi
-  first_name: Matheus
-  last_name: Marabesi
 ---
 
 Usually streams in a common sense are a data that flow through some kind of "pipe" and in PHP we can use it in a 

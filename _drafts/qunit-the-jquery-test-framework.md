@@ -12,11 +12,6 @@ tags:
 - tests,
 - jquery,
 - qunit
-meta:
-author:
-  display_name: Matheus Marabesi
-  first_name: Matheus
-  last_name: Marabesi
 ---
 
 

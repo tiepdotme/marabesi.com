@@ -13,8 +13,6 @@ tags:
 - join,
 - has many,
 - has one
-author:
-  display_name: Matheus Marabesi
 ---
 
 # Before start
