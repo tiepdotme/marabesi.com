@@ -2,7 +2,7 @@
 layout: post
 title: Converting Hexadecimal(16) to Decimal(10)
 date: 2015-02-16 23:51:27.000000000 -02:00
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/CPT-Numbers-Conversion.svg/400px-CPT-Numbers-Conversion.svg.png
+image: /assets/2015-02-16-converting-hexadecimal16-decimal10/cover.png
 type: post
 published: true
 status: publish
@@ -117,7 +117,7 @@ echo 0xFF;
 
 <p>The right answer is <strong>255</strong> !</p>
 <p>When I first saw this expression I thought, it will output 1515. No doubts! If in the content table above the F represents 15 it is easy, with two F it will concatenate.</p>
-<p>But be careful with that ! It is wrong thinking, the conversion is made as the same way as octal conversion (<a href="http://marabesi.com/php/php-basics-sure-tell-use-octal-system/">you can see the octal post conversion here</a>).</p>
+<p>But be careful with that ! It is wrong thinking, the conversion is made as the same way as octal conversion (<a href="{{ site.baseurl }}/php/2015/01/27/php-basics-sure-tell-use-octal-system">you can see the octal post conversion here</a>).</p>
 <p>First of all we need to convert the letters F into numbers which are 15, if it was the letter A would be 10 and so on, just look to the hexadecimal table. (tip: I like to think that from A to F its just 10 to 15)</p>
 <p>Now that we have the value of F we can use this in the equation :</p>
 <p>15×16¹ + 15×16° = 255<sub>10</sub></p>

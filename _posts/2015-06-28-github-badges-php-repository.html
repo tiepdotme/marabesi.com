@@ -5,7 +5,7 @@ date: 2015-06-28 20:27:09.000000000 -03:00
 type: post
 published: true
 status: publish
-image: /assets/github-badges-php-repository/cover.png
+image: /assets/2015-06-28-github-badges-php-repository/cover.png
 categories:
 - php
 tags:
@@ -25,7 +25,7 @@ tags:
 author:
   - Matheus Marabesi
 ---
-<p>Disclaimer : If you don't know what are badges I'd suggest a quick view to <a href="https://poser.pugx.org/" target="_blank">https://poser.pugx.org/</a> which is a open source project with badges for PHP projects. Also for this post I'm assume you have a experience with GitHub already and know how to commit, push, pull or use GitHub from web interface.</p>
+<p>Disclaimer : If you don't know what are badges I'd suggest a quick view to <a href="https://poser.pugx.org" target="_blank">https://poser.pugx.org</a> which is a open source project with badges for PHP projects. Also for this post I'm assume you have a experience with GitHub already and know how to commit, push, pull or use GitHub from web interface.</p>
 <p>Repository used for this post you can find <a href="https://github.com/marabesi/gnrephp" target="_blank">here</a>.</p>
 <p>Badgest we're going to use:</p>
 <p>- Build Status<br />
@@ -34,13 +34,27 @@ author:
 - Latest Stable Version<br />
 - Latest Unstable Version<br />
 - License</p>
+
 <h1>Final result</h1>
-<p><a href="http://marabesi.com/wp-content/uploads/2015/06/badges2.png"><img class="alignnone size-full wp-image-417" src="{{ site.baseurl }}/assets/badges2.png" alt="GitHub badges" width="870" height="176" /></a></p>
+<p>
+  <a href="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/badges2.png" target="_blank">
+    <img class="alignnone size-full wp-image-417" src="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/badges2.png" alt="GitHub badges" width="870" height="176" />
+  </a>
+</p>
+
 <h1>Travis CI</h1>
-<p>First step is go to <a href="https://travis-ci.org/" target="_blank">https://travis-ci.org/</a> and click in <em>Sign in with GitHub</em> and Travis will ask you to sign with your GitHub account. Fill the fields <em>Username/Email</em> and <em>Password</em> and click in sign in (Don't forget to allow Travis in your GitHub account).</p>
-<p>Now we have to go to our profile in Travis and enable which repository we're going to build.</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2015/06/travis2.png"><img class="alignnone size-full wp-image-419" src="{{ site.baseurl }}/assets/travis2.png" alt="Travis CI repository list" width="858" height="798" /></a></p>
+<p>
+  First step is go to <a href="https://travis-ci.org" target="_blank">https://travis-ci.org/</a> and click in <em>Sign in with GitHub</em> and Travis will ask you to sign with your GitHub account.
+  Fill the fields <em>Username/Email</em> and <em>Password</em> and click in sign in (Don't forget to allow Travis in your GitHub account).
+  Now we have to go to our profile in Travis and enable which repository we're going to build.
+</p>
+<p>
+  <a href="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/travis2.png" target="_blank">
+    <img class="alignnone size-full wp-image-419" src="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/travis2.png" alt="Travis CI repository list" width="858" height="798" />
+  </a>
+</p>
 <p>If you have any issue doing this follow the step in travis CI website!</p>
+
 <h1>.travis.yml</h1>
 <p>We have to tell <em>Travis</em> which configuration we're going to use and to do that we use a file called <em>.travis.yml</em> and push it to the root of the repository.</p>
 <pre class="lang:yaml decode:true" title="Example of .travis.yml file">language: php
@@ -56,18 +70,18 @@ before_script:
   - composer install</pre>
 <h1>README.md</h1>
 <p>The last step to use the <strong>Build Badge</strong> is update the file README.md in your GitHub repository.</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2015/06/travis5.png"><img class="alignnone size-full wp-image-422" src="{{ site.baseurl }}/assets/travis5.png" alt="Getting link to the badge" width="1274" height="573" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/travis5.png" target="_blank"><img class="alignnone size-full wp-image-422" src="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/travis5.png" alt="Getting link to the badge" width="1274" height="573" /></a></p>
 <p><strong>1)</strong> click on Build Passing in the left side of your repository name and a modal will appear.<br />
 <strong>2)</strong> Select which branch you're going to use<br />
 <strong>3)</strong> Select Markdown in the select box<br />
 <strong>4)</strong> Copy the text in the text area<br />
 <strong>5)</strong> Create a file in your repository called README.md (or just update it if exists) with the copied text in the step 4.</p>
 <h1>Coveralls</h1>
-<p>To use coverage badge we're going to use <a href="https://coveralls.io/" target="_blank">https://coveralls.io/</a> and as we did with <em>Travis</em> we have to allow coveralls in our GitHub account. Go to <a href="https://coveralls.io/" target="_blank">https://coveralls.io/ </a>and click in <em>Free GitHub Sign-in</em>.</p>
+<p>To use coverage badge we're going to use <a href="https://coveralls.io/" target="_blank">https://coveralls.io</a> and as we did with <em>Travis</em> we have to allow coveralls in our GitHub account. Go to <a href="https://coveralls.io/" target="_blank">https://coveralls.io </a>and click in <em>Free GitHub Sign-in</em>.</p>
 <p>After a successful login click in <em>add repos</em>.</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2015/06/coverall.png"><img class="alignnone size-full wp-image-427" src="{{ site.baseurl }}/assets/coverall.png" alt="Adding repositories in coveralls.io" width="1599" height="356" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/coverall.png" target="_blank"><img class="alignnone size-full wp-image-427" src="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/coverall.png" alt="Adding repositories in coveralls.io" width="1599" height="356" /></a></p>
 <p>Just like Travis select which one you're going yo use.</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2015/06/coveralls3.png"><img class="alignnone size-full wp-image-429" src="{{ site.baseurl }}/assets/coveralls3.png" alt="Coveralls repository list " width="1416" height="507" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/coveralls3.png" target="_blank"><img class="alignnone size-full wp-image-429" src="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/coveralls3.png" alt="Coveralls repository list " width="1416" height="507" /></a></p>
 <h1>.travis.yml</h1>
 <p>To use coveralls.io you must have a test suite. Here we're going to use phpunit to execute our tests.</p>
 <p>We must update our .travis.yml file to execute our tests and generate coverage in a XML format for coveralls.io.</p>
@@ -95,10 +109,10 @@ after_script:
 <pre class="lang:yaml decode:true " title=".coveralls.yml example">src_dir: .</pre>
 <p>After that push it to your repository.</p>
 <p>Otherwise you'll get a InvalidArgumentException from <em>Travis</em> build:</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2015/06/error-co.png"><img class="alignnone size-full wp-image-431" src="{{ site.baseurl }}/assets/error-co.png" alt="Coveralls error" width="1465" height="628" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/error-co.png" target="_blank"><img class="alignnone size-full wp-image-431" src="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/error-co.png" alt="Coveralls error" width="1465" height="628" /></a></p>
 <h1>README.md</h1>
 <p>Now we have <em>Travis</em> working together with coveralls.io. We need just to update our README.me with the badge.</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2015/06/c-badge.png"><img class="alignnone size-full wp-image-433" src="{{ site.baseurl }}/assets/c-badge.png" alt="Coveralls report" width="1671" height="697" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/c-badge.png" target="_blank"><img class="alignnone size-full wp-image-433" src="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/c-badge.png" alt="Coveralls report" width="1671" height="697" /></a></p>
 <p><strong>1)</strong> Go to https://coveralls.io/repos</p>
 <p><strong>2)</strong> Select your repository in the list</p>
 <p><strong>3)</strong> In the rightmost look at the bottom and find <em>Readme Badge</em> and click on it.</p>
@@ -106,12 +120,12 @@ after_script:
 <p><strong>5)</strong> Update your README.md on GitHub with this text</p>
 <h1>Total Downloads, Latest Stable Version, Latest Unstable Version, License</h1>
 <p>Now we have our two badges(Build with Travis and Code Coverage with Coveralls) in our repository, but we have 4 badges to be done yet.</p>
-<p>The reason I left those for last is simple you can find them in <a href="https://poser.pugx.org/" target="_blank">https://poser.pugx.org/</a>.</p>
-<p><strong>IMPORTANT ! Your repository must be in <a href="https://packagist.org/" target="_blank">https://packagist.org/</a> otherwise it wont work.</strong></p>
+<p>The reason I left those for last is simple you can find them in <a href="https://poser.pugx.org" target="_blank">https://poser.pugx.org</a>.</p>
+<p><strong>IMPORTANT ! Your repository must be in <a href="https://packagist.org" target="_blank">https://packagist.org</a> otherwise it wont work.</strong></p>
 <p><strong>1)</strong> Type your repository name in the text box<br />
 <strong>2)</strong> Select which you want to and select the Markdown text or click in Copy to clipboard<br />
 <strong>3)</strong> Update your README.md in your repository</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2015/06/poser-c.png"><img class="alignnone size-full wp-image-435" src="{{ site.baseurl }}/assets/poser-c.png" alt="Poser website" width="953" height="578" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/poser-c.png" target="_blank"><img class="alignnone size-full wp-image-435" src="{{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/poser-c.png" alt="Poser website" width="953" height="578" /></a></p>
 <h1>References</h1>
 <p>InvalidArgumentException with Coveralls -<a href="https://github.com/lemurheavy/coveralls-public/issues/45" target="_blank">https://github.com/lemurheavy/coveralls-public/issues/45</a></p>
 <p>Adding Build Badge with Travis - <a href="http://stackoverflow.com/questions/19810386/showing-travis-build-status-in-github-repo" target="_blank">http://stackoverflow.com/questions/19810386/showing-travis-build-status-in-github-repo</a></p>

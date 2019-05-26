@@ -2,7 +2,7 @@
 layout: post
 title: Intel Galileo and Debian
 date: 2017-03-13 01:06:05.000000000 -03:00
-image: /assets/intel-galileo-and-debian/cover.jpg
+image: /assets/2017-03-19-intel-galileo-and-debian/cover.jpg
 type: post
 published: true
 status: published
@@ -40,16 +40,16 @@ I'e written a post in how to use a Debian distribution with Intel Galileo Gen2.
 
 ## Getting the image
 
-The first result when searching for the term ["galileo and debian" is a sourceforge link to download the image](https://sourceforge.net/p/galileodebian/wiki/Home/)
+The first result when searching for the term ["galileo and debian" is a sourceforge link to download the image](https://sourceforge.net/p/galileodebian/wiki/Home){:target="_blank"}
 and a few references to read about assembling the image and expand the SD Card size.
 
 Grab the latest link from the image list, download the image called **galileo.img_v.1.0.0.7z**, in case of not found or any error
-I've uploaded my own [image on google drive](https://drive.google.com/file/d/0B8eXZIvTLcpjdlNKRDdYVGVWRWs/view?usp=sharing).
+I've uploaded my own [image on google drive](https://drive.google.com/file/d/0B8eXZIvTLcpjdlNKRDdYVGVWRWs/view?usp=sharing){:target="_blank"}.
 
 > Use the credential "user" and the password "user"
 
 The next step will be to create a bootable SD Card within the Debian image, as Intel provide us a good tutorial to achieve this
- I'm not going to focus on installing the image. Visit this [link](https://software.intel.com/en-us/get-started-galileo-linux-step1) to instructions in how to setup the image.
+ I'm not going to focus on installing the image. Visit this [link](https://software.intel.com/en-us/get-started-galileo-linux-step1){:target="_blank"} to instructions in how to setup the image.
 
 ## Issues found while using Debian on Intel Galileo
 

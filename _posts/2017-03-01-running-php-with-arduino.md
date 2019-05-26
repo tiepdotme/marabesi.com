@@ -2,7 +2,7 @@
 layout: post
 title: Running PHP with Arduino
 date: 2017-03-01 01:06:05.000000000 -03:00
-image: https://cdn-learn.adafruit.com/assets/assets/000/003/199/medium800/learn_arduino_arduinounotop.jpg
+image: /assets/2017-03-01-running-php-with-arduino/cover.jpg
 type: post
 published: true
 status: published
@@ -135,7 +135,10 @@ class streamWrapper {
 }
 ```
 
-<small>The code above was taken from PHP.net official documentation and you can see it at http://php.net/manual/en/class.streamwrapper.php</small>
+<small>
+    The code above was taken from PHP.net official documentation and you can see it at
+    [http://php.net/manual/en/class.streamwrapper.php](http://php.net/manual/en/class.streamwrapper.php){:target="_blank"}
+</small>
 
 The methods we are going to needs are:
 
@@ -253,7 +256,10 @@ print file_put_contents('arduino://hello Arduino');
 A good example of using custom PHP streams is Amazon and it' storage service called S3. Amazon provides a SDK
 in PHP which uses a custom wrapper to store data in the cloud.
 
-<small>Official documentation can be found at http://docs.aws.amazon.com/aws-sdk-php/v3/guide/service/s3-stream-wrapper.html</small>
+<small>
+    Official documentation can be found at
+    [http://docs.aws.amazon.com/aws-sdk-php/v3/guide/service/s3-stream-wrapper.html](http://docs.aws.amazon.com/aws-sdk-php/v3/guide/service/s3-stream-wrapper.html){:target="_blank"}
+</small>
 
 With S3 wrapper to download a file is a matter of calling the function file_get_contents
 

@@ -3,7 +3,7 @@ layout: post
 title: SIM800L tracking your IoT device
 date: 2018-02-16 20:39:18.000000000 -02:00
 type: post
-image: https://cdn.awsli.com.br/600x450/249/249328/produto/20061616/56e03e1fbc.jpg
+image: /assets/2018-02-16-sim800l-tracking-your-iot-device/cover.jpeg
 published: true
 status: publish
 categories:
@@ -47,7 +47,7 @@ SIM900 comes with a antenna and a bigger board.
 Besides the board is needed to have a *micro SIM* card. In my case I had to use an adapter to transfor the nano SIM I
 have into the micro.
 
-[![Font: Mi.com](/assets/sim800l-tracking-your-iot-device/sim-type.jpeg)](http://c.mi.com/thread-46072-1-0.html)
+[![Font: Mi.com](/assets/2018-02-16-sim800l-tracking-your-iot-device/sim-type.jpeg)](http://c.mi.com/thread-46072-1-0.html){:target="_blank"}
 
 <small>Fonte: Mi.com</small>
 
@@ -70,14 +70,14 @@ table holds the pins where the wires should go to.
 
 To make it easier to understand, the following image illustrates how the wiring should be done.
 
-![SIM800L wiring](/assets/sim800l-tracking-your-iot-device/sim800.png)
+![SIM800L wiring](/assets/2018-02-16-sim800l-tracking-your-iot-device/sim800.png){:target="_blank"}
 
-<small>[SIM800L Font: Lelong.my](http://www.lelong.com.my/arduino-sim800l-gprs-gsm-tracking-module-antena-sim-slot-robotedu-183929865-2018-10-Sale-P.htm)</small>
+<small>[SIM800L Font: Lelong.my](http://www.lelong.com.my/arduino-sim800l-gprs-gsm-tracking-module-antena-sim-slot-robotedu-183929865-2018-10-Sale-P.htm){:target="_blank"}</small>
 
-<small>[Arduino Uno Font: Nooelec](http://www.nooelec.com/store/arduino-uno-r3.html)</small>
+<small>[Arduino Uno Font: Nooelec](http://www.nooelec.com/store/arduino-uno-r3.html){:target="_blank"}</small>
 
 > If you are planning to use your device for a long time, it is good to mention that
-> there is an resistor to add and deliver the 4.2v instead of 5v. For that check this [repo](https://github.com/cristiansteib/Sim800l)
+> there is an resistor to add and deliver the 4.2v instead of 5v. For that check this [repo](https://github.com/cristiansteib/Sim800l){:target="_blank"}
 > and make sure to wire up using the resistor.
 >
 > As this post has the goal to keep as simple as possible, I am not going to use the resitor.
@@ -90,7 +90,7 @@ if not, please find out how to to that and come back later.
 
 Before we go any deeper on the libraries available out there, the proposal here is to upload a simple
 sketch to interact with the serial port. The reason behind it is that the SIM800L handles AT ([instructions
-to command a modem](https://www.codeproject.com/Articles/85636/Introduction-to-AT-commands-and-its-uses))
+to command a modem](https://www.codeproject.com/Articles/85636/Introduction-to-AT-commands-and-its-uses){:target="_blank"})
 commands into the SIM card, and in order to understand what is going on we need to
 understand the AT commands first. The following sketch reads and writes to the serial port.
 
@@ -125,11 +125,11 @@ Once we have the sketch up and running in our Arduino, is time to understand the
 to send trhough the serial interface is the command `AT`. This is the most basic command
 to see if the sensor is up and running, if everything is correct an `OK` is printed back.
 
-![AT command](/assets/sim800l-tracking-your-iot-device/arduino-serial.png)
+![AT command](/assets/2018-02-16-sim800l-tracking-your-iot-device/arduino-serial.png){:target="_blank"}
 
 The next step is to understand what is required to setup the GPRS mode in our SIM card. For that we are
 going to rely a lot on the SIM800L official documentation
-available [here](https://www.elecrow.com/download/SIM800%20Series_AT%20Command%20Manual_V1.09.pdf).
+available [here](https://www.elecrow.com/download/SIM800%20Series_AT%20Command%20Manual_V1.09.pdf){:target="_blank"}.
 
 ## Enabling GSM location
 
@@ -151,7 +151,7 @@ by the username, the password and finally activate the bearer. Each command shou
 separately and before execute the next one, macke sure to get an **OK** response from the serial.
 
 > There is an website with the possible APNS around the world, if you don't know which one
-> is yours, access this [link](https://www.hw-group.com/products/HWg-Ares/HWg-Ares_GSM_APN_en.html)
+> is yours, access this [link](https://www.hw-group.com/products/HWg-Ares/HWg-Ares_GSM_APN_en.html){:target="_blank"}
 
 ```
 AT+SAPBR=3,1,"APN","{here goes your APN}"
@@ -199,7 +199,7 @@ AT+CIPGSMLOC=1,1
 It should return an string containing the latitude, longitude, current date, and current time. The figure below
 illustrates the response receive in the serial monitor.
 
-![Response from SIM800L after requireing the current location](/assets/sim800l-tracking-your-iot-device/current-location.png)
+![Response from SIM800L after requireing the current location](/assets/2018-02-16-sim800l-tracking-your-iot-device/current-location.png){:target="_blank"}
 
 ## Edit 04/03/2018
 
@@ -208,16 +208,16 @@ Sometimes it gives the same location even with 10 meters of change.
 
 ## References
 
-[Tracking with GPS NEO 6](/post/raspberry/2018/02/07/setting-up-gps-neo6-sensor.html)
+[Tracking with GPS NEO 6](/post/raspberry/2018/02/07/setting-up-gps-neo6-sensor.html){:target="_blank"}
 
-[SIM (Subscriber Identity Module)](https://en.wikipedia.org/wiki/Subscriber_identity_module)
+[SIM (Subscriber Identity Module)](https://en.wikipedia.org/wiki/Subscriber_identity_module){:target="_blank"}
 
-[SIM Card types](http://c.mi.com/thread-46072-1-0.html)
+[SIM Card types](http://c.mi.com/thread-46072-1-0.html){:target="_blank"}
 
-[Arduino Serial](https://www.arduino.cc/en/Tutorial/SoftwareSerialExample)
+[Arduino Serial](https://www.arduino.cc/en/Tutorial/SoftwareSerialExample){:target="_blank"}
 
-[AT commands](https://www.codeproject.com/Articles/85636/Introduction-to-AT-commands-and-its-uses)
+[AT commands](https://www.codeproject.com/Articles/85636/Introduction-to-AT-commands-and-its-uses){:target="_blank"}
 
-[SIMCOM AT commands PDF](https://www.elecrow.com/download/SIM800%20Series_AT%20Command%20Manual_V1.09.pdf)
+[SIMCOM AT commands PDF](https://www.elecrow.com/download/SIM800%20Series_AT%20Command%20Manual_V1.09.pdf){:target="_blank"}
 
-[APN providers worldwide](https://www.hw-group.com/products/HWg-Ares/HWg-Ares_GSM_APN_en.html)
+[APN providers worldwide](https://www.hw-group.com/products/HWg-Ares/HWg-Ares_GSM_APN_en.html){:target="_blank"}

@@ -2,7 +2,7 @@
 layout: post
 title: 30 days of VIM - One week after
 date: 2018-01-29 20:30:18.000000000 -02:00
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/1200px-Vimlogo.svg.png
+image: /assets/2018-01-29-30-days-of-vim-1-week-after/cover.png
 type: post
 published: true
 status: publish
@@ -14,23 +14,21 @@ tags:
 - a byte of vim
 - vim adventures
 - practical vim
-author:
-  - Matheus Marabesi
 ---
 
 It's been one week since I adopted vim as my main editor, and this is the second post about this journey.
-If you haven't read the first post yet, click [here](/thoughts/2018/01/22/30-days-of-vim.html) and be happy.
+If you haven't read the first post yet, click [here](/thoughts/2018/01/22/30-days-of-vim.html){:target="_blank"} and be happy.
 
 ## First impressions
 
 I feel like I have the control over my editor and the navigation is REALLY fast with the `w` and `e` letters.
 The key challenge here (I believe, and I haven't achieved yet) is to move the navigation from the key
 arrows (up, down, left and right) to `k`, `j`, `h` and `l`. As it seems to be weird at first the book
-[Practical Vim](https://pragprog.com/book/dnvim2/practical-vim-second-edition) from Drew Neil in it's
+[Practical Vim](https://pragprog.com/book/dnvim2/practical-vim-second-edition){:target="_blank"} from Drew Neil in it's
 chapter 8 says that using those keys improves the productivity as your hand won't leave the home row.
 
-Besides Drew's book, vimtutor, [vim adventures](https://vim-adventures.com/) and
-[A byte of vim](https://vim.swaroopch.com/) encorages the same approach.
+Besides Drew's book, vimtutor, [vim adventures](https://vim-adventures.com){:target="_blank"} and
+[A byte of vim](https://vim.swaroopch.com){:target="_blank"} encorages the same approach.
 
 ## Searching
 
@@ -43,7 +41,8 @@ the serach. Vim will send the cursor to the first ocurrence in the file. To go t
 just press `n`.
 
 The second type of search is a bit trickier compared to searching for a string in the current file.
-Vim has different approachs to search a string through files and directories, for me, [vimgrep](http://vim.wikia.com/wiki/Find_in_files_within_Vim) is the one I ended up using the most.
+Vim has different approachs to search a string through files and directories, for me,
+[vimgrep](http://vim.wikia.com/wiki/Find_in_files_within_Vim){:target="_blank"} is the one I ended up using the most.
 
 VScode turns it simpler than vim though, you just type `CMD + SHIFT + F`.
 
@@ -53,13 +52,14 @@ Vim runs directly from the terminal, just open a new window and that's it. Thoug
 limitating, so for every new project a new window is required. As I don't like to have a bunch of
 terminals openend I jus tried to find something that would fit for me.
 
-The first shot was to find a Mac GUI for vim. The projec [Mac vim](https://github.com/macvim-dev/macvim) is the most popular, with more than 3k stars but unfortunatelly I couldn't stick with it.
+The first shot was to find a Mac GUI for vim. The projec [Mac vim](https://github.com/macvim-dev/macvim){:target="_blank"}
+is the most popular, with more than 3k stars but unfortunatelly I couldn't stick with it.
 
-The second solution that I found is [TMUX](https://github.com/tmux/tmux/wiki), which I am using right now.
+The second solution that I found is [TMUX](https://github.com/tmux/tmux/wiki){:target="_blank"}, which I am using right now.
 The good part is that I can divide my terminal in as many part as I want and create new windows
 inside the existing one.
 
-Finally the [recording](http://vim.wikia.com/wiki/Recording_keys_for_repeated_jobs) feature is amazing.
+Finally the [recording](http://vim.wikia.com/wiki/Recording_keys_for_repeated_jobs){:target="_blank"} feature is amazing.
 It allows you to record a sequence of commands to repeat it later.
 
 ## Conclusion

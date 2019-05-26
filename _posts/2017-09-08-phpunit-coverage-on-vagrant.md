@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PHPUnit coverage on vagrant
-image: https://cdn.tutsplus.com/net/uploads/2013/06/phpunit-400.jpg
+image: /assets/2017-09-08-phpunit-coverage-on-vagrant/cover.jpg
 date: 2017-09-08 01:06:05.000000000 -03:00
 type: post
 published: true
@@ -22,7 +22,7 @@ Vagrant is the official tool that Laravel supports in the development stage,
 which means that you can use vagrant and Homestead to create a simple and 
 powerful environment.
 
-[Homestead(a box to use with vagrant)](https://github.com/laravel/homestead) has
+[Homestead(a box to use with vagrant)](https://github.com/laravel/homestead){:target="_blank"} has
  been created to give everything that developers need to run Laravel. Web server, 
  PHP (including extensions), database, cache drivers and so on.
 

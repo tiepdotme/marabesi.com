@@ -3,7 +3,7 @@ layout: post
 title: Errors compiling PHP from source on a Raspberry Pi
 image: 
 date: 2019-01-12 01:06:05.000000000 -03:00
-image: https://cdn.sparkfun.com//assets/parts/1/1/4/1/8/13825-01.jpg
+image: /assets/2019-01-12-errors-compiling-php-from-source-on-a-raspberry-pi/cover.jpg
 type: post
 published: true
 status: published
@@ -25,15 +25,13 @@ tags:
 - bison,
 - rec2c,
 - libxml2-dev
-author:
-  display_name: Matheus Marabesi
 ---
 
 The PHP version used is 7.2 directly from the git reository from github. Newer
 version might not work as expected.
 
 The version used to compile is the
-[Raspbian](https://www.raspberrypi.org/downloads/raspbian) (Raspbian Stretch
+[Raspbian](https://www.raspberrypi.org/downloads/raspbian){:target="_blank"} (Raspbian Stretch
 with desktop and recommended software):
 
 - Version: November 2018

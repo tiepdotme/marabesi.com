@@ -3,7 +3,7 @@ layout: post
 title: Custom validator with Laravel 5 + (5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8)
 date: 2017-05-31 01:06:05.000000000 -03:00
 type: post
-image: https://upload.wikimedia.org/wikipedia/commons/3/3d/LaravelLogo.png
+image: /assets/2017-05-31-laravel-custom-validator/cover.png
 published: true
 status: published
 categories:
@@ -87,7 +87,7 @@ The first thing is to create new class and extends the Laravel Validator
 
 The second thing to have a look, is the convention name of each method. You must use the *validate* prefix, this is a way to tell Laravel that this method can be used to validate data.
 
-The Laravel Framework itself uses this approach, the class [Validator](https://laravel.com/api/5.2/Illuminate/Validation/Validator.html) brings the core validation from the Framework such as: required, between a value, min value, max value and so on.
+The Laravel Framework itself uses this approach, the class [Validator](https://laravel.com/api/5.2/Illuminate/Validation/Validator.html){:target="_blank"} brings the core validation from the Framework such as: required, between a value, min value, max value and so on.
 
 ```php
 <?php
@@ -162,7 +162,7 @@ class BookController extends Controller
 }
 ```
 
-Here we have changed the required rule by the one we've created. The name is the same of our method, but in [snake case](https://en.wikipedia.org/wiki/Snake_case) and without the *validate* prefix.
+Here we have changed the required rule by the one we've created. The name is the same of our method, but in [snake case](https://en.wikipedia.org/wiki/Snake_case){:target="_blank"} and without the *validate* prefix.
 
 ## Important tips to be aware of
 

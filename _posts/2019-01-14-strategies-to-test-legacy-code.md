@@ -2,7 +2,7 @@
 layout: post
 title: Strategies to test legacy code - PART 1
 date: 2019-01-14 01:06:05.000000000 -03:00
-image: https://appdevelopermagazine.com/images/news_images/Making-Application-Testing-a-First-Class-Citizen-App-Developer-Magazine_gd5jd6gn.jpg
+image: /assets/2019-01-14-strategies-to-test-legacy-code/cover.jpg
 type: post
 published: true
 status: published
@@ -16,8 +16,6 @@ tags:
 - legacy code,
 - acceptance test,
 - unit test
-author:
-  display_name: Matheus Marabesi
 ---
 
 Often developers have to deal with code base without test, which might lead
@@ -45,7 +43,7 @@ start to reproduce the events that an user would have done **[4]**.
 The pyramid of test though, gave it a label of being slow and that depends
 on integration to be possible to test. 
 
-![Test pyramid. Font: https://martinfowler.com/articles/practical-test-pyramid.html](https://martinfowler.com/articles/practical-test-pyramid/testPyramid.png "Test pyramid. Font: https://martinfowler.com/articles/practical-test-pyramid.htm")
+![Test pyramid. Font: https://martinfowler.com/articles/practical-test-pyramid.html](https://martinfowler.com/articles/practical-test-pyramid/testPyramid.png "Test pyramid. Font: https://martinfowler.com/articles/practical-test-pyramid.htm"){:target="_blank"}
 
 There are at least two reasons for
 acceptance test be considered slow, the first is the need to use a web drive,
@@ -83,7 +81,7 @@ refactoring in as many scenarios as possible, in the other hand acceptance test
 is slow to execute. Even a small change would take a few minutes to execute the
 suite.
 
-![TDD applied to acceptance](/assets/strategies-to-test-legacy-code/strategies-1.png)
+![TDD applied to acceptance](/assets/2019-01-14-strategies-to-test-legacy-code/strategies-1.png){:target="_blank"}
 
 # Iterating over the strategy
 
@@ -107,7 +105,7 @@ test with the unit test doing refactoring, the recommended approach would be:
 The last part is to remove specific cases in the acceptance testing suite, and
 keep only the general ones, which covers the most basic flow.
 
-![Iterating over the strategy](/assets/strategies-to-test-legacy-code/strategies-2.png)
+![Iterating over the strategy](/assets/2019-01-14-strategies-to-test-legacy-code/strategies-2.png){:target="_blank"}
 
 It is possible to keep with all the acceptance test suite in place as well,
 just the execution approach would change from a developer point of view.

@@ -2,7 +2,7 @@
 layout: post
 title: ARE YOU NOT USING TDD ?! – PART || (Legacy code)
 date: 2015-05-23 18:33:47.000000000 -03:00
-image: https://cdn-images-1.medium.com/max/1600/1*ieVWcSsJmeBbZFo6a_dL5g.png
+image: /assets/2015-05-23-are-you-not-using-tdd-part-legacy-code/cover.png
 type: post
 published: true
 status: publish
@@ -18,8 +18,19 @@ tags:
 author:
   - Matheus Marabesi
 ---
-<p>In the part one I introduced the life cycle of TDD(<a href="http://marabesi.com/tdd/not-using-tdd-part-1/">you can see here</a>) and how it works, but often people come to me and ask about the legacy code how can we start using TDD with legacy code ? Should we start from zero ? Should we use baby-steps ?</p>
+<p>In the part one I introduced the life cycle of TDD(<a href="{{ site.baseurl }}{% post_url 2015-04-19-not-using-tdd-part-1 %}">you can see here</a>) and how it works, but often people come to me and ask about the legacy code how can we start using TDD with legacy code ? Should we start from zero ? Should we use baby-steps ?</p>
 <p>I decided to share my experience in how I used TDD in legacy code and how I did to get this task done also I have to say many thanks to my friend Alexandre Cintra who helped my a lot giving me gold tips.</p>
+
+<h1>Edit: Jun 17, 2015</h1>
+<p>You can find useful information in my slides below. It was created for <a href="http://www.meetup.com/pt/THT-Things-Hacker-Team/events/222831499" target="_blank">my talk at Samsung Ocean</a>.</p>
+<p><iframe width="100%" height="500" style="border: 1px solid #CCC; border-width: 1px; margin-bottom: 5px; max-width: 100%;" src="//www.slideshare.net/slideshow/embed_code/key/vO17674rb2GiBI" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"> </iframe></p>
+<div style="margin-bottom: 5px;"></div>
+<div style="margin-bottom: 5px;">
+<h1>Edit: July 28, 2015</h1>
+<p style="text-align: right;">Legacy software systems . . . were developed decades ago and have been continually modified to meet changes in business requirements and computing platforms. The proliferation of such systems is causing headaches for large organizations who find them costly to maintain and risky to evolve.</p>
+<p style="text-align: right;">Dayani-Fard</p>
+</div>
+
 <h1>Legacy code the nightmare of everyone</h1>
 <p>Doesn't matter if you are in a big company or a small one it is normal to have legacy code and you will need to maintain and even do some improvements as the request of our client comes.</p>
 <p>How can I identify legacy that is impossible to test ?</p>
@@ -1257,13 +1268,3 @@ public function setEmitValues($config) {
 <p>3) Substitute legacy code to your new code</p>
 <p>4) Make sure everything is working</p>
 <p>5) Create your unit tests</p>
-<h1>Edit: Jun 17, 2015</h1>
-<p>You can find useful information in my slides below. It was created for <a href="http://www.meetup.com/pt/THT-Things-Hacker-Team/events/222831499/" target="_blank">my talk at Samsung Ocean</a>.</p>
-<p><iframe width="100%" height="500" style="border: 1px solid #CCC; border-width: 1px; margin-bottom: 5px; max-width: 100%;" src="//www.slideshare.net/slideshow/embed_code/key/vO17674rb2GiBI" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"> </iframe></p>
-<div style="margin-bottom: 5px;"><strong> <a title="From legacy code to continuous integration" href="//www.slideshare.net/marabesi/from-legacy-code-to-continuous" target="_blank">From legacy code to continuous integration</a> </strong> from <strong><a href="//www.slideshare.net/marabesi" target="_blank">Matheus Marabesi</a></strong></div>
-<div style="margin-bottom: 5px;"></div>
-<div style="margin-bottom: 5px;">
-<h1>Edit: July 28, 2015</h1>
-<p style="text-align: right;">Legacy software systems . . . were developed decades ago and have been continually modified to meet changes in business requirements and computing platforms. The proliferation of such systems is causing headaches for large organizations who find them costly to maintain and risky to evolve.</p>
-<p style="text-align: right;">Dayani-Fard</p>
-</div>

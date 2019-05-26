@@ -2,7 +2,7 @@
 layout: post
 title: Is specification important?
 date: 2017-03-31 01:06:05.000000000 -03:00
-image: https://contentmgmt.quinstreet.com/imagesvr_ce/2804/software-engineer-word-cloud.jpg
+image: /assets/2017-03-31-is-specification-important/cover.jpg
 type: post
 published: true
 status: published
@@ -69,7 +69,7 @@ the lack of technical understanding can lead to a pressure even worse.(In the en
 
 > Working software over comprehensive documentation
 
-<small>Working software over comprehensive documentation - http://agilemanifesto.org/iso/en/manifesto.html</small>
+<small>Working software over comprehensive documentation - [Agile manifesto](http://agilemanifesto.org/iso/en/manifesto.html){:target="_blank"}</small>
 
 Nowadays the agile term miss understood and miss spread by a lot of professionals on the market is avoiding the 
 real needs behind building a real software.

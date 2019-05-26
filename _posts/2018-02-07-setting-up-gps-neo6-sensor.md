@@ -2,7 +2,7 @@
 layout: post
 title: Setting up GPS NEO 6 sensor
 date: 2018-02-07 17:30:18.000000000 -02:00
-image: https://cdn.instructables.com/FKL/Q62O/ICJLZ1YR/FKLQ62OICJLZ1YR.LARGE.jpg
+image: /assets/2018-02-07-setting-up-gps-neo6-sensor/cover.jpg
 type: post
 published: true
 status: publish
@@ -19,8 +19,6 @@ tags:
 - uart,
 - gpio,
 - iot
-author:
-  - Matheus Marabesi
 ---
 ## IMPORTANT - EDIT 05/01
 
@@ -69,10 +67,10 @@ show the pin name (from the GPS NEO 6) and where it should go on the Raspberry P
 | `VCC  ->` | 3.3v or 5v |
 | `GND  ->` | GND |
 
-The table below was build looking at the [pi4j](http://pi4j.com/pins/model-b-plus.html) project, which has an
+The table below was build looking at the [pi4j](http://pi4j.com/pins/model-b-plus.html){:target="_blank"} project, which has an
 image to better illustrate the pins. For now the figure below should do the work.
 
-![GPS NEO 6 wires](/assets/setting-up-gps-neo6-sensor/wires.png)
+![GPS NEO 6 wires](/assets/2018-02-07-setting-up-gps-neo6-sensor/wires.png){:target="_blank"}
 
 If you follow everything as described in the table and in the figure, you should see a green light on
 the GPS NEO 6. This means that at least the power was plugged correctly. The next step
@@ -104,7 +102,7 @@ sudo cat /dev/serial0
 
 If everything is correct you should see the following response:
 
-[![Font: Waveshare.com](https://www.waveshare.com/w/upload/b/bb/UART-GPS-NEO-6M-User-Manual-2.png)](https://www.waveshare.com/wiki/UART_GPS_NEO-6M)
+[![Font: Waveshare.com](https://www.waveshare.com/w/upload/b/bb/UART-GPS-NEO-6M-User-Manual-2.png)](https://www.waveshare.com/wiki/UART_GPS_NEO-6M){:target="_blank"}
 
 <small>Font: Waveshare.com</small>
 
@@ -114,7 +112,7 @@ port is not the same as this post, first find it and replace the serial with the
 Finally we have everything done to use the GPS daemon and client. If you have a look at the raw
 logs from the serial port, the text has an pattern but is difficult to understand and difficult
 to interact with (parse and use the data for an application). For that reason the project
-[GPSD](http://www.catb.org/gpsd/) exists, which is a library to help to communicate with the GPS sensor (
+[GPSD](http://www.catb.org/gpsd){:target="_blank"} exists, which is a library to help to communicate with the GPS sensor (
 not to mention the amazing interface between the sensor and the client).
 
 To use it, just run the `apt-get` command as the following:
@@ -144,10 +142,10 @@ gpsd /dev/serial0
 The command `cgps` should work as a spected now. The picture below ilustrates the result
 after invoking the command.
 
-![cgps client response](/assets/setting-up-gps-neo6-sensor/cgps.png)
+![cgps client response](/assets/2018-02-07-setting-up-gps-neo6-sensor/cgps.png){:target="_blank"}
 
 obs: The response given by the `cgps` is a JSON, to understand the content of each key
-check out the [official documentation](http://www.catb.org/gpsd/gpsd_json.html).
+check out the [official documentation](http://www.catb.org/gpsd/gpsd_json.html){:target="_blank"}.
 
 ## Gotchas
 
@@ -157,6 +155,5 @@ to you as well but don't worry, just wait and keep an eye in the logs.
 
 ## References
 
-* [RASPBERRY PI & THE NEO 6M GPS](http://www.instructables.com/id/Raspberry-Pi-the-Neo-6M-GPS)
-* [gpsd — a GPS service daemon](http://www.catb.org/gpsd)
-
+* [RASPBERRY PI & THE NEO 6M GPS](http://www.instructables.com/id/Raspberry-Pi-the-Neo-6M-GPS){:target="_blank"}
+* [gpsd — a GPS service daemon](http://www.catb.org/gpsd){:target="_blank"}

@@ -2,7 +2,7 @@
 layout: post
 title: Phing ? Automate all the things ! - Practical example
 date: 2015-09-30 01:46:25.000000000 -03:00
-image: /assets/phing-automate-all-the-things/phing.gif
+image: /assets/2015-09-30-phing-automate-all-the-things-practical-example/cover.gif
 type: post
 published: true
 status: publish
@@ -23,13 +23,13 @@ tags:
 author:
   - Matheus Marabesi
 ---
-<p>If you want to know what is Phing, why should you use it and see some simple XML code please visit the part one of this post <a href="http://marabesi.com/php/phing-automate-all-the-things/" target="_blank">here</a>.</p>
+<p>If you want to know what is Phing, why should you use it and see some simple XML code please visit the part one of this post <a href="{{ site.baseurl }}{% post_url 2015-08-30-phing-automate-all-the-things %}">here</a>.</p>
 <p>The main objective here is to demonstrate how Phing fits in our day as developers and how useful it is. Nothing better than a real example world to illustrate and clarify our minds.</p>
 <h1>Starting the project</h1>
 <p>Here I'm going to propose a workflow to ilustrate where Phing fits and how it can contribute to improve our productivity.</p>
 <p>Usually when we start a new project that already exists we clone it, we run composer and we run PHPUnit to check if its all right.</p>
 <p>It's kinda of boring when we have to do it manually and also we can make mistakes, for example I can forget to update my dependencies with composer and try to run unit tests, and get a error thrown. As a second advantage to use a build tool we can improve our productivity, while Phing run our tasks we can do other things. For instance let's see how our flow is going to work:</p>
-<p><a href="http://marabesi.com/wp-content/uploads/2015/09/flow.png"><img class="alignnone size-full wp-image-571" src="{{ site.baseurl }}/assets/flow.png" alt="Phing flow" width="1600" height="1200" /></a></p>
+<p><a href="{{ site.baseurl }}/assets/2015-09-30-phing-automate-all-the-things-practical-example/flow.png" target="_blank"><img class="alignnone size-full wp-image-571" src="{{ site.baseurl }}/assets/2015-09-30-phing-automate-all-the-things-practical-example/flow.png" alt="Phing flow" width="1600" height="1200" /></a></p>
 <p>Describing it into step we have:</p>
 <p>1) Cloning repository</p>
 <p>2) Install/Update dependencies</p>

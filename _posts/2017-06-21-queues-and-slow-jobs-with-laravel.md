@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Queues and slow jobs with Laravel
-image: /assets/Laravel-5.png
+image: /assets/2017-06-21-queues-and-slow-jobs-with-laravel/cover.png
 date: 2017-06-21 01:06:05.000000000 -03:00
 type: post
 published: true
@@ -13,12 +13,6 @@ tags:
 - laravel,
 - quickbooks,
 - php
-author:
-  login: matheusmarabesi
-  email: matheus.marabesi@gmail.com
-  display_name: Matheus Marabesi
-  first_name: Matheus
-  last_name: Marabesi
 ---
 
 Queues are commonly used on a daily basis of software development, even the IoT world
@@ -27,7 +21,7 @@ the same providing developers with an amazing API.
 
 Here, we are going to focus on the theory and practice itself being
 independent of any vendor such as Amazon or Beanstalkd, for that
-you can check [Laravel's documentation](https://laravel.com/docs/queues).
+you can check [Laravel's documentation](https://laravel.com/docs/queues){:target="_blank"}.
 
 ## Basics
 
@@ -171,9 +165,9 @@ class EmailController extends Controller
     {
         Mail::later(10, 'welcome.blade', ['data' => 'Email sent!'], function($message) {
             $message->to('my@email.com');
-        });  
-        
-        return 'Email has been sent successfully!';      
+        });
+
+        return 'Email has been sent successfully!';
     }
 }
 ```
@@ -182,7 +176,7 @@ The code above ilustrates how would it be to send an email using the queue, usua
 **send**, but the Laravel documentation gives to us a good reason to queue: 
 
 "Since sending email messages can drastically lengthen the response time of your application, many developers choose to 
-queue email messages for background sending. Laravel makes this easy using its built-in unified queue API." - [Laravel docs](https://laravel.com/docs/5.4/mail#configuring-the-view)
+queue email messages for background sending. Laravel makes this easy using its built-in unified queue API." - [Laravel docs](https://laravel.com/docs/5.4/mail#configuring-the-view){:target="_blank"}
 
 If you didn't notice, the method invoked here is the later, and its first argument is how many seconds it should be delayed.
 In our case we are going to send the email after 10 seconds, but if you run this code you will immediately see the message: 

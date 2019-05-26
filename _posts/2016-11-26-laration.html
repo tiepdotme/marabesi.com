@@ -2,7 +2,7 @@
 layout: post
 title: Laration - A simple way to visualize your configs
 date: 2016-11-26 01:06:05.000000000 -03:00
-image: https://upload.wikimedia.org/wikipedia/commons/3/3d/LaravelLogo.png
+image: /assets/2016-11-26-laration/cover.png
 type: post
 published: true
 status: published
@@ -84,7 +84,7 @@ DB_PASSWORD=secret
     The step number 3 will require more time if you don't know in which file the variable that you want is. This behavior
     is a consequence of Laravel's structure, for each section of configuration you will have different files.
 </p>
-<p><img src="/assets/laration/configs.png"/></p>
+<p><img src="/assets/2016-11-26-laration/configs.png"/></p>
 
 <p>To solve the probles listed above, Laration was born a simple Laravel package to list your configurations being used by your application</p>
 
@@ -131,7 +131,7 @@ composer create-project --prefer-dist laravel/laravel laration_demo && cd larati
 <p>The image below shows us that an application has been created successfully and is ready to use. Make sure to see the same
 result in your terminal, if not, something went wrong. In this case try to start from the begining.</p>
 
-<p><img src="/assets/laration/installed-successfully.png"/></p>
+<p><img src="/assets/2016-11-26-laration/installed-successfully.png"/></p>
 
 <p>Now let's serve our newest application using Laravel's built-in server. To complete this task we are going to use 
 Artisan.</p>
@@ -146,7 +146,7 @@ go in your prefered browser and type <strong><a href="http://localhost:8000" tar
 <p>The message <strong>Laravel development server started on http://localhost:8000/</strong> should be displayed, and you 
 will have the same as in the figure below:</p>
 
-<p><img src="/assets/laration/welcome-laravel.png"/></p>
+<p><img src="/assets/2016-11-26-laration/welcome-laravel.png"/></p>
 
 <p>Finally we've got a Laravel application running, the next step will show how to install the <strong>Laration</strong> package
     and how to configure it.
@@ -167,7 +167,7 @@ will have the same as in the figure below:</p>
 
 In the end you'll have something similar to the following image:
 
-<p><img src="/assets/laration/composer.png"/></p>
+<p><img src="/assets/2016-11-26-laration/composer.png"/></p>
 
 <p>We are almost done, the last step is to update the dependencies. To do this go back to your terminal inside the <strong>laration_demo</strong>
 folder and execute the following:</p>
@@ -179,14 +179,14 @@ composer update
 <p>The command will update all the dependencies inside your Laravel application, but as we just added one new dependency
 and no one has been changed you will see that composer just added the Laration package, as shown in the image below:</p>
 
-<p><img src="/assets/laration/laration.png"/></p>
+<p><img src="/assets/2016-11-26-laration/laration.png"/></p>
 
 <p>Finally we have both, the Laravel application and the Laration package. The last step to see Laration in action
     is to add the command inside the Laravel. To achieve this we are going to add a single line of code
     inside the file located in <strong>app/Console/Kernel.php</strong>
 </p>
 
-<p><img src="/assets/laration/kernel.png"/></p>
+<p><img src="/assets/2016-11-26-laration/kernel.png"/></p>
 
 <p>
     The Kernel.php file has an attribute called <strong>$commands</strong>, this attribute is where we must register all the commands
@@ -233,7 +233,7 @@ php artisan | grep laration
 
 <p>The command should return something like the image below.</p> 
 
-<p><img src="/assets/laration/laration-artisan.png"/></p>
+<p><img src="/assets/2016-11-26-laration/laration-artisan.png"/></p>
 
 <p>The frase "List all environment variables used" confirm that the Laration has been installed. In the same result you will
     be allow to see all the commands available to use within Laration.
@@ -255,7 +255,7 @@ php artisan laration:list app
 and yours, because the application that you have may be different. It will be the same result if you like me have installed
 a fresh copy of Laravel.</p>
 
-<p><img src="/assets/laration/laration-app.png"/></p>
+<p><img src="/assets/2016-11-26-laration/laration-app.png"/></p>
 
 <p>In the left side the keys are displayed and in the right side it's value. If the key is an array it will keep repeating itself
 till the last element be reached, in the picture we can see the key <strong>providers</strong> as an example of it.</p>

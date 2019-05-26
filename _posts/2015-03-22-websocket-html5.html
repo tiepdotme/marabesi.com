@@ -2,7 +2,7 @@
 layout: post
 title: WebSocket - HTML5
 date: 2015-03-22 18:21:43.000000000 -03:00
-image: /assets/websocket-html5/cover.jpg
+image: /assets/2015-03-22-websocket-html5/cover.jpg
 type: post
 published: true
 status: publish
@@ -21,7 +21,6 @@ author:
 ---
 <p>With the HTML5 age a lot of new features came to help developers to create amazing apps and amazing user experience, one of these features is called web socket which provides new powers under the HTTP protocol. Web socket resolves the lack of HTTP when we need updating our clients with real time data and also server events regardless of a request.</p>
 <p><iframe width="100%" height="355" style="border: 1px solid #CCC; border-width: 1px; margin-bottom: 5px; max-width: 100%;" src="//www.slideshare.net/slideshow/embed_code/46061464" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"> </iframe></p>
-<div style="margin-bottom: 5px;"><strong> <a title="Web Sockets - HTML5" href="//pt.slideshare.net/marabesi/web-sockets-html5" target="_blank">Web Sockets - HTML5</a> </strong> from <strong><a href="//www.slideshare.net/marabesi" target="_blank">Matheus Marabesi</a></strong></div>
 <h1>The client side</h1>
 <p>First of all let's have a look in the javascript code the easiest step to get web sockets working.</p>
 
@@ -92,6 +91,6 @@ if(preg_match("/Sec-WebSocket-Key: (.*)\r\n/",$hds,$matchs)){
 }
 {% endhighlight %}
 
-<p>To deeper information go ahead and see the<a href="https://tools.ietf.org/html/rfc6455"> RFC 6455 documentation</a>.</p>
+<p>To deeper information go ahead and see the<a href="https://tools.ietf.org/html/rfc6455" target="_blank"> RFC 6455 documentation</a>.</p>
 <h1>Wrapping everything up!</h1>
 <p>As you saw on this post to create a websocket server from scratch is a tough task, roughly we have a couple of projects that do all the hard work for us. The most common in the PHP world is <a href="https://github.com/ratchetphp/Ratchet" target="_blank">Ratchet</a>, the documentation is awesome and the repository on github is updated frequently I do recommend Ratchet.</p>
