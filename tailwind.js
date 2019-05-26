@@ -49,7 +49,8 @@ let colors = {
   'black': '#22292f',
   'white': '#ffffff',
 
-  'marabesi-pink': '#f12f46'
+  'marabesi-pink': '#f12f46',
+  'marabesi-purple': '#9717bb',
 }
 
 module.exports = {
