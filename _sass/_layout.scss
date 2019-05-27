@@ -12,6 +12,21 @@ a:visited {
     color: #1756a9;
 }
 
+table {
+    width: 100%;
+
+    td, th {
+        padding: 5px;
+    }
+
+    th {
+        color: #fff;
+        background-color: $th-background;
+        padding: 10px;
+        text-align: left;
+    }
+}
+
 .top-menu {
     align-items: center;
 
