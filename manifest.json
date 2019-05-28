@@ -3,8 +3,8 @@
   "short_name": "Marabesi",
   "start_url": "/?homescreen=1",
   "display": "standalone",
-  "theme_color": "#f12f46",
-  "background_color": "#9717bb",
+  "theme_color": "#9717bb",
+  "background_color": "#f12f46",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",
