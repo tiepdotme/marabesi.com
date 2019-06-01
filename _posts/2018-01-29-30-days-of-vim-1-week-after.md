@@ -16,8 +16,9 @@ tags:
 - practical vim
 ---
 
-It's been one week since I adopted vim as my main editor, and this is the second post about this journey.
-If you haven't read the first post yet, click [here](/thoughts/2018/01/22/30-days-of-vim.html){:target="_blank"} and be happy.
+It's been one week since I adopted vim as my main editor, and this is the second
+post about this journey. If you haven't read the first post yet, click
+[here]({% post_url 2018-01-21-30-days-of-vim %}) and be happy.
 
 ## First impressions
 

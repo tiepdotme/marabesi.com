@@ -20,32 +20,54 @@ tags:
 - ratchet,
 - sockets,
 - web,
-- wipi
+- wipi,
+- html,
+- w3c,
+- codepen
 ---
-<p>Recently I did a post about <a href="{{ site.baseurl }}{% post_url 2015-03-22-websocket-html5 %}">HTML5 WebSockets</a> and it had a purpose. I was preparing the material of my <a href="http://www.meetup.com/THT-Things-Hacker-Team/events/221699738" target="_blank">talk at Samsung Ocean</a> and my goal was create a RC car with an Hybrid application to control it and not use java as a server-side language.</p>
-<p>The final result you can check on my <a href="https://github.com/marabesi/brasilino4" target="_blank">github</a> and play around with the code.</p>
-<p>The following steps are to getting the socket working in your raspberry, here I'm going to use the <a href="https://www.raspberrypi.org/products/model-b-plus" target="_blank">model B+</a>.</p>
-<h1>First of all</h1>
-<p>We need to to access our Pi trough the SSH, for this example I'm going to use the WiPi (wireless adapter for raspberry Pi)</p>
-<p><a href="{{ site.baseurl }}/assets/2015-05-09-raspberry-pi-php-socket/wipidongle.jpg" ><img class="aligncenter wp-image-343" src="{{ site.baseurl }}/assets/2015-05-09-raspberry-pi-php-socket/wipidongle.jpg" alt="WiPi" width="250" height="250" /></a>But you can use the RJ-45 to access it or use a little monitor with a keyboard on the Pi, fell free to choose your option just make sure you will have this access.</p>
-<p>obs: In this tutorial I don't cover how to set up wireless on your pi, refer to <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md" target="_blank">https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md</a> to get it done</p>
-<h1> Getting started</h1>
-<p>For this example we are going to use only the php without any web server, it is interesting isn't it ? Let's update our Pi and install the php</p>
 
-{% highlight sh %}
+Recently I did a post about [HTML5 WebSockets]({{ site.baseurl }}{% post_url 2015-03-22-websocket-html5 %})
+and it had a purpose. I was preparing the material of my
+[talk at Samsung Ocean](http://www.meetup.com/THT-Things-Hacker-Team/events/221699738){:target="_blank"} and my goal was create a RC car
+with an Hybrid application to control it and not use java as a server-side language.
+
+The final result you can check on my [github](https://github.com/marabesi/brasilino4){:target="_blank"} and play around with the code.
+The following steps are to getting the socket working in your raspberry, here I'm going to use 
+the [model B+](https://www.raspberrypi.org/products/model-b-plus){:target="_blank"}.
+
+## First of all
+
+We need to to access our Pi trough the SSH, for this example I'm going to use the WiPi
+(wireless adapter for raspberry Pi).
+
+[![WiPi]({{ site.baseurl }}/assets/2015-05-09-raspberry-pi-php-socket/wipidongle.jpg)]({{ site.baseurl }}/assets/2015-05-09-raspberry-pi-php-socket/wipidongle.jpg){:target="_blank"}
+
+But you can use the RJ-45 to access it or use a little monitor with a keyboard on the Pi, fell free to choose your
+option just make sure you will have this access.
+obs: In this tutorial I don't cover how to set up wireless on your pi, refer to
+[wireless documentation](https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md){:target="_blank"}
+to get it done.
+
+##  Getting started
+
+For this example we are going to use only the php without any web server, it is interesting isn't it? Let's update our Pi and install the php
+
+```bash
 sudo rpi-update
-{% endhighlight %}
+```
 
-<p>After a few minutes the pi will be up to date and then we can finally install PHP</p>
+After a few minutes the pi will be up to date and then we can finally install PHP
 
-{% highlight sh %}
+```bash
 sudo apt-get install php5
-{% endhighlight %}
+```
 
-<h1> Setting up the socket</h1>
-<p>Choose a directory and create a <strong>socket.php</strong> file with the content below, I'm going to use my own directory called <strong>/home/marabesi</strong></p>
+##  Setting up the socket
 
-{% highlight php %}
+Choose a directory and create a **socket.php** file with the content below,
+I'm going to use my own directory called **/home/marabesi**
+
+```php
 <?php
 
 $host = 'localhost';
@@ -188,28 +210,40 @@ function perform_handshaking($receved_header,$client_conn, $host, $port)
 	"Sec-WebSocket-Accept:$secAccept\r\n\r\n";
 	socket_write($client_conn,$upgrade,strlen($upgrade));
 }
-{% endhighlight %}
+```
 
-<p>Now we have to create a simple HTML file to interact with our socket and see it working, from now on we have two path to take the first is to create an HTML file on the Pi and then access it, and the second is to create a simple HTML in our own PC and just make the connection to our socket into the Pi.</p>
-<p>Just make sure you execute the <strong>socket.php</strong> file in the Pi to be able to listen on port 9000</p>
+Now we have to create a simple HTML file to interact with our socket and see it
+working, from now on we have two path to take the first is to create an HTML
+file on the Pi and then access it, and the second is to create a simple HTML
+in our own PC and just make the connection to our socket into the Pi.
 
-{% highlight sh %}
+Just make sure you execute the **socket.php** file in the Pi to be able to
+listen on port 9000
+
+```bash
 php /home/marabesi/socket.php
-{% endhighlight %}
+```
 
-<p>If everything goes well you'll see the following message</p>
+If everything goes well you'll see the following message
 
-{% highlight sh %}
+```bash
 Socket listening on host: localhost port: 9000
-{% endhighlight %}
+```
 
-<p>IMPORTANT : You must keep the <strong>socket.php</strong> executing otherwise it won't let you connect through the socket.</p>
-<p>To simplify this post I'm going to go with the second option, but you can install a web server such as nginx in your pi and try it yourself!</p>
-<p>As a alternative you can use the <a href="https://github.com/ratchetphp/Ratchet" target="_blank">Ratchet</a> to create you socket in a much easier way and with a amazing use of Object Oriented Programming you should check it out.</p>
-<h1>Creating the HTML page to interact with</h1>
-<p>Now we can save the following code in a file called <strong>index.html</strong></p>
+IMPORTANT : You must keep the **socket.php** executing otherwise it won't let
+you connect through the socket. To simplify this post I'm going to go with the
+second option, but you can install a web server such as nginx in your pi and
+try it yourself!
 
-{% highlight html %}
+As a alternative you can use the [Ratchet](https://github.com/ratchetphp/Ratchet){:target="_blank"}
+to create you socket in a much easier way and with a amazing use of
+Object Oriented Programming you should check it out.
+
+## Creating the HTML page to interact with
+
+Now we can save the following code in a file called **index.html**
+
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -217,7 +251,7 @@ Socket listening on host: localhost port: 9000
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>Test your websocket connection!</h1>
+        ## Test your websocket connection!
         <h3>Just type and press enter ;)</h3>
         <div id="container"></div>
         <input type="text" placeholder="Write your message to the WebSocket!" id="message" />
@@ -260,32 +294,40 @@ Socket listening on host: localhost port: 9000
         </script>
     </body>
 </html>
-{% endhighlight %}
+```
 
-<p>Here we have to modify two thing to get the things done.</p>
-<p>1) Where you see <strong>raspberryIp</strong> you should change to you raspberry IP</p>
-<p>2) And where you see <strong>raspberryPort</strong> you should also change to the port where the socket is running and in this example the port is 9002</p>
-<p>The HTML code was originally made on codepen.io and you can see the working example above, with the bootstrap style.</p>
-<p><iframe width="300" height="300" style="width: 100%;" scrolling="no" src="//codepen.io/marabesi/embed/OPrBPO/?height=300&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="allowfullscreen">See the Pen <a href="http://codepen.io/marabesi/pen/OPrBPO" target="_blank">WebSocket !</a> by Matheus Marabesi (<a href="http://codepen.io/marabesi">@marabesi</a>) on <a href="http://codepen.io" target="_blank">CodePen</a>.<br />
-</iframe></p>
-<p>Suggestions ? please let me know!</p>
-<h1>Edit: 17/03/2016 - Setting up Apache virtual host</h1>
-<p>If you don't have apache installed just type</p>
+Here we have to modify two thing to get the things done.
 
-{% highlight sh %}
+1. Where you see **raspberryIp** you should change to you raspberry IP
+2. And where you see **raspberryPort** you should also change to the port
+where the socket is running and in this example the port is 9002
+
+The HTML code was originally made on codepen.io and you can see the working
+example above, with the bootstrap style.
+
+<iframe width="300" height="300" style="width: 100%;" scrolling="no" src="//codepen.io/marabesi/embed/OPrBPO/?height=300&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="allowfullscreen">See the Pen <a href="http://codepen.io/marabesi/pen/OPrBPO" target="_blank">WebSocket !</a> by Matheus Marabesi (<a href="http://codepen.io/marabesi">@marabesi</a>) on <a href="http://codepen.io" target="_blank">CodePen</a>.<br />
+</iframe>
+
+Suggestions? please let me know!
+
+## Edit: 17/03/2016 - Setting up Apache virtual host
+
+If you don't have apache installed just type
+
+```bash
 sudo apt-get install apache2
-{% endhighlight %}
+```
 
-<p>You can install it on raspberry pi or anywhere you want to.</p>
-<p>After that we need create a virtual host.</p>
+You can install it on raspberry pi or anywhere you want to.
+After that we need create a virtual host.
 
-{% highlight sh %}
+```bash
 touch /etc/apache2/sites-available/websocket.conf
-{% endhighlight %}
+```
 
-<p>and with the file created just copy and paste the following code</p>
+and with the file created just copy and paste the following code
 
-{% highlight apache %}
+```apache
 <VirtualHost *:80>
         ServerName websocket
 
@@ -294,6 +336,7 @@ touch /etc/apache2/sites-available/websocket.conf
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-{% endhighlight %}
+```
 
-<p>As you can see our root directory is <strong>/var/www/websocket</strong> and is the place where you should save the HTML we created to manipulate our socket connection.</p>
+As you can see our root directory is **/var/www/websocket** and is the place
+where you should save the HTML we created to manipulate our socket connection.

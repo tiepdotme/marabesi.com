@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ARE YOU NOT USING TDD ?! – PART || (Legacy code)
+title: ARE YOU NOT USING TDD?! – PART || (Legacy code)
 date: 2015-05-23 18:33:47.000000000 -03:00
 image: /assets/2015-05-23-are-you-not-using-tdd-part-legacy-code/cover.png
 type: post
@@ -16,25 +16,51 @@ tags:
 - tdd,
 - legacy
 ---
-<p>In the part one I introduced the life cycle of TDD(<a href="{{ site.baseurl }}{% post_url 2015-04-19-not-using-tdd-part-1 %}">you can see here</a>) and how it works, but often people come to me and ask about the legacy code how can we start using TDD with legacy code ? Should we start from zero ? Should we use baby-steps ?</p>
-<p>I decided to share my experience in how I used TDD in legacy code and how I did to get this task done also I have to say many thanks to my friend Alexandre Cintra who helped my a lot giving me gold tips.</p>
 
-<h1>Edit: Jun 17, 2015</h1>
-<p>You can find useful information in my slides below. It was created for <a href="http://www.meetup.com/pt/THT-Things-Hacker-Team/events/222831499" target="_blank">my talk at Samsung Ocean</a>.</p>
-<p><iframe width="100%" height="500" style="border: 1px solid #CCC; border-width: 1px; margin-bottom: 5px; max-width: 100%;" src="//www.slideshare.net/slideshow/embed_code/key/vO17674rb2GiBI" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"> </iframe></p>
-<div style="margin-bottom: 5px;"></div>
-<div style="margin-bottom: 5px;">
-<h1>Edit: July 28, 2015</h1>
-<p style="text-align: right;">Legacy software systems . . . were developed decades ago and have been continually modified to meet changes in business requirements and computing platforms. The proliferation of such systems is causing headaches for large organizations who find them costly to maintain and risky to evolve.</p>
-<p style="text-align: right;">Dayani-Fard</p>
-</div>
+In the part one I introduced the life cycle of TDD
+[you can see here]({{ site.baseurl }}{% post_url 2015-04-19-not-using-tdd-part-1 %}) and how it works, but often people come to me and ask about the legacy code how can we start
+using TDD with legacy code? Should we start from zero? Should we use baby-steps?
 
-<h1>Legacy code the nightmare of everyone</h1>
-<p>Doesn't matter if you are in a big company or a small one it is normal to have legacy code and you will need to maintain and even do some improvements as the request of our client comes.</p>
-<p>How can I identify legacy that is impossible to test ?</p>
-<p>1) Many responsibilities: Usually legacy code has many lines between 1000 and 2000 (I've seen many with 3000) and do everything in one file database connection, data persistence, business logic, IO are a couple of examples.</p>
-<p>2) Without code pattern: A "great" feature of legacy code is the lack of pattern in its code. When you touch the code base you usually see huge files and also blank files, once I was just playing around in a company repository and I saw a model without one single line just with its declaration therefore in the controller was everything else the access data, DAO and even the queries were wrote in the controller ! (WTF)</p>
-<pre class="height-set:true height:300 lang:php decode:true" title="Legacy code example">&lt;?php
+I decided to share my experience in how I used TDD in legacy code and how I did
+to get this task done also I have to say many thanks to my friend Alexandre
+Cintra who helped my a lot giving me gold tips.
+
+## Edit: Jun 17, 2015
+
+You can find useful information in my slides below. It was created for
+[my talk at Samsung Ocean](http://www.meetup.com/pt/THT-Things-Hacker-Team/events/222831499){:target="_blank"}.
+
+<iframe width="100%" height="500" style="border: 1px solid #CCC; border-width: 1px; margin-bottom: 5px; max-width: 100%;" src="//www.slideshare.net/slideshow/embed_code/key/vO17674rb2GiBI" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"> </iframe>
+
+## Edit: July 28, 2015
+
+Legacy software systems . . . were developed decades ago and have been
+continually modified to meet changes in business requirements and computing
+platforms. The proliferation of such systems is causing headaches for
+large organizations who find them costly to maintain and risky to evolve -
+Dayani-Fard
+
+## Legacy code the nightmare of everyone
+
+Doesn't matter if you are in a big company or a small one it is normal to have
+legacy code and you will need to maintain and even do some improvements as the
+request of our client comes.
+
+How can I identify legacy that is impossible to test?
+
+1. Many responsibilities: Usually legacy code has many lines between 1000 and
+2000 (I've seen many with 3000) and do everything in one file database
+connection, data persistence, business logic, IO are a couple of examples.
+
+2. Without code pattern: A "great" feature of legacy code is the lack of
+pattern in its code. When you touch the code base you usually see huge
+files and also blank files, once I was just playing around in a company
+repository and I saw a model without one single line just with its declaration
+therefore in the controller was everything else the access data, DAO and
+even the queries were wrote in the controller!
+
+```php
+<?php
 
 class MyLegacyClass {
 	
@@ -766,8 +792,8 @@ class MyLegacyClass {
 
             	$vPrest = $xml-&gt;infCte-&gt;addChild('vPrest');
 
-            	$vPrest-&gt;addChild('vTPrest', empty($config['vTPrest']) ? '0.00' : $config['vTPrest']);
-            	$vPrest-&gt;addChild('vRec', empty($config['vRec']) ? '0.00' : $config['vRec']);
+            	$vPrest-&gt;addChild('vTPrest', empty($config['vTPrest'])? '0.00' : $config['vTPrest']);
+            	$vPrest-&gt;addChild('vRec', empty($config['vRec'])? '0.00' : $config['vRec']);
 
             	if(isset($config['Comp']) &amp;&amp; count($config['Comp']) &gt; 0) {
             		// \E8 obrigat\F3rio ter um elemento filho do Comp para emitir a nota
@@ -776,8 +802,8 @@ class MyLegacyClass {
             			if ( !empty($Comp['cic_nome_componente']) &amp;&amp; !empty($Comp['cic_valor_componente']) ){
             				$xComp = $vPrest-&gt;addChild('Comp');
             				// verificar se esse campo \E9 vazio caso contr\E1rio ocorrer\E1 um erro no xml
-            				$xComp-&gt;addChild('xNome', (empty($Comp['cic_nome_componente'])) ? 'ND' : $Comp['cic_nome_componente']);
-            				$xComp-&gt;addChild('vComp', (empty($Comp['cic_valor_componente'])) ? '00.00' : $Comp['cic_valor_componente']); //13,2 ER25 15 posi\E7\F5es, sendo 13 inteiras e 2 decimais.
+            				$xComp-&gt;addChild('xNome', (empty($Comp['cic_nome_componente']))? 'ND' : $Comp['cic_nome_componente']);
+            				$xComp-&gt;addChild('vComp', (empty($Comp['cic_valor_componente']))? '00.00' : $Comp['cic_valor_componente']); //13,2 ER25 15 posi\E7\F5es, sendo 13 inteiras e 2 decimais.
             			}
             		}
             	}
@@ -911,14 +937,14 @@ class MyLegacyClass {
 
             					$infNF-&gt;addChild('nDoc', str_pad($dInfDoc['cnf_numero'], 20, STR_PAD_LEFT)/*'1'*/);
 
-            					$infNF-&gt;addChild('dEmi', ($dInfDoc['cnf_data_emissao'] == '---') ? $dInfDoc['cnf_data_emissao'] : date('Y-m-d')); /
-            					$infNF-&gt;addChild('vBC', ($dInfDoc['cnf_valor_base_icms']) ? $dInfDoc['cnf_valor_base_icms'] : '0.00'/*'8047.11'*/);
-            					$infNF-&gt;addChild('vICMS', ($dInfDoc['cnf_total_icms']) ? $dInfDoc['cnf_total_icms'] : '0.00'/*'965.65'*/);
-            					$infNF-&gt;addChild('vBCST', ($dInfDoc['cnf_valor_base_icms_st']) ? $dInfDoc['cnf_valor_base_icms_st'] : '0.00'/*'123.00'*/);
-            					$infNF-&gt;addChild('vST', ($dInfDoc['cnf_valor_icms_st']) ? $dInfDoc['cnf_valor_icms_st'] : '0.00'/*'123.00'*/);
-            					$infNF-&gt;addChild('vProd', ($dInfDoc['cnf_valor_total_produtos']) ? $dInfDoc['cnf_valor_total_produtos'] : '0.00'/*'123.00'*/);
-            					$infNF-&gt;addChild('vNF', ($dInfDoc['cnf_valor_total_nf']) ? $dInfDoc['cnf_valor_total_nf'] : '0.00'/*'123.00'*/);
-            					$infNF-&gt;addChild('nCFOP', ($dInfDoc['cnf_cfop_prodominante']) ? $dInfDoc['cnf_cfop_prodominante'] : '5353'/*'5353'*/);
+            					$infNF-&gt;addChild('dEmi', ($dInfDoc['cnf_data_emissao'] == '---')? $dInfDoc['cnf_data_emissao'] : date('Y-m-d')); /
+            					$infNF-&gt;addChild('vBC', ($dInfDoc['cnf_valor_base_icms'])? $dInfDoc['cnf_valor_base_icms'] : '0.00'/*'8047.11'*/);
+            					$infNF-&gt;addChild('vICMS', ($dInfDoc['cnf_total_icms'])? $dInfDoc['cnf_total_icms'] : '0.00'/*'965.65'*/);
+            					$infNF-&gt;addChild('vBCST', ($dInfDoc['cnf_valor_base_icms_st'])? $dInfDoc['cnf_valor_base_icms_st'] : '0.00'/*'123.00'*/);
+            					$infNF-&gt;addChild('vST', ($dInfDoc['cnf_valor_icms_st'])? $dInfDoc['cnf_valor_icms_st'] : '0.00'/*'123.00'*/);
+            					$infNF-&gt;addChild('vProd', ($dInfDoc['cnf_valor_total_produtos'])? $dInfDoc['cnf_valor_total_produtos'] : '0.00'/*'123.00'*/);
+            					$infNF-&gt;addChild('vNF', ($dInfDoc['cnf_valor_total_nf'])? $dInfDoc['cnf_valor_total_nf'] : '0.00'/*'123.00'*/);
+            					$infNF-&gt;addChild('nCFOP', ($dInfDoc['cnf_cfop_prodominante'])? $dInfDoc['cnf_cfop_prodominante'] : '5353'/*'5353'*/);
 
             					if ( !empty($dInfDoc['cnf_peso_total']) ){
             						$infNF-&gt;addChild('nPeso', $dInfDoc['cnf_peso_total']);
@@ -1087,13 +1113,22 @@ class MyLegacyClass {
             public function calculaChaveAcesso($cUF, $AAMM, $CNPJ, $mod, $serie, $nCT, $tpEmis, $cCT) {
 		// omitted code with 20 lines
             }
-}</pre>
-<h1>Crying, Thinking and Planning</h1>
-<p>As you could see now we have a class with 1054 lines and our challenge is to transform it in testable code. As a first step I'd recommend you to cry and as a second step we can start to think in what the code does and how can we break it down in pieces.</p>
-<p>In our code we have a couple of method that can be separated in classes instead of methods because they have its own behavior for example the method setCompl($config)  will add to our XML a bunch of nodes depending on some conditions in this case is used a switch statement either a couple of if's .</p>
-<pre class="height-set:true height:300 lang:php decode:true" title="Refactoring setCompl($config)">class Compl {
+}
+```
+
+## Crying, Thinking and Planning
+
+As you could see now we have a class with 1054 lines and our challenge is to transform it in testable code.
+As a first step I'd recommend you to cry and as a second step we can start to think in what the code does and how can
+we break it down in pieces.
+
+In our code we have a couple of method that can be separated in classes instead of methods because they have its own
+behavior for example the method setCompl($config) will add to our XML a bunch of nodes depending on some conditions
+in this case is used a switch statement either a couple of if's .
+
+```php
+class Compl {
 public function setCompl($config) {
-            	//		if($this-&gt;validaInputacao($config)) {
             	$xml = $this-&gt;getXml();
 
             	$compl = $xml-&gt;infCte-&gt;addChild('compl');
@@ -1236,14 +1271,21 @@ public function setCompl($config) {
 					//		}
             }
 
-}</pre>
-<p>&nbsp;</p>
-<p>It is much better now, isn't it ? We've got one class with a one responsibility and very tiny just 146 lines although this class we have just created could be improved as well but it is a subject to other post.</p>
-<p>So we got what we need to do and we have a plan already:</p>
-<p><del>1) Analyze the methods</del></p>
-<p><del>2) Extract and create new classes</del></p>
-<p>Our last step before go to unit test is substitute the source code to use or new class instead of the currently code let's find where is the <strong>setComple($config)</strong> and switch our code.</p>
-<pre class="lang:default decode:true ">public function setIdeValues($config, $Cte) {
+}
+```
+
+It is much better now, isn't it? We've got one class with a one responsibility and very tiny just 146 lines although
+this class we have just created could be improved as well but it is a subject to other post.
+So we got what we need to do and we have a plan already:
+
+1. Analyze the methods
+2. Extract and create new classes
+
+Our last step before go to unit test is substitute the source code to use or new class instead of the currently code
+let's find where is the **setComple($config)** and switch our code.
+
+```php
+public function setIdeValues($config, $Cte) {
 //omitted code
 }
 
@@ -1254,15 +1296,29 @@ public function setCompl($config) {
 
 public function setEmitValues($config) {
 //omitted code
-}</pre>
-<p>&nbsp;</p>
-<p><del>3) Substitute legacy code to your new code</del></p>
-<p><strong>Now we should test our code in order to see if its still working</strong>, once we have this confirmation we can now create our unit tests and repeat the cycle again. As you start refactoring all the legacy using those steps you'll start to have your source code with better quality, maintainability  and of course testable.</p>
-<h1>It is hard</h1>
-<p>It is not easy to restructure all the legacy with new code but the result is amazing. You can fallow the ideology of baby steps in this refactor as well so as you change the legacy to the new code you test to see if everything is the same. The trick here is to be patient and change piece by piece.</p>
-<p>Basically I tried to show one single way of do it but in the internet you can find thousands.</p>
-<p>1) Analyze the methods</p>
-<p>2) Extract and create new classes</p>
-<p>3) Substitute legacy code to your new code</p>
-<p>4) Make sure everything is working</p>
-<p>5) Create your unit tests</p>
+}
+```
+
+3. Substitute legacy code to your new code
+
+**Now we should test our code in order to see if its still working**, once we
+have this confirmation we can now create our unit tests and repeat the cycle
+again. As you start refactoring all the legacy using those steps you'll start
+to have your source code with better quality, maintainability  and of course
+testable.
+
+## It is hard
+
+It is not easy to restructure all the legacy with new code but the result
+is amazing. You can fallow the ideology of baby steps in this refactor as well
+so as you change the legacy to the new code you test to see if everything is
+the same. The trick here is to be patient and change piece by piece.
+
+Basically I tried to show one single way of do it but in the internet you can
+find thousands.
+
+1. Analyze the methods
+2. Extract and create new classes
+3. Substitute legacy code to your new code
+4. Make sure everything is working
+5. Create your unit tests

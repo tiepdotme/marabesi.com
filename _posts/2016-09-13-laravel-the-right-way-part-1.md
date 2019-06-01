@@ -18,7 +18,7 @@ tags:
 - laranews
 ---
 
-Recently I've been to the <a href="http://www.meetup.com/pt-BR/Laravel-SP/events/233563455/" target="_blank">Laravel meetup</a> and I had the pleasure to talk about good pratices and common
+Recently I've been to the <a href="http://www.meetup.com/pt-BR/Laravel-SP/events/233563455" target="_blank">Laravel meetup</a> and I had the pleasure to talk about good pratices and common
  mistakes that newbies in Laravel do in the daily basis. We  had also Guilherme Guitte's
  talk who had spoken how elastic serach work.
 

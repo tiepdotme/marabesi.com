@@ -25,6 +25,14 @@ table {
         padding: 10px;
         text-align: left;
     }
+
+    tr:nth-child(even) {
+        background: #EEF
+    }
+    
+    tr:nth-child(odd) {
+        background: #FFF
+    }
 }
 
 .top-menu {
