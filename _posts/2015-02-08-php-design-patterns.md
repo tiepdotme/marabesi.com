@@ -2,7 +2,7 @@
 layout: post
 title: PHP Design Patterns
 date: 2015-02-08 02:41:43.000000000 -02:00
-image: /assets/2015-02-08-php-design-patterns/cover.jpg
+image: /images/posts/2015-02-08-php-design-patterns/cover.jpg
 type: post
 published: true
 status: publish

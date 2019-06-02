@@ -2,7 +2,7 @@
 layout: post
 title: Setting up GPS NEO 6 sensor
 date: 2018-02-07 17:30:18.000000000 -02:00
-image: /assets/2018-02-07-setting-up-gps-neo6-sensor/cover.jpg
+image: /images/posts/2018-02-07-setting-up-gps-neo6-sensor/cover.jpg
 type: post
 published: true
 status: publish
@@ -70,7 +70,7 @@ show the pin name (from the GPS NEO 6) and where it should go on the Raspberry P
 The table below was build looking at the [pi4j](http://pi4j.com/pins/model-b-plus.html){:target="_blank"} project, which has an
 image to better illustrate the pins. For now the figure below should do the work.
 
-![GPS NEO 6 wires](/assets/2018-02-07-setting-up-gps-neo6-sensor/wires.png)
+![GPS NEO 6 wires](/images/posts/2018-02-07-setting-up-gps-neo6-sensor/wires.png)
 
 If you follow everything as described in the table and in the figure, you should see a green light on
 the GPS NEO 6. This means that at least the power was plugged correctly. The next step
@@ -142,7 +142,7 @@ gpsd /dev/serial0
 The command `cgps` should work as a spected now. The picture below ilustrates the result
 after invoking the command.
 
-![cgps client response](/assets/2018-02-07-setting-up-gps-neo6-sensor/cgps.png)
+![cgps client response](/images/posts/2018-02-07-setting-up-gps-neo6-sensor/cgps.png)
 
 obs: The response given by the `cgps` is a JSON, to understand the content of each key
 check out the [official documentation](http://www.catb.org/gpsd/gpsd_json.html){:target="_blank"}.

@@ -5,7 +5,7 @@ date: 2016-04-16 20:13:33.000000000 -03:00
 type: post
 published: true
 status: publish
-image: /assets/2016-04-16-requirements-engineering-tool-use-case/cover.jpg
+image: /images/posts/2016-04-16-requirements-engineering-tool-use-case/cover.jpg
 categories:
 - Software Engineering
 tags:
@@ -30,11 +30,11 @@ As usual in Brazil software development is a big issue (I'm specifically talkin
 
 Software engineers should have the knowledge and power to change it. Therefore we also have a lack of tools to help us to build better software. Let's assume a waterfall model to build software:
 
-[![Waterfall model]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/waterfall.jpg "Waterfall model")](http://www.maxwideman.com/papers/linearity/waterfall.jpg){:target="_blank"}
+[![Waterfall model]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/waterfall.jpg "Waterfall model")](http://www.maxwideman.com/papers/linearity/waterfall.jpg){:target="_blank"}
 
 Just looking to the diagram we identified that the problem is in the first three steps:
 
-[![Waterfall model and the problem]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/waterfall-problem.jpg)]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/waterfall-problem.jpg){:target="_blank"}
+[![Waterfall model and the problem]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/waterfall-problem.jpg)]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/waterfall-problem.jpg){:target="_blank"}
 
 Assuming that we did a research to confirm our thesis and let's see what experts have to say to us:
 
@@ -52,11 +52,11 @@ and where both business and technology can understand for some reasons:
 - The diagram and the description is really intuitive
 - Once you learn how to create is really easy to repeat (in meetings where the user will be interviewed is common to use use case approach)
 
-![Use case diagram]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/use-cases-newspapar.gif){:target="_blank"}
+![Use case diagram]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/use-cases-newspapar.gif){:target="_blank"}
 
 Use case diagram Of course the diagram is much easier to understand than the description one. Just looking to the image you know that you'll have a user with the journalist role and a reader, really easy isn't it ? Unfortunately what we have is not the diagram itself in our tool rather we have the description one
 
-![Description use case]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/Description-of-Use-Cases.jpg)
+![Description use case]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/Description-of-Use-Cases.jpg)
 
 Description use case Usually Use case descriptions are created and stored in word documents and as you can imagine they can be very hard to maintain and even create them. Our solution provides a easily way to create and store use case description based on an application. You can see the tool here [https://shielded-headland-1947.herokuapp.com](https://shielded-headland-1947.herokuapp.com).
 The following section will introduce to the tool and give to a explanation in how we ported the use case description.
@@ -65,7 +65,7 @@ The following section will introduce to the tool and give to a explanation in ho
 
 Once you have visited the link you'll see the following image to create an application
 
-[![Use case management - Application]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/application.png)]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/application.png)
+[![Use case management - Application]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/application.png)]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/application.png)
 
 The first screen is where you define your application, you can have as many
 application as you want. Usually when you are creating a use case you are creating
@@ -73,7 +73,7 @@ it to a given application, for instance let's say you are developing requirement
 to a application called **Fly Cotrol**, so you should use the same name in this
 screen. To understand the flow we propose I drawled the following flow chart:
 
-[![Basic flow to create use case]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/flow.png)]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/flow.png){:target="_blank"}
+[![Basic flow to create use case]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/flow.png)]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/flow.png){:target="_blank"}
 
 Keep it in mind because we're going to follow this as well
 
@@ -82,19 +82,19 @@ Keep it in mind because we're going to follow this as well
 As the name already said here we are going o manage our actor. You can insert,
 delete and update an actor.
 
-[![Use case management - Actors]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/actors.png)]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/actors.png)
+[![Use case management - Actors]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/actors.png)]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/actors.png)
 
 ## Version
 
 In this section is where you going to define the versions of your use cases. A simple example here is when you create the first version called 1.0.0, then comes the need to upgrade some functionalities and then you create the version 2.0.0 to specify only what has been changed.
 
-[![Use case management - Version]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/version-1.png)]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/version-1.png)
+[![Use case management - Version]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/version-1.png)]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/version-1.png)
 
 ## Use case
 
 Finally we can now create our use case, here is where all we have done before get together. The first select box is where you select your application to create a use case:
 
-[![Use case management - Use case]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/use_case_-1.png)]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/use_case_-1.png)
+[![Use case management - Use case]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/use_case_-1.png)]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/use_case_-1.png)
 
 Then the select box of named Version comes, here is where you select which
 version your use case is going to use. Following the same idea you can select
@@ -102,7 +102,7 @@ one or more actors to be in your use case.
 
 ## Steps
 
-[![Use case management - Version]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/steps.png)]({{ site.baseurl }}/assets/2016-04-16-requirements-engineering-tool-use-case/steps.png)
+[![Use case management - Version]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/steps.png)]({{ site.baseurl }}/images/posts/2016-04-16-requirements-engineering-tool-use-case/steps.png)
 
 Here we are in the last step to create our use case, this is the last section
 because is complex to explain. Here is where you use case is going to be detailed

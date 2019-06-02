@@ -2,7 +2,7 @@
 layout: post
 title: Introduction to Service Worker
 date: 2018-12-02 01:06:05.000000000 -03:00
-image: /assets/2018-12-02-introduction-to-service-worker/cover.png
+image: /images/posts/2018-12-02-introduction-to-service-worker/cover.png
 type: post
 published: true
 status: published
@@ -146,7 +146,7 @@ show the new content cached by the new service worker, all instances of the
 current one must be terminated **[2][6]**. In this context terminated means, to close the
 current page or navigate to a new URL and then come back.
 
-![Service work lifecycle](/assets/2018-12-02-introduction-to-service-worker/service_worker_flow.png){:target="_blank"}
+![Service work lifecycle](/images/posts/2018-12-02-introduction-to-service-worker/service_worker_flow.png){:target="_blank"}
 
 The steps to have a site available offline is done, but with that approach the
 cache in the users browser would grow as every change made in the service worker.
@@ -201,7 +201,7 @@ Those events are related to the service worker but they occurr in diferente obje
 The used script to interact with `install` and `fetch` is the single javascript
 file `service-worker.js` (snippet 1). 
 
-![Service worker types of events](/assets/2018-12-02-introduction-to-service-worker/service_worker_events.png){:target="_blank"}
+![Service worker types of events](/images/posts/2018-12-02-introduction-to-service-worker/service_worker_events.png){:target="_blank"}
 
 The events `updatefound` and `statechange`
 are events related to the `ServiceWorkerRegistration` object, which is returned 

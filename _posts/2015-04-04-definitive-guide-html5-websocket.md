@@ -2,7 +2,7 @@
 layout: post
 title: The definitive guide to HTML5 WebSocket
 date: 2015-04-04 16:06:44.000000000 -03:00
-image: /assets/2015-04-04-definitive-guide-html5-websocket/cover.jpg
+image: /images/posts/2015-04-04-definitive-guide-html5-websocket/cover.jpg
 type: post
 published: true
 status: publish

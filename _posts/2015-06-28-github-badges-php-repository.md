@@ -5,7 +5,7 @@ date: 2015-06-28 20:27:09.000000000 -03:00
 type: post
 published: true
 status: publish
-image: /assets/2015-06-28-github-badges-php-repository/cover.png
+image: /images/posts/2015-06-28-github-badges-php-repository/cover.png
 categories:
 - php
 tags:
@@ -42,7 +42,7 @@ Repository used for this post you can find
 
 ## Final result
 
-[![GitHub badges]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/badges2.png)]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/badges2.png){:target="_blank"}
+[![GitHub badges]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/badges2.png)]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/badges2.png){:target="_blank"}
 
 ## Travis CI
 
@@ -53,7 +53,7 @@ your GitHub account. Fill the fields Username/Email and Password and click in
 sign in (Don't forget to allow Travis in your GitHub account). Now we have to go
 to our profile in Travis and enable which repository we're going to build.
 
-[![Travis CI repository list]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/travis2.png)]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/travis2.png){:target="_blank"}
+[![Travis CI repository list]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/travis2.png)]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/travis2.png){:target="_blank"}
 
 If you have any issue doing this follow the step in travis CI website!
 
@@ -79,7 +79,7 @@ before_script:
 The last step to use the **Build Badge** is update the file README.md
 in your GitHub repository.
 
-[![Getting link to the badge]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/travis5.png)]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/travis5.png){:target="_blank"}
+[![Getting link to the badge]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/travis5.png)]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/travis5.png){:target="_blank"}
 
 1. click on Build Passing in the left side of your repository name and a modal will appear.
 2. Select which branch you're going to use
@@ -95,11 +95,11 @@ did with Travis we have to allow coveralls in our GitHub account. Go to
 [https://coveralls.io](https://coveralls.io){:target="_blank"} and click
 in Free GitHub Sign-in. After a successful login click in add repos.
 
-[![Adding repositories in coveralls.io]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/coverall.png)]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/coverall.png){:target="_blank"}
+[![Adding repositories in coveralls.io]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/coverall.png)]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/coverall.png){:target="_blank"}
 
 Just like Travis select which one you're going yo use.
 
-[![Coveralls repository list]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/coveralls3.png)]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/coveralls3.png){:target="_blank"}
+[![Coveralls repository list]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/coveralls3.png)]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/coveralls3.png){:target="_blank"}
 
 ## .travis.yml
 
@@ -143,14 +143,14 @@ src_dir: .
 After that push it to your repository. Otherwise you'll get an
 InvalidArgumentException from Travis build:
 
-[![Coveralls error]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/error-co.png)]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/error-co.png){:target="_blank"}
+[![Coveralls error]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/error-co.png)]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/error-co.png){:target="_blank"}
 
 ## README.md
 
 Now we have Travis working together with coveralls.io. We need just
 to update our README.me with the badge.
 
-[![Coveralls report]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/c-badge.png)]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/c-badge.png){:target="_blank"}
+[![Coveralls report]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/c-badge.png)]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/c-badge.png){:target="_blank"}
 
 1. Go to https://coveralls.io/repos
 2. Select your repository in the list
@@ -176,7 +176,7 @@ for last is simple: you can find them at
 2. Select which you want to and select the Markdown text or click in Copy to clipboard
 3. Update your README.md in your repository
 
-[![Poser website]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/poser-c.png)]({{ site.baseurl }}/assets/2015-06-28-github-badges-php-repository/poser-c.png){:target="_blank"}
+[![Poser website]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/poser-c.png)]({{ site.baseurl }}/images/posts/2015-06-28-github-badges-php-repository/poser-c.png){:target="_blank"}
 
 ## References
 

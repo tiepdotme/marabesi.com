@@ -2,7 +2,7 @@
 layout: post
 title: ARE YOU NOT USING TDD?! – PART || (Legacy code)
 date: 2015-05-23 18:33:47.000000000 -03:00
-image: /assets/2015-05-23-are-you-not-using-tdd-part-legacy-code/cover.png
+image: /images/posts/2015-05-23-are-you-not-using-tdd-part-legacy-code/cover.png
 type: post
 published: true
 status: publish

@@ -5,7 +5,7 @@ date: 2015-12-29 23:33:11.000000000 -02:00
 type: post
 published: true
 status: publish
-image: /assets/2015-12-29-is-tdd-dead/cover.jpg
+image: /images/posts/2015-12-29-is-tdd-dead/cover.jpg
 categories:
 - TDD
 tags:

@@ -2,7 +2,7 @@
 layout: post
 title: The Art of Readable Code
 date: 2015-01-22 10:18:46.000000000 -02:00
-image: /assets/2015-01-22-the-art-of-readable-code/cover.jpg
+image: /images/posts/2015-01-22-the-art-of-readable-code/cover.jpg
 type: post
 published: true
 status: publish
@@ -26,7 +26,7 @@ Have you ever wonder what was the best comment to write? Have you ever had
 to read twice the same code to understand what that was about? Don't worry
 this book is for you!
 
-[![Cover of the book "The Art of Readable Code"]({{ site.baseurl }}/assets/2015-01-22-the-art-of-readable-code/cover.jpg)]({{ site.baseurl }}/assets/2015-01-22-the-art-of-readable-code/cover.jpg){:target="_blank"}
+[![Cover of the book "The Art of Readable Code"]({{ site.baseurl }}/images/posts/2015-01-22-the-art-of-readable-code/cover.jpg)]({{ site.baseurl }}/images/posts/2015-01-22-the-art-of-readable-code/cover.jpg){:target="_blank"}
 
 ## The Art of Readable code for rescue
 

@@ -2,7 +2,7 @@
 layout: post
 title: Is specification important?
 date: 2017-03-31 01:06:05.000000000 -03:00
-image: /assets/2017-03-31-is-specification-important/cover.jpg
+image: /images/posts/2017-03-31-is-specification-important/cover.jpg
 type: post
 published: true
 status: published

@@ -2,7 +2,7 @@
 layout: post
 title: Bitwise operators - The Journey
 date: 2015-02-19 10:04:16.000000000 -02:00
-image: /assets/2015-02-19-bitwise-operators-journey/cover.png
+image: /images/posts/2015-02-19-bitwise-operators-journey/cover.png
 type: post
 published: true
 status: publish

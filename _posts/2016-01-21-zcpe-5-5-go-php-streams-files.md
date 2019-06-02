@@ -5,7 +5,7 @@ date: 2016-01-21 09:44:36.000000000 -02:00
 type: post
 published: true
 status: publish
-image: /assets/2016-01-21-zcpe-5-5-go-php-streams-files/cover.jpg
+image: /images/posts/2016-01-21-zcpe-5-5-go-php-streams-files/cover.jpg
 categories:
 - php
 - ZCPE

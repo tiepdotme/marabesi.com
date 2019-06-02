@@ -3,7 +3,7 @@ layout: post
 title: SIM800L tracking your IoT device
 date: 2018-02-16 20:39:18.000000000 -02:00
 type: post
-image: /assets/2018-02-16-sim800l-tracking-your-iot-device/cover.jpeg
+image: /images/posts/2018-02-16-sim800l-tracking-your-iot-device/cover.jpeg
 published: true
 status: publish
 categories:
@@ -45,7 +45,7 @@ SIM900 comes with a antenna and a bigger board.
 Besides the board is needed to have a *micro SIM* card. In my case I had to use an adapter to transfor the nano SIM I
 have into the micro.
 
-[![Font: Mi.com](/assets/2018-02-16-sim800l-tracking-your-iot-device/sim-type.jpeg)](http://c.mi.com/thread-46072-1-0.html){:target="_blank"}
+[![Font: Mi.com](/images/posts/2018-02-16-sim800l-tracking-your-iot-device/sim-type.jpeg)](http://c.mi.com/thread-46072-1-0.html){:target="_blank"}
 
 <small>Fonte: Mi.com</small>
 
@@ -68,7 +68,7 @@ table holds the pins where the wires should go to.
 
 To make it easier to understand, the following image illustrates how the wiring should be done.
 
-![SIM800L wiring](/assets/2018-02-16-sim800l-tracking-your-iot-device/sim800.png){:target="_blank"}
+![SIM800L wiring](/images/posts/2018-02-16-sim800l-tracking-your-iot-device/sim800.png){:target="_blank"}
 
 <small>[SIM800L Font: Lelong.my](http://www.lelong.com.my/arduino-sim800l-gprs-gsm-tracking-module-antena-sim-slot-robotedu-183929865-2018-10-Sale-P.htm){:target="_blank"}</small>
 
@@ -123,7 +123,7 @@ Once we have the sketch up and running in our Arduino, is time to understand the
 to send trhough the serial interface is the command `AT`. This is the most basic command
 to see if the sensor is up and running, if everything is correct an `OK` is printed back.
 
-![AT command](/assets/2018-02-16-sim800l-tracking-your-iot-device/arduino-serial.png){:target="_blank"}
+![AT command](/images/posts/2018-02-16-sim800l-tracking-your-iot-device/arduino-serial.png){:target="_blank"}
 
 The next step is to understand what is required to setup the GPRS mode in our SIM card. For that we are
 going to rely a lot on the SIM800L official documentation
@@ -197,7 +197,7 @@ AT+CIPGSMLOC=1,1
 It should return an string containing the latitude, longitude, current date, and current time. The figure below
 illustrates the response receive in the serial monitor.
 
-![Response from SIM800L after requireing the current location](/assets/2018-02-16-sim800l-tracking-your-iot-device/current-location.png){:target="_blank"}
+![Response from SIM800L after requireing the current location](/images/posts/2018-02-16-sim800l-tracking-your-iot-device/current-location.png){:target="_blank"}
 
 ## Edit 04/03/2018
 

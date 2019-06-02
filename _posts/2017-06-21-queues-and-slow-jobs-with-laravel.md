@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Queues and slow jobs with Laravel
-image: /assets/2017-06-21-queues-and-slow-jobs-with-laravel/cover.png
+image: /images/posts/2017-06-21-queues-and-slow-jobs-with-laravel/cover.png
 date: 2017-06-21 01:06:05.000000000 -03:00
 type: post
 published: true

@@ -2,7 +2,7 @@
 layout: post
 title: Software engineering, in the developer's hand?
 date: 2015-12-07 21:27:30.000000000 -02:00
-image: /assets/2015-12-07-software-engineering-in-developers-hand/cover.jpeg
+image: /images/posts/2015-12-07-software-engineering-in-developers-hand/cover.jpeg
 type: post
 published: true
 status: publish
@@ -49,7 +49,7 @@ Use case diagram is one of the UML diagrams used to help to understand
 scenarios of the software, this diagram has a main purpose to expose the user
 point of view.
 
-[![]({{ site.baseurl }}/assets/2015-12-07-software-engineering-in-developers-hand/u11.png)]({{ site.baseurl }}/assets/2015-12-07-software-engineering-in-developers-hand/u11.png){:target="_blank"}
+[![]({{ site.baseurl }}/images/posts/2015-12-07-software-engineering-in-developers-hand/u11.png)]({{ site.baseurl }}/images/posts/2015-12-07-software-engineering-in-developers-hand/u11.png){:target="_blank"}
 
 Above we can see the simplest use case possible. On left side we have an actor
 that can represents a regular user or even another system and in the right side
@@ -75,7 +75,7 @@ present a standard document to use thus you can adapt it to satisfy your need.
 The problem with this approch is time. Above we have a graph comparing between
 creating a diagram before code and not create a diagram.
 
-[![Planing chart]({{ site.baseurl }}/assets/2015-12-07-software-engineering-in-developers-hand/chart1.png)]({{ site.baseurl }}/assets/2015-12-07-software-engineering-in-developers-hand/chart1.png){:target="_blank"}
+[![Planing chart]({{ site.baseurl }}/images/posts/2015-12-07-software-engineering-in-developers-hand/chart1.png)]({{ site.baseurl }}/images/posts/2015-12-07-software-engineering-in-developers-hand/chart1.png){:target="_blank"}
 
 As we can see it takes longer but as you can imagine the quality grows.
 Why should we start to draw or planing before do code?

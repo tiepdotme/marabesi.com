@@ -2,7 +2,7 @@
 layout: post
 title: Converting Hexadecimal(16) to Decimal(10)
 date: 2015-02-16 23:51:27.000000000 -02:00
-image: /assets/2015-02-16-converting-hexadecimal16-decimal10/cover.png
+image: /images/posts/2015-02-16-converting-hexadecimal16-decimal10/cover.png
 type: post
 published: true
 status: publish

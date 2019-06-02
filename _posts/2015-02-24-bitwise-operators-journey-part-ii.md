@@ -2,7 +2,7 @@
 layout: post
 title: Bitwise operators – The Journey Part II
 date: 2015-02-24 01:27:27.000000000 -03:00
-image: /assets/2015-02-24-bitwise-operators-journey-part-ii/cover.png
+image: /images/posts/2015-02-24-bitwise-operators-journey-part-ii/cover.png
 type: post
 published: true
 status: publish

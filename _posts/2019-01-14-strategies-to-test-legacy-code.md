@@ -2,7 +2,7 @@
 layout: post
 title: Strategies to test legacy code - PART 1
 date: 2019-01-14 01:06:05.000000000 -03:00
-image: /assets/2019-01-14-strategies-to-test-legacy-code/cover.jpg
+image: /images/posts/2019-01-14-strategies-to-test-legacy-code/cover.jpg
 type: post
 published: true
 status: published
@@ -81,7 +81,7 @@ refactoring in as many scenarios as possible, in the other hand acceptance test
 is slow to execute. Even a small change would take a few minutes to execute the
 suite.
 
-![TDD applied to acceptance](/assets/2019-01-14-strategies-to-test-legacy-code/strategies-1.png){:target="_blank"}
+![TDD applied to acceptance](/images/posts/2019-01-14-strategies-to-test-legacy-code/strategies-1.png){:target="_blank"}
 
 # Iterating over the strategy
 
@@ -105,7 +105,7 @@ test with the unit test doing refactoring, the recommended approach would be:
 The last part is to remove specific cases in the acceptance testing suite, and
 keep only the general ones, which covers the most basic flow.
 
-![Iterating over the strategy](/assets/2019-01-14-strategies-to-test-legacy-code/strategies-2.png){:target="_blank"}
+![Iterating over the strategy](/images/posts/2019-01-14-strategies-to-test-legacy-code/strategies-2.png){:target="_blank"}
 
 It is possible to keep with all the acceptance test suite in place as well,
 just the execution approach would change from a developer point of view.

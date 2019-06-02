@@ -2,7 +2,7 @@
 layout: post
 title: Continuous Delivery
 date: 2015-11-02 22:55:27.000000000 -02:00
-image: /assets/2015-11-02-continuous-delivery/cover.png
+image: /images/posts/2015-11-02-continuous-delivery/cover.png
 type: post
 published: true
 status: publish
@@ -107,7 +107,7 @@ We can have different types of tests and different purposes the figure below
 show us how to understand it and what are each type of tests and when we apply
 them.
 
-[![Testing quadrant]({{ site.baseurl }}/assets/2015-11-02-continuous-delivery/unit-test.png)]({{ site.baseurl }}/assets/2015-11-02-continuous-delivery/unit-test.png){:target="_blank"}
+[![Testing quadrant]({{ site.baseurl }}/images/posts/2015-11-02-continuous-delivery/unit-test.png)]({{ site.baseurl }}/images/posts/2015-11-02-continuous-delivery/unit-test.png){:target="_blank"}
 
 ## The deployment pipe line
 

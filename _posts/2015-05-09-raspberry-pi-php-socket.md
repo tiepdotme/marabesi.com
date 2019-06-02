@@ -2,7 +2,7 @@
 layout: post
 title: Raspberry Pi + PHP socket
 date: 2015-05-09 13:58:04.000000000 -03:00
-image: /assets/2015-05-09-raspberry-pi-php-socket/cover.jpg
+image: /images/posts/2015-05-09-raspberry-pi-php-socket/cover.jpg
 type: post
 published: true
 status: publish
@@ -40,7 +40,7 @@ the [model B+](https://www.raspberrypi.org/products/model-b-plus){:target="_blan
 We need to to access our Pi trough the SSH, for this example I'm going to use the WiPi
 (wireless adapter for raspberry Pi).
 
-[![WiPi]({{ site.baseurl }}/assets/2015-05-09-raspberry-pi-php-socket/wipidongle.jpg)]({{ site.baseurl }}/assets/2015-05-09-raspberry-pi-php-socket/wipidongle.jpg){:target="_blank"}
+[![WiPi]({{ site.baseurl }}/images/posts/2015-05-09-raspberry-pi-php-socket/wipidongle.jpg)]({{ site.baseurl }}/images/posts/2015-05-09-raspberry-pi-php-socket/wipidongle.jpg){:target="_blank"}
 
 But you can use the RJ-45 to access it or use a little monitor with a keyboard on the Pi, fell free to choose your
 option just make sure you will have this access.

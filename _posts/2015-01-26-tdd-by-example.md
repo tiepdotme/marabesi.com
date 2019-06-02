@@ -2,7 +2,7 @@
 layout: post
 title: TDD by example
 date: 2015-01-26 09:59:40.000000000 -02:00
-image: /assets/2015-01-26-tdd-by-example/cover.jpg
+image: /images/posts/2015-01-26-tdd-by-example/cover.jpg
 type: post
 published: true
 status: publish
@@ -20,7 +20,7 @@ tags:
 - tdd by example
 ---
 
-[![Cover of the book "TDD By Example"]({{ site.baseurl }}/assets/2015-01-26-tdd-by-example/cover.jpg)]({{ site.baseurl }}/assets/2015-01-26-tdd-by-example/cover.jpg)
+[![Cover of the book "TDD By Example"]({{ site.baseurl }}/images/posts/2015-01-26-tdd-by-example/cover.jpg)]({{ site.baseurl }}/images/posts/2015-01-26-tdd-by-example/cover.jpg)
 
 ## Are you not using TDD ?
 

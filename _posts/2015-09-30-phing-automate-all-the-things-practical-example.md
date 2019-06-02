@@ -2,7 +2,7 @@
 layout: post
 title: Phing ? Automate all the things ! - Practical example
 date: 2015-09-30 01:46:25.000000000 -03:00
-image: /assets/2015-09-30-phing-automate-all-the-things-practical-example/cover.gif
+image: /images/posts/2015-09-30-phing-automate-all-the-things-practical-example/cover.gif
 type: post
 published: true
 status: publish
@@ -43,7 +43,7 @@ and get a error thrown. As a second advantage to use a build tool we can
 improve our productivity, while Phing run our tasks we can do other things.
 For instance let's see how our flow is going to work:
 
-[![Phing flow]({{ site.baseurl }}/assets/2015-09-30-phing-automate-all-the-things-practical-example/flow.png)]({{ site.baseurl }}/assets/2015-09-30-phing-automate-all-the-things-practical-example/flow.png){:target="_blank"}
+[![Phing flow]({{ site.baseurl }}/images/posts/2015-09-30-phing-automate-all-the-things-practical-example/flow.png)]({{ site.baseurl }}/images/posts/2015-09-30-phing-automate-all-the-things-practical-example/flow.png){:target="_blank"}
 
 Describing it into step we have:
 

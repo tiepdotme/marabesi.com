@@ -2,7 +2,7 @@
 layout: post
 title: Stop complaining, do it now.
 date: 2015-05-16 16:30:34.000000000 -03:00
-image: /assets/2015-05-16-stop-complaining-now/cover.jpg
+image: /images/posts/2015-05-16-stop-complaining-now/cover.jpg
 type: post
 published: true
 status: publish

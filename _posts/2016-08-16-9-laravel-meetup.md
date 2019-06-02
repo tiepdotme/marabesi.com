@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 9º Laravel Meetup
-image: /assets/2016-08-16-9-laravel-meetup/cover.jpg
+image: /images/posts/2016-08-16-9-laravel-meetup/cover.jpg
 date: 2016-08-16 19:00:00.000000000 -03:00
 type: post
 published: true
@@ -24,7 +24,7 @@ audience, thanks iMasters for the coffee-break. Usually the people who go to the
 were really confortable with each other which I think is really good. The main goal of the meetup was to help newbies in
 Laravel(specifically in middlewares ). The first speaker(Igor Carvalho) started his talk.
 
-![Igor Carvalho](/assets/2016-08-16-9-laravel-meetup/speaker1.jpeg "Igor Carvalho")
+![Igor Carvalho](/images/posts/2016-08-16-9-laravel-meetup/speaker1.jpeg "Igor Carvalho")
 
 # Middleware 4 Life
 
@@ -39,7 +39,7 @@ so many paths to take.
 Keep up to date - A developer's eternal joruney of leanership ("Mantenha-se Atualizado - A eterna jornada de aprendizado
 de um desenvolvedor de software - Marcel dos Santos" - Original title in Portuguese)
 
-![Marcel Santos](/assets/2016-08-16-9-laravel-meetup/speaker2.jpeg "Marcel Santos")
+![Marcel Santos](/images/posts/2016-08-16-9-laravel-meetup/speaker2.jpeg "Marcel Santos")
 
 Marcel is a well known developer in various communities in São Paulo and he has spoken in many conferences such as PHP
 Experience (one of the biggest PHP conference in Brasil). His talk was the inspiring one, he talked about the difficulty

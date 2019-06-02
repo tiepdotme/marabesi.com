@@ -2,7 +2,7 @@
 layout: post
 title: WebSocket - HTML5
 date: 2015-03-22 18:21:43.000000000 -03:00
-image: /assets/2015-03-22-websocket-html5/cover.jpg
+image: /images/posts/2015-03-22-websocket-html5/cover.jpg
 type: post
 published: true
 status: publish

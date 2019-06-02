@@ -5,7 +5,7 @@ date: 2016-09-13 01:06:05.000000000 -03:00
 type: post
 published: true
 status: published
-image: /assets/2016-09-13-laravel-the-right-way-part-1/cover.svg
+image: /images/posts/2016-09-13-laravel-the-right-way-part-1/cover.svg
 categories:
 - php
 tags:
@@ -37,7 +37,7 @@ just throw it away on the framework.
 The freedom that we have is huge, and sometimes new developers doesn't know how to handle that (or if you're
 a experienced developer you may not know what are the best place to store the files
 
-![Models](/assets/2016-09-13-laravel-the-right-way-part-1/models.png "Models")
+![Models](/images/posts/2016-09-13-laravel-the-right-way-part-1/models.png "Models")
 
 So here I present what I've found useful in how to handle with the models and the solution is simple, store input
 in a folder called <strong>Models</strong>.
@@ -58,13 +58,13 @@ logic from the interactions with the underlying data source or Web service.
 As our application grows is normal to have a lot of files, a lot of classes and many assets to handle.
 It is not different with our models, in the MVC pattern we use the models to store the business logic.
 
-![Business rules inside a model](/assets/2016-09-13-laravel-the-right-way-part-1/model-rules.png "Business rules inside a model")
+![Business rules inside a model](/images/posts/2016-09-13-laravel-the-right-way-part-1/model-rules.png "Business rules inside a model")
 
 There is nothing to fear when dealing with small applications, but if you have a application a little bit
 bigger you are going to start to have many methods inside a single file. Don't believe me? Let's have a look
 at a real application
 
-![Too many methods](/assets/2016-09-13-laravel-the-right-way-part-1/methods.png "Too many methods")
+![Too many methods](/images/posts/2016-09-13-laravel-the-right-way-part-1/methods.png "Too many methods")
 
 What's the problem with that? It seems perfect, right? The first problem here is the coupled access
 to the data in the database, this is tighten into the models's method. The second problem is that
@@ -81,7 +81,7 @@ same rule but in a different kind? How would you use polymorphism?). The second 
 three main folders model-view-controller it will get too many files really quick and the last is the modularity
 how would you use modules?
 
-![regular MVC](/assets/2016-09-13-laravel-the-right-way-part-1/mvc.png "regular MVC")
+![regular MVC](/images/posts/2016-09-13-laravel-the-right-way-part-1/mvc.png "regular MVC")
 
 For those reasons we could start using the service layer. The service layer is where all the business rules lives.
 
@@ -89,7 +89,7 @@ The basic approach is to build the services and the service is going to use the 
 the service. This must by single direction, which means that services doesn't uses controller otherwise there is
 no point to have a layer specific to it.
 
-![MVC and service layer](/assets/2016-09-13-laravel-the-right-way-part-1/mvc-service-layer.png "MVC and service layer")
+![MVC and service layer](/images/posts/2016-09-13-laravel-the-right-way-part-1/mvc-service-layer.png "MVC and service layer")
 
 The good point of using a layer service is the flexibility that i gives to you, is possible to concentrate 
 the business rules inside of this layer and consume them.

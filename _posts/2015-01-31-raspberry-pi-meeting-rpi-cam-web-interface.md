@@ -2,7 +2,7 @@
 layout: post
 title: Raspberry Pi - Meeting the RPi-Cam-Web-Interface
 date: 2015-01-31 05:04:02.000000000 -02:00
-image: /assets/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/cover.png
+image: /images/posts/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/cover.png
 type: post
 published: true
 status: publish
@@ -25,7 +25,7 @@ If you are not familiar with raspberry PI please go ahead and see
 going to be talking about what is and what it can do rather I want to go
 further and focus on just the raspberry PI + camera.
 
-[![]({{ site.baseurl }}/assets/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/cover.png)]({{ site.baseurl }}/assets/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/cover.png){:target="_blank"}
+[![]({{ site.baseurl }}/images/posts/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/cover.png)]({{ site.baseurl }}/images/posts/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/cover.png){:target="_blank"}
 
 RPi-Cam-Web-Interface is a simple interface that enable the users to interact
 with the camera module on the raspberry PI, it has a lot of documentation and
@@ -35,7 +35,7 @@ is really easy to understand if you're a programmer.
 The interface is very easy to use and it has a lot of features such as
 resolution adjust, control of brightness, saturation and contrast.
 
-[![]({{ site.baseurl }}/assets/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/rpi-web-interface2.png)]({{ site.baseurl }}/assets/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/rpi-web-interface2.png){:target="_blank"}
+[![]({{ site.baseurl }}/images/posts/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/rpi-web-interface2.png)]({{ site.baseurl }}/images/posts/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/rpi-web-interface2.png){:target="_blank"}
 
 I think the main feature of the the RPi-Cam-Web-Interface is be web based.
 Easy to use easy to share across multiple devices and easy to modify as well.
