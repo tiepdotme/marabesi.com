@@ -81,7 +81,7 @@
 
       <nav class="top-menu flex justify-start container lg:justify-center md:m-auto md:pt-2 md:pb-2">
         <a href="{{ site.url }}" class="hidden md:block">
-          <img class="logo w-18 p-1" src="/images/logo.png" width="100" />
+          <img class="logo w-18 p-1" data-src="/images/logo.png" width="100" />
         </a>
 
         <ul id="menu-list" class="container-menu hidden flex-col pl-5 md:flex md:pl-0 md:flex-row md:m-auto lg:m-0">
@@ -136,19 +136,6 @@
     </script>
     {% endif %}
 
-    <script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
-    <script async src="/src/main.js"></script>
-    <script async src="https://static.addtoany.com/menu/page.js"></script>
-  
-    {% if jekyll.environment == "production" %}
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-
-      <ins class="adsbygoogle ads-style" data-ad-client="ca-pub-4464092086775263" data-ad-slot="3786833122"
-        data-ad-format="auto" data-full-width-responsive="true">
-      </ins>
-    {% endif %}
+    <script async src="/js/main-bundle.js"></script>
   </body>
 </html>

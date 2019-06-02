@@ -52,3 +52,6 @@ exclude:
   - .idea
   - .jekyll-metadata
   - .jekyll-cache
+  - utils
+  - log
+  - src

@@ -10,3 +10,4 @@ node_modules
 _sass/tailwind.scss
 log
 vendor
+js/
