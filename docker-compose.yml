@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  blog:
+    image: jekyll/jekyll
+    command: jekyll serve --livereload
+    volumes:
+      - ./:/srv/jekyll
+      - ./vendor:/usr/local/bundle
+    ports:
+      - 4000:4000
+      - 35729:35729
