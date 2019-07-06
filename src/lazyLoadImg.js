@@ -9,7 +9,7 @@ if (window.IntersectionObserver) {
     img.setAttribute('src', dataSrc)
   }
 
-  let observer = new IntersectionObserver(function (entries, self) {
+  const observer = new IntersectionObserver(function (entries, self) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         preloadImage(entry.target);

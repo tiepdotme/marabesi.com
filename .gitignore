@@ -11,3 +11,5 @@ _sass/tailwind.scss
 log
 vendor
 js/
+main-bundle.js
+main-bundle.css

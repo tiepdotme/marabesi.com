@@ -36,7 +36,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 
-    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/assets/main-bundle.css" rel="stylesheet" />
 
     <!-- See https://goo.gl/OOhYW5 -->
     <link rel="manifest" href="/manifest.json">
@@ -69,22 +69,13 @@
   <body class="font-sans overflow-x-hidden">
     <button class="update-button w-full text-white bg-marabesi-purple p-2 m-auto fixed pin-t mb-5 z-50 hidden focus:outline-none font-bold">Update found, click to update</button>
 
-    <div class="menu-wrapper">
-      <div class="w-full flex items-center h-12 pl-2 bg-white md:hidden">
-        <svg id="menu" class="cursor-pointer w-10 h-10 p-2 text-marabesi-pink fill-current" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24">
-          <path
-            style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"
-            d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"
-            font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible"></path>
-        </svg>
-      </div>
-
+    <div class="menu-wrapper flex">
       <nav class="top-menu flex justify-start container lg:justify-center md:m-auto md:pt-2 md:pb-2">
         <a href="{{ site.url }}" class="hidden md:block">
           <img class="logo w-18 p-1" data-src="/images/logo.png" width="100" />
         </a>
 
-        <ul id="menu-list" class="container-menu hidden flex-col pl-5 md:flex md:pl-0 md:flex-row md:m-auto lg:m-0">
+        <ul id="menu-list" class="container-menu flex flex-col pl-5 md:flex md:pl-0 md:flex-row md:m-auto lg:m-0">
           {% for my_page in site.pages %}
           {% if my_page.title %}
           {% unless my_page.url contains 'bower_components' %}
@@ -98,6 +89,16 @@
           {% endfor %}
         </ul>
       </nav>
+
+      <div class="w-full flex items-center h-12 pl-2 bg-white md:hidden">
+        <svg id="menu" class="cursor-pointer w-10 h-10 p-2 text-marabesi-pink fill-current" xmlns="http://www.w3.org/2000/svg"
+          x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24">
+          <path
+            style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"
+            d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"
+            font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible"></path>
+        </svg>
+      </div>
     </div>
 
     <div class="flex flex-col items-center justify-center p-5">
@@ -105,20 +106,22 @@
       <ul id="results-container"></ul>
     </div>
 
-    <div class="banner-highlight">
-      <h1 class="font-normal text-lg py-4 md:text-3xl lg:text-4xl">
-        <span class="apostrophe">‘‘</span>
-        Code should be easy to understand.
-        <span class="apostrophe">’’</span>
-      </h1>
-      <p class="author text-xs">Dustin Boswell and Trevor Foucher - The Art Of Readable Code</p>
-    </div>
+    <div class="shell-content">
+      <div class="banner-highlight">
+        <h1 class="font-normal text-lg py-4 md:text-3xl lg:text-4xl">
+          <span class="apostrophe">‘‘</span>
+          Code should be easy to understand.
+          <span class="apostrophe">’’</span>
+        </h1>
+        <p class="author text-xs">Dustin Boswell and Trevor Foucher - The Art Of Readable Code</p>
+      </div>
 
     {{ content }}
 
-    <div class="footer">
-      <div class="footer-details">
-        Designed by @tamyitokazo
+      <div class="footer">
+        <div class="footer-details">
+          Designed by @tamyitokazo
+        </div>
       </div>
     </div>
 
@@ -136,6 +139,6 @@
     </script>
     {% endif %}
 
-    <script async src="/js/main-bundle.js"></script>
+    <script async src="/assets/main-bundle.js"></script>
   </body>
 </html>

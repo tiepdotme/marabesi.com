@@ -1,11 +1,3 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
 title: Marabesi
 email: matheus.marabesi@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
@@ -18,7 +10,6 @@ github_username:  marabesi
 paginate: 10
 paginate_path: "/posts/page:num"
 
-# Custom settings
 collections:
   newbies:
     output: true
@@ -29,11 +20,6 @@ collections:
   projects:
     output: true
 
-sass:
-    sass_dir: _sass
-    style: compressed
-
-# Build settings
 markdown: kramdown
 
 kramdown:
@@ -52,6 +38,6 @@ exclude:
   - .idea
   - .jekyll-metadata
   - .jekyll-cache
-  - utils
-  - log
   - src
+  - webpack.config.js
+  - main-bundle.js

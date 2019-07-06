@@ -5,10 +5,10 @@
   "main": "src/main.js",
   "scripts": {
     "compress": "node utils/image-compressor",
-    "build": "webpack --production && npm run build:tailwind && bundle exec jekyll build --config _config.yml",
-    "watch": "npm run build:tailwind && bundle exec jekyll serve --livereload --incremental --config _config.yml,_config_local.yml",
-    "watch-drafts": "npm run build:tailwind && bundle exec jekyll serve --livereload --incremental --drafts --config _config.yml,_config_local.yml",
-    "serve": "npm run build:tailwind && bundle exec jekyll build --config _config.yml,_config_local.yml && http-server -p 4000 ./_site",
+    "build": "npm run build:tailwind && webpack --production && bundle exec jekyll build --config _config.yml",
+    "watch": "npm run build:tailwind && webpack && bundle exec jekyll serve --livereload --incremental --config _config.yml,_config_local.yml",
+    "watch-drafts": "npm run build:tailwind && webpack && bundle exec jekyll serve --livereload --incremental --drafts --config _config.yml,_config_local.yml",
+    "serve": "npm run build:tailwind && webpack && bundle exec jekyll build --config _config.yml,_config_local.yml && http-server -p 4000 ./_site",
     "build:tailwind": "tailwind build src/tailwind.src.css -c tailwind.js -o _sass/tailwind.scss"
   },
   "repository": {
@@ -26,12 +26,24 @@
     "tailwindcss": "^0.7.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
     "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
+    "cssnano": "^4.1.10",
+    "extract-text-webpack-plugin": "^3.0.2",
     "http-server": "^0.11.1",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "purgecss-webpack-plugin": "^1.5.0",
+    "sass-loader": "^7.1.0",
     "script-loader": "^0.7.2",
-    "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2"
+    "style-loader": "^0.23.1",
+    "sugarss": "^2.0.0",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
   }
 }

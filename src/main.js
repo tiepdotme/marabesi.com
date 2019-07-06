@@ -4,6 +4,9 @@ require('./serviceWorkerHandler')
 require('simple-jekyll-search/dest/simple-jekyll-search')
 require('./disqus')
 
+import '../_sass/tailwind.scss';
+import '../_sass/main.scss'
+
 SimpleJekyllSearch({
   searchInput: document.getElementById('search-input'),
   resultsContainer: document.getElementById('results-container'),
