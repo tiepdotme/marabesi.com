@@ -2,7 +2,7 @@ const path = require('path')
 const glob = require('glob')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const purgePath = `${path.resolve(__dirname)}/_site/**/*`
+const purgePath = `${path.resolve(__dirname)}/**/{*.html, *.css}`
 class TailwindExtractor {
   static extract(content) {
     return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
@@ -16,7 +16,7 @@ module.exports = {
   ],
   output: {
     filename: '[name]-bundle.js',
-    path: path.resolve(__dirname, '_site/assets')
+    path: path.resolve(__dirname, 'assets')
   },
   module: {
     rules: [{
@@ -29,18 +29,18 @@ module.exports = {
         presets: ['@babel/preset-env']
       }
     }, {
-        test: /\.s(a|c)ss$/,
-        loader: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true
-            }
+      test: /\.s(a|c)ss$/,
+      loader: [
+        MiniCssExtractPlugin.loader,
+        'css-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true
           }
-        ]
-      }]
+        }
+      ]
+    }]
   },
   resolve: {
     extensions: ['.json', '.js'],
@@ -50,7 +50,7 @@ module.exports = {
       filename: "[name]-bundle.css",
     }),
     new PurgecssPlugin({
-      paths: glob.sync(purgePath, { nodir: true }),
+      paths: glob.sync(purgePath, { nodir: true, ignore: '{node_modules,vendor}/**' }),
       extractors: [
         {
           extractor: TailwindExtractor,

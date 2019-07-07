@@ -5,10 +5,10 @@
   "main": "src/main.js",
   "scripts": {
     "compress": "node utils/image-compressor",
-    "build": "npm run build:tailwind && bundle exec jekyll build --config _config.yml && webpack --production",
-    "watch": "npm run build:tailwind && webpack && bundle exec jekyll serve --livereload --incremental --config _config.yml,_config_local.yml",
-    "watch-drafts": "npm run build:tailwind && webpack && bundle exec jekyll serve --livereload --incremental --drafts --config _config.yml,_config_local.yml",
-    "serve": "npm run build:tailwind && webpack && bundle exec jekyll build --config _config.yml,_config_local.yml && http-server -p 4000 ./_site",
+    "build": "npm run build:tailwind && webpack --production && bundle exec jekyll build --config _config.yml",
+    "watch": "concurrently --kill-others \"webpack --watch\" \"npm run build:tailwind && bundle exec jekyll serve --livereload --incremental --config _config.yml,_config_local.yml\"",
+    "watch:drafts": "concurrently --kill-others \"webpack --watch\" \"npm run build:tailwind && bundle exec jekyll serve --livereload --incremental --drafts --config _config.yml,_config_local.yml\"",
+    "serve": "npm run build:tailwind && webpack --production && bundle exec jekyll build --config _config.yml,_config_local.yml && http-server -p 4003 ./_site",
     "build:tailwind": "tailwind build src/tailwind.src.css -c tailwind.js -o _sass/tailwind.scss"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "@babel/core": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.1",
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
     "extract-text-webpack-plugin": "^3.0.2",
