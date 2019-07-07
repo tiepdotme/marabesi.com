@@ -70,12 +70,12 @@
     <button class="update-button w-full text-white bg-marabesi-purple p-2 m-auto fixed pin-t mb-5 z-50 hidden focus:outline-none font-bold">Update found, click to update</button>
 
     <div class="menu-wrapper flex">
-      <nav class="top-menu flex justify-start container lg:justify-center md:m-auto md:pt-2 md:pb-2">
+      <nav class="top-menu hidden md:flex justify-start container lg:justify-center md:m-auto md:pt-2 md:pb-2">
         <a href="{{ site.url }}" class="hidden md:block">
           <img class="logo w-18 p-1" data-src="/images/logo.png" width="100" />
         </a>
 
-        <ul id="menu-list" class="container-menu flex flex-col pl-5 md:flex md:pl-0 md:flex-row md:m-auto lg:m-0">
+        <ul id="menu-list" class="container-menu hidden md:flex flex-col pl-5 md:flex md:pl-0 md:flex-row md:m-auto lg:m-0">
           {% for my_page in site.pages %}
           {% if my_page.title %}
           {% unless my_page.url contains 'bower_components' %}
