@@ -1,12 +1,23 @@
 version: '3'
 
 services:
+  nodejs:
+    volumes:
+      - ./:/srv/jekyll
+    working_dir: /srv/jekyll
+    build:
+      context: ./docker
+    ports:
+      - 4003:4003
+    command: bash -c "npm install && npm rebuild node-sass && npm run watch:webpack"
   blog:
     image: jekyll/jekyll
-    command: jekyll serve --livereload
+    command: jekyll serve --livereload --incremental --config _config.yml,_config_local.yml
     volumes:
       - ./:/srv/jekyll
       - ./vendor:/usr/local/bundle
     ports:
       - 4000:4000
       - 35729:35729
+    links:
+      - nodejs

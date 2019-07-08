@@ -8,8 +8,9 @@
     "build": "npm run build:tailwind && webpack --production && bundle exec jekyll build --config _config.yml",
     "watch": "concurrently --kill-others \"webpack --watch\" \"npm run build:tailwind && bundle exec jekyll serve --livereload --incremental --config _config.yml,_config_local.yml\"",
     "watch:drafts": "concurrently --kill-others \"webpack --watch\" \"npm run build:tailwind && bundle exec jekyll serve --livereload --incremental --drafts --config _config.yml,_config_local.yml\"",
-    "serve": "npm run build:tailwind && webpack --production && bundle exec jekyll build --config _config.yml,_config_local.yml && http-server -p 4003 ./_site",
-    "build:tailwind": "tailwind build src/tailwind.src.css -c tailwind.js -o _sass/tailwind.scss"
+    "http:serve": "npm run build:tailwind && webpack --production && http-server -p 4003 ./_site",
+    "build:tailwind": "tailwind build src/tailwind.src.css -c tailwind.js -o _sass/tailwind.scss",
+    "watch:webpack": "webpack --watch"
   },
   "repository": {
     "type": "git",
