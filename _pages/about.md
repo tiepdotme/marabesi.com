@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /about
 title: About
 date: 2016-03-24 10:29:49.000000000 -03:00
 type: page

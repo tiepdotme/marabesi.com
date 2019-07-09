@@ -11,6 +11,9 @@ paginate: 10
 paginate_path: "/posts/page:num"
 
 collections:
+  pages:
+    output: true
+    permalink: /:path
   newbies:
     output: true
   tests:

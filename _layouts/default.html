@@ -77,14 +77,12 @@
 
         <ul id="menu-list" class="container-menu hidden md:flex flex-col pl-5 md:flex md:pl-0 md:flex-row md:m-auto lg:m-0">
           {% for my_page in site.pages %}
-          {% if my_page.title %}
-          {% unless my_page.url contains 'bower_components' %}
-          <li class="item pt-2 pb-2 md:p-2">
-            <a class="item-link no-underline" href="{{ my_page.url | prepend: site.baseurl }}">
-              {{ my_page.title }}
-            </a>
-          </li>
-          {% endunless %}
+           {% if my_page.title %}
+            <li class="item pt-2 pb-2 md:p-2">
+              <a class="item-link no-underline" href="{{ my_page.url | prepend: site.baseurl }}">
+                {{ my_page.title }}
+              </a>
+            </li>
           {% endif %}
           {% endfor %}
         </ul>

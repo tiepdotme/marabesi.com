@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Agenda
-permalink: /calendar/
+permalink: /calendar
 date: 2017-05-26 10:29:49.000000000 -03:00
 type: page
 published: true
@@ -68,6 +68,6 @@ tags:
   - [PHPExperience - IoT powered by PHP and Streams](https://joind.in/event/php-experience-2017/schedule/grid){:target="_blank"}
 
 - 05/11/2016
-  - [TDC 2016 | Florianópolis - Vá para o próximo nível - Dicas e truques para a certificação PHP](http://www.thedevelopersconference.com.br/tdc/2016/florianopolis/trilha-php){:target="_blank"}
+  - [TDC 2016 Florianópolis - Vá para o próximo nível - Dicas e truques para a certificação PHP](http://www.thedevelopersconference.com.br/tdc/2016/florianopolis/trilha-php){:target="_blank"}
 
 [Home](/)
