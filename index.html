@@ -8,7 +8,13 @@ layout: default
             <div class="post-content" alt="{{ post.title }}">
                 <a href="{{ post.url | prepend: site.baseurl }}" class="post-link no-underline hidden sm:block">
                     <div class="cover-image">
-                        <img class="post-image rounded-full" height="100" width="100" data-src="{{ post.image }}" alt="Image of {{ post.title }}"/>
+                        {% if post.image %}
+                            <img class="post-image rounded-full" height="100" width="100" data-src="{{ post.image }}" alt="Image of {{ post.title }}"/>
+                        {% else %}
+                            <div class="post-image rounded-full flex justify-center items-center">
+                                <span class="text-3xl font-bold text-marabesi-purple">{{ post.title | slice: 0 | capitalize }}</span>
+                            </div>
+                        {% endif %}
                     </div>
                 </a>
 
