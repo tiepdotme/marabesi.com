@@ -17,8 +17,6 @@ collections:
     output: true
   conferences:
     output: true
-  projects:
-    output: true
 
 markdown: kramdown
 

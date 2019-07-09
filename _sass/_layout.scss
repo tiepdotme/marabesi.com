@@ -35,6 +35,10 @@ table {
     }
 }
 
+main ul li {
+    margin: 20px;
+}
+
 .top-menu {
     align-items: center;
 
@@ -155,6 +159,10 @@ table {
 
 .about-picture {
     margin-top: -200px;
+}
+
+.about > p > a > img {
+    display: inline;
 }
 
 .footer {

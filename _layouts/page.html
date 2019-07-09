@@ -6,6 +6,6 @@ layout: default
   <img src="/images/about.jpg" class="about-picture hidden md:block"/>
 {% endif %}
 
-<main class="page-content container m-auto p-5">
+<main class="page-content container m-auto p-5 {{ page.title | downcase }}">
   {{ content }}
 </main>
