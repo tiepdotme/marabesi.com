@@ -16,7 +16,11 @@ tags:
 - simcom,
 - iot,
 - tracking,
-- serial
+- serial,
+- gps,
+- gps neo6,
+- at,
+- at commands
 ---
 
 After a while testing the [GPS NEO6](/post/raspberry/2018/02/07/setting-up-gps-neo6-sensor.html) I ordered a new guy
