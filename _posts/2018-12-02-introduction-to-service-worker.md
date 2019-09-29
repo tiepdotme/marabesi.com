@@ -27,6 +27,10 @@ The following content is inspired by the udacity course with bits from [other
 sources as well](#03---references). The main goal is to identify what is a service worker
 and what it can offer to incorporate a progressive web app.
 
+# Edit May 14, 2019 - MadridJs talk
+
+<iframe src="//speakerdeck.com/player/ebcd7b3fea5744cf8e290a788f48bd68" width="100%" height="399" style="border:0; padding:0; margin:0; background:transparent;" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
 # 01 - Offline and lie-fi problem
 
 Service workers improves the user experience in the connectivity aspect.
