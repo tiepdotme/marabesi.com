@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Custom validator with Laravel 5 + (5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8)
+title: Custom validator with Laravel 5 + (5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8 and 6.0)
 date: 2017-05-31 01:06:05.000000000 -03:00
 type: post
 image: /images/posts/2017-05-31-laravel-custom-validator/cover.png
@@ -28,7 +28,9 @@ tags:
 - laravel 5.4,
 - laravel 5.5,
 - laravel 5.6,
-- laravel 5.7
+- laravel 5.7,
+- laravel 6.0,
+- laravel 6
 ---
 
 Obs: This post assumes that you understand the following topics within the
