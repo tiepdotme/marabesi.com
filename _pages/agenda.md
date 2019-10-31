@@ -19,7 +19,8 @@ tags:
 
 # Coming soon
 
--
+- 30/10/2019 ~ 11/01/2019
+  - [XIV Latin American Conference on Learning Objetcs](http://laclo2019.com){:target="_blank"}
 
 # Past due
 
