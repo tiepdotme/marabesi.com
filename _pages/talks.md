@@ -24,6 +24,7 @@ tags:
 
 # Talks
 
+- [LACLO 2019 - San José del Cabo, 2019](/conferences/laclo-2019)
 - [7Masters (Laravel) - São Paulo, 2018](/conferences/7masters-laravel-2018)
 - [Laravel meetup #16 - São Paulo, 2018](/conferences/16-laravel-meetup)
 - [NerdZão Day #1 - 6 Trilhas Tech Simultâneas - São Paulo](/conferences/nerdzao)
