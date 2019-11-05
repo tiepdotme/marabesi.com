@@ -81,6 +81,10 @@ this file follows the first rule. In addition to the the file [`index.js`](https
 The second rule can be checked in the `pages` and `components` directory, as
 all of them should't dispatch Firebase interactions.
 
+Interesting enough, exposing the store to the `window` object might fit other
+libraries/frameworks as well. This approach is not related to ReactJs + Redux only,
+but to any Flux implementation. As an example, Vuex can also benefit from this approach.
+
 ## Related work
 
 Previous work have shown that the solution proposed in the previous sections is
