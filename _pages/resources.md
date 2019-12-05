@@ -60,6 +60,7 @@ tags:
 * [Software Engineering Daily](https://softwareengineeringdaily.com)
 * [Software Engineering Radio](http://www.se-radio.net)
 * [Thoughtworks Radar](https://www.thoughtworks.com/radar)
+* [React podcast](https://reactpodcast.simplecast.fm/)
 
 ## Software engineering
 
