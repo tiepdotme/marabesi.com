@@ -22,6 +22,7 @@ tags:
 - laravel custom validator class,
 - laravel validation service provider,
 - laravel extend validator,
+- laravel custom validation,
 - laravel validator::extend
 - laravel 5.2,
 - laravel 5.3,
@@ -30,7 +31,8 @@ tags:
 - laravel 5.6,
 - laravel 5.7,
 - laravel 6.0,
-- laravel 6
+- laravel 6,
+- rules
 ---
 
 Obs: This post assumes that you understand the following topics within the
