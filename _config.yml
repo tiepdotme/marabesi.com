@@ -42,3 +42,6 @@ exclude:
   - src
   - webpack.config.js
   - main-bundle.js
+
+plugins:
+  - jekyll-sitemap
