@@ -261,7 +261,7 @@ graphql: Unexpected invocation at runtime. Either the Babel transform was not se
 The alternative solution proposed is to eject the reactjs app created with the
 create react app, the next section dives in details in how to achieve it.
 
-# The solution ejecting reactjs
+## The solution ejecting reactjs
 
 The solution for that is to eject the reactjs project running the command:
 `npm run eject`. Followed by changing the babel configuration used.
