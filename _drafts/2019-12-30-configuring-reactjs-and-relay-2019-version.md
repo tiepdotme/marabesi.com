@@ -37,6 +37,22 @@ in conclusion the solution with the eject react app is presented.
 - **Disclaimer 2: The following of this text assumes that a graphql server up and running on localhost port 4002.**
 - **Disclaimer 3: The text assumes general knowledge in handling terminal commands.**
 
+## Related work
+
+Despite previous attempts to setup reactjs and relay without ejecting the create
+react app **[7][8]**, the approach to such options shows to not be effective
+as, the application created by create react by does not understand the
+configuration required for relay to work.
+
+The `relay.config.js` pointed by **[7]** demonstrates that the reactjs app
+has difficulties to interpret the configuration file, leading to a broken
+application state.
+
+In the same sense **[8]** provides three different alternatives to setup relay
+and reactjs, which the third options elaborates more on how to use relay
+without ejecting. This approach as the previous one mentioned leads to a
+broken state application.
+
 ## Setting up ReactJs
 
 Create react app **[1]** is a opinionated tool that comes with webpack configuration and
@@ -57,9 +73,19 @@ by relay to work.
 npm i get-graphql-schema relay-compiler babel-plugin-relay --save-dev && npm i graphql react-relay --save
 ```
 
+`get-graphql-schema` **[2]** is a tool used for generating the graphql schema from a given
+graphql server.
+
+`relay-compiler` **[3]** is used to convert graphql literals into generated
+files that live alongside your source files. This approach facilitates the
+usage of relay into reactjs project, preventing developers to write those files
+themselves. `babel-plugin-relay` is related as well, as it converts graphql to
+runtime artifacts - without this plugin is not possible to run relay in the
+browser.
+
 At this stage a check point would help to make sure that the dependencies
 have been installed and they are working as expected. For that, in the `package.json`
-file add the following scripts:
+file add the following scripts **[4]**:
 
 ```js
 {
@@ -109,11 +135,15 @@ Writing js
 Unchanged: 0 files
 ```
 
+The last line should reflect the project lack of graphql files, as in the last
+line it shows `Unchanged: 0 files`, which in this case is the desired
+behavior.
+
 ## Setting up relay environment
 
-Relay requires an environment setup to work properly **[4]**. The environment
+Relay requires an environment setup to work properly **[5]**. The environment
 provided by the official documentation is the one used here. Copy the following
-code and salve it in a file called `environment.js`.
+code and save it in a file called `environment.js`.
 
 ```js
 import {
@@ -153,6 +183,8 @@ Next, comes the relay component to interact with the graphql server. The compone
 used here is a react functional component that creates a list of products
 (file named `ProductList.js`). The point of attention here is the `environment` usage
 defined previously, followed by the `query` variable that holds the graphql query.
+The graphql query is passed to the `QueryRenderer` **[6]** relay component to fetch
+the graphql data.
 
 ```js
 // ProductList.js
@@ -196,8 +228,8 @@ export default ProductListQuery;
 ```
 
 The ProductList component is based on the component provided by the relay official
-documentation **[5]**. To actually use the ProductList component one more step
-is required: invoke the component in the `App.js` file, as the following code does.
+documentation **[6]**. To actually use the ProductList component one more step
+is required: to invoke the component in the `App.js` file, as the following code does.
 
 ```js
 import React from 'react';
@@ -216,8 +248,9 @@ export default App;
 
 ```
 
-Once the code is in place, the expected behavior is to just works. Unfortunately
-it doesn't. Trying to run the code with the setup made so far throws an exception.
+Once the code is in place, the expected behavior is to it to work, as the
+basic setup is completed. Unfortunately it doesn't. Trying to run the code
+with the setup made so far throws an exception.
 
 ```
 graphql: Unexpected invocation at runtime. Either the Babel transform was not set up, or it failed to identify this call site. Make sure it is being used verbatim as `graphql`.
@@ -285,14 +318,18 @@ reactjs app and realy should be up and running as well.
 
 ## References
 
-[1] https://create-react-app.dev
+[1] Create React App - Set up a modern web app by running one command [Online]. Available: [https://create-react-app.dev](https://create-react-app.dev){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[2] https://github.com/prisma-labs/get-graphql-schema
+[2] Fetch and print the GraphQL schema from a GraphQL HTTP endpoint [Online]. Available: [https://github.com/prisma-labs/get-graphql-schema](https://github.com/prisma-labs/get-graphql-schema){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[3] https://docs.npmjs.com/misc/scripts
+[3] https://relay.dev/docs/en/installation-and-setup#set-up-relay-compiler
 
-[4] https://relay.dev/docs/en/quick-start-guide#relay-environment
+[4] How npm handles the "scripts" field [Online]. Available: [https://docs.npmjs.com/misc/scripts](https://docs.npmjs.com/misc/scripts){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[5] https://relay.dev/docs/en/quick-start-guide#rendering-graphql-queries
+[5] Relay environment [Online]. Available: [https://relay.dev/docs/en/quick-start-guide#relay-environment](https://relay.dev/docs/en/quick-start-guide#relay-environment){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[6] https://hackernoon.com/using-create-react-app-with-relay-modern-989c078fa892
+[6] Rendering GraphQL Queries [Online]. Available: [https://relay.dev/docs/en/quick-start-guide#rendering-graphql-queries](https://relay.dev/docs/en/quick-start-guide#rendering-graphql-queries){:target="_blank"}. [Accessed: 31 - Dec - 2019]
+
+[7] Set up Relay with a single config file [Online]. Available: [https://relay.dev/docs/en/installation-and-setup#set-up-relay-with-a-single-config-file](https://relay.dev/docs/en/installation-and-setup#set-up-relay-with-a-single-config-file){:target="_blank"}. [Accessed: 01 - Jan - 2020]
+
+[8] Using Create React App with Relay Modern [Online]. Available: [https://hackernoon.com/using-create-react-app-with-relay-modern-989c078fa892](https://hackernoon.com/using-create-react-app-with-relay-modern-989c078fa892){:target="_blank"}. [Accessed: 01 - Jan - 2020]
