@@ -318,18 +318,18 @@ reactjs app and realy should be up and running as well.
 
 ## References
 
-[1] Create React App - Set up a modern web app by running one command [Online]. Available: [https://create-react-app.dev](https://create-react-app.dev){:target="_blank"}. [Accessed: 31 - Dec - 2019]
+[1] Create React App - Set up a modern web app by running one command [Online]. Available: [https://create-react-app.dev](https://create-react-app.dev "Create React App - Set up a modern web app by running one command"){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[2] Fetch and print the GraphQL schema from a GraphQL HTTP endpoint [Online]. Available: [https://github.com/prisma-labs/get-graphql-schema](https://github.com/prisma-labs/get-graphql-schema){:target="_blank"}. [Accessed: 31 - Dec - 2019]
+[2] Fetch and print the GraphQL schema from a GraphQL HTTP endpoint [Online]. Available: [https://github.com/prisma-labs/get-graphql-schema](https://github.com/prisma-labs/get-graphql-schema, "Fetch and print the GraphQL schema from a GraphQL HTTP endpoint"){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[3] https://relay.dev/docs/en/installation-and-setup#set-up-relay-compiler
+[3] Set up relay-compiler [Online]. Available: [https://relay.dev/docs/en/installation-and-setup#set-up-relay-compiler](https://relay.dev/docs/en/installation-and-setup#set-up-relay-compiler "Set up relay-compiler"){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[4] How npm handles the "scripts" field [Online]. Available: [https://docs.npmjs.com/misc/scripts](https://docs.npmjs.com/misc/scripts){:target="_blank"}. [Accessed: 31 - Dec - 2019]
+[4] How npm handles the "scripts" field [Online]. Available: [https://docs.npmjs.com/misc/scripts](https://docs.npmjs.com/misc/scripts "How npm handles the scripts field"){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[5] Relay environment [Online]. Available: [https://relay.dev/docs/en/quick-start-guide#relay-environment](https://relay.dev/docs/en/quick-start-guide#relay-environment){:target="_blank"}. [Accessed: 31 - Dec - 2019]
+[5] Relay environment [Online]. Available: [https://relay.dev/docs/en/quick-start-guide#relay-environment](https://relay.dev/docs/en/quick-start-guide#relay-environment "Relay environment"){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[6] Rendering GraphQL Queries [Online]. Available: [https://relay.dev/docs/en/quick-start-guide#rendering-graphql-queries](https://relay.dev/docs/en/quick-start-guide#rendering-graphql-queries){:target="_blank"}. [Accessed: 31 - Dec - 2019]
+[6] Rendering GraphQL Queries [Online]. Available: [https://relay.dev/docs/en/quick-start-guide#rendering-graphql-queries](https://relay.dev/docs/en/quick-start-guide#rendering-graphql-queries "Rendering GraphQL Queries"){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[7] Set up Relay with a single config file [Online]. Available: [https://relay.dev/docs/en/installation-and-setup#set-up-relay-with-a-single-config-file](https://relay.dev/docs/en/installation-and-setup#set-up-relay-with-a-single-config-file){:target="_blank"}. [Accessed: 01 - Jan - 2020]
+[7] Set up Relay with a single config file [Online]. Available: [https://relay.dev/docs/en/installation-and-setup#set-up-relay-with-a-single-config-file](https://relay.dev/docs/en/installation-and-setup#set-up-relay-with-a-single-config-file "Set up Relay with a single config file"){:target="_blank"}. [Accessed: 01 - Jan - 2020]
 
-[8] Using Create React App with Relay Modern [Online]. Available: [https://hackernoon.com/using-create-react-app-with-relay-modern-989c078fa892](https://hackernoon.com/using-create-react-app-with-relay-modern-989c078fa892){:target="_blank"}. [Accessed: 01 - Jan - 2020]
+[8] Using Create React App with Relay Modern [Online]. Available: [https://hackernoon.com/using-create-react-app-with-relay-modern-989c078fa892](https://hackernoon.com/using-create-react-app-with-relay-modern-989c078fa892 "Using Create React App with Relay Modern"){:target="_blank"}. [Accessed: 01 - Jan - 2020]
