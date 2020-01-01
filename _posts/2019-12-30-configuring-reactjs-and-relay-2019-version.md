@@ -15,7 +15,16 @@ tags:
 - relay,
 - graph,
 - graphql,
-- eject reactjs
+- eject reactjs,
+- configuring relay js,
+- A Step By Step Guide,
+- relay-config npm,
+- get-graphql-schema,
+- relay-compiler,
+- babel-plugin-relay,
+- react-relay,
+- getting started,
+- howtographql
 ---
 
 Recently GraphQL started to gain attention from the open source community
