@@ -13,9 +13,9 @@ tags:
 - build,
 - CI,
 - commit,
-- continuous,
-- delivery,
-- chapter,
+- Continuous,
+- Delivery,
+- Chapter,
 - martin fowler,
 - pipeline,
 - review,
@@ -28,7 +28,10 @@ tags:
 - travis,
 - deployment,
 - deploy,
-- version
+- version,
+- integration,
+- production,
+- control
 ---
 
 As we know the software nowadays exists to support the business rules and I
