@@ -3,6 +3,10 @@ layout: default
 ---
 
 <main class="page-container container m-auto lg:flex lg:flex-col">
+    {% if paginator.page %}
+        <h1 class="hidden">Listing posts on page {{ paginator.page }}</h1>
+    {% endif %}
+
     {% for post in paginator.posts %}
         <div class="p-5 w-4/5 m-auto lg:w-1/2">
             <div class="post-content" alt="{{ post.title }}">
