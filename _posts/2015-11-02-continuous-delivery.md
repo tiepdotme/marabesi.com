@@ -21,6 +21,7 @@ tags:
 - review,
 - strategy,
 - test,
+- stage,
 - software,
 - martin fowler,
 - Humble J. and Farley D.,
@@ -120,12 +121,12 @@ them.
 
 [![Testing quadrant]({{ site.baseurl }}/images/posts/2015-11-02-continuous-delivery/unit-test.png)]({{ site.baseurl }}/images/posts/2015-11-02-continuous-delivery/unit-test.png){:target="_blank"}
 
-## The deployment pipe line
+## The deployment pipeline
 
 If you aren't familiar with CI you don't know what a deployment pipeline
 is, we use deployment pipeline to build a flow where we can deploy the source
-code into production, the pipe line has steps where each one of it has a simple
-purpose, for example unit test, also the steps used in the pipe line usually
+code into production, the pipeline has steps where each one of it has a simple
+purpose, for example unit test, also the steps used in the pipeline usually
 were made manually in the past.
 
 At an abstract level, a deployment pipeline is an automated manifestation of
@@ -133,9 +134,9 @@ your process for getting software from version control into the hands of your
 users. Every change to your software goes through a complex process on its
 way to being released **[1, p. 107]**.
 
-To build a pipe line depends in which project you're working on.
-The best pipe line for you project could be the worse from mine.
-What brings us to a really unique way to develop pipe lines, but of
+To build a pipeline depends in which project you're working on.
+The best pipeline for you project could be the worse from mine.
+What brings us to a really unique way to develop pipelines, but of
 course following some rules and best practices.
 
 ## Build and Deployment Scripting
@@ -193,7 +194,7 @@ to apply Continuous Delivery.
 ## Don't be regular programmer
 
 Continuous Delivery is a process that take a while for start to work.
-There are many steps to follow, many things to automate, pipe line to be
+There are many steps to follow, many things to automate, pipeline to be
 created, configuration management and commit stages to watch, just to name a
 few. To achieve Continuous Delivery we must persist and don't give up.
 
