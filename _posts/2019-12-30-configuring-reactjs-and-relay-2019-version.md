@@ -15,6 +15,12 @@ tags:
 - relay,
 - graph,
 - graphql,
+- query,
+- environment,
+- component,
+- compiler,
+- web,
+- js,
 - eject reactjs,
 - configuring relay js,
 - A Step By Step Guide,
@@ -329,7 +335,7 @@ reactjs app and realy should be up and running as well.
 
 [1] Create React App - Set up a modern web app by running one command [Online]. Available: [https://create-react-app.dev](https://create-react-app.dev "Create React App - Set up a modern web app by running one command"){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
-[2] Fetch and print the GraphQL schema from a GraphQL HTTP endpoint [Online]. Available: [https://github.com/prisma-labs/get-graphql-schema](https://github.com/prisma-labs/get-graphql-schema, "Fetch and print the GraphQL schema from a GraphQL HTTP endpoint"){:target="_blank"}. [Accessed: 31 - Dec - 2019]
+[2] Fetch and print the GraphQL schema from a GraphQL HTTP endpoint [Online]. Available: [https://github.com/prisma-labs/get-graphql-schema](https://github.com/prisma-labs/get-graphql-schema "Fetch and print the GraphQL schema from a GraphQL HTTP endpoint"){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 
 [3] Set up relay-compiler [Online]. Available: [https://relay.dev/docs/en/installation-and-setup#set-up-relay-compiler](https://relay.dev/docs/en/installation-and-setup#set-up-relay-compiler "Set up relay-compiler"){:target="_blank"}. [Accessed: 31 - Dec - 2019]
 

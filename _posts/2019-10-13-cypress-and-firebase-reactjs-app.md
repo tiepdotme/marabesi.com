@@ -11,11 +11,21 @@ categories:
 tags:
 - web,
 - js,
+- redux,
 - javascript,
 - reactjs,
+- ReactJs,
 - e2e,
 - cypress,
+- Cypress,
+- testing,
+- test,
+- solution,
+- docs,
 - firebase,
+- Firebase,
+- Online,
+- github,
 - sdk
 ---
 
@@ -41,7 +51,7 @@ In specific the real time database (or more recent firestore) is a Firebase
 product that allows developers to write real time applications.
 
 It has a vast library that integrates with many programming languages, the firebase
-app has support for iOS, Android and Web **[4]**. The server side supports more technologies **[5]**.
+app has support for iOS, Android and Web (javascript) **[4]**. The server side supports more technologies **[5]**.
 
 ## Cypress and Firebase
 

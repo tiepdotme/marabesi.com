@@ -12,8 +12,19 @@ categories:
 - raspberrypi
 - php
 tags:
+- config,
+- creating,
+- configure,
+- version,
+- buildconf,
+- install,
+- command,
+- libxml,
+- found,
+- Solution,
 - web,
 - php,
+- PHP,
 - source,
 - php-src,
 - raspberry pi,
@@ -38,7 +49,7 @@ with desktop and recommended software):
 - Release date: 2018-11-13
 - Kernel version: 4.14
 
-# Getting the source code
+## Getting the source code
 
 ```
 git clone https://github.com/php/php-src
@@ -62,7 +73,7 @@ the errors show up in the following commands:
 - ./buildconf
 - ./configure
 
-# Error (buildconf): autoconf out of date
+## Error (buildconf): autoconf out of date
 
 Executed command: `./buildconf`.
 
@@ -93,7 +104,7 @@ rebuilding main/php_config.h.in
 ```
 
 
-# Error (configure): bison out of date
+## Error (configure): bison out of date
 
 Executed command `./configure`
 
@@ -108,7 +119,7 @@ sudo apt-get install bison
 ```
 
 
-# Error (configure): rec2c not installed 
+## Error (configure): rec2c not installed 
 
 Executed command: `./configure`
 
@@ -123,7 +134,7 @@ configure: error: You will need re2c 0.13.4 or later to generate PHP lexers.
 sudo apt-get install re2c
 ```
 
-# Error (configure): libxml2 dev dependecy not installed
+## Error (configure): libxml2 dev dependecy not installed
 
 Executed command: `./configure`
 
@@ -139,7 +150,7 @@ configure: error: libxml2 not found. Please check your libxml2 installation.
 sudo apt-get install libxml2-dev
 ```
 
-# Error (configure): sqlite3 dev dependecy not installed
+## Error (configure): sqlite3 dev dependecy not installed
 
 Executed command: `./configure`
 

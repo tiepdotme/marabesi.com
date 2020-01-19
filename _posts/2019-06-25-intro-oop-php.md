@@ -9,10 +9,22 @@ status: published
 categories:
 - php
 tags:
+- class,
+- programming,
+- private,
+- classes,
+- Person,
+- object,
+- type,
+- final,
+- methods,
+- code,
+- inheritance,
 - web,
 - oop,
 - php,
-- standard,
+- PHP,
+- behaviors,
 - oop
 ---
 

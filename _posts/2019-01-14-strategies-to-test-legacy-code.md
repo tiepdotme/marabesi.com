@@ -10,11 +10,24 @@ categories:
 - javascript
 tags:
 - test,
+- acceptance,
+- code,
+- unit,
+- suite,
+- change,
+- testing,
+- developer,
+- class,
+- refactoring,
 - software,
 - refactor,
 - strategies,
 - legacy code,
 - acceptance test,
+- confidence,
+- strategy,
+- slow,
+- pyramid,
 - unit test
 ---
 
