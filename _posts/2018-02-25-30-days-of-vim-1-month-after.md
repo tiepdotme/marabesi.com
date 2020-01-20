@@ -10,9 +10,9 @@ categories:
 - Thoughts
 - Vim
 tags:
-- vim
-- text editor
-- productivity
+- vim,
+- text editor,
+- productivity,
 - plugins
 ---
 

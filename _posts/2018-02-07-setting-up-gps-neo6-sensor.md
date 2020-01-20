@@ -11,25 +11,22 @@ categories:
 - raspberry
 tags:
 - gps,
+- GPS,
+- NEO,
+- command,
 - neo 6,
 - raspberry,
+- Raspberry,
 - pi,
 - gpsd,
+- cgps,
+- sensor,
 - serial,
 - uart,
 - gpio,
+- GPIO,
 - iot
 ---
-## IMPORTANT - EDIT 05/01
-
-The antenna that comes with this sensor is really cheap and takes time to receive the signal from the satellites.
-Make sure to be outside, and with a clear vision from the sky to improve your success of getting a signal.
-
-The sensor has a PPS indicator (green light), when blinking it indicates that the signal is comming and
-therefore you are receiving the correct information. Otherwise the light will keep on, which means that
-it is trying to connect.
-
-## Getting started with GPS NEO 6
 
 Recently I have had the chance to set up a basic IoT project which consists of localization by GPS.
 The decision was to work with the Raspberry board over the arduino based on the number os shields
@@ -50,6 +47,15 @@ In this post you will see the following:
 2. How to configure the Raspberry Pi and read data from the GPS
 3. Enable the UART mode in a specific GPIO
 4. Gotchas, a few tricks and tips to help you mitigate problems
+
+## IMPORTANT - EDIT 05/01
+
+The antenna that comes with this sensor is really cheap and takes time to receive the signal from the satellites.
+Make sure to be outside, and with a clear vision from the sky to improve your success of getting a signal.
+
+The sensor has a PPS indicator (green light), when blinking it indicates that the signal is comming and
+therefore you are receiving the correct information. Otherwise the light will keep on, which means that
+it is trying to connect.
 
 ## Wiring up
 

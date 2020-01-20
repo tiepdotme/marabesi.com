@@ -9,18 +9,28 @@ status: publish
 categories:
 - posts
 tags:
+- SIM,
+- APN,
 - web,
 - arduino,
+- Arduino,
+- Uno,
+- board,
+- command,
+- Command,
 - sim800l,
-- 800,
-- simcom,
 - iot,
 - tracking,
 - serial,
+- Serial,
+- SAPBR,
 - gps,
 - gps neo6,
 - at,
-- at commands
+- at commands,
+- password,
+- location,
+- gsm
 ---
 
 After a while testing the [GPS NEO6](/post/raspberry/2018/02/07/setting-up-gps-neo6-sensor.html) I ordered a new guy

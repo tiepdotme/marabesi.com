@@ -9,6 +9,15 @@ status: published
 categories:
 - javascript
 tags:
+- worker,
+- service,
+- event,
+- user,
+- function,
+- cached,
+- content,
+- Available,
+- Accessed,
 - web,
 - js,
 - javascript,

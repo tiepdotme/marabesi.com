@@ -28,8 +28,6 @@ tags:
 - oop
 ---
 
-## Abstract
-
 The following content aims to introduce the concepts of OOP, complementing these
 concepts the PHP language is used to demonstrate practical examples, but can be
 written in any programming language.

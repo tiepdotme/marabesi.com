@@ -9,6 +9,11 @@ status: publish
 categories:
 - Thoughts
 tags:
+- Vim,
+- week,
+- find,
+- VScode,
+- book,
 - vim,
 - text editor,
 - a byte of vim,
