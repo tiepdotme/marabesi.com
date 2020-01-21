@@ -9,7 +9,20 @@ status: published
 categories:
 - Post
 tags:
+- image,
+- Debian,
+- Intel,
+- error,
+- version,
+- SSH,
+- Yocto,
+- distribution,
+- Gen,
+- node,
+- interface,
+- Linux,
 - iot,
+- Galileo,
 - galileo,
 - gen2,
 - debian,

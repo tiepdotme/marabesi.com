@@ -9,6 +9,14 @@ image: /images/posts/2016-09-13-laravel-the-right-way-part-1/cover.svg
 categories:
 - php
 tags:
+- Laravel,
+- business,
+- data,
+- service,
+- layer,
+- right,
+- different,
+- application,
 - php,
 - laravel,
 - right way,

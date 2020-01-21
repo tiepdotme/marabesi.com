@@ -9,6 +9,18 @@ status: published
 categories:
 - php
 tags:
+- documentation,
+- end,
+- customer,
+- understand,
+- building,
+- Pressman,
+- client,
+- problem,
+- wrong,
+- developers,
+- questions,
+- implement,
 - specification,
 - business,
 - software

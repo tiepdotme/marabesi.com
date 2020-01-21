@@ -26,7 +26,10 @@ tags:
 - Firebase,
 - Online,
 - github,
-- sdk
+- sdk,
+- https,
+- store,
+- Redux
 ---
 
 Cypress is a e2e testing tool that interacts with chrome based browsers (and electron) to

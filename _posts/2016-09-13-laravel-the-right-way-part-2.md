@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Laravel the right way (PART 2) - 10 Laravel meetup
+title: Laravel the right way (PART 2 - Modules) - 10 Laravel meetup
 date: 2016-09-13 01:06:05.000000000 -03:00
 image: /images/posts/2016-09-13-laravel-the-right-way-part-2/cover.svg
 type: post
@@ -9,6 +9,14 @@ status: published
 categories:
 - php
 tags:
+- Laravel,
+- modules,
+- Modules,
+- system,
+- modular,
+- app,
+- community,
+- applications,
 - php,
 - laravel,
 - right way,
@@ -17,8 +25,6 @@ tags:
 - laracast,
 - laranews
 ---
-
-## Modules
 
 Modules are always required by many applications and its not different in PHP, but again, to take this decision
 there are things to think about. The first is the size of your application, if you have a small app there is no need

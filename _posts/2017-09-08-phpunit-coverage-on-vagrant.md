@@ -13,7 +13,16 @@ tags:
 - laravel,
 - environment,
 - php,
-- tip
+- tip,
+- PHPUnit,
+- run,
+- coverage,
+- xdebug,
+- PHP,
+- extension,
+- Homestead,
+- composer,
+- version
 ---
 
 Vagrant is the official tool that Laravel supports in the development stage, 

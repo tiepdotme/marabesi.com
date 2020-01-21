@@ -9,6 +9,19 @@ status: published
 categories:
 - php
 tags:
+- queue,
+- Laravel,
+- database,
+- default,
+- email,
+- table,
+- send,
+- file,
+- sync,
+- jobs,
+- failed,
+- configuration,
+- Queues,
 - queues,
 - laravel,
 - quickbooks,

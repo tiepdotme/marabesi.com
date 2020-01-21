@@ -9,6 +9,16 @@ status: published
 categories:
 - Post
 tags:
+- stream,
+- public,
+- Arduino,
+- path,
+- PHP,
+- register,
+- file,
+- read,
+- fopen,
+- contents,
 - arduino,
 - php,
 - serial,
