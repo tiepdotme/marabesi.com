@@ -68,6 +68,7 @@ tags:
     - [IEEE Software Magazine](https://publications.computer.org/software-magazine)
     - [Object calisthenics](http://williamdurand.fr/2013/06/03/object-calisthenics)
     - [arXiv.org](https://arxiv.org/list/cs.SE/recent)
+    - [Software Testing: From Theory to Practice](https://sttp.site)
 * Books
     - [Software Engineering - A Practitioner’s Approach](http://www.vumultan.com/Books/CS605-Software%20Engineering%20Practitioner%E2%80%99s%20Approach%20%20by%20Roger%20S.%20Pressman%20.pdf)
     - [Software Engineering, Global Edition](https://www.amazon.com/Software-Engineering-Global-Ian-Sommerville/dp/1292096136)
