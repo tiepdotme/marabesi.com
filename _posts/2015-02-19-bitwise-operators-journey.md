@@ -9,14 +9,18 @@ status: publish
 categories:
 - php
 tags:
+- operator,
+- Operator,
+- table,
+- Result,
+- Bits,
+- operators,
 - and,
 - bitwise,
 - or,
 - php,
-- php basics,
 - web,
 - xor,
-- zce,
 - certification
 ---
 

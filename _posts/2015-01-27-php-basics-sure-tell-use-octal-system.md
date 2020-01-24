@@ -9,6 +9,17 @@ status: publish
 categories:
 - php
 tags:
+- PHP,
+- system,
+- numbers,
+- format,
+- program,
+- expression,
+- decimal,
+- documentation,
+- Converting,
+- output,
+- code,
 - octal,
 - php,
 - php basics,

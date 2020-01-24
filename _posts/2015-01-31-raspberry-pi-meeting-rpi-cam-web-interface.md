@@ -9,6 +9,16 @@ status: publish
 categories:
 - IoT
 tags:
+- raspberry,
+- Raspberry,
+- interface,
+- Interface,
+- Web,
+- Cam,
+- RPi,
+- picture,
+- Code,
+- Meeting,
 - socket,
 - text,
 - message,

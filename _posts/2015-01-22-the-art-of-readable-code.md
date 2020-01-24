@@ -9,6 +9,14 @@ status: publish
 categories:
 - Books review
 tags:
+- Code,
+- Readable,
+- Art,
+- read,
+- good,
+- writing,
+- Boswell,
+- write,
 - art,
 - book,
 - code,

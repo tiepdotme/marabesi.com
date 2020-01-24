@@ -9,6 +9,13 @@ status: publish
 categories:
 - php
 tags:
+- conversion,
+- table,
+- Hexadecimal,
+- numbers,
+- Converting,
+- Code,
+- Decimal,
 - development,
 - hex,
 - hexadecimal,

@@ -10,6 +10,17 @@ categories:
 - Books review
 - Design Patterns
 tags:
+- patterns,
+- PHP,
+- book,
+- Design,
+- Patterns,
+- Code,
+- Method,
+- Behavioral,
+- explain,
+- creational,
+- structural,
 - adapter,
 - decorator,
 - design patterns,

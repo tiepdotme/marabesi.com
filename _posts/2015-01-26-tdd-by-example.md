@@ -9,11 +9,17 @@ status: publish
 categories:
 - Books review
 tags:
+- TDD,
+- book,
+- example,
+- designs,
+- Beck,
+- Kent,
+- Code,
 - development,
 - driven,
 - java,
 - kent beck,
-- phyton,
 - tdd,
 - software testing,
 - pettern,
