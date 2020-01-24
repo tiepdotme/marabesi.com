@@ -8,13 +8,21 @@ status: publish
 categories:
 - php
 tags:
+- PHP,
+- Continuous,
+- build,
+- project,
+- tests,
+- repository,
+- branch,
+- deploy,
+- Github,
 - CI,
 - continuous delivery,
 - continuous php,
 - php,
 - improvement,
-- team,
-- it
+- team
 image: /images/posts/2016-04-04-continuous-php/cover.png
 ---
 
@@ -30,7 +38,7 @@ To see how is easy to use **Continuous PHP** I'm going to use it in a simple per
 project ([https://github.com/marabesi/use-case-management](https://github.com/marabesi/use-case-management){:target="_blank"})
 which consist of a simple PHPUnit test suit.
 
-To follow this post you need to have :
+To follow this post you need to have:
 
 1. You must have a Github account
 2. You must have a project with PHPUnit tests

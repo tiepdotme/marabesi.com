@@ -9,6 +9,17 @@ status: publish
 categories:
 - TDD
 tags:
+- TDD,
+- code,
+- test,
+- stage,
+- make,
+- first,
+- pass,
+- problem,
+- bug,
+- hard,
+- refactor,
 - blue,
 - green,
 - red,

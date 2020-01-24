@@ -9,6 +9,17 @@ status: publish
 categories:
 - php
 tags:
+- Xpath,
+- book,
+- summary,
+- author,
+- library,
+- node,
+- PHP,
+- Summary,
+- version,
+- document,
+- using,
 - dom,
 - nodes,
 - php,

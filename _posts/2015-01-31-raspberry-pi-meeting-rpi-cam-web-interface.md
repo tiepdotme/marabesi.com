@@ -9,6 +9,17 @@ status: publish
 categories:
 - IoT
 tags:
+- socket,
+- text,
+- message,
+- changed,
+- port,
+- host,
+- WebSocket,
+- container,
+- clients,
+- server,
+- HTML,
 - camera,
 - internet of things,
 - iot,

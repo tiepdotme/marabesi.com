@@ -10,6 +10,9 @@ categories:
 tags:
 - web,
 - js,
+- app,
+- schema,
+- npm,
 - reactjs,
 - react,
 - relay,

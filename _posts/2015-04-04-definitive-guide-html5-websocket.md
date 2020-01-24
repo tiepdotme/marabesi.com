@@ -9,6 +9,16 @@ status: publish
 categories:
 - Books review
 tags:
+- WebSocket,
+- WebSockets,
+- Chapter,
+- handshake,
+- guide,
+- HTML5,
+- PHP,
+- protocol,
+- Messaging,
+- client,
 - html5,
 - IETF,
 - MDN,
@@ -16,11 +26,10 @@ tags:
 - W3C,
 - web sockets,
 - web,
-- www,
 - chat,
 - sockets,
 - xmpp,
-- review
+- revew
 ---
 
 The book "The definitive guide to HTML5 WebSocket" is a short book with a great

@@ -9,6 +9,17 @@ status: publish
 categories:
 - Thoughts
 tags:
+- case,
+- diagram,
+- Software,
+- actor,
+- development,
+- management,
+- UML,
+- developer,
+- code,
+- flow,
+- project,
 - angular,
 - backend,
 - firebase,

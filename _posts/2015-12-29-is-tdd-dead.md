@@ -9,14 +9,20 @@ image: /images/posts/2015-12-29-is-tdd-dead/cover.jpg
 categories:
 - TDD
 tags:
+- test,
+- TDD,
+- tests,
+- write,
+- unit,
+- Laravel,
+- application,
+- change,
 - code,
 - dead,
 - software,
 - tdd,
 - testing,
-- software testing,
 - laravel,
-- zf2,
 - symfony
 ---
 
