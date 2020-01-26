@@ -8,6 +8,17 @@ status: published
 categories:
 - php
 tags:
+- Software,
+- Websites,
+- Engineering,
+- PHP,
+- Books,
+- Unit,
+- Resources,
+- Framework,
+- Code,
+- podcast,
+- Testing,
 - resources,
 - php,
 - software,
@@ -16,38 +27,6 @@ tags:
 - unit tests,
 - books
 ---
-
-## PHP
-* Websites
-    - [PHP Certification](http://www.zend.com/en/services/certification/php-certification)
-
-## Unit tests
-
-* Websites
-    - [PHP Unit documentation](https://phpunit.de/)
-* Books
-    - [Test Driven Development: By Example: Kent Beck](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
-    - [The art of Unit testing](http://www.cs.umss.edu.bo/doc/material/mat_gral_137/The%20Art%20of%20Unit%20Testing%20with%20Examples%20in%20.NET%20(Manning%202009).pdf)
-
-## Zend Framework
-
-* Books
-   - [Using Zend Framework 3](https://olegkrivtsov.github.io/using-zend-framework-3-book/html/)
-
-## Laravel
-
-* Websites
-    - [Laracast](https://laracasts.com/)
-    - [Laravel documentation](https://laravel.com/docs/)
-    - [Laranews](https://laravel-news.com/)
-
-## Symfony
-
-* Websites
-    - [Symfony documentation](https://symfony.com/doc/current/index.html)
-
-* Books
-    - [Mastering Symfony](https://www.packtpub.com/web-development/mastering-symfony)
 
 ## Podcasts
 
@@ -82,3 +61,32 @@ tags:
 * [Matthew Weier O'Phinney](https://mwop.net)
 * [Martin Fowler](https://martinfowler.com)
 * [Simon Brown](http://www.codingthearchitecture.com/authors/sbrown)
+
+## PHP
+
+* Websites
+    - [PHP Certification](http://www.zend.com/en/services/certification/php-certification)
+
+## Unit tests
+
+* Websites
+    - [PHP Unit documentation](https://phpunit.de/)
+* Books
+    - [Test Driven Development: By Example: Kent Beck](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
+    - [The art of Unit testing](http://www.cs.umss.edu.bo/doc/material/mat_gral_137/The%20Art%20of%20Unit%20Testing%20with%20Examples%20in%20.NET%20(Manning%202009).pdf)
+
+## Laravel
+
+* Websites
+    - [Laracast](https://laracasts.com/)
+    - [Laravel documentation](https://laravel.com/docs/)
+    - [Laranews](https://laravel-news.com/)
+
+## Symfony
+
+* Websites
+    - [Symfony documentation](https://symfony.com/doc/current/index.html)
+
+* Books
+    - [Mastering Symfony](https://www.packtpub.com/web-development/mastering-symfony)
+
