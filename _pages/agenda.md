@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Agenda
+title: Agenda - Conferences, Meetups and Workshops
 permalink: /calendar
 date: 2017-05-26 10:29:49.000000000 -03:00
 type: page
@@ -8,6 +8,12 @@ published: true
 status: publish
 categories: []
 tags:
+- PHP,
+- Code,
+- Agenda,
+- Talk,
+- Workshop,
+- Meetup,
 - events,
 - calendar,
 - conferences,
@@ -17,12 +23,15 @@ tags:
 - community
 ---
 
-# Coming soon
+## Coming soon
 
-- 30/10/2019 ~ 11/01/2019
-  - [XIV Latin American Conference on Learning Objetcs](http://laclo2019.com){:target="_blank"}
+- 02/03/2020 ~ 04/03/2020
+  - [14th annual International Technology, Education and Development Conference (INTED2020)](https://iated.org/inted){:target="_blank"}
 
-# Past due
+## Past due
+
+- 10/30/2019 ~ 11/01/2019
+  - [XIV Latin American Conference on Learning Objetcs](http://laclo2019.com/conferencia){:target="_blank"}
 
 - 06/28/2019
   - [Digital Innovation One - Introdução à orientação a objetos em PHP ](https://digitalinnovation.one/introducao-orientacao-objetos-em-php){:target="_blank"}

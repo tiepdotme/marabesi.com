@@ -9,19 +9,34 @@ published: true
 status: publish
 categories: []
 tags:
+- development,
+- Software,
+- MBA,
+- Marabesi,
+- engineering,
+- About,
+- mobile,
+- Matheus,
+- Masters,
+- Code,
+- analysis,
+- publications,
+- Technology,
+- IoT,
+- MSc,
+- Computer,
 - about,
-- blog,
 - mba,
 - iot,
 - matheus marabesi
 ---
 
-## Academic background
-
 Marabesi is currently doing his master degrees in Game design and 
 mobile application development at FIAP, but has a MBA in Software engineer already
 and is addicted to development in general. As a hobby he likes to play with
 Raspberry PI and dive into the IoT world.
+
+## Academic background
 
 - MSc - Computer engineering
 - MBA - Software development and game development for mobile applications

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Resources
+title: Resources - A collection of resources about software development
 date: 2016-12-23 01:06:05.000000000 -03:00
 type: post
 published: true
@@ -27,6 +27,10 @@ tags:
 - unit tests,
 - books
 ---
+
+This page shows a collection of resources related to software development, more
+specifically, web development. Besides that, this page offers software engineering
+links, podcasts, books and influencers to follow.
 
 ## Podcasts
 
@@ -89,4 +93,3 @@ tags:
 
 * Books
     - [Mastering Symfony](https://www.packtpub.com/web-development/mastering-symfony)
-
