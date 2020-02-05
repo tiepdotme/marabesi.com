@@ -44,6 +44,7 @@ links, podcasts, books and influencers to follow.
 * [Software Engineering Radio](http://www.se-radio.net)
 * [Thoughtworks Radar](https://www.thoughtworks.com/radar)
 * [React podcast](https://reactpodcast.simplecast.fm/)
+* [Kubernetes podcast](https://kubernetespodcast.com)
 
 ## Software engineering
 
@@ -55,6 +56,7 @@ links, podcasts, books and influencers to follow.
 * Books
     - [Software Engineering - A Practitioner’s Approach](http://www.vumultan.com/Books/CS605-Software%20Engineering%20Practitioner%E2%80%99s%20Approach%20%20by%20Roger%20S.%20Pressman%20.pdf)
     - [Software Engineering, Global Edition](https://www.amazon.com/Software-Engineering-Global-Ian-Sommerville/dp/1292096136)
+    - [Implementation Patterns](https://www.amazon.com/Implementation-Patterns-Kent-Beck/dp/0321413091)
     
 ## People
 
@@ -81,8 +83,8 @@ links, podcasts, books and influencers to follow.
 
 ## Containers
 
-* Podcasts
-    - [Kubernetes podcast](https://kubernetespodcast.com)
+* Books
+    - [Docker: Up & Running, 2nd Edition](http://shop.oreilly.com/product/0636920153566.do)
 
 ## Laravel
 
