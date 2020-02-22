@@ -43,6 +43,10 @@ Raspberry PI and dive into the IoT world.
 - MBA - Software engineering
 - Degree - Technology analysis and systems development
 
+## EN publications
+
+- [(EN) Towards a Gamified Tool to Improve Unit Test Teaching](https://ieeexplore.ieee.org/document/8994972){:target="_blank"}
+
 ## PT-BR publications
 
 - [(PT-BR) Matheus Marabesi: Testing - 7Masters](https://setemasters.imasters.com.br/conversas/testing-com-matheus-marabesi)
