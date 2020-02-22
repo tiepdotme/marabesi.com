@@ -31,10 +31,9 @@ tags:
 - matheus marabesi
 ---
 
-Marabesi is currently doing his master degrees in Game design and 
-mobile application development at FIAP, but has a MBA in Software engineer already
-and is addicted to development in general. As a hobby he likes to play with
-Raspberry PI and dive into the IoT world.
+Marabesi is addicted to software development in general. As a hobby he likes
+to play with Raspberry PI and dive into the IoT world. Besides that  he's an
+aspiring researcher focused on software testing and gamification.
 
 ## Academic background
 
@@ -49,11 +48,11 @@ Raspberry PI and dive into the IoT world.
 
 ## PT-BR publications
 
-- [(PT-BR) Matheus Marabesi: Testing - 7Masters](https://setemasters.imasters.com.br/conversas/testing-com-matheus-marabesi)
+- [(PT-BR) Matheus Marabesi: Testing - 7Masters](https://setemasters.imasters.com.br/conversas/testing-com-matheus-marabesi){:target="_blank"}
 
-- [(PT-BR) Matheus Marabesi: Migrando de Mysql para MongoDB - 7Masters](https://setemasters.imasters.com.br/conversas/migrando-de-mysql-para-mongodb-por-matheus-marabesi)
+- [(PT-BR) Matheus Marabesi: Migrando de Mysql para MongoDB - 7Masters](https://setemasters.imasters.com.br/conversas/migrando-de-mysql-para-mongodb-por-matheus-marabesi){:target="_blank"}
 
-- [(PT-BR) Nesse novo mundo da Internet das coisas, nos perguntamos: e o PHP? - iMasters](http://imasters.com.br/linguagens/php/nesse-novo-mundo-da-internet-das-coisas-nos-perguntamos-e-o-php)
+- [(PT-BR) Nesse novo mundo da Internet das coisas, nos perguntamos: e o PHP? - iMasters](http://imasters.com.br/linguagens/php/nesse-novo-mundo-da-internet-das-coisas-nos-perguntamos-e-o-php){:target="_blank"}
 
 ## PT-BR released books
 
