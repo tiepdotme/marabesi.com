@@ -7,6 +7,12 @@ published: true
 status: publish
 categories: []
 tags:
+- Conference,
+- Developers,
+- Talks,
+- meetup,
+- Code,
+- Paulo,
 - conferences,
 - talks,
 - meetups,
@@ -19,12 +25,15 @@ tags:
 - 2016,
 - 2017,
 - 2018,
-- 2019
+- 2019,
+- 2020
 ---
 
 # Talks
 
+- [MadridJs - Madrid, 2020](https://www.meetup.com/pt-BR/madridjs/events/268557996)
 - [LACLO 2019 - San José del Cabo, 2019](/conferences/laclo-2019)
+- [MadridJs - Madrid, 2019](https://www.meetup.com/pt-BR/madridjs/events/261046807)
 - [7Masters (Laravel) - São Paulo, 2018](/conferences/7masters-laravel-2018)
 - [Laravel meetup #16 - São Paulo, 2018](/conferences/16-laravel-meetup)
 - [NerdZão Day #1 - 6 Trilhas Tech Simultâneas - São Paulo](/conferences/nerdzao)

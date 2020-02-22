@@ -57,6 +57,8 @@ links, podcasts, books and influencers to follow.
     - [Software Engineering - A Practitioner’s Approach](http://www.vumultan.com/Books/CS605-Software%20Engineering%20Practitioner%E2%80%99s%20Approach%20%20by%20Roger%20S.%20Pressman%20.pdf)
     - [Software Engineering, Global Edition](https://www.amazon.com/Software-Engineering-Global-Ian-Sommerville/dp/1292096136)
     - [Implementation Patterns](https://www.amazon.com/Implementation-Patterns-Kent-Beck/dp/0321413091)
+    - [The Art of Readable Code](https://www.amazon.com/Art-Readable-Code-Practical-Techniques/dp/0596802293)
+    - [Engenharia de Software Moderna](https://engsoftmoderna.info)
     
 ## People
 
