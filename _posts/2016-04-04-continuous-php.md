@@ -2,7 +2,7 @@
 layout: post
 title: Continuous PHP
 date: 2016-04-04 01:20:14.000000000 -03:00
-type: post
+type: article
 published: true
 status: publish
 categories:

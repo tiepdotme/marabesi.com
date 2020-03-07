@@ -3,7 +3,7 @@ layout: post
 title: Introduction to OOP with PHP (Classes, Encapsulation, Inheritance)
 date: 2019-06-25 02:06:05.000000000 -03:00
 image: /images/posts/2019-06-25-intro-oop-php/cover.jpg
-type: post
+type: article
 published: true
 status: published
 categories:

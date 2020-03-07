@@ -3,7 +3,7 @@ layout: post
 title: PHPUnit coverage on vagrant
 image: /images/posts/2017-09-08-phpunit-coverage-on-vagrant/cover.jpg
 date: 2017-09-08 01:06:05.000000000 -03:00
-type: post
+type: article
 published: true
 status: published
 categories:

@@ -3,7 +3,7 @@ layout: post
 title: ZCPE 5.5 here we go – PHP Basics (Language constructs)
 date: 2015-08-26 01:01:47.000000000 -03:00
 image: /images/posts/2015-08-26-zcpe-5-5-here-we-go-php-basics-language-constructs/cover.jpg
-type: post
+type: article
 published: true
 status: publish
 categories:

@@ -4,7 +4,7 @@ title: Errors compiling PHP from source on a Raspberry Pi
 image: 
 date: 2019-01-12 01:06:05.000000000 -03:00
 image: /images/posts/2019-01-12-errors-compiling-php-from-source-on-a-raspberry-pi/cover.jpg
-type: post
+type: article
 published: true
 status: published
 categories:

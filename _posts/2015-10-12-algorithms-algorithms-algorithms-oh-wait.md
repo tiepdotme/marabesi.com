@@ -3,7 +3,7 @@ layout: post
 title: Algorithms, Algorithms, Algorithms .... Oh Wait!
 date: 2015-10-12 18:19:55.000000000 -03:00
 image: /images/posts/2015-10-12-algorithms-algorithms-algorithms-oh-wait/cover.jpg
-type: post
+type: article
 published: true
 status: publish
 categories:

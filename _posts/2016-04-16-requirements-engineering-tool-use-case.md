@@ -2,7 +2,7 @@
 layout: post
 title: Requirements Engineering - A tool for Use Case
 date: 2016-04-16 20:13:33.000000000 -03:00
-type: post
+type: article
 published: true
 status: publish
 image: /images/posts/2016-04-16-requirements-engineering-tool-use-case/cover.jpg

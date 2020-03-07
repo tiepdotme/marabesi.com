@@ -3,7 +3,7 @@ layout: post
 title: PHP basics, are you sure? So tell me how to use octal system!
 date: 2015-01-27 11:25:14.000000000 -02:00
 image: /images/posts/2015-01-27-php-basics-sure-tell-use-octal-system/cover.png
-type: post
+type: article
 published: true
 status: publish
 categories:

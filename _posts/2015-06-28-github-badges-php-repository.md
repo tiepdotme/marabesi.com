@@ -2,7 +2,7 @@
 layout: post
 title: GitHub badges! (PHP repository)
 date: 2015-06-28 20:27:09.000000000 -03:00
-type: post
+type: article
 published: true
 status: publish
 image: /images/posts/2015-06-28-github-badges-php-repository/cover.png

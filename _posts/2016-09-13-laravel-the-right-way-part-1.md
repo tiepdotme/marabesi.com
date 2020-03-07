@@ -2,7 +2,7 @@
 layout: post
 title: Laravel the right way (PART 1) - 10 Laravel meetup
 date: 2016-09-13 01:06:05.000000000 -03:00
-type: post
+type: article
 published: true
 status: published
 image: /images/posts/2016-09-13-laravel-the-right-way-part-1/cover.svg

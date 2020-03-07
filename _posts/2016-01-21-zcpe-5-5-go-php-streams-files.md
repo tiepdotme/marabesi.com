@@ -2,7 +2,7 @@
 layout: post
 title: ZCPE 5.5 here we go – PHP Streams (Files/Http)
 date: 2016-01-21 09:44:36.000000000 -02:00
-type: post
+type: article
 published: true
 status: publish
 image: /images/posts/2016-01-21-zcpe-5-5-go-php-streams-files/cover.jpg

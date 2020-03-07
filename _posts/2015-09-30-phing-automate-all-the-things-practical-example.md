@@ -3,7 +3,7 @@ layout: post
 title: Phing ? Automate all the things ! - Practical example
 date: 2015-09-30 01:46:25.000000000 -03:00
 image: /images/posts/2015-09-30-phing-automate-all-the-things-practical-example/cover.gif
-type: post
+type: article
 published: true
 status: publish
 categories:

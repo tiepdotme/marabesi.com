@@ -3,7 +3,7 @@ layout: post
 title: Getting started with Xpath
 date: 2015-05-07 11:12:05.000000000 -03:00
 image: /images/posts/2015-05-07-getting-started-xpath/cover.gif
-type: post
+type: article
 published: true
 status: publish
 categories:

@@ -3,7 +3,7 @@ layout: post
 title: Introduction to Service Worker
 date: 2018-12-02 01:06:05.000000000 -03:00
 image: /images/posts/2018-12-02-introduction-to-service-worker/cover.png
-type: post
+type: article
 published: true
 status: published
 categories:

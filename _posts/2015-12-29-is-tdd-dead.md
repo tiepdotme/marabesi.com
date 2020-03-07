@@ -2,7 +2,7 @@
 layout: post
 title: Is TDD dead ?
 date: 2015-12-29 23:33:11.000000000 -02:00
-type: post
+type: article
 published: true
 status: publish
 image: /images/posts/2015-12-29-is-tdd-dead/cover.jpg

@@ -3,7 +3,7 @@ layout: post
 title: Continuous Delivery
 date: 2015-11-02 22:55:27.000000000 -02:00
 image: /images/posts/2015-11-02-continuous-delivery/cover.png
-type: post
+type: article
 published: true
 status: publish
 categories:

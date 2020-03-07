@@ -3,7 +3,7 @@ layout: post
 title: Raspberry Pi - Meeting the RPi-Cam-Web-Interface
 date: 2015-01-31 05:04:02.000000000 -02:00
 image: /images/posts/2015-01-31-raspberry-pi-meeting-rpi-cam-web-interface/cover.png
-type: post
+type: article
 published: true
 status: publish
 categories:

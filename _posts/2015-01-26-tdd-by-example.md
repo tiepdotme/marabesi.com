@@ -3,7 +3,7 @@ layout: post
 title: TDD by example
 date: 2015-01-26 09:59:40.000000000 -02:00
 image: /images/posts/2015-01-26-tdd-by-example/cover.jpg
-type: post
+type: article
 published: true
 status: publish
 categories:

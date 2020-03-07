@@ -3,7 +3,7 @@ layout: post
 title: 30 days of VIM - One week after
 date: 2018-01-29 20:30:18.000000000 -02:00
 image: /images/posts/2018-01-29-30-days-of-vim-1-week-after/cover.png
-type: post
+type: article
 published: true
 status: publish
 categories:

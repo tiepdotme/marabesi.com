@@ -3,7 +3,7 @@ layout: post
 title: Software engineering, in the developer's hand?
 date: 2015-12-07 21:27:30.000000000 -02:00
 image: /images/posts/2015-12-07-software-engineering-in-developers-hand/cover.jpeg
-type: post
+type: article
 published: true
 status: publish
 categories:

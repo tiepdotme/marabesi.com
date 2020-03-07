@@ -3,7 +3,7 @@ layout: post
 title: ARE YOU NOT USING TDD ?! - PART 1
 date: 2015-04-19 20:47:38.000000000 -03:00
 image: /images/posts/2015-04-19-not-using-tdd-part-1/cover.png
-type: post
+type: article
 published: true
 status: publish
 categories:

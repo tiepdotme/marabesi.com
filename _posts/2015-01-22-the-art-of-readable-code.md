@@ -3,7 +3,7 @@ layout: post
 title: The Art of Readable Code
 date: 2015-01-22 10:18:46.000000000 -02:00
 image: /images/posts/2015-01-22-the-art-of-readable-code/cover.jpg
-type: post
+type: article
 published: true
 status: publish
 categories:

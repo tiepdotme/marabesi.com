@@ -3,7 +3,7 @@ layout: post
 title: e2e testing with Cypress, ReactJs and Firebase
 date: 2019-10-13 01:06:05.000000000 -03:00
 image: 
-type: post
+type: article
 published: true
 status: published
 categories:

@@ -3,7 +3,7 @@ layout: post
 title: Strategies to test legacy code - PART 1
 date: 2019-01-14 01:06:05.000000000 -03:00
 image: /images/posts/2019-01-14-strategies-to-test-legacy-code/cover.jpg
-type: post
+type: article
 published: true
 status: published
 categories:

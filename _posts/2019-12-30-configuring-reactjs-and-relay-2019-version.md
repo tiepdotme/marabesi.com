@@ -2,7 +2,7 @@
 layout: post
 title: Configuring reactjs and relay 2019 version
 date: 2019-12-30 01:06:05.000000000 -03:00
-type: post
+type: article
 published: true
 status: published
 categories:

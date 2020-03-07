@@ -3,7 +3,7 @@ layout: post
 title: Head first - Design Patterns
 date: 2015-02-20 09:15:48.000000000 -02:00
 image: /images/posts/2015-02-20-head-first-design-patterns/cover.jpg
-type: post
+type: article
 published: true
 status: publish
 categories:

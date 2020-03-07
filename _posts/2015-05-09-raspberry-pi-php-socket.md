@@ -3,7 +3,7 @@ layout: post
 title: Raspberry Pi + PHP socket
 date: 2015-05-09 13:58:04.000000000 -03:00
 image: /images/posts/2015-05-09-raspberry-pi-php-socket/cover.jpg
-type: post
+type: article
 published: true
 status: publish
 categories:

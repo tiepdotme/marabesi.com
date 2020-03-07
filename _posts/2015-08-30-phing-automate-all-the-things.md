@@ -3,7 +3,7 @@ layout: post
 title: Phing? Automate all the things!
 image: /images/posts/2015-08-30-phing-automate-all-the-things/cover.gif
 date: 2015-08-30 19:46:48.000000000 -03:00
-type: post
+type: article
 published: true
 status: publish
 categories:

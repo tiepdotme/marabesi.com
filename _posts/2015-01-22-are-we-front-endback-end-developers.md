@@ -3,7 +3,7 @@ layout: post
 title: Are we front-end/back-end developers?
 date: 2015-01-22 23:39:18.000000000 -02:00
 image: /images/posts/2015-01-22-are-we-front-endback-end-developers/cover.jpg
-type: post
+type: article
 published: true
 status: publish
 categories:

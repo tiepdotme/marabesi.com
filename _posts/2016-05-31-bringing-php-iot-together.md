@@ -2,7 +2,7 @@
 layout: post
 title: Bringing PHP and IoT together
 date: 2016-05-31 18:42:15.000000000 -03:00
-type: post
+type: article
 image: /images/posts/2016-05-31-bringing-php-iot-together/cover.jpg
 published: true
 status: publish
