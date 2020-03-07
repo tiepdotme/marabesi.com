@@ -1,4 +1,4 @@
-var CACHE_NAME = 'marabesi.com_v57';
+var CACHE_NAME = 'marabesi.com_v58';
 var assetsToCache = [
   '/',
 ];

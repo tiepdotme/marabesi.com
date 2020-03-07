@@ -14,12 +14,15 @@
       href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
     <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:site_name" content="marabesi.com" />
     <meta property="og:type" content="{% if page.type %}{{ page.type }}{% else %}website{% endif %}" />
     <meta property="og:url" content="{{ page.url | prepend: site.url }}" />
     <meta property="og:image"
       content="{% if page.image %}{{ page.image | prepend: site.url }}{% else %}{{ '/images/manifest/icon-192x192.png' | prepend: site.url }}{% endif %}" />
     <meta property="og:description"
       content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+
+    <meta property="fb:app_id" content="536384943068161" />
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@MatheusMarabesi">
