@@ -37,9 +37,9 @@ aspiring researcher focused on software testing and gamification.
 
 ## Academic background
 
-- MSc - Computer engineering
-- MBA - Software development and game development for mobile applications
-- MBA - Software engineering
+- [MSc - Software engineering (focused on software testing)]({{ site.baseurl }}{% link pdfs/mackenzie.pdf %}){:target="_blank"}
+- [MBA - Software development and game development for mobile applications]({{ site.baseurl }}{% link pdfs/fiap.pdf %}){:target="_blank"}
+- [MBA - Software engineering]({{ site.baseurl }}{% link pdfs/fsa.pdf %}){:target="_blank"}
 - Degree - Technology analysis and systems development
 
 ## EN publications
