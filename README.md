@@ -10,8 +10,11 @@ send a PR.
 Disclaimer: [docker](https://docs.docker.com/install) must be installed as well
 as [docker-compode](https://docs.docker.com/compose/install).
 
+As a pre-configuration step (in linux), the number of watchers must be increased, as explained
+[here](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers)
+
 This repository provides a docker compose file to serve the website with docker
-using a single command. For that to happend run the command:
+using a single command:
 
 ```
 docker-compose up

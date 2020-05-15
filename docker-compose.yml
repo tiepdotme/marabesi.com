@@ -1,23 +1,21 @@
-version: '3'
+version: '2'
 
 services:
   nodejs:
+    image: node:10
     volumes:
       - ./:/srv/jekyll
     working_dir: /srv/jekyll
-    build:
-      context: ./docker
     ports:
       - 4003:4003
-    command: bash -c "npm install && npm rebuild node-sass && npm run watch:webpack"
+    command: bash -c "npm install && npm rebuild node-sass && npm run build:tailwind && npm run watch:webpack"
   blog:
-    image: jekyll/jekyll
-    command: jekyll serve --livereload --incremental --config _config.yml,_config_local.yml
+    image: bretfisher/jekyll-serve
+    command: bundle exec jekyll serve --livereload --incremental --config _config.yml,_config_local.yml
+    working_dir: /srv/jekyll
     volumes:
       - ./:/srv/jekyll
       - ./vendor:/usr/local/bundle
     ports:
       - 4000:4000
       - 35729:35729
-    links:
-      - nodejs
