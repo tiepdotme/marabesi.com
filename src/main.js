@@ -13,5 +13,6 @@ SimpleJekyllSearch({
   searchResultTemplate: '<li class="list-reset p-2"><a href="{url}">{title}</a></li>',
   json: '/search.json',
   fuzzy: false,
-  noResultsText: 'No results found 😞'
+  noResultsText: 'No results found 😞',
+  success: function() {}
 })

@@ -13,3 +13,4 @@ vendor
 js/
 main-bundle.js
 main-bundle.css
+.jekyll-cache/
