@@ -45,6 +45,7 @@ aspiring researcher focused on software testing and gamification.
 ## EN publications
 
 - [(EN) Towards a Gamified Tool to Improve Unit Test Teaching](https://ieeexplore.ieee.org/document/8994972){:target="_blank"}
+- [(EN) EVALUATION OF TESTABLE, A GAMIFIED TOOL TO IMPROVE UNIT TEST TEACHING](http://dx.doi.org/10.21125/inted.2020.0150){:target="_blank"}
 
 ## PT-BR publications
 
