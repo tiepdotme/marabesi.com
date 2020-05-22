@@ -50,9 +50,7 @@ aspiring researcher focused on software testing and gamification.
 ## PT-BR publications
 
 - [(PT-BR) Matheus Marabesi: Testing - 7Masters](https://setemasters.imasters.com.br/conversas/testing-com-matheus-marabesi){:target="_blank"}
-
 - [(PT-BR) Matheus Marabesi: Migrando de Mysql para MongoDB - 7Masters](https://setemasters.imasters.com.br/conversas/migrando-de-mysql-para-mongodb-por-matheus-marabesi){:target="_blank"}
-
 - [(PT-BR) Nesse novo mundo da Internet das coisas, nos perguntamos: e o PHP? - iMasters](http://imasters.com.br/linguagens/php/nesse-novo-mundo-da-internet-das-coisas-nos-perguntamos-e-o-php){:target="_blank"}
 
 ## PT-BR released books
