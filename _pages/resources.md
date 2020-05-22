@@ -46,6 +46,8 @@ links, podcasts, books and influencers to follow.
 * [React podcast](https://reactpodcast.simplecast.fm){:target="_blank"}
 * [Kubernetes podcast](https://kubernetespodcast.com){:target="_blank"}
 * [Stackoverflow podcast](https://stackoverflow.blog/podcast){:target="_blank"}
+* [php[podcast]](https://www.phparch.com/podcast){:target="_blank"}
+* [Serverless chats](https://www.serverlesschats.com){:target="_blank"}
 
 ## Software engineering
 
