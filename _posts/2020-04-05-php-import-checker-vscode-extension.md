@@ -9,6 +9,12 @@ status: published
 categories:
 - php
 tags:
+- PHP,
+- color,
+- command,
+- highlight,
+- developers,
+- IDE,
 - php,
 - import,
 - checker,
