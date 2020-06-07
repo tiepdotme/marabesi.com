@@ -27,6 +27,9 @@ markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
 
+scholar:
+  style: ieee-with-url
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -46,3 +49,4 @@ exclude:
 
 plugins:
   - jekyll-sitemap
+  - "jekyll/scholar"
