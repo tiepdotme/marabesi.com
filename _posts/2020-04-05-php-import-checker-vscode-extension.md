@@ -26,17 +26,20 @@ tags:
 - extension
 ---
 
-Vscode is one of the most used editors for web development **[1]**, which supports
-various programming languages, including PHP. As its goal is not to be a full
-featured PHP IDE, it lacks a few characteristics that help PHP developers
-to be more productive. In that list, we can name one: the lack of checking if
-an imported class is being used or not.
+Vscode is one of the most used editors for web development
+{% cite pypl_ide_index --file 2020-04-05-php-import-checker-vscode-extension %},
+which supports various programming languages, including PHP.
+As its goal is not to be a full featured PHP IDE, it lacks a few characteristics
+that help PHP developers to be more productive. In that list, we can name one:
+the lack of checking if an imported class is being used or not.
 
-On the other hand, PHPStorm **[2]** has the ability to check imports being used
-built-in - This is a long discussion between editors x IDE's.
+On the other hand, PHPStorm {% cite phpstorm_jetbrains --file 2020-04-05-php-import-checker-vscode-extension %}
+has the ability to check imports being used built-in - This is a long discussion
+between editors x IDE's.
 
-PHP import checker **[3]** fills this gap, which offers PHP developers feedback of
-unused classes that have been imported into the file.
+PHP import checker {% cite php_import_checker --file 2020-04-05-php-import-checker-vscode-extension %} fills
+this gap, which offers PHP developers feedback of unused classes that have been
+imported into the file.
 
 ## Installing the extension
 
@@ -57,14 +60,16 @@ The extension runs on PHP files only and by default it will run and scan
 the imported classes once the file is saved. Though, there are cases in which
 the developer might want to run the scan manually, for that a command is
 available. The command can be executed typing "check php import" in the
-command palette **[4]** (as depicted by the following GIF).
+command palette {% cite command_palette_vscode --file 2020-04-05-php-import-checker-vscode-extension %}
+(as depicted by the following gi).
 
 ![Unused class highlight in red, the default color](https://github.com/marabesi/php-import-checker/blob/master/demo.gif?raw=true){:target="_blank"}
 
 By default, the extension uses a red color to highlight the unused classes in the
 file. The color can be changed through the directive `php.import.highlight`. The
 directive accepts a JSON with the key `color`. The color should be in the hex
-format. The JSON settings can be accessed through the command palette as well **[5]**.
+format. The JSON settings can be accessed through the command palette as well
+{% cite workspace_settings_vscode --file 2020-04-05-php-import-checker-vscode-extension %}.
 
 ```json
 {
@@ -98,12 +103,4 @@ section of the project.
 
 ## References
 
-[1] Top IDE index - The Top IDE Index is created by analyzing how often IDEs' download page are searched on Google. Available: [https://pypl.github.io/IDE.html](https://pypl.github.io/IDE.html "Top IDE index - The Top IDE Index is created by analyzing how often IDEs' download page are searched on Google"){:target="_blank"}. [Accessed: 12 - Apr - 2020]
-
-[2] The Lightning-Smart PHP IDE. Available: [https://www.jetbrains.com/phpstorm](https://www.jetbrains.com/phpstorm "The Lightning-Smart PHP IDE"){:target="_blank"}. [Accessed: 12 - Apr - 2020]
-
-[3] PHP import checker - Visual Studio Code market place. Available: [https://marketplace.visualstudio.com/items?itemName=marabesi.php-import-checker](https://marketplace.visualstudio.com/items?itemName=marabesi.php-import-checker "PHP import checker - Visual Studio Code market place"){:target="_blank"}. [Accessed: 12 - Apr - 2020]
-
-[4] User interface, Command Palette. Available: [https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette "User interface, Command Palette"){:target="_blank"}. [Accessed: 12 - Apr - 2020]
-
-[5] User and Workspace Settings. Available: [https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations](https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations "User and Workspace Settings"){:target="_blank"}. [Accessed: 12 - Apr - 2020]
+{% bibliography --cited_in_order --file 2020-04-05-php-import-checker-vscode-extension %}
