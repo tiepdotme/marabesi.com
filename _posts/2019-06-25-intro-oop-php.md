@@ -217,4 +217,4 @@ final class LegalPerson {}
 
 ## References
 
-[1] Pablo Dall'Oglio.: PHP Programando com Orientação a Objetos. Ed 1. Novatec (2007)
+{% bibliography --cited_in_order --file 2019-06-25-intro-oop-php %}
