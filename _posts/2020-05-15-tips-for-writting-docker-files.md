@@ -10,10 +10,15 @@ categories:
 - devops
 tags:
 - docker,
+- Docker,
 - image,
 - user,
 - build,
 - root,
+- network,
+- setup,
+- compose,
+- container,
 - program
 ---
 
@@ -74,13 +79,33 @@ between each other. Therefore, there are scenerios in which this behavior
 is not desired. For example, a database. As the database holds state (the data)
 usually it is used an external provider (RDS, mongodb atlas etc).
 
-By default the container can't access external ports, which in turn it will
+By default the container can't access external ports, which in turn will
 block the databse connection. There are two posible options for that, using
 a `network` flag or using the `add-host` flag.
 
 There is a side effect using the network flag, which will ignore the docker
 network created automatically by docker and the container will run as if
-it were in the host. Impacting the port that the application run.
+it were in the host. Impacting the port that the application run and therefore
+prevents the possibility of blue-green
+deployments {% cite docker_blue_green_no_down_time --file 2020-05-15-tips-for-writting-docker-files %},
+which requires two intances of the same app running, each on its specific port.
+
+## 6. Different docker compose files for different evnrionments 
+
+Docker compose files are used to compose the container orchestration, therefore
+sometimes it is needed to use different behavior based on the environment
+that the application is one. For example, in development mode, the database
+container might be needed, but in production it might not be the case.
+
+For that, it is possible to create different docker compose files for each
+environment. For example, for development, staging and production we might have:
+
+- development: `docker-compose-dev.yml`
+- staging and production: `docker-compose-deploy.yml`
+
+It is also posible to share code among each docker file, which might make
+sense to create a `docker-compose.yml` as the base for the two files previously
+mentioned.
 
 ## References
 
