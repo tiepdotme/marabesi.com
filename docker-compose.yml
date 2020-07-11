@@ -9,9 +9,11 @@ services:
     ports:
       - 4003:4003
     command: bash -c "npm install && npm rebuild node-sass && npm run build:tailwind && npm run watch:webpack"
+    environment:
+      NODE_ENV: development 
   blog:
     image: bretfisher/jekyll-serve
-    command: bundle exec jekyll serve --livereload --incremental --host 0.0.0.0 --config _config.yml,_config_local.yml
+    command: bundle exec jekyll serve --livereload --drafts --incremental --host 0.0.0.0 --config _config.yml,_config_local.yml
     working_dir: /srv/jekyll
     volumes:
       - ./:/srv/jekyll

@@ -20,6 +20,7 @@ deploy:
 
 env:
   - JEKYLL_ENV=production
+  - NODE_ENV=production
 
 os:
   - osx
