@@ -20,6 +20,7 @@ const plugins = [
 if (NODE_ENV !== 'development') {
   plugins.push(
     new PurgecssPlugin({
+      whitelist: ['bibliography'],
       paths: glob.sync(purgePath, { nodir: true, ignore: '{node_modules,vendor}/**' }),
       extractors: [
         {
