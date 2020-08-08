@@ -74,6 +74,9 @@ links, podcasts, books and influencers to follow.
     - [The Art of Readable Code](https://www.amazon.com/Art-Readable-Code-Practical-Techniques/dp/0596802293){:target="_blank"}
     - [Engenharia de Software Moderna](https://engsoftmoderna.info){:target="_blank"}
     - [Clean Architecture: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)](https://www.goodreads.com/book/show/18043011-clean-architecture){:target="_blank"}
+* Social media
+  * [Netflix engineering](https://netflixtechblog.com){:target="_blank"}
+  * [Instagram engineering](https://instagram-engineering.com){:target="_blank"}
 
 ## People
 
