@@ -2,7 +2,7 @@
 layout: post
 title: ReactJs patterns - A study based on google search
 date: 2020-06-22 01:06:05.000000000 -03:00
-image: 
+image: /images/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/cover.png
 type: article
 published: true
 status: published
@@ -10,7 +10,7 @@ categories:
 - web
 tags:
 - search,
-- result,
+- results,
 - google,
 - reactjs,
 - patterns,
@@ -27,8 +27,8 @@ Inspired by the software systematic review literature paper
 overview of the software engineering success and failure factors, this post has
 the goal to answer the following questions:
 
-1. What is the most popular ReactJS pattern?
-2. What are the themes that appears related to the patterns?
+- **Q1.** What is the most popular ReactJS pattern?
+- **Q2.** What are the themes that appears related to the patterns?
 
 Opposed to the scientific method presented by the authors (the research was
 conducted mining scientific bases, named: IEEE explorer, ACM digital library,
@@ -56,7 +56,7 @@ is expected as pointed by {% cite google_employee_search_results --file 2020-06-
 
 To mine the results a javascript file was developed, the script executes recursively
 based on the number of pages that google returns till the last page of results
-for a given search string. In total 96 links were found and saved to a XLS file
+for a given search string. In total 96 links were found and saved to a XLS file {% cite google_search_results --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 for further analysis described in the next section.
 
 ## Mining results
@@ -89,10 +89,44 @@ The cateogry `post` is the most popular, followed by `course` and `book`, `quest
 
 ## Analyzing the results
 
+This section dives into the results found, presents a brief exaplanation of each
+item in the list. Therefore, this section does not cover the categories `question`,
+`meetup`, `video` and `slides` as they present less than three items.
 
+### Posts
 
+The post category is the most popular with 66, as a first exploration the posts
+were read, and for each of them a pattern name was manually asigned, based on the content
+of the post. Most of them have more the one pattern associated with it, for
+example, the first post, in the list covered 22 patterns.
 
+This process was repeated for each post in the list. Once the classification was done,
+the word cloud {% cite python_word_cloud --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+vizualization was generated following a pre process.
 
+![Word cloud generated based on the classification](/images/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/word_cloud.png "Word cloud generated based on the classification")
+
+The raw classification was processed using the following steps:
+
+1. Similar words were normalized, the word "component" and "components" were normalized
+to the word without s (singular form), resulting in "component"
+2. Words with capital letter were normalized to use the lower case.
+3. Different words used with common mean were normalized, for example, the higher order component
+is commonly used as HoC, the longer version was used.
+
+The word cloud depicts the translation between the most cited patterns used
+in the dataset. The most cited pattern is Component, followed by props.
+
+<!-- ### Course -->
+
+<!-- ### Book -->
+
+## Discussion
+
+For **Q1**, the results point to the most popular pattern being the "component",
+which is the foundation of reactjs, as everything is a component.
+
+<!-- ## Conclusion -->
 
 ## References
 
