@@ -56,24 +56,24 @@ links, podcasts, books and influencers to follow.
 ## Software engineering
 
 * Conferences
-    - [ICSE](https://twitter.com/ICSEconf){:target="_blank"}
-    - [FSE](https://conf.researchr.org/series/fse){:target="_blank"}
-    - [ASE](https://conf.researchr.org/home/ase-2020){:target="_blank"}
+  * [ICSE](https://twitter.com/ICSEconf){:target="_blank"}
+  * [FSE](https://conf.researchr.org/series/fse){:target="_blank"}
+  * [ASE](https://conf.researchr.org/home/ase-2020){:target="_blank"}
 * Journals
-    - [TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32){:target="_blank"}
-    - [EMSE](https://www.springer.com/journal/10664){:target="_blank"}
+  * [TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32){:target="_blank"}
+  * [EMSE](https://www.springer.com/journal/10664){:target="_blank"}
 * Links
-    - [IEEE Software Magazine](https://publications.computer.org/software-magazine){:target="_blank"}
-    - [Object calisthenics](http://williamdurand.fr/2013/06/03/object-calisthenics){:target="_blank"}
-    - [arXiv.org](https://arxiv.org/list/cs.SE/recent){:target="_blank"}
-    - [Software Testing: From Theory to Practice](https://sttp.site){:target="_blank"}
+  * [IEEE Software Magazine](https://publications.computer.org/software-magazine){:target="_blank"}
+  * [Object calisthenics](http://williamdurand.fr/2013/06/03/object-calisthenics){:target="_blank"}
+  * [arXiv.org](https://arxiv.org/list/cs.SE/recent){:target="_blank"}
+  * [Software Testing: From Theory to Practice](https://sttp.site){:target="_blank"}
 * Books
-    - [Software Engineering - A Practitioner’s Approach](http://www.vumultan.com/Books/CS605-Software%20Engineering%20Practitioner%E2%80%99s%20Approach%20%20by%20Roger%20S.%20Pressman%20.pdf){:target="_blank"}
-    - [Software Engineering, Global Edition](https://www.amazon.com/Software-Engineering-Global-Ian-Sommerville/dp/1292096136){:target="_blank"}
-    - [Implementation Patterns](https://www.amazon.com/Implementation-Patterns-Kent-Beck/dp/0321413091){:target="_blank"}
-    - [The Art of Readable Code](https://www.amazon.com/Art-Readable-Code-Practical-Techniques/dp/0596802293){:target="_blank"}
-    - [Engenharia de Software Moderna](https://engsoftmoderna.info){:target="_blank"}
-    - [Clean Architecture: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)](https://www.goodreads.com/book/show/18043011-clean-architecture){:target="_blank"}
+  * [Software Engineering - A Practitioner’s Approach](http://www.vumultan.com/Books/CS605-Software%20Engineering%20Practitioner%E2%80%99s%20Approach%20%20by%20Roger%20S.%20Pressman%20.pdf){:target="_blank"}
+  * [Software Engineering, Global Edition](https://www.amazon.com/Software-Engineering-Global-Ian-Sommerville/dp/1292096136){:target="_blank"}
+  * [Implementation Patterns](https://www.amazon.com/Implementation-Patterns-Kent-Beck/dp/0321413091){:target="_blank"}
+  * [The Art of Readable Code](https://www.amazon.com/Art-Readable-Code-Practical-Techniques/dp/0596802293){:target="_blank"}
+  * [Engenharia de Software Moderna](https://engsoftmoderna.info){:target="_blank"}
+  * [Clean Architecture: A Craftsman's Guide to Software Structure and Design (Robert C. Martin Series)](https://www.goodreads.com/book/show/18043011-clean-architecture){:target="_blank"}
 * Social media
   * [Netflix engineering](https://netflixtechblog.com){:target="_blank"}
   * [Instagram engineering](https://instagram-engineering.com){:target="_blank"}
@@ -93,32 +93,32 @@ links, podcasts, books and influencers to follow.
 ## PHP
 
 * Websites
-    - [PHP Certification](http://www.zend.com/en/services/certification/php-certification){:target="_blank"}
+  * [PHP Certification](http://www.zend.com/en/services/certification/php-certification){:target="_blank"}
 
 ## Unit tests
 
 * Websites
-    - [PHP Unit documentation](https://phpunit.de/){:target="_blank"}
+  * [PHP Unit documentation](https://phpunit.de/){:target="_blank"}
 * Books
-    - [Test Driven Development: By Example: Kent Beck](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530){:target="_blank"}
-    - [The art of Unit testing](http://www.cs.umss.edu.bo/doc/material/mat_gral_137/The%20Art%20of%20Unit%20Testing%20with%20Examples%20in%20.NET%20(Manning%202009){:target="_blank"}.pdf){:target="_blank"}
+  * [Test Driven Development: By Example: Kent Beck](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530){:target="_blank"}
+  * [The art of Unit testing](http://www.cs.umss.edu.bo/doc/material/mat_gral_137/The%20Art%20of%20Unit%20Testing%20with%20Examples%20in%20.NET%20(Manning%202009){:target="_blank"}.pdf){:target="_blank"}
 
 ## Containers
 
 * Books
-    - [Docker: Up & Running, 2nd Edition](http://shop.oreilly.com/product/0636920153566.do){:target="_blank"}
+  * [Docker: Up & Running, 2nd Edition](http://shop.oreilly.com/product/0636920153566.do){:target="_blank"}
 
 ## Laravel
 
 * Websites
-    - [Laracast](https://laracasts.com){:target="_blank"}
-    - [Laravel documentation](https://laravel.com/docs){:target="_blank"}
-    - [Laranews](https://laravel-news.com){:target="_blank"}
+  * [Laracast](https://laracasts.com){:target="_blank"}
+  * [Laravel documentation](https://laravel.com/docs){:target="_blank"}
+  * [Laranews](https://laravel-news.com){:target="_blank"}
 
 ## Symfony
 
 * Websites
-    - [Symfony documentation](https://symfony.com/doc/current/index.html){:target="_blank"}
+  * [Symfony documentation](https://symfony.com/doc/current/index.html){:target="_blank"}
 
 * Books
-    - [Mastering Symfony](https://www.packtpub.com/web-development/mastering-symfony){:target="_blank"}
+  * [Mastering Symfony](https://www.packtpub.com/web-development/mastering-symfony){:target="_blank"}
