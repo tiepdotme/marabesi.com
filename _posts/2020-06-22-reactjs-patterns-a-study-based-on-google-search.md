@@ -134,119 +134,64 @@ right a short abstract was provided to ilustrate the source content.
 
 |Title| Abstract|
 |-----|---------|
-| React Patterns {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |  |
-
+| React Patterns | {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}  |
 | Design Principles – React | {% cite post_design_principles_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | 2019 ReactJS Best Practices - Bogdan Kulbida - Medium | {% cite post_2019_reactjs_best_practices --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | Advanced React Component Patterns | {% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | Five Ways to Advanced React Patterns - DEV | {% cite post_five_ways_to_advanced_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | How To Master Advanced React Design Patterns — Render Props | {% cite post_how_to_master_advanced_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | Simple React Patterns \| Lucas Reis' Blog | {% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | Advanced Patterns in React | {% cite post_advanced_patterns_reactjs --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | React.js in patterns | {% cite post_reactjs_in_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | React Component Patterns - Level Up Coding | {% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | Evolving Patterns in React | {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | React Conditional Rendering Patterns \| Building SPAs | {% cite post_react_conditional_rendering --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | Patterns for Style Composition in React \| Jxnblk | {% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | Simple React Design Patterns: Container/View - serendipidata | {% cite  post_simple_react_design_patterns_container_view --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | Higher-order Components: A React Application Design Pattern ... | {% cite post_higher_order_components --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | Patterns for data fetching in React - LogRocket Blog | {% cite post_patterns_for_data_fetching_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
 | 10 React mini-patterns \| Hacker Noon | {% cite post_10_react_mini_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| 5 React Data-Fetching Patterns - Nordschool | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| The Facade pattern and applying it to React Hooks | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| React hooks design patterns and creating components without class | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Common i18n patterns in React — LinguiJS documentation | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Implementing the Container Pattern using React Hooks | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Introduction to React Design Patterns | DrupalCon | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| How advanced React patterns changed with hooks | Sunscrapers | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Zemuldo Blog - Patterns For Testable React Components | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Discovering patterns with React hooks |  {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| The ReactJS Controller View Pattern | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Seven patterns by example: The many ways to `type="radio"` in React | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| The React + Redux Container Pattern | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| React Component Types: A complete Overview - RWieruch | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Production-Level Patterns for React Hooks  | FullStack Labs | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| A Model View Controller Pattern for React - Test Double | Our Blog | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Provider Pattern in React using React Context API | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Using the Adapter Design Pattern With React | SendGrid | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Dependency injection · React in patterns | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| AngularJS Patterns in React | Greg Babiars's Blog | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Global listener patterns in React - Advanced Web Machinery | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Level up your React architecture with MVVM - COBE | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| React patterns | React and Ramda patterns | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Friday Frontend: New React Patterns | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} | 
-
-| React's State Reducer Pattern - DSC Engineering | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| The Unstated React Service Pattern - HMH Engineering | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Best Practices With React Hooks — Smashing Magazine | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| 15 React Best Practices You Need to Follow in 2020 | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| React Patterns - Render Callback | Lenny's Blog | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Redux design patterns & Reduxsauce | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| React Hooks, the rebirth of State Management and beyond. | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| 8 no-Flux strategies for React component communication | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| BLoC Pattern with React Hooks — magarcia | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Getting to Know the Redux Pattern \| DotNetCurry | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Clean Code vs. Dirty Code: React Best Practices - American ... | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| ReactJS - GeeksforGeeks | |
-
-| Reusable Code In React: Inheritance, Composition, Decorators and ... | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Killing Switch Statements in React with the Strategy Pattern | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| A state management pattern for Ionic React with React Hooks | The ... | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-
-| Advanced React Concepts \| React Resources |
-
-| Reactjs application development tips | Reactive | {% cite post_ --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| 5 React Data-Fetching Patterns - Nordschool | {% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| The Facade pattern and applying it to React Hooks | {% cite post_the_facade_pattern_and_applying_to_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| React hooks design patterns and creating components without class | {% cite post_react_hooks_design_patterns_creating_components_without_class --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Common i18n patterns in React — LinguiJS documentation | {% cite  post_common_i18n_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Implementing the Container Pattern using React Hooks | {% cite post_implementing_the_container_pattern_using_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Introduction to React Design Patterns | {% cite post_introduction_to_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| How advanced React patterns changed with hooks | {% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Four patterns for global state with React hooks: Context or Redux | {% cite post_four_patterns_for_global_state_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Zemuldo Blog - Patterns For Testable React Components | {% cite post_patterns_for_testable_react_components --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Discovering patterns with React hooks |  {% cite post_discovering_patterns_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| The ReactJS Controller View Pattern | {% cite post_the_reactjs_controller_view_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Seven patterns by example: The many ways to `type="radio"` in React | {% cite post_seven_patterns_by_example --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| The React + Redux Container Pattern | {% cite post_the_react_redux_container_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| React Component Types: A complete Overview - RWieruch | {% cite post_react_component_types_a_complete_overview --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Production-Level Patterns for React Hooks \| FullStack Labs | {% cite post_production_level_patterns_for_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| A Model View Controller Pattern for React - Test Double \| Our Blog | {% cite post_a_model_view_controller_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Provider Pattern in React using React Context API | {% cite post_provider_pattern_in_react_using_react_context_api --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Using the Adapter Design Pattern With React \| SendGrid | {% cite post_using_the_adapter_design_pattern_with_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Dependency injection · React in patterns | {% cite post_dependency_injection --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| AngularJS Patterns in React \| Greg Babiars's Blog | {% cite post_angularjs_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Global listener patterns in React - Advanced Web Machinery | {% cite post_global_listener_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Level up your React architecture with MVVM - COBE | {% cite post_level_up_react_architecture --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| React patterns \| React and Ramda patterns | {% cite post_react_patterns_react_and_ramda --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Friday Frontend: New React Patterns | {% cite post_friday_frontend_new_react_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| React's State Reducer Pattern - DSC Engineering | {% cite post_react_state_reducer_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| The Unstated React Service Pattern - HMH Engineering | {% cite post_the_unstated_react_service_patttern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Best Practices With React Hooks — Smashing Magazine | {% cite post_best_practices_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| 15 React Best Practices You Need to Follow in 2020 | {% cite post_15_react_best_practices_you_need_to_follow_in_2019 --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| React Patterns - Render Callback \| Lenny's Blog | {% cite post_react_patterns_render_callback --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Redux design patterns & Reduxsauce | {% cite post_redux_design_patterns_reduxsauce --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| React Hooks, the rebirth of State Management and beyond. | {% cite post_react_hooks_rebirth_of_state_management --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| 8 no-Flux strategies for React component communication | {% cite post_8_no_flux_strategies_for_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| BLoC Pattern with React Hooks — magarcia | {% cite post_bloc_pattern_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Getting to Know the Redux Pattern \| DotNetCurry | {% cite post_getting_to_know_the_redux_Pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Clean Code vs. Dirty Code: React Best Practices - American ... | {% cite post_clean_code_dirty_code --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| ReactJS - GeeksforGeeks | {% cite post_geeks_for_geeks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Reusable Code In React: Inheritance, Composition, Decorators and ... | {% cite post_reusable_code_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Killing Switch Statements in React with the Strategy Pattern | {% cite post_killing_switch_statements --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| A state management pattern for Ionic React with React Hooks | {% cite post_a_state_management_pattern_for_ionic_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Advanced React Concepts \| React Resources | {% cite post_advanced_react_concepts --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Reactjs application development tips \| Reactive | {% cite post_reactjs_application_development_tips --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
 
 ### Q1
 
