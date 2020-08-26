@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ReactJs patterns - A study based on google search
+title: (WIP) ReactJs patterns - A study based on google search
 date: 2020-06-22 01:06:05.000000000 -03:00
 image: /images/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/cover.png
 type: article
@@ -106,9 +106,9 @@ example, the first post, in the list covered 22 patterns.
 
 This process was repeated for each post in the list. Once the classification was done,
 the word cloud {% cite word_cloud --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-vizualization was generated following a process.
+vizualization was generated (the process is described in the next sentence).
 
-![Word cloud generated based on the classification](/images/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/word_cloud.png "Word cloud generated based on the classification")
+[![Word cloud generated based on the classification](/images/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/word_cloud.png "Word cloud generated based on the classification, click to see the visualization")](/artifacts/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/word-cloud){:target="_blank"}
 
 The raw classification was processed using the following steps:
 
@@ -134,10 +134,10 @@ right a short abstract was provided to ilustrate the source content.
 
 |Title| Abstract|
 |-----|---------|
-| React Patterns | {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}  |
-| Design Principles – React | {% cite post_design_principles_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-| 2019 ReactJS Best Practices - Bogdan Kulbida - Medium | {% cite post_2019_reactjs_best_practices --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-| Advanced React Component Patterns | {% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| React Patterns | {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} provides a list with patterns used in reactjs, the list has a title and a brief description as well as the code snippet that represents the described pattern. The list works as a friendly guide for developers that need a way to quickly check how to compose a specific pattern. |
+| Design Principles – React | {% cite post_design_principles_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} is a collection of the ReactJs design principles that together composes the phylosophy and key concepts implemented in ReactJs. Those are used as a guide fo ReactJs evolution and changes for the community around it. |
+| 2019 ReactJS Best Practices - Bogdan Kulbida - Medium | {% cite post_2019_reactjs_best_practices --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} presents a best practices guide related to componented creation, the is around: stateful components, stateless components, Higher order components and container components. For each pattern listed, the author goes in details for each one of them. The communication pattern between react components is also cited (known as data/props down, actions/events up). |
+| Advanced React Component Patterns | {% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} describes the patterns used in his course, named: compound componentes, Higher order components, render props, prop collectionsan getters, state initializers, controlled components an provider. The list just gives a brief description of what is covered in the course and not much detail is given, which might be difficult to understand without a proper context, the author also asumes tha the reader alread has previous knowledge in React (as the title says it is an advanced reactjs patterns).|
 | Five Ways to Advanced React Patterns - DEV | {% cite post_five_ways_to_advanced_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
 | How To Master Advanced React Design Patterns — Render Props | {% cite post_how_to_master_advanced_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
 | Simple React Patterns \| Lucas Reis' Blog | {% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
