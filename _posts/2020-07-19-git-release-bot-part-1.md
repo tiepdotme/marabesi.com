@@ -21,7 +21,7 @@ tags:
 
 Releasing software to the final users is challenging regardless of the programming
 language of choice. For web apps it requires a web server, for compiled apps
-it requres a way for distribute the binary and for each one extra steps
+it requires a way for distribute the binary and for each one extra steps
 are needed, in the end the release is just the final step of a long process.
 
 In the old days, applications where deployed via SFTP and required to move file by file
@@ -39,8 +39,8 @@ for each relased an automated process.
 To release a version of a software, usually there is a boring task of updating
 specific files with the version to be released. For example, a team may want to update
 the `package.json` file (version property) with the release they are tagging,
-for documentation purpose. Then, before a release the developer incharge of the
-release must remember to follow the rules of updateing the file, and after that
+for documentation purpose. Then, before a release the developer in charge of the
+release must remember to follow the rules of updating the file, and after that
 generate a git tag.
 
 In the scenario described the major issue is to relay on the developer
@@ -85,7 +85,9 @@ Once Gitbot detects the match, it will automatically push the changes to the
 files with the specific version. Currently Gitbot implementation
 {% cite gitbot_github --file 2020-07-19-git-release-bot-part-1 %}
 supports Gitlab only, but it's core was designed to support other git providers,
-such as github or bitbucket.
+such as github or bitbucket. The following flowchart depicts the flow described so far
+
+[![Git bot flow chart](/images/posts/2020-07-19-git-release-bot-part-1/flowchart.png)](/images/posts/2020-07-19-git-release-bot-part-1/flowchart.png){:target="_blank"}
 
 ## References
 
