@@ -17,6 +17,8 @@ collections:
     permalink: /:path
   newbies:
     output: true
+  projects:
+    output: true
   tests:
     output: true
   conferences:
@@ -50,3 +52,4 @@ exclude:
 plugins:
   - jekyll-sitemap
   - "jekyll/scholar"
+  - jekyll-figure
