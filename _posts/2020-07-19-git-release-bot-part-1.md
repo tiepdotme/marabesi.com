@@ -82,12 +82,14 @@ chore: tagged version 10.2.0-rc
 ```
 
 Once Gitbot detects the match, it will automatically push the changes to the
-files with the specific version. Currently Gitbot implementation
-{% cite gitbot_github --file 2020-07-19-git-release-bot-part-1 %}
-supports Gitlab only, but it's core was designed to support other git providers,
-such as github or bitbucket. The following flowchart depicts the flow described so far
+files with the specific version. The following flow chart describes the flow that is executed starting from the git repository (Gitlab).
 
 [![Git bot flow chart](/images/posts/2020-07-19-git-release-bot-part-1/flowchart.png)](/images/posts/2020-07-19-git-release-bot-part-1/flowchart.png){:target="_blank"}
+
+Currently Gitbot implementation
+{% cite gitbot_github --file 2020-07-19-git-release-bot-part-1 %}
+supports Gitlab only, but it's core was designed to support other git providers,
+such as github or bitbucket.
 
 ## References
 
