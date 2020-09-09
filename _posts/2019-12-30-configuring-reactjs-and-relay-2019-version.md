@@ -163,7 +163,7 @@ Relay requires an environment setup to work properly **[5]**. The environment
 provided by the official documentation is the one used here. Copy the following
 code and save it in a file called `environment.js`.
 
-```js
+```jsx
 import {
   Environment,
   Network,
@@ -204,7 +204,7 @@ defined previously, followed by the `query` variable that holds the graphql quer
 The graphql query is passed to the `QueryRenderer` **[6]** relay component to fetch
 the graphql data.
 
-```js
+```jsx
 // ProductList.js
 import React from 'react';
 import {graphql, QueryRenderer} from 'react-relay';
@@ -249,7 +249,7 @@ The ProductList component is based on the component provided by the relay offici
 documentation **[6]**. To actually use the ProductList component one more step
 is required: to invoke the component in the `App.js` file, as the following code does.
 
-```js
+```jsx
 import React from 'react';
 import ProductList from './ProductList';
 import './App.css';
