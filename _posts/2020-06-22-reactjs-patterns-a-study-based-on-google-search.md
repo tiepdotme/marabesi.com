@@ -120,45 +120,101 @@ to the word without s (singular form), resulting in "component"
 3. Different words used with common mean were normalized, for example, the higher order component
 is commonly used as HoC, the shorter version was used.
 
-The word cloud depicts the translation between the most cited patterns used
-in the dataset. The most cited pattern is Component, followed by props taking into
-consideration just a single word.
+The word cloud depicts the translation between the most cited patterns used in the dataset. The most cited pattern is Component, followed by props taking into consideration just a single word.
 
 
 ## Discussion
 
-This section dive deeper in the results depicted in the previous section,
-the first sub section focus on **Q1** and the second section focuses on **Q2**.
-The discussion presented in this section is based in the table of result mined
-to generate the word cloud in the previous section.
+This section dive deeper in the results depicted in the previous section, the first sub section focus on **Q1** and the second section focuses on **Q2**.
 
+### Q1
 
-## Reactjs patterns
+For **Q1**, based on the pure pattern classification the results point to the most popular pattern being the "component",
+followed by "props" which are the foundation of ReactJs, as everything is a component, and communication happens via props. A first hypothesis into this result is the repetition of those two patterns to explain more complex ones, for developers that are starting into the reactjs, components and props are the first principles to understand.
 
+[![lollipop graph](/images/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/lollipop.png "lollipop graph, top 10, click to see the visualization")](/artifacts/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/lollipop){:target="_blank"}
 
+In addition to that complex patterns such as hooks and higher order components appear surrounding the component and prop pattern. Those are the patterns which requires from the developer a previous understanding of props and components as they are more complex, which in turn, can lead to less content related to those patterns.
+
+### Q2
+
+For **Q2** the surrounding elements are the focus, so for example, terms like
+best practices and design were found and are related to reactjs patterns.
+
+<!-- Code reuse, separate of concerns, readability, easy to maintain,-->
+As such, {% cite post_clean_code_dirty_code --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %},
+entitled "Clean Code vs. Dirty Code: React Best Practices", enumarates 14 sections
+about best practices. Those sections are related to code standards, javascript
+features, naming variables and also about industry standard to follo when coding
+like DRY.
+
+## Related work
 
 ### Container component
 
 {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+uses the Jason Bonta's definition of the container component: the container component fetches data, and then
+renders it's corresponding sub component. That's it.
 
-{% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and {% cite  post_simple_react_design_patterns_container_view --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} agrees on
+the same definition as {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+and adds that, the container component is the place to connect to redux.
 
-{% cite  post_simple_react_design_patterns_container_view --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
+The following code from {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} depicts
+the container component using class component.
+
+```jsx
+const CommentList = ({ comments }) => (
+  <ul>
+    {comments.map(comment => (
+      <li>
+        {comment.body}-{comment.author}
+      </li>
+    ))}
+  </ul>
+);
+
+class CommentListContainer extends React.Component {
+  constructor() {
+    super()
+    this.state = { comments: [] }
+  }
+
+  componentDidMount() {
+    $.ajax({
+      url: "/my-comments.json",
+      dataType: 'json',
+      success: comments =>
+        this.setState({comments: comments});
+    })
+  }
+
+  render() {
+    return <CommentList comments={this.state.comments} />
+  }
+}
+```
 
 {% cite post_implementing_the_container_pattern_using_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+elaborates on the container component with hooks along side with a todo list app that implements the pattern. Also the definition
+followed was the same as {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}, it
+seems that there is a consensus that Jason Bonta defined the container component pattern
+and developers point to him. 
 
-{% cite post_introduction_to_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
+{% cite post_introduction_to_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+rates the cotainer component as a pattern that provides: separation of concerns, it
+is reusable and it is testable. 
 
-{% cite post_the_react_redux_container_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-
+{% cite post_the_react_redux_container_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} expands on
+the idea that container component is awere of redux, the same
+argument made by {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}, but in
+this case, the author gives "the internet" the credit to agree on that.
 
 ### Conditional rendering
 
 {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
 {% cite post_react_conditional_rendering --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
 
 
 ### Compound Components
@@ -175,6 +231,8 @@ to generate the word cloud in the previous section.
 
 ### Higher-Order-Component
 
+{% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+
 {% cite post_2019_reactjs_best_practices --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
 {% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
@@ -186,8 +244,6 @@ to generate the word cloud in the previous section.
 {% cite post_advanced_patterns_reactjs --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
 {% cite post_reactjs_in_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
 {% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
@@ -329,6 +385,10 @@ to generate the word cloud in the previous section.
 
 {% cite post_bloc_pattern_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
+{% cite post_reusable_code_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
+
+{% cite post_a_state_management_pattern_for_ionic_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+
 
 
 ### Decorated component
@@ -382,24 +442,6 @@ to generate the word cloud in the previous section.
 
 
 
-### Q1
-
-For **Q1**, the results point to the most popular pattern being the "component",
-followed by "props" which are the foundation of ReactJs, as everything is a component,
-and communication happens via props. A first hypothesis into this result is the repetition of those two patterns to explain more complex ones, for developers that are starting into the reactjs, components and props are the first principles to understand.
-
-[![lollipop graph](/images/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/lollipop.png "lollipop graph, top 10, click to see the visualization")](/artifacts/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/lollipop){:target="_blank"}
-
-In addition to that complex patterns such as hooks and higher order components appear surrounding
-the component and prop pattern. Those are the patterns which requires from
-the developer a previous understanding of props and components as they are more complex.
-
-### Q2
-
-For **Q2** the surrounding elements are the focus, so for example, terms like
-best practices and design were found and are related to reactjs patterns.
-
-Code reuse, separate of concerns, readability, easy to maintain,
 
 
 
@@ -425,8 +467,7 @@ more experience are the ones less popular as well.
 
 ### Mined content
 
-On the Title column, the original title from the source was preserved and on the
-right a short abstract was provided to illustrate what the source content is about.
+On the Title column, the original title from the source was preserved and on the right a short abstract was provided to illustrate what the source content is about.
 
 |Title| Abstract|
 |-----|---------|
@@ -439,7 +480,7 @@ right a short abstract was provided to illustrate what the source content is abo
 | Simple React Patterns \| Lucas Reis' Blog | {% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} gives code snippets for different reactjs patterns, named as "everyday patterns", such as: container or view pattern (not to be confused by compound pattern), higher order component , render props and the provider pattern. |
 | Advanced Patterns in React | {% cite post_advanced_patterns_reactjs --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} dedicates the post to two specific reactjs patterns: higher order components  and render props. |
 | React.js in patterns | {% cite post_reactjs_in_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} the author starts by the communication flow that reactjs uses as a foundation as well as the children props, basically setting up a common ground, then the pattern higher order component is introduced. |
-| React Component Patterns - Level Up Coding | {% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} mentions for the first time in this list stateless and stateful components shows up, those patterns are often used to separate concerns between components. |
+| React Component Patterns - Level Up Coding | {% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} mentions for the first time in this list stateless and stateful components shows up, those patterns are often used to separate concerns between components. Besides that, the container, higher order component, render callback are presented. The author focus was to summarize his experience regarding those patterns. |
 | Evolving Patterns in React | {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} starts with patterns that are considered to be simple, such as conditional rendering, passing down props ({% cite post_2019_reactjs_best_practices --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} also mentions the passing props), in the follow up the author mentions the destructuring pattern, which is a javascript functionality and not a reactjs pattern. |
 | React Conditional Rendering Patterns \| Building SPAs | {% cite post_react_conditional_rendering --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} focus on the rendering patterns used in reactjs. Those patterns are directly connected to JSX, as reactjs uses JSX to render the component. |
 | Patterns for Style Composition in React \| Jxnblk | {% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} describes the patterns the he used to keep things organized, the goal as mentioned was to (but not limited to): create a well defined visual design, increase maintainability of visual styles and create reusable components. For that, the author used: stateless components (which is also discussed by {% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}), styles module, style functions, npm modules, base component and higher order components. Those patterns listed, were used focused on the visual part. |
@@ -483,8 +524,8 @@ right a short abstract was provided to illustrate what the source content is abo
 | Getting to Know the Redux Pattern \| DotNetCurry | {% cite post_getting_to_know_the_redux_Pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}  offers an approach to the redux pattern introducing the flux (which is the pattern definition - one way data flow) and also exposes a few examples in how to use it as a pure library (no reactjs). The content presented is a base to developers that want to understand how redux works and where it come from. |
 | Clean Code vs. Dirty Code: React Best Practices - American ... | {% cite post_clean_code_dirty_code --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} introduces the idea behind clean code and also its counter parts "dirty code". The content is a set of best practices guide instead of a clear pattern implementation. |
 | ReactJS - GeeksforGeeks | {% cite post_geeks_for_geeks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} is a material created for beginners, it gives the foundation of reactjs, how it works, what it is, the naming and conventions. The material is recommended as a first approach to the reactjs ecosystem. |
-| Reusable Code In React: Inheritance, Composition, Decorators and ... | {% cite post_reusable_code_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-| Killing Switch Statements in React with the Strategy Pattern | {% cite post_killing_switch_statements --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-| A state management pattern for Ionic React with React Hooks | {% cite post_a_state_management_pattern_for_ionic_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-| Advanced React Concepts \| React Resources | {% cite post_advanced_react_concepts --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
+| Reusable Code In React: Inheritance, Composition, Decorators and ... | {% cite post_reusable_code_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} goes around the oriented object programming style for sharing code, such as inheritance, composition and decorators. Besides that the mixins pattern is taken as a "deprecated" way for sharing code in favor of hooks. |
+| Killing Switch Statements in React with the Strategy Pattern | {% cite post_killing_switch_statements --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} presents an alternative to switch statements, as mentioned by the author, the switch statement in this case was a smell and with maintainability  issues. |
+| A state management pattern for Ionic React with React Hooks | {% cite post_a_state_management_pattern_for_ionic_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} uses reactjs hooks to replicate the redux library behavior. |
+| Advanced React Concepts \| React Resources | {% cite post_advanced_react_concepts --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} is a collection of reactjs resources about advanced usage of reactjs. |
 | Reactjs application development tips \| Reactive | {% cite post_reactjs_application_development_tips --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
