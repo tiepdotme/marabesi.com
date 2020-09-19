@@ -108,7 +108,6 @@ to run the program. on the other side though, the alphine version has almost
 nothing to run the program, it has just the core, nothing else. Which in many 
 cases will make the program to not run, depending on the dependencies.
 
-
 ### 2. The root user
 
 The root user is the default user in which the container runs, which makes
@@ -167,12 +166,26 @@ By default the container can't access external ports, which in turn will
 block the database connection. There are two possible options for that, using
 a `network` flag or using the `add-host` flag.
 
+```shell
+# using --network flag
+docker run --rm --network=host nginx
+```
+
 There is a side effect using the network flag, which will ignore the docker
 network created automatically by docker and the container will run as if
 it were in the host. Impacting the port that the application run and therefore
 prevents the possibility of blue-green
 deployments {% cite docker_blue_green_no_down_time --file 2020-05-15-tips-for-writting-docker-files %},
 which requires two instances of the same app running, each on its specific port.
+
+The `add-host` gives the flexibility needed to overcome the port issue. The
+flag maps a specific host to a IP, the following example maps the localhost
+to be the host.
+
+```shell
+# using --add-host flag
+docker run --rm --add-host=localhost:192.168.1.102 nginx
+```
 
 ## Docker compose
 
