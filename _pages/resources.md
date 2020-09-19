@@ -59,6 +59,7 @@ links, podcasts, books and influencers to follow.
   * [ICSE](https://twitter.com/ICSEconf){:target="_blank"}
   * [FSE](https://conf.researchr.org/series/fse){:target="_blank"}
   * [ASE](https://conf.researchr.org/home/ase-2020){:target="_blank"}
+  * [ICST](https://icst2020.info){:target="_blank"}
 * Journals
   * [TSE](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32){:target="_blank"}
   * [EMSE](https://www.springer.com/journal/10664){:target="_blank"}
