@@ -279,37 +279,28 @@ explores the HoC in the new era of react hooks.
 {% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} has no
 definition statement, though the content is followed with HoC code examples.
 
-### Render Props
+### Render Props / Render callback
 
-{% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
+The render props or render callback pattern is used to render a given component
+based on a function callback {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 {% cite post_five_ways_to_advanced_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_how_to_master_advanced_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_advanced_patterns_reactjs --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite  post_common_i18n_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_introduction_to_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
-
-{% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-
-
-### Render callback
-
 {% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_advanced_patterns_reactjs --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_introduction_to_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}, or
+as {% cite post_how_to_master_advanced_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} states,
+instead of rendering the children (which is as common technique in reactjs), this pattern
+renders the prop. Eventhough {% cite post_how_to_master_advanced_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} states that the render prop renders the prop, instead of the children, {% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %},{% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and {% cite  post_common_i18n_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} describes the render prop
+using the children explicitly.
 
-{% cite post_react_patterns_render_callback --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+Furthermore {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+states that the pattern render props and HoC are interchangeable.
 
+The term render callback is clearer in the intention
+of the pattern, but the term, render props got more adoption from the
+community {% cite post_react_patterns_render_callback --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}.
 
+On the other hand {% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %},
+states that there are discution between the effectiveness of the pattern.
 
 ### Prop Collections and Getters
 
