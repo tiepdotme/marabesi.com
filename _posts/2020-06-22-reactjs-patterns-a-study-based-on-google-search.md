@@ -150,18 +150,21 @@ like DRY.
 
 ## Related work
 
+This section dives in the content of each post mined and group them in the
+different patterns found. It is possible for the same post to appear in different
+sections, as the content might explore more than one at time.
+
 ### Container component
 
 {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 uses the Jason Bonta's definition of the container component: the container component fetches data, and then
-renders it's corresponding sub component. That's it.
-
-{% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and {% cite  post_simple_react_design_patterns_container_view --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} agrees on
+renders it's corresponding sub component. That's it. {% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and {% cite  post_simple_react_design_patterns_container_view --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} agrees on
 the same definition as {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 and adds that, the container component is the place to connect to redux.
 
 The following code from {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} depicts
-the container component using class component.
+the container component using class component. {% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+also offers a code example.
 
 ```jsx
 const CommentList = ({ comments }) => (
@@ -199,67 +202,82 @@ class CommentListContainer extends React.Component {
 elaborates on the container component with hooks along side with a todo list app that implements the pattern. Also the definition
 followed was the same as {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}, it
 seems that there is a consensus that Jason Bonta defined the container component pattern
-and developers point to him. 
-
-{% cite post_introduction_to_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+and developers point to him. {% cite post_introduction_to_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 rates the cotainer component as a pattern that provides: separation of concerns, it
-is reusable and it is testable. 
+is reusable and it is testable.
 
 {% cite post_the_react_redux_container_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} expands on
 the idea that container component is awere of redux, the same
 argument made by {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}, but in
-this case, the author gives "the internet" the credit to agree on that.
+this case, the author gives "the internet" the credit to agree on that. {% cite post_2019_reactjs_best_practices --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} has somehow
+a not so clean definition about container component, also the text mix HoC with
+presentational components and other patterns.
 
 ### Conditional rendering
 
 {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_react_conditional_rendering --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
+gives his opinions on the conditional rendering pattern and also states that
+it is a narutal step for developers to separate logic from the actual return code (the code
+given as example is a ternary if). As an alternative to the conditional
+rendering, the author suggests to use the JSX alternative with `&&`. {% cite post_react_conditional_rendering --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+expands on the JSX alternatives for conditional rendering.
 
 ### Compound Components
 
-{% cite post_2019_reactjs_best_practices --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
+{% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and
 {% cite post_five_ways_to_advanced_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+share the same definition, the compound components are components that are distinct, but does not work without
+the other, they make sense together only. Furthermore, {% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} mentions the HTML
+`select` and `option` as an example of compound components. {% cite post_seven_patterns_by_example --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} uses
+the compount component pattern to build a radio group component, which the user can select only one option
+between the avaialbe options.
 
-{% cite post_seven_patterns_by_example --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+### Decorated component
 
+The decorated component is a pattern that does not not appear often,
+{% cite post_patterns_for_testable_react_components --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+demonstrates the decorated component as a way to decouple components, or even
+to enhance component features, Redux uses the decorated component pattern
+to enhance the component props.
 
+Therefore, the decorated pattern can be used as a way to decouple the component
+that fetch data with the one that actually uses the data. {% cite post_2019_reactjs_best_practices --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} states that
+the decorated pattern is the same as HoC.
 
 ### Higher-Order-Component
 
-{% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
+{% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and
 {% cite post_2019_reactjs_best_practices --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+agree on the definition that HoC, in a sense that HoC are decorators. {% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} though, has an
+argument that the HoC name is misnormer, which is based on his own thoughts.
 
-{% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_five_ways_to_advanced_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
+A HoC takes a reactjs component enhances it and then returns the new enhanced
+component to be used {% cite post_five_ways_to_advanced_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 {% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
 {% cite post_advanced_patterns_reactjs --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_reactjs_in_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
+{% cite post_reactjs_in_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
 {% cite post_higher_order_components --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_react_component_types_a_complete_overview --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}.
 
-{% cite post_patterns_for_data_fetching_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_react_patterns_react_and_ramda --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} has a different
+definition, which states that the HoC receives a component as an argument and returns
+another component. This definition is weider than the previous one. Often the
+HoC receives a component and enhance the same component functionality, and returns
+the same camponent with added behavior, from {% cite post_react_patterns_react_and_ramda --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+would be possible to receive A and then return B.
 
-{% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+Therefore, {% cite post_patterns_for_data_fetching_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+states that HoC is responsbile to fetch data and then propagate to child components. This definition is an addition
+to the previous agreed definition, but does not restrict the pattern to be used as data fetch only. {% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} adds that
+the HoC is used to fetch data and also split data fetching from data presentation.
+For the first time, the HoC is compared as a `container pattern` and not the 
+`decorated component pattern`.
 
 {% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+explores the HoC in the new era of react hooks.
 
-{% cite post_react_component_types_a_complete_overview --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_react_patterns_react_and_ramda --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-
+{% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} has no
+definition statement, though the content is followed with HoC code examples.
 
 ### Render Props
 
@@ -388,12 +406,6 @@ this case, the author gives "the internet" the credit to agree on that.
 {% cite post_reusable_code_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
 
 {% cite post_a_state_management_pattern_for_ionic_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-
-
-### Decorated component
-
-{% cite post_patterns_for_testable_react_components --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
 
 
