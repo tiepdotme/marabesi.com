@@ -67,36 +67,36 @@ class MyLegacyClass {
 	    // omitted code with 50 lines also construct method and some properties was took off
             public function setXml($xml) {
             	try {
-            		$this-&gt;xml = $xml;
+            		$this->xml = $xml;
             		return $this;
             	} catch(Exception $e) {
-            		exit($e-&gt;getMessage());
+            		exit($e->getMessage());
             	}
             }
 
             public function getXml() {
-            	return $this-&gt;xml;
+            	return $this->xml;
             }
              
             public function getModalRodoviario() {
             	try {
-            		$xml = $this-&gt;getXml();
-            		return $xml-&gt;rodo;
+            		$xml = $this->getXml();
+            		return $xml->rodo;
             	} catch(Exception $e) {
-            		exit($e-&gt;getMessage());
+            		exit($e->getMessage());
             	}
             }
              
             public function printXML() {
-            	$xml = $this-&gt;getXml();
-            	print($xml-&gt;asXML());
+            	$xml = $this->getXml();
+            	print($xml->asXML());
             	exit;
             }
              
             public function setIdeValues($config, $Cte) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
-            	$ide = $xml-&gt;infCte-&gt;addChild('ide');
+            	$ide = $xml->infCte->addChild('ide');
 
             	$confIde = $config;
 
@@ -113,9 +113,9 @@ class MyLegacyClass {
 
             	unset($confIde['toma']);
 
-            	$confIde['cUF'] = $this-&gt;estadosIBGE[$confIde['cUF']];
+            	$confIde['cUF'] = $this->estadosIBGE[$confIde['cUF']];
 
-            	$this-&gt;chaveAcesso = $this-&gt;calculaChaveAcesso(
+            	$this->chaveAcesso = $this->calculaChaveAcesso(
             	$confIde['cUF'],
             	substr(str_replace('-', '', $confIde['dhEmi']),2,4),
             	$Cte['Empresa']['Entidade']['ent_cnpj'],
@@ -126,17 +126,17 @@ class MyLegacyClass {
             	$confIde['cCT']
             	);
 
-            	$Cte-&gt;cte_chave = $this-&gt;chaveAcesso;
+            	$Cte->cte_chave = $this->chaveAcesso;
 
-            	$Cte-&gt;save();
+            	$Cte->save();
 
-            	$confIde['cDV'] = $this-&gt;digVer;
+            	$confIde['cDV'] = $this->digVer;
 
-            	$xml-&gt;infCte-&gt;addAttribute('Id', 'CTe' . $this-&gt;chaveAcesso);
+            	$xml->infCte->addAttribute('Id', 'CTe' . $this->chaveAcesso);
 
-            	foreach($confIde as $node =&gt; $nodeValue) {
-            		if($nodeValue != "" &amp;&amp; !is_array($nodeValue)) {
-            			$ide-&gt;addChild($node, $nodeValue);
+            	foreach($confIde as $node => $nodeValue) {
+            		if($nodeValue != "" && !is_array($nodeValue)) {
+            			$ide->addChild($node, $nodeValue);
             		} else {
             			if(array_key_exists($node, $camposObrigatoriosConfIde))
             			throw new Exception($camposObrigatoriosConfIde[$node]);
@@ -145,8 +145,8 @@ class MyLegacyClass {
 
             	//		exit;
             	if(isset($confToma4)) {
-            		$toma4 = $ide-&gt;addChild('toma4');
-            		$toma4-&gt;addChild('toma', $confToma);
+            		$toma4 = $ide->addChild('toma4');
+            		$toma4->addChild('toma', $confToma);
             		 
             		$camposObrigatoriosTomador = array(
 				//omitted code 9 lines
@@ -155,65 +155,65 @@ class MyLegacyClass {
             		$confToma4['toma_data_ent_cont'] = date('Y-m-d H:i:s');
             		$confToma4['toma_justificativa_cont'] = "Justificativa teste";
             		 
-            		foreach($camposObrigatoriosTomador as $campo =&gt; $mensagemErro) {
+            		foreach($camposObrigatoriosTomador as $campo => $mensagemErro) {
             			if($confToma4[$campo] == "")
             			throw new Exception($mensagemErro);
             		}
             		 
             		$dePara = array(
-				'fone' =&gt; 'toma_telefone',
-				'xLgr' =&gt; 'toma_end_logradouro',
-				'nro' =&gt; 'toma_end_nro',
-				'xCpl' =&gt; 'toma_end_cpl',
-				'xBairro' =&gt; 'toma_end_bairo',
-				'cMun' =&gt; 'toma_end_cod_mun',
-				'xMun' =&gt; 'toma_end_mun',
-				'UF' =&gt; 'toma_end_uf_sigla',
-            		//'CEP' =&gt; 'toma_end_cep',
-				'cPais' =&gt; 'toma_cod_end_pais',
-				'xPais' =&gt; 'toma_end_pais',
-				'email' =&gt; 'toma_cont_email',
-            		//'xJust' =&gt; 'toma_justificativa_cont'
+				'fone' => 'toma_telefone',
+				'xLgr' => 'toma_end_logradouro',
+				'nro' => 'toma_end_nro',
+				'xCpl' => 'toma_end_cpl',
+				'xBairro' => 'toma_end_bairo',
+				'cMun' => 'toma_end_cod_mun',
+				'xMun' => 'toma_end_mun',
+				'UF' => 'toma_end_uf_sigla',
+            		//'CEP' => 'toma_end_cep',
+				'cPais' => 'toma_cod_end_pais',
+				'xPais' => 'toma_end_pais',
+				'email' => 'toma_cont_email',
+            		//'xJust' => 'toma_justificativa_cont'
             		);
             		 
             		if(strlen($confToma4['toma_cpf_cnpj']) == 11) {
-            			$toma4-&gt;addChild('CPF', $confToma4['toma_cpf_cnpj']);
+            			$toma4->addChild('CPF', $confToma4['toma_cpf_cnpj']);
             			if($confToma4['toma_nome']!="")
-            			$toma4-&gt;addChild('xNome', $confToma4['toma_nome']);
+            			$toma4->addChild('xNome', $confToma4['toma_nome']);
             		} else {
-            			$toma4-&gt;addChild('CNPJ', $confToma4['toma_cpf_cnpj']);
+            			$toma4->addChild('CNPJ', $confToma4['toma_cpf_cnpj']);
             			if($confToma4['toma_fantasia']!="")
-            			$toma4-&gt;addChild('xFant', $confToma4['toma_fantasia']);
+            			$toma4->addChild('xFant', $confToma4['toma_fantasia']);
             			if($confToma4['toma_ie']!="")
-            			$toma4-&gt;addChild('IE', $confToma4['toma_ie']);
+            			$toma4->addChild('IE', $confToma4['toma_ie']);
             		}
             		 
             		if(!empty($confToma4['toma_telefone']))
-            		$toma4-&gt;addChild('fone', $confToma4['toma_telefone']);
+            		$toma4->addChild('fone', $confToma4['toma_telefone']);
             		 
-            		$enderToma = $toma4-&gt;addChild('enderToma');
+            		$enderToma = $toma4->addChild('enderToma');
 
-            		foreach($dePara as $de =&gt; $para) {
-            			$confToma4[$para] = $this-&gt;cleaner($confToma4[$para]);
+            		foreach($dePara as $de => $para) {
+            			$confToma4[$para] = $this->cleaner($confToma4[$para]);
             			if($confToma4[$para]!="")
-            			$enderToma-&gt;addChild($de, $confToma4[$para]);
+            			$enderToma->addChild($de, $confToma4[$para]);
             		}
             		 
             		/*if(!empty($confToma4['toma_data_ent_cont']))
-            		 $enderToma-&gt;addChild('dhCont', implode('T', explode(' ', $confToma4['toma_data_ent_cont'])));*/
+            		 $enderToma->addChild('dhCont', implode('T', explode(' ', $confToma4['toma_data_ent_cont'])));*/
             	} else {
-            		$toma03 = $ide-&gt;addChild('toma03');
-            		$toma03-&gt;addChild('toma', $confToma);
+            		$toma03 = $ide->addChild('toma03');
+            		$toma03->addChild('toma', $confToma);
             	}
 
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
 
             public function setCompl($config) {
-            	//		if($this-&gt;validaInputacao($config)) {
-            	$xml = $this-&gt;getXml();
+            	//		if($this->validaInputacao($config)) {
+            	$xml = $this->getXml();
 
-            	$compl = $xml-&gt;infCte-&gt;addChild('compl');
+            	$compl = $xml->infCte->addChild('compl');
 
             	$confComplPrimeiroBloco = array(
 					'xCaracAd', 
@@ -222,158 +222,158 @@ class MyLegacyClass {
 					);
 
 					foreach($confComplPrimeiroBloco as $node) {
-						$config[$node] = $this-&gt;cleaner($config[$node]);
+						$config[$node] = $this->cleaner($config[$node]);
 						if($config[$node]!="")
-						$compl-&gt;addChild($node, $config[$node]);
+						$compl->addChild($node, $config[$node]);
 					}
 
 					if($config['fluxo']['xOrig'] != "" || $config['fluxo']['pass'] != "") {
-						$fluxo = $compl-&gt;addChild('fluxo');
+						$fluxo = $compl->addChild('fluxo');
 					}
 
 					if(!empty($config['fluxo']['xOrig'])) {
-						$fluxo-&gt;addChild('xOrig', $config['fluxo']['xOrig']);
+						$fluxo->addChild('xOrig', $config['fluxo']['xOrig']);
 					}
 
-					if($config['fluxo']['pass'] != "" &amp;&amp; count($config['fluxo']['pass']) &gt; 0) {
+					if($config['fluxo']['pass'] != "" && count($config['fluxo']['pass']) > 0) {
 						foreach($config['fluxo']['pass'] as $pass) {
-							$xpass = $fluxo-&gt;addChild('pass');
+							$xpass = $fluxo->addChild('pass');
 
 							$nodesPass = array(
-						'xPass' =&gt; 'cdp_sigla_aeroporto_passagem',
-						'xDest' =&gt; 'cdp_sigla_aeroporto_destino',
-						'xRota' =&gt; 'cdp_codigo_rota_entrega'
+						'xPass' => 'cdp_sigla_aeroporto_passagem',
+						'xDest' => 'cdp_sigla_aeroporto_destino',
+						'xRota' => 'cdp_codigo_rota_entrega'
 						);
 							
-						foreach($nodesPass as $nodePass =&gt; $nodePassIndex) {
-							$pass[$nodePassIndex] = $this-&gt;cleaner($pass[$nodePassIndex]);
+						foreach($nodesPass as $nodePass => $nodePassIndex) {
+							$pass[$nodePassIndex] = $this->cleaner($pass[$nodePassIndex]);
 							if($pass[$nodePassIndex]!="")
-							$xpass-&gt;addChild($nodePass, $pass[$nodePassIndex]);
+							$xpass->addChild($nodePass, $pass[$nodePassIndex]);
 						}
 						}
 					}
 
 					if(count($config['Entrega'])) {
-						$Entrega = $compl-&gt;addChild('Entrega');
+						$Entrega = $compl->addChild('Entrega');
 
-						$config['Entrega']['tpPer'] = $this-&gt;cleaner($config['Entrega']['tpPer']);
+						$config['Entrega']['tpPer'] = $this->cleaner($config['Entrega']['tpPer']);
 
 						if($config['Entrega']['tpPer']=="")
 
 						switch($config['Entrega']['tpPer']) {
 							case '0' :
-								$semData = $Entrega-&gt;addChild('semData');
-								$semData-&gt;addChild('tpPer', $config['Entrega']['tpPer']);
+								$semData = $Entrega->addChild('semData');
+								$semData->addChild('tpPer', $config['Entrega']['tpPer']);
 								break;
 							case '1' :
 							case '2' :
 							case '3' :
-								$comData = $Entrega-&gt;addChild('comData');
-								$comData-&gt;addChild('tpPer', $config['Entrega']['tpPer']);
-								$config['Entrega']['dProg'] = $this-&gt;cleaner($config['Entrega']['dProg']);
+								$comData = $Entrega->addChild('comData');
+								$comData->addChild('tpPer', $config['Entrega']['tpPer']);
+								$config['Entrega']['dProg'] = $this->cleaner($config['Entrega']['dProg']);
 
 								if($config['Entrega']['dProg']!="")
-								$comData-&gt;addChild('tpPer', $config['Entrega']['dProg']);
+								$comData->addChild('tpPer', $config['Entrega']['dProg']);
 								
 								break;
 							case '4' :
-								$noPeriodo = $Entrega-&gt;addChild('noPeriodo');
-								$noPeriodo-&gt;addChild('tpPer', $config['Entrega']['tpPer']);
-								$config['Entrega']['dtIni'] = $this-&gt;cleaner($config['Entrega']['dtIni']);
+								$noPeriodo = $Entrega->addChild('noPeriodo');
+								$noPeriodo->addChild('tpPer', $config['Entrega']['tpPer']);
+								$config['Entrega']['dtIni'] = $this->cleaner($config['Entrega']['dtIni']);
 								if($config['Entrega']['dtIni']!="")
-								$noPeriodo-&gt;addChild('dtIni', $config['Entrega']['dtIni']);
+								$noPeriodo->addChild('dtIni', $config['Entrega']['dtIni']);
 								
-								$config['Entrega']['dtFim'] = $this-&gt;cleaner($config['Entrega']['dtFim']);
+								$config['Entrega']['dtFim'] = $this->cleaner($config['Entrega']['dtFim']);
 								if($config['Entrega']['dtFim']!="")
-								$noPeriodo-&gt;addChild('dtFim', $config['Entrega']['dtFim']);
+								$noPeriodo->addChild('dtFim', $config['Entrega']['dtFim']);
 								
 								break;
 						}
 
-						$config['Entrega']['tpHor'] = $this-&gt;cleaner($config['Entrega']['tpHor']);
+						$config['Entrega']['tpHor'] = $this->cleaner($config['Entrega']['tpHor']);
 
 						switch($config['Entrega']['tpHor']) {
 							case '0' :
-								$semHora = $Entrega-&gt;addChild('semHora');
-								$semHora-&gt;addChild('tpHor', $config['Entrega']['tpHor']);
+								$semHora = $Entrega->addChild('semHora');
+								$semHora->addChild('tpHor', $config['Entrega']['tpHor']);
 								break;
 							case '1' :
 							case '2' :
 							case '3' :
-								$comHora = $Entrega-&gt;addChild('comHora');
-								$comHora-&gt;addChild('tpHor', $config['Entrega']['tpHor']);
-								$config['Entrega']['hProg'] = $this-&gt;cleaner($config['Entrega']['hProg']);
+								$comHora = $Entrega->addChild('comHora');
+								$comHora->addChild('tpHor', $config['Entrega']['tpHor']);
+								$config['Entrega']['hProg'] = $this->cleaner($config['Entrega']['hProg']);
 								if($config['Entrega']['hProg']!="")
-								$comHora-&gt;addChild('tpHor', $config['Entrega']['hProg']);
+								$comHora->addChild('tpHor', $config['Entrega']['hProg']);
 								break;
 							case '4' :
-								$noInter = $Entrega-&gt;addChild('noInter');
-								$noInter-&gt;addChild('tpHor', $config['Entrega']['tpHor']);
-								$config['Entrega']['hIni'] = $this-&gt;cleaner($config['Entrega']['hIni']);
+								$noInter = $Entrega->addChild('noInter');
+								$noInter->addChild('tpHor', $config['Entrega']['tpHor']);
+								$config['Entrega']['hIni'] = $this->cleaner($config['Entrega']['hIni']);
 								if($config['Entrega']['hIni']!="")
-								$noInter-&gt;addChild('hIni', $config['Entrega']['hIni']);
-								$config['Entrega']['hFim'] = $this-&gt;cleaner($config['Entrega']['hFim']);
+								$noInter->addChild('hIni', $config['Entrega']['hIni']);
+								$config['Entrega']['hFim'] = $this->cleaner($config['Entrega']['hFim']);
 								if($config['Entrega']['hFim']!="")
-								$noInter-&gt;addChild('hFim', $config['Entrega']['hFim']);
+								$noInter->addChild('hFim', $config['Entrega']['hFim']);
 								break;
 						}
 					}
 
 					if ( !empty($config['xObs']) ){
-						$compl-&gt;addChild('xObs', $config['xObs']);
+						$compl->addChild('xObs', $config['xObs']);
 					}
 
-					if(isset($config['ObsCont']) &amp;&amp; count($config['ObsCont']) &gt; 0) {
+					if(isset($config['ObsCont']) && count($config['ObsCont']) > 0) {
 						foreach($config['ObsCont'] as $ObsCont) {
-							$xObsCont = $compl-&gt;addChild('ObsCont');
+							$xObsCont = $compl->addChild('ObsCont');
 
-							$ObsCont['coic_identificador'] = $this-&gt;cleaner($ObsCont['coic_identificador']);
+							$ObsCont['coic_identificador'] = $this->cleaner($ObsCont['coic_identificador']);
 							if($ObsCont['coic_identificador']!="")
-							$xObsCont-&gt;addChild('xCampo', $ObsCont['coic_identificador']);
-							$ObsCont['coic_obs'] = $this-&gt;cleaner($ObsCont['coic_obs']);
+							$xObsCont->addChild('xCampo', $ObsCont['coic_identificador']);
+							$ObsCont['coic_obs'] = $this->cleaner($ObsCont['coic_obs']);
 							if($ObsCont['coic_obs']!="")
-							$xObsCont-&gt;addChild('xTexto', $ObsCont['coic_obs']);
+							$xObsCont->addChild('xTexto', $ObsCont['coic_obs']);
 						}
 					}
 
-					if(isset($config['ObsFisco']) &amp;&amp; count($config['ObsFisco']) &gt; 0) {
+					if(isset($config['ObsFisco']) && count($config['ObsFisco']) > 0) {
 						foreach($config['ObsFisco'] as $ObsFisco) {
-							$xObsFisco = $compl-&gt;addChild('ObsFisco');
+							$xObsFisco = $compl->addChild('ObsFisco');
 
-							$ObsFisco['coif_identificador'] = $this-&gt;cleaner($ObsFisco['coif_identificador']);
+							$ObsFisco['coif_identificador'] = $this->cleaner($ObsFisco['coif_identificador']);
 							if($ObsFisco['coif_identificador']!="")
-							$xObsFisco-&gt;addChild('xCampo', $ObsFisco['coif_identificador']);
-							$ObsFisco['coif_obs'] = $this-&gt;cleaner($ObsFisco['coif_obs']);
+							$xObsFisco->addChild('xCampo', $ObsFisco['coif_identificador']);
+							$ObsFisco['coif_obs'] = $this->cleaner($ObsFisco['coif_obs']);
 							if($ObsFisco['coif_obs']!="")
-							$xObsFisco-&gt;addChild('xTexto', $ObsFisco['coif_obs']);
+							$xObsFisco->addChild('xTexto', $ObsFisco['coif_obs']);
 						}
 					}
 
-					$this-&gt;setXml($xml);
+					$this->setXml($xml);
 					//		}
             }
 
             public function setEmitValues($config) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
             	$emitDePara = array(
-			'CNPJ' =&gt; 'CNPJ',
-			'IE' =&gt; 'IE',
-			'xNome' =&gt; 'nome_razao',
-			'xFant' =&gt; 'fantasia'
+			'CNPJ' => 'CNPJ',
+			'IE' => 'IE',
+			'xNome' => 'nome_razao',
+			'xFant' => 'fantasia'
 			);
 
 			$camposObrigatorios = array(
 			//omitted code 3 lines
 			);
 
-			$emit = $xml-&gt;infCte-&gt;addChild('emit');
+			$emit = $xml->infCte->addChild('emit');
 
-			foreach($emitDePara as $node =&gt; $nodeValue) {
-				$config[$nodeValue] = $this-&gt;cleaner($config[$nodeValue]);
+			foreach($emitDePara as $node => $nodeValue) {
+				$config[$nodeValue] = $this->cleaner($config[$nodeValue]);
 					
 				if($config[$nodeValue]!="") {
-					$emit-&gt;addChild($node, $config[$nodeValue]);
+					$emit->addChild($node, $config[$nodeValue]);
 				} else {
 					if(array_key_exists($node, $camposObrigatorios)) {
 						throw new Exception($camposObrigatorios[$node]);
@@ -382,27 +382,27 @@ class MyLegacyClass {
 			}
 
 			$emitEnderDePara = array(
-				'xLgr' =&gt; 'logradouro',
-				'nro' =&gt; 'numero',
-				'xCpl' =&gt; 'complemento',
-				'xBairro' =&gt; 'bairro',
-				'cMun' =&gt; 'cod_municipio',
-				'xMun' =&gt; 'municipio',
-				'UF' =&gt; 'UF',
-				'fone' =&gt; 'fone'
+				'xLgr' => 'logradouro',
+				'nro' => 'numero',
+				'xCpl' => 'complemento',
+				'xBairro' => 'bairro',
+				'cMun' => 'cod_municipio',
+				'xMun' => 'municipio',
+				'UF' => 'UF',
+				'fone' => 'fone'
 				);
 					
 				$camposObrigatoriosEnder = array(
 				//omitted code 7 lines
 				);
 					
-				$enderEmit = $emit-&gt;addChild('enderEmit');
+				$enderEmit = $emit->addChild('enderEmit');
 					
-				foreach($emitEnderDePara as $node =&gt; $nodeValue) {
-					$config[$nodeValue] = $this-&gt;cleaner($config[$nodeValue]);
+				foreach($emitEnderDePara as $node => $nodeValue) {
+					$config[$nodeValue] = $this->cleaner($config[$nodeValue]);
 
 					if($config[$nodeValue]!="") {
-						$enderEmit-&gt;addChild($node, $config[$nodeValue]);
+						$enderEmit->addChild($node, $config[$nodeValue]);
 					} else {
 						if(array_key_exists($node, $camposObrigatoriosEnder)) {
 							throw new Exception($camposObrigatoriosEnder[$node]);
@@ -410,24 +410,24 @@ class MyLegacyClass {
 					}
 				}
 					
-				$this-&gt;setXml($xml);
+				$this->setXml($xml);
             }
 
             public function setRemValues($config) {
-            	$config = $this-&gt;limpaEspacos($config);
-            	$xml = $this-&gt;getXml();
+            	$config = $this->limpaEspacos($config);
+            	$xml = $this->getXml();
 
-            	$rem = $xml-&gt;infCte-&gt;addChild('rem');
+            	$rem = $xml->infCte->addChild('rem');
             	if(strlen($config['cpfcnpj']) == 14) {
-            		$rem-&gt;addChild('CNPJ', str_pad($config['cpfcnpj'], 14, '0', STR_PAD_LEFT));
+            		$rem->addChild('CNPJ', str_pad($config['cpfcnpj'], 14, '0', STR_PAD_LEFT));
             	} else {
-            		$rem-&gt;addChild('CPF', str_pad($config['cpfcnpj'], 11, '0', STR_PAD_LEFT));
+            		$rem->addChild('CPF', str_pad($config['cpfcnpj'], 11, '0', STR_PAD_LEFT));
             	}
 
             	if ( !is_numeric($config['IE']) ) {
-            		$rem-&gt;addChild('IE', '000000000');
+            		$rem->addChild('IE', '000000000');
             	} else {
-            		$rem-&gt;addChild('IE', str_pad($config['IE'], 9, STR_PAD_LEFT));
+            		$rem->addChild('IE', str_pad($config['IE'], 9, STR_PAD_LEFT));
             	}
 
             	if ( TIPO_AMBIENTE_CTE == 2 ) {
@@ -435,579 +435,579 @@ class MyLegacyClass {
             		$config['xFant'] = 'CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL';
             	}
 
-            	$rem-&gt;addChild('xNome',$config['nome']);
-            	$rem-&gt;addChild('xFant', $config['nome']);
+            	$rem->addChild('xNome',$config['nome']);
+            	$rem->addChild('xFant', $config['nome']);
 
             	if (!empty($config['fone'])){
-            		$rem-&gt;addChild('fone', $config['fone']);
+            		$rem->addChild('fone', $config['fone']);
             	}
-            	$enderReme = $rem-&gt;addChild('enderReme');
+            	$enderReme = $rem->addChild('enderReme');
 
-            	$enderReme-&gt;addChild('xLgr', $config['logradouro']);
-            	$enderReme-&gt;addChild('nro', $config['numero']);
-            	$enderReme-&gt;addChild('xCpl', $config['bairro']);
-            	$enderReme-&gt;addChild('xBairro', $config['bairro']);
-            	$enderReme-&gt;addChild('cMun', $config['cod_municipio']);
-            	$enderReme-&gt;addChild('xMun', $config['municipio']);
+            	$enderReme->addChild('xLgr', $config['logradouro']);
+            	$enderReme->addChild('nro', $config['numero']);
+            	$enderReme->addChild('xCpl', $config['bairro']);
+            	$enderReme->addChild('xBairro', $config['bairro']);
+            	$enderReme->addChild('cMun', $config['cod_municipio']);
+            	$enderReme->addChild('xMun', $config['municipio']);
 
             	if ( !empty($config['CEP']) ) {
-            		$enderReme-&gt;addChild('CEP', str_pad($config['CEP'], 8, STR_PAD_LEFT));
+            		$enderReme->addChild('CEP', str_pad($config['CEP'], 8, STR_PAD_LEFT));
             	}
 
-            	$enderReme-&gt;addChild('UF', $config['UF']);
-            	$enderReme-&gt;addChild('cPais', $config['cod_pais']);
-            	$enderReme-&gt;addChild('xPais', $config['pais']);
+            	$enderReme->addChild('UF', $config['UF']);
+            	$enderReme->addChild('cPais', $config['cod_pais']);
+            	$enderReme->addChild('xPais', $config['pais']);
 
             	if ( !empty($config['email']) ) {
-            		$rem-&gt;addChild('email', $config['email']);
+            		$rem->addChild('email', $config['email']);
             	}
 
             	
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
 
             }
              
             public function setDestValues($config) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
-            	$dest = $xml-&gt;infCte-&gt;addChild('dest');
+            	$dest = $xml->infCte->addChild('dest');
 
             	if(strlen($config['cpfcnpj']) == 14) {
-            		$dest-&gt;addChild('CNPJ', $config['cpfcnpj']);
+            		$dest->addChild('CNPJ', $config['cpfcnpj']);
             	} else {
-            		$dest-&gt;addChild('CPF', $config['cpfcnpj']);
+            		$dest->addChild('CPF', $config['cpfcnpj']);
             	}
 
             	if ( !is_numeric($config['IE']) ) {
-            		$dest-&gt;addChild('IE', '000000000');
+            		$dest->addChild('IE', '000000000');
             	} else {
-            		$dest-&gt;addChild('IE', str_pad($config['IE'], 9, STR_PAD_LEFT));
+            		$dest->addChild('IE', str_pad($config['IE'], 9, STR_PAD_LEFT));
             	}
 
             	if ( TIPO_AMBIENTE_CTE == 2 ) {
             		$config['nome'] = 'CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL';
             	}
 
-            	$dest-&gt;addChild('xNome', $config['nome']);
+            	$dest->addChild('xNome', $config['nome']);
 
             	if( !empty($config['fone']) ) {
-            		$dest-&gt;addChild('fone', $config['fone']);
+            		$dest->addChild('fone', $config['fone']);
             	}
 
-            	$enderDest = $dest-&gt;addChild('enderDest');
-            	$enderDest-&gt;addChild('xLgr', $config['logradouro']);
-            	$enderDest-&gt;addChild('nro', str_pad($config['numero'], 3, STR_PAD_LEFT));
+            	$enderDest = $dest->addChild('enderDest');
+            	$enderDest->addChild('xLgr', $config['logradouro']);
+            	$enderDest->addChild('nro', str_pad($config['numero'], 3, STR_PAD_LEFT));
 
             	if( !empty($config['complemento']) ) {
-            		$enderDest-&gt;addChild('xCpl', $config['complemento']);
+            		$enderDest->addChild('xCpl', $config['complemento']);
             	}
-            	$enderDest-&gt;addChild('xBairro', $config['bairro']);
-            	$enderDest-&gt;addChild('cMun', $config['cod_municipio']);
-            	$enderDest-&gt;addChild('xMun', $config['municipio']);
+            	$enderDest->addChild('xBairro', $config['bairro']);
+            	$enderDest->addChild('cMun', $config['cod_municipio']);
+            	$enderDest->addChild('xMun', $config['municipio']);
 
             	if( !empty($config['CEP']) ) {
-            		$enderDest-&gt;addChild('CEP', str_pad($this-&gt;cleaner($config['CEP']), 8, '0', STR_PAD_LEFT));
+            		$enderDest->addChild('CEP', str_pad($this->cleaner($config['CEP']), 8, '0', STR_PAD_LEFT));
             	}
 
-            	$enderDest-&gt;addChild('UF', $config['UF']);
+            	$enderDest->addChild('UF', $config['UF']);
 
             	if( !empty($config['cod_pais']) ) {
-            		$enderDest-&gt;addChild('cPais', $config['cod_pais']);
+            		$enderDest->addChild('cPais', $config['cod_pais']);
             	}
             	if( !empty($config['pais']) ) {
-            		$enderDest-&gt;addChild('xPais', $config['pais']);
+            		$enderDest->addChild('xPais', $config['pais']);
             	}
 
             	if( !empty($config['email']) ) {
-            		$dest-&gt;addChild('email', $config['email']);
+            		$dest->addChild('email', $config['email']);
             	}
 
             
 
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
              
             public function setRecValues($config) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
-            	$rec = $xml-&gt;infCte-&gt;addChild('receb');
+            	$rec = $xml->infCte->addChild('receb');
 
             	if(strlen($config['cpfcnpj']) == 14) {
-            		$rec-&gt;addChild('CNPJ', $config['cpfcnpj']);
+            		$rec->addChild('CNPJ', $config['cpfcnpj']);
             	} else {
-            		$rec-&gt;addChild('CPF', $config['cpfcnpj']);
+            		$rec->addChild('CPF', $config['cpfcnpj']);
             	}
 
             	if ( !is_numeric($config['IE']) ) {
-            		$rec-&gt;addChild('IE', '000000000');
+            		$rec->addChild('IE', '000000000');
             	} else {
-            		$rec-&gt;addChild('IE', str_pad($config['IE'], 9, STR_PAD_LEFT));
+            		$rec->addChild('IE', str_pad($config['IE'], 9, STR_PAD_LEFT));
             	}
 
             	if ( TIPO_AMBIENTE_CTE == 2 ) {
             		$config['nome'] = 'CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL';
             	}
-            	$rec-&gt;addChild('xNome', $config['nome']);
+            	$rec->addChild('xNome', $config['nome']);
 
             	if( !empty($config['fone']) ) {
-            		$rec-&gt;addChild('fone', $config['fone']);
+            		$rec->addChild('fone', $config['fone']);
             	}
-            	$enderRec = $rec-&gt;addChild('enderReceb');
-            	$enderRec-&gt;addChild('xLgr', $config['logradouro']);
-            	$enderRec-&gt;addChild('nro', str_pad($config['numero'], 3, STR_PAD_LEFT));
+            	$enderRec = $rec->addChild('enderReceb');
+            	$enderRec->addChild('xLgr', $config['logradouro']);
+            	$enderRec->addChild('nro', str_pad($config['numero'], 3, STR_PAD_LEFT));
 
             	if( !empty($config['complemento']) ) {
-            		$enderRec-&gt;addChild('xCpl', $config['complemento']);
+            		$enderRec->addChild('xCpl', $config['complemento']);
             	}
-            	$enderRec-&gt;addChild('xBairro', $config['bairro']);
-            	$enderRec-&gt;addChild('cMun', $config['cod_municipio']);
-            	$enderRec-&gt;addChild('xMun', $config['municipio']);
+            	$enderRec->addChild('xBairro', $config['bairro']);
+            	$enderRec->addChild('cMun', $config['cod_municipio']);
+            	$enderRec->addChild('xMun', $config['municipio']);
 
             	if( !empty($config['CEP']) ) {
-            		$enderRec-&gt;addChild('CEP', $config['CEP']);
+            		$enderRec->addChild('CEP', $config['CEP']);
             	}
 
-            	$enderRec-&gt;addChild('UF', $config['UF']);
+            	$enderRec->addChild('UF', $config['UF']);
 
             	if( !empty($config['cod_pais']) ){
-            		$enderRec-&gt;addChild('cPais', $config['cod_pais']);
+            		$enderRec->addChild('cPais', $config['cod_pais']);
             	}
 
             	if( empty($config['pais']) ) {
-            		$enderRec-&gt;addChild('xPais', $config['pais']);
+            		$enderRec->addChild('xPais', $config['pais']);
             	}
 
             	if( !empty($config['email']) ) {
-            		$rec-&gt;addChild('email', $config['email']);
+            		$rec->addChild('email', $config['email']);
             	}
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
 
             public function setExpValues($config) {
-            	$xml = $this-&gt;getXml();
-            	$exp = $xml-&gt;infCte-&gt;addChild('exped');
+            	$xml = $this->getXml();
+            	$exp = $xml->infCte->addChild('exped');
 
             	if(strlen($config['cpfcnpj']) == 14) {
-            		$exp-&gt;addChild('CNPJ', $config['cpfcnpj']);
+            		$exp->addChild('CNPJ', $config['cpfcnpj']);
             	} else {
-            		$exp-&gt;addChild('CPF', $config['cpfcnpj']);
+            		$exp->addChild('CPF', $config['cpfcnpj']);
             	}
 
             	if ( !is_numeric($config['IE']) ) {
-            		$exp-&gt;addChild('IE', '000000000');
+            		$exp->addChild('IE', '000000000');
             	} else {
-            		$exp-&gt;addChild('IE', str_pad($config['IE'], 9, STR_PAD_LEFT));
+            		$exp->addChild('IE', str_pad($config['IE'], 9, STR_PAD_LEFT));
             	}
 
             	if ( TIPO_AMBIENTE_CTE == 2 ) {
             		$config['nome'] = 'CT-E EMITIDO EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL';
             	}
-            	$exp-&gt;addChild('xNome', $config['nome']);
+            	$exp->addChild('xNome', $config['nome']);
 
-            	$config['fone'] = $this-&gt;cleaner($config['fone']);
+            	$config['fone'] = $this->cleaner($config['fone']);
 
             	if( !empty($config['fone']) ) {
-            		$exp-&gt;addChild('fone', $config['fone']);
+            		$exp->addChild('fone', $config['fone']);
             	}
 
-            	$enderExp = $exp-&gt;addChild('enderExped');
-            	$enderExp-&gt;addChild('xLgr', $config['logradouro']);
-            	$enderExp-&gt;addChild('nro', str_pad($config['numero'], 3, STR_PAD_LEFT));
+            	$enderExp = $exp->addChild('enderExped');
+            	$enderExp->addChild('xLgr', $config['logradouro']);
+            	$enderExp->addChild('nro', str_pad($config['numero'], 3, STR_PAD_LEFT));
 
-            	if($this-&gt;cleaner($config['complemento']))
-            	$enderExp-&gt;addChild('xCpl', $config['complemento']);
+            	if($this->cleaner($config['complemento']))
+            	$enderExp->addChild('xCpl', $config['complemento']);
 
-            	$enderExp-&gt;addChild('xBairro', $config['bairro']);
-            	$enderExp-&gt;addChild('cMun', $config['cod_municipio']);
-            	$enderExp-&gt;addChild('xMun', $config['municipio']);
+            	$enderExp->addChild('xBairro', $config['bairro']);
+            	$enderExp->addChild('cMun', $config['cod_municipio']);
+            	$enderExp->addChild('xMun', $config['municipio']);
 
-            	if($this-&gt;cleaner($config['CEP']))
-            	$enderExp-&gt;addChild('CEP', $config['CEP']);
+            	if($this->cleaner($config['CEP']))
+            	$enderExp->addChild('CEP', $config['CEP']);
 
-            	$enderExp-&gt;addChild('UF', $config['UF']);
+            	$enderExp->addChild('UF', $config['UF']);
 
-            	if($this-&gt;cleaner($config['cod_pais'])!="")
-            	$enderExp-&gt;addChild('cPais', $config['cod_pais']);
+            	if($this->cleaner($config['cod_pais'])!="")
+            	$enderExp->addChild('cPais', $config['cod_pais']);
 
-            	if($this-&gt;cleaner($config['pais'])!="")
-            	$enderExp-&gt;addChild('xPais', $config['pais']);
+            	if($this->cleaner($config['pais'])!="")
+            	$enderExp->addChild('xPais', $config['pais']);
 
             	if( !empty($config['email']) ) {
-            		$exp-&gt;addChild('email', $config['email']);
+            		$exp->addChild('email', $config['email']);
             	}
 
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
 
             
             public function setInfCteComp($config) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
             	if($config['chave']!="") {
-            		$infCteComp = $xml-&gt;infCte-&gt;addChild('infCteComp');
-            		$infCteComp-&gt;addChild('chave', $config['chave']);
+            		$infCteComp = $xml->infCte->addChild('infCteComp');
+            		$infCteComp->addChild('chave', $config['chave']);
             	}
 
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
 
             public function setInfCteAnu($config) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
-            	if($config['chCte']!="" &amp;&amp; $config['dEmi']!="") {
-            		$infCteAnu = $xml-&gt;infCte-&gt;addChild('infCteAnu');
-            		$infCteAnu-&gt;addChild('chCte', $config['chCte']);
-            		$infCteAnu-&gt;addChild('dEmi', $config['dEmi']);
+            	if($config['chCte']!="" && $config['dEmi']!="") {
+            		$infCteAnu = $xml->infCte->addChild('infCteAnu');
+            		$infCteAnu->addChild('chCte', $config['chCte']);
+            		$infCteAnu->addChild('dEmi', $config['dEmi']);
             	}
 
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
 
             public function setAutXML($config) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
             	foreach($config as $cda) {
-            		$autXML = $xml-&gt;infCte-&gt;addChild('autXML');
+            		$autXML = $xml->infCte->addChild('autXML');
             		 
             		if(strlen($cda['cda_cpf_cnpj_autori']) == 14)
-            		$autXML-&gt;addChild('CNPJ', $cda['cda_cpf_cnpj_autori']);
+            		$autXML->addChild('CNPJ', $cda['cda_cpf_cnpj_autori']);
             		else
-            		$autXML-&gt;addChild('CPF', $cda['cda_cpf_cnpj_autori']);
+            		$autXML->addChild('CPF', $cda['cda_cpf_cnpj_autori']);
             	}
 
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
 
             public function setModalRodoviario($config) {
-            	$xml = $this-&gt;getXml();
-            	$rodo = $xml-&gt;infCte-&gt;infCTeNorm-&gt;infModal-&gt;addChild('rodo');
+            	$xml = $this->getXml();
+            	$rodo = $xml->infCte->infCTeNorm->infModal->addChild('rodo');
             	$modal = $config['rodo'];
 
-            	$rodo-&gt;addChild('RNTRC', $modal['RNTRC']);
-            	$rodo-&gt;addChild('dPrev', $modal['dPrev']);
-            	$rodo-&gt;addChild('lota', $modal['lota']);
+            	$rodo->addChild('RNTRC', $modal['RNTRC']);
+            	$rodo->addChild('dPrev', $modal['dPrev']);
+            	$rodo->addChild('lota', $modal['lota']);
 
             	if( !empty($modal['CIOT']) ) {
-            		$rodo-&gt;addChild('CIOT', str_pad($this-&gt;cleaner($modal['CIOT']), 12, STR_PAD_LEFT));
+            		$rodo->addChild('CIOT', str_pad($this->cleaner($modal['CIOT']), 12, STR_PAD_LEFT));
             	}
 
-            	if(isset($modal['occ']) &amp;&amp; count($modal['occ']) &gt; 0) {
+            	if(isset($modal['occ']) && count($modal['occ']) > 0) {
             		foreach($modal['occ'] as $occ) {
-            			$xocc = $rodo-&gt;addChild('occ');
+            			$xocc = $rodo->addChild('occ');
 
-            			$xocc-&gt;addChild('serie', $occ['occ_serie']);
-            			$xocc-&gt;addChild('nOcc', $occ['occ_numero']);
-            			$xocc-&gt;addChild('dEmi', $occ['occ_demi']);
+            			$xocc->addChild('serie', $occ['occ_serie']);
+            			$xocc->addChild('nOcc', $occ['occ_numero']);
+            			$xocc->addChild('dEmi', $occ['occ_demi']);
 
-            			$emiOcc = $xocc-&gt;addChild('emiOcc');
+            			$emiOcc = $xocc->addChild('emiOcc');
 
-            			$emiOcc-&gt;addChild('CNPJ', $occ['occ_cnpj']);
+            			$emiOcc->addChild('CNPJ', $occ['occ_cnpj']);
 
-            			if($this-&gt;cleaner($occ['occ_cint'])!="")
-            			$emiOcc-&gt;addChild('cInt', $occ['occ_cint']);
+            			if($this->cleaner($occ['occ_cint'])!="")
+            			$emiOcc->addChild('cInt', $occ['occ_cint']);
 
-            			$emiOcc-&gt;addChild('IE', $occ['occ_ie']);
-            			$emiOcc-&gt;addChild('UF', $occ['Uf']['uf_sigla']);
+            			$emiOcc->addChild('IE', $occ['occ_ie']);
+            			$emiOcc->addChild('UF', $occ['Uf']['uf_sigla']);
 
-            			if($this-&gt;cleaner($occ['occ_fone'])!="")
-            			$emiOcc-&gt;addChild('fone', $occ['occ_fone']);
+            			if($this->cleaner($occ['occ_fone'])!="")
+            			$emiOcc->addChild('fone', $occ['occ_fone']);
             		}
             	}
 
-            	if(isset($modal['valePed']) &amp;&amp; count($modal['valePed']) &gt; 0) {
+            	if(isset($modal['valePed']) && count($modal['valePed']) > 0) {
             		foreach($modal['valePed'] as $valePed) {
-            			$xValePed = $rodo-&gt;addChild('valePed');
+            			$xValePed = $rodo->addChild('valePed');
 
-            			$xValePed-&gt;addChild('CNPJForn', $valePed['vpd_cnpj_forn']);
-            			$xValePed-&gt;addChild('nCompra', $valePed['vpd_ncompra']);
+            			$xValePed->addChild('CNPJForn', $valePed['vpd_cnpj_forn']);
+            			$xValePed->addChild('nCompra', $valePed['vpd_ncompra']);
 
-            			if($this-&gt;cleaner($valePed['vpd_cnpj_pg'])!="")
-            			$xValePed-&gt;addChild('CNPJPg', $valePed['vpd_cnpj_pg']);
+            			if($this->cleaner($valePed['vpd_cnpj_pg'])!="")
+            			$xValePed->addChild('CNPJPg', $valePed['vpd_cnpj_pg']);
 
-            			$xValePed-&gt;addChild('vValePed', $valePed['vpd_valor_vale_pedagio']);
+            			$xValePed->addChild('vValePed', $valePed['vpd_valor_vale_pedagio']);
             		}
             	}
 
-            	if(isset($modal['veic']) &amp;&amp; count($modal['veic']) &gt; 0) {
+            	if(isset($modal['veic']) && count($modal['veic']) > 0) {
             		foreach($modal['veic'] as $confVeic){
-            			$veic = $rodo-&gt;addChild('veic');
+            			$veic = $rodo->addChild('veic');
 
-            			if($this-&gt;cleaner($confVeic['CteVeiculo']['cve_cod_interno'])!="")
-            			$veic-&gt;addChild('cInt', $confVeic['CteVeiculo']['cve_cod_interno']);
+            			if($this->cleaner($confVeic['CteVeiculo']['cve_cod_interno'])!="")
+            			$veic->addChild('cInt', $confVeic['CteVeiculo']['cve_cod_interno']);
 
-            			$veic-&gt;addChild('RENAVAM', $confVeic['CteVeiculo']['cve_renavam']);
-            			$veic-&gt;addChild('placa', str_replace(' ', '', $confVeic['CteVeiculo']['cve_placa'])); // remove qualquer espa\E7o branco
-            			$veic-&gt;addChild('tara', $confVeic['CteVeiculo']['cve_tara']);
-            			$veic-&gt;addChild('capKG', $confVeic['CteVeiculo']['cve_capacidade_kg']);
-            			$veic-&gt;addChild('capM3', $confVeic['CteVeiculo']['cve_capacidade_mc']);
-            			$veic-&gt;addChild('tpProp', $confVeic['CteVeiculo']['cve_proprietario']);
-            			$veic-&gt;addChild('tpVeic', $confVeic['CteVeiculo']['CteVeiculoTipo']['cvt_codigo']);
-            			$veic-&gt;addChild('tpRod', $confVeic['CteVeiculo']['CteVeiculoRodado']['cvr_codigo']);
-            			$veic-&gt;addChild('tpCar', $confVeic['CteVeiculo']['CteVeiculoCarroceria']['cvc_codigo']);
-            			$veic-&gt;addChild('UF', $confVeic['CteVeiculo']['Uf']['uf_sigla']);
+            			$veic->addChild('RENAVAM', $confVeic['CteVeiculo']['cve_renavam']);
+            			$veic->addChild('placa', str_replace(' ', '', $confVeic['CteVeiculo']['cve_placa'])); // remove qualquer espa\E7o branco
+            			$veic->addChild('tara', $confVeic['CteVeiculo']['cve_tara']);
+            			$veic->addChild('capKG', $confVeic['CteVeiculo']['cve_capacidade_kg']);
+            			$veic->addChild('capM3', $confVeic['CteVeiculo']['cve_capacidade_mc']);
+            			$veic->addChild('tpProp', $confVeic['CteVeiculo']['cve_proprietario']);
+            			$veic->addChild('tpVeic', $confVeic['CteVeiculo']['CteVeiculoTipo']['cvt_codigo']);
+            			$veic->addChild('tpRod', $confVeic['CteVeiculo']['CteVeiculoRodado']['cvr_codigo']);
+            			$veic->addChild('tpCar', $confVeic['CteVeiculo']['CteVeiculoCarroceria']['cvc_codigo']);
+            			$veic->addChild('UF', $confVeic['CteVeiculo']['Uf']['uf_sigla']);
 
             			if($confVeic['CteVeiculo']['cve_proprietario'] != 'P') {
-            				$prop = $rodo-&gt;addChild('prop');
+            				$prop = $rodo->addChild('prop');
             				$infoVeicProp = CteVeiculo::consultaVeiculo($confVeic['CteVeiculo']['cve_id']);
             				 
             				$veicProp = reset($infoVeicProp['CteEmpresaVeiculoProprietarioAtrb']);
             				$veicPropTipo = $veicProp['CteEmpresaVeiculoProprietarioTipo'];
             				 
             				if($veicProp['evpa_tipo_pessoa'] == 'FIS'){
-            					$prop-&gt;addChild('CPF', $veicProp['evpa_cpf_cnpj']);
+            					$prop->addChild('CPF', $veicProp['evpa_cpf_cnpj']);
             				} else {
-            					$prop-&gt;addChild('CNPJ', $veicProp['evpa_cpf_cnpj']);
+            					$prop->addChild('CNPJ', $veicProp['evpa_cpf_cnpj']);
             				}
-            				$prop-&gt;addChild('RNTRC', $veicProp['evpa_rntrc']);
-            				$prop-&gt;addChild('xNome', $veicProp['evpa_nome_razao']);
-            				$prop-&gt;addChild('IE', $veicProp['evpa_rg_ie']);
-            				$prop-&gt;addChild('UF', $veicProp['Uf']['uf_sigla']);
-            				$prop-&gt;addChild('tpProp', $veicPropTipo['evpt_codigo']);
+            				$prop->addChild('RNTRC', $veicProp['evpa_rntrc']);
+            				$prop->addChild('xNome', $veicProp['evpa_nome_razao']);
+            				$prop->addChild('IE', $veicProp['evpa_rg_ie']);
+            				$prop->addChild('UF', $veicProp['Uf']['uf_sigla']);
+            				$prop->addChild('tpProp', $veicPropTipo['evpt_codigo']);
             			}
             		}
             	}
 
-            	if(isset($modal['lacre']) &amp;&amp; count($modal['lacre']) &gt; 0) {
+            	if(isset($modal['lacre']) && count($modal['lacre']) > 0) {
             		foreach($modal['lacre'] as $infLacre) {
-            			$lacRodo = $rodo-&gt;addChild('lacRodo');
+            			$lacRodo = $rodo->addChild('lacRodo');
 
-            			$lacRodo-&gt;addChild('nLacre', $infLacre['cmrl_num_lacre']);
+            			$lacRodo->addChild('nLacre', $infLacre['cmrl_num_lacre']);
             		}
             	}
 
-            	if(isset($modal['moto']) &amp;&amp; count($modal['moto']) &gt; 0) {
+            	if(isset($modal['moto']) && count($modal['moto']) > 0) {
             		foreach($modal['moto'] as $infMoto) {
-            			$moto = $rodo-&gt;addChild('moto');
+            			$moto = $rodo->addChild('moto');
 
-            			$moto-&gt;addChild('xNome', $infMoto['CteMotorista']['mot_nome']);
-            			$moto-&gt;addChild('CPF', $infMoto['CteMotorista']['mot_cpf']);
+            			$moto->addChild('xNome', $infMoto['CteMotorista']['mot_nome']);
+            			$moto->addChild('CPF', $infMoto['CteMotorista']['mot_cpf']);
             		}
             	}
 
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
 
             public function setVPrestValues($config) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
-            	$vPrest = $xml-&gt;infCte-&gt;addChild('vPrest');
+            	$vPrest = $xml->infCte->addChild('vPrest');
 
-            	$vPrest-&gt;addChild('vTPrest', empty($config['vTPrest'])? '0.00' : $config['vTPrest']);
-            	$vPrest-&gt;addChild('vRec', empty($config['vRec'])? '0.00' : $config['vRec']);
+            	$vPrest->addChild('vTPrest', empty($config['vTPrest'])? '0.00' : $config['vTPrest']);
+            	$vPrest->addChild('vRec', empty($config['vRec'])? '0.00' : $config['vRec']);
 
-            	if(isset($config['Comp']) &amp;&amp; count($config['Comp']) &gt; 0) {
+            	if(isset($config['Comp']) && count($config['Comp']) > 0) {
             		// \E8 obrigat\F3rio ter um elemento filho do Comp para emitir a nota
             		foreach($config['Comp'] as $Comp) {
             			// \E8 necess\E1rio fazer a verifica\E7\E3o para n\E3o ocorrer erros no xml
-            			if ( !empty($Comp['cic_nome_componente']) &amp;&amp; !empty($Comp['cic_valor_componente']) ){
-            				$xComp = $vPrest-&gt;addChild('Comp');
+            			if ( !empty($Comp['cic_nome_componente']) && !empty($Comp['cic_valor_componente']) ){
+            				$xComp = $vPrest->addChild('Comp');
             				// verificar se esse campo \E9 vazio caso contr\E1rio ocorrer\E1 um erro no xml
-            				$xComp-&gt;addChild('xNome', (empty($Comp['cic_nome_componente']))? 'ND' : $Comp['cic_nome_componente']);
-            				$xComp-&gt;addChild('vComp', (empty($Comp['cic_valor_componente']))? '00.00' : $Comp['cic_valor_componente']); //13,2 ER25 15 posi\E7\F5es, sendo 13 inteiras e 2 decimais.
+            				$xComp->addChild('xNome', (empty($Comp['cic_nome_componente']))? 'ND' : $Comp['cic_nome_componente']);
+            				$xComp->addChild('vComp', (empty($Comp['cic_valor_componente']))? '00.00' : $Comp['cic_valor_componente']); //13,2 ER25 15 posi\E7\F5es, sendo 13 inteiras e 2 decimais.
             			}
             		}
             	}
 
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
 
             public function setImpValues($config) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
-            	$imp = $xml-&gt;infCte-&gt;addChild('imp');
+            	$imp = $xml->infCte->addChild('imp');
 
-            	$ICMS = $imp-&gt;addChild('ICMS');
+            	$ICMS = $imp->addChild('ICMS');
 
             	switch($config['CST']) {
             		case '00' :
-            			$ICMS00 = $ICMS-&gt;addChild('ICMS00');
+            			$ICMS00 = $ICMS->addChild('ICMS00');
 
-            			$ICMS00-&gt;addChild('CST', $config['CST']);
-            			$ICMS00-&gt;addChild('vBC', $config['vBC']);
-            			$ICMS00-&gt;addChild('pICMS', $config['pICMS']);
-            			$ICMS00-&gt;addChild('vICMS', $config['vICMS']);
+            			$ICMS00->addChild('CST', $config['CST']);
+            			$ICMS00->addChild('vBC', $config['vBC']);
+            			$ICMS00->addChild('pICMS', $config['pICMS']);
+            			$ICMS00->addChild('vICMS', $config['vICMS']);
             			break;
             		case '20' :
-            			$ICMS20 = $ICMS-&gt;addChild('ICMS20');
-            			$ICMS20-&gt;addChild('CST', $config['CST']);
-            			$ICMS20-&gt;addChild('pRedBC', $config['pRedBC']);
-            			$ICMS20-&gt;addChild('vBC', $config['vBC']);
-            			$ICMS20-&gt;addChild('pICMS', $config['pICMS']);
-            			$ICMS20-&gt;addChild('vICMS', $config['vICMS']);
+            			$ICMS20 = $ICMS->addChild('ICMS20');
+            			$ICMS20->addChild('CST', $config['CST']);
+            			$ICMS20->addChild('pRedBC', $config['pRedBC']);
+            			$ICMS20->addChild('vBC', $config['vBC']);
+            			$ICMS20->addChild('pICMS', $config['pICMS']);
+            			$ICMS20->addChild('vICMS', $config['vICMS']);
             			break;
 
             		case '40' :
             		case '41' :
             		case '51' :
-            			$ICMS45 = $ICMS-&gt;addChild('ICMS45');
-            			$ICMS45-&gt;addChild('CST', $config['CST']);
+            			$ICMS45 = $ICMS->addChild('ICMS45');
+            			$ICMS45->addChild('CST', $config['CST']);
             			break;
 
             		case '60' :
-            			$ICMS60 = $ICMS-&gt;addChild('ICMS60');
+            			$ICMS60 = $ICMS->addChild('ICMS60');
 
-            			$ICMS60-&gt;addChild('CST', $config['CST']);
-            			$ICMS60-&gt;addChild('vBCSTRet', $config['vBCSTRet']);
-            			$ICMS60-&gt;addChild('vICMSSTRet', $config['vICMSSTRet']);
-            			$ICMS60-&gt;addChild('pICMSSTRet', $config['pICMSSTRet']);
-            			$ICMS60-&gt;addChild('vCred', $config['vCred']);
+            			$ICMS60->addChild('CST', $config['CST']);
+            			$ICMS60->addChild('vBCSTRet', $config['vBCSTRet']);
+            			$ICMS60->addChild('vICMSSTRet', $config['vICMSSTRet']);
+            			$ICMS60->addChild('pICMSSTRet', $config['pICMSSTRet']);
+            			$ICMS60->addChild('vCred', $config['vCred']);
             			break;
 
             		case '90' :
-            			$ICMS90 = $ICMS-&gt;addChild('ICMS90');
-            			$ICMS90-&gt;addChild('CST', $config['CST']);
-            			$ICMS90-&gt;addChild('pRedBC', $config['pRedBC']);
-            			$ICMS90-&gt;addChild('vBC', $config['vBC']);
-            			$ICMS90-&gt;addChild('pICMS', $config['pICMS']);
-            			$ICMS90-&gt;addChild('vICMS', $config['Vicms']);
-            			$ICMS90-&gt;addChild('vCred', $config['vCred']);
+            			$ICMS90 = $ICMS->addChild('ICMS90');
+            			$ICMS90->addChild('CST', $config['CST']);
+            			$ICMS90->addChild('pRedBC', $config['pRedBC']);
+            			$ICMS90->addChild('vBC', $config['vBC']);
+            			$ICMS90->addChild('pICMS', $config['pICMS']);
+            			$ICMS90->addChild('vICMS', $config['Vicms']);
+            			$ICMS90->addChild('vCred', $config['vCred']);
             			break;
 
             		case 'SN' :
-            			$ICMSSN = $ICMS-&gt;addChild('ICMSSN');
-            			$ICMSSN-&gt;addChild('indSN', 1);
+            			$ICMSSN = $ICMS->addChild('ICMSSN');
+            			$ICMSSN->addChild('indSN', 1);
             			break;
 
             		default: // Default ser\E1 outra UF
-            			$ICMSOutraUF = $ICMS-&gt;addChild('ICMSOutraUF');
+            			$ICMSOutraUF = $ICMS->addChild('ICMSOutraUF');
 
-            			$ICMSOutraUF-&gt;addChild('CST', '90');
-            			$ICMSOutraUF-&gt;addChild('pRedBCOutraUF', $config['pRedBCOutraUF']);
-            			$ICMSOutraUF-&gt;addChild('vBCOutraUF', $config['vBCOutraUF']);
-            			$ICMSOutraUF-&gt;addChild('pICMSOutraUF', $config['pICMSOutraUF']);
-            			$ICMSOutraUF-&gt;addChild('vICMSOutraUF', $config['vICMSOutraUF']);
+            			$ICMSOutraUF->addChild('CST', '90');
+            			$ICMSOutraUF->addChild('pRedBCOutraUF', $config['pRedBCOutraUF']);
+            			$ICMSOutraUF->addChild('vBCOutraUF', $config['vBCOutraUF']);
+            			$ICMSOutraUF->addChild('pICMSOutraUF', $config['pICMSOutraUF']);
+            			$ICMSOutraUF->addChild('vICMSOutraUF', $config['vICMSOutraUF']);
             	}
 
             	if ( !empty($config['vTotTrib']) ) {
-            		$imp-&gt;addChild('vTotTrib', $config['vTotTrib']);
+            		$imp->addChild('vTotTrib', $config['vTotTrib']);
             	}
 
             	if ( !empty($config['infAdFisco']) ) {
-            		$imp-&gt;addChild('infAdFisco', $config['infAdFisco']);
+            		$imp->addChild('infAdFisco', $config['infAdFisco']);
             	}
 
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
 
             public function setInfCTeNormValues($config) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
-            	$infCTeNorm = $xml-&gt;infCte-&gt;addChild('infCTeNorm');
+            	$infCTeNorm = $xml->infCte->addChild('infCTeNorm');
             	$dInfCarga = $config['infCarga'];
 
-            	$infCarga = $infCTeNorm-&gt;addChild('infCarga');
+            	$infCarga = $infCTeNorm->addChild('infCarga');
 
-            	if( $this-&gt;cleaner( $dInfCarga['vCarga']) != '' ){
-            		$infCarga-&gt;addChild('vCarga', $dInfCarga['vCarga']);
+            	if( $this->cleaner( $dInfCarga['vCarga']) != '' ){
+            		$infCarga->addChild('vCarga', $dInfCarga['vCarga']);
             	}
 
             	if ( empty($dInfCarga['proPred']) ){
             		$dInfCarga['proPred'] = 'N/D';
             	}
-            	$infCarga-&gt;addChild('proPred', $dInfCarga['proPred']);
+            	$infCarga->addChild('proPred', $dInfCarga['proPred']);
 
-            	if( $this-&gt;cleaner($dInfCarga['xOutCat']) != '') {
-            		$infCarga-&gt;addChild('xOutCat', $dInfCarga['xOutCat']);
+            	if( $this->cleaner($dInfCarga['xOutCat']) != '') {
+            		$infCarga->addChild('xOutCat', $dInfCarga['xOutCat']);
             	}
 
-            	if(count($config['infQ']) &gt; 0) {
+            	if(count($config['infQ']) > 0) {
             		foreach($config['infQ'] as $dInfQ) {
-            			$infQ = $infCarga-&gt;addChild('infQ');
+            			$infQ = $infCarga->addChild('infQ');
 
-            			$infQ-&gt;addChild('cUnid', str_pad($dInfQ['cnc_codigo_unidade_medida'], 2, '0', STR_PAD_LEFT)/*'01'*/);
-            			$infQ-&gt;addChild('tpMed', $dInfQ['cnc_tipo_medida']/*'PESO BRUTO'*/);
-            			$infQ-&gt;addChild('qCarga', $dInfQ['cnc_valor_componente']/*'12345678911.1154'*/);
+            			$infQ->addChild('cUnid', str_pad($dInfQ['cnc_codigo_unidade_medida'], 2, '0', STR_PAD_LEFT)/*'01'*/);
+            			$infQ->addChild('tpMed', $dInfQ['cnc_tipo_medida']/*'PESO BRUTO'*/);
+            			$infQ->addChild('qCarga', $dInfQ['cnc_valor_componente']/*'12345678911.1154'*/);
             		}
             	}
 
   
             	$documentos = $config['infDoc'];
-            	if ( isset($documentos) &amp;&amp; count($documentos) &gt; 0){
+            	if ( isset($documentos) && count($documentos) > 0){
 
-            		$infDoc = $infCTeNorm-&gt;addChild('infDoc');
+            		$infDoc = $infCTeNorm->addChild('infDoc');
             		foreach($documentos as $dInfDoc) {
             			
             			switch($dInfDoc['cnf_tipo']) {
             				case 1 :
-            					$infNF = $infDoc-&gt;addChild('infNF');
-            					$infNF-&gt;addChild('nRoma', str_pad($dInfDoc['cnf_numero_romaneio'], 20, STR_PAD_LEFT)/*'12315646156189189111'*/);
-            					$infNF-&gt;addChild('nPed', str_pad($dInfDoc['cnf_numero_pedido'], 20, STR_PAD_LEFT)/*'12315646156189189111'*/);
-            					$infNF-&gt;addChild('mod', '01'/*$dInfDoc['cnf_modelo_nota']'04'*/);	//Preencher com:01 - NF Modelo 01/1A e Avulsa;04 - NF de Produtor
-            					$infNF-&gt;addChild('serie', str_pad($dInfDoc['cnf_serie'], 3, STR_PAD_LEFT)/*'1'*/);
+            					$infNF = $infDoc->addChild('infNF');
+            					$infNF->addChild('nRoma', str_pad($dInfDoc['cnf_numero_romaneio'], 20, STR_PAD_LEFT)/*'12315646156189189111'*/);
+            					$infNF->addChild('nPed', str_pad($dInfDoc['cnf_numero_pedido'], 20, STR_PAD_LEFT)/*'12315646156189189111'*/);
+            					$infNF->addChild('mod', '01'/*$dInfDoc['cnf_modelo_nota']'04'*/);	//Preencher com:01 - NF Modelo 01/1A e Avulsa;04 - NF de Produtor
+            					$infNF->addChild('serie', str_pad($dInfDoc['cnf_serie'], 3, STR_PAD_LEFT)/*'1'*/);
 
-            					$infNF-&gt;addChild('nDoc', str_pad($dInfDoc['cnf_numero'], 20, STR_PAD_LEFT)/*'1'*/);
+            					$infNF->addChild('nDoc', str_pad($dInfDoc['cnf_numero'], 20, STR_PAD_LEFT)/*'1'*/);
 
-            					$infNF-&gt;addChild('dEmi', ($dInfDoc['cnf_data_emissao'] == '---')? $dInfDoc['cnf_data_emissao'] : date('Y-m-d')); /
-            					$infNF-&gt;addChild('vBC', ($dInfDoc['cnf_valor_base_icms'])? $dInfDoc['cnf_valor_base_icms'] : '0.00'/*'8047.11'*/);
-            					$infNF-&gt;addChild('vICMS', ($dInfDoc['cnf_total_icms'])? $dInfDoc['cnf_total_icms'] : '0.00'/*'965.65'*/);
-            					$infNF-&gt;addChild('vBCST', ($dInfDoc['cnf_valor_base_icms_st'])? $dInfDoc['cnf_valor_base_icms_st'] : '0.00'/*'123.00'*/);
-            					$infNF-&gt;addChild('vST', ($dInfDoc['cnf_valor_icms_st'])? $dInfDoc['cnf_valor_icms_st'] : '0.00'/*'123.00'*/);
-            					$infNF-&gt;addChild('vProd', ($dInfDoc['cnf_valor_total_produtos'])? $dInfDoc['cnf_valor_total_produtos'] : '0.00'/*'123.00'*/);
-            					$infNF-&gt;addChild('vNF', ($dInfDoc['cnf_valor_total_nf'])? $dInfDoc['cnf_valor_total_nf'] : '0.00'/*'123.00'*/);
-            					$infNF-&gt;addChild('nCFOP', ($dInfDoc['cnf_cfop_prodominante'])? $dInfDoc['cnf_cfop_prodominante'] : '5353'/*'5353'*/);
+            					$infNF->addChild('dEmi', ($dInfDoc['cnf_data_emissao'] == '---')? $dInfDoc['cnf_data_emissao'] : date('Y-m-d')); /
+            					$infNF->addChild('vBC', ($dInfDoc['cnf_valor_base_icms'])? $dInfDoc['cnf_valor_base_icms'] : '0.00'/*'8047.11'*/);
+            					$infNF->addChild('vICMS', ($dInfDoc['cnf_total_icms'])? $dInfDoc['cnf_total_icms'] : '0.00'/*'965.65'*/);
+            					$infNF->addChild('vBCST', ($dInfDoc['cnf_valor_base_icms_st'])? $dInfDoc['cnf_valor_base_icms_st'] : '0.00'/*'123.00'*/);
+            					$infNF->addChild('vST', ($dInfDoc['cnf_valor_icms_st'])? $dInfDoc['cnf_valor_icms_st'] : '0.00'/*'123.00'*/);
+            					$infNF->addChild('vProd', ($dInfDoc['cnf_valor_total_produtos'])? $dInfDoc['cnf_valor_total_produtos'] : '0.00'/*'123.00'*/);
+            					$infNF->addChild('vNF', ($dInfDoc['cnf_valor_total_nf'])? $dInfDoc['cnf_valor_total_nf'] : '0.00'/*'123.00'*/);
+            					$infNF->addChild('nCFOP', ($dInfDoc['cnf_cfop_prodominante'])? $dInfDoc['cnf_cfop_prodominante'] : '5353'/*'5353'*/);
 
             					if ( !empty($dInfDoc['cnf_peso_total']) ){
-            						$infNF-&gt;addChild('nPeso', $dInfDoc['cnf_peso_total']);
+            						$infNF->addChild('nPeso', $dInfDoc['cnf_peso_total']);
             					}
 
             					if ( !empty($dInfDoc['cnf_suframa']) ) {
-            						$infNF-&gt;addChild('PIN', str_pad($dInfDoc['cnf_suframa'], 9, STR_PAD_LEFT/*'123'*/));
+            						$infNF->addChild('PIN', str_pad($dInfDoc['cnf_suframa'], 9, STR_PAD_LEFT/*'123'*/));
             					}
 
-            					if ( !empty($dInfDoc['cnf_data_prevista_entrega']) &amp;&amp; $dInfDoc['cnf_data_prevista_entrega'] != '---' ) { 
-            						$infNF-&gt;addChild('dPrev', $dInfDoc['cnf_data_prevista_entrega']);
+            					if ( !empty($dInfDoc['cnf_data_prevista_entrega']) && $dInfDoc['cnf_data_prevista_entrega'] != '---' ) { 
+            						$infNF->addChild('dPrev', $dInfDoc['cnf_data_prevista_entrega']);
             					}
             					break;
             				case 2 :
-            					$infNFe = $infDoc-&gt;addChild('infNFe');
-            					$infNFe-&gt;addChild('chave', $dInfDoc['cnf_eletronica_chave_acesso']);
+            					$infNFe = $infDoc->addChild('infNFe');
+            					$infNFe->addChild('chave', $dInfDoc['cnf_eletronica_chave_acesso']);
 
             					if ( !empty($dInfDoc['cnf_eletronica_suframa']) ){
-            						$infNFe-&gt;addChild('PIN', str_pad($dInfDoc['cnf_eletronica_suframa'], 9, STR_PAD_LEFT));
+            						$infNFe->addChild('PIN', str_pad($dInfDoc['cnf_eletronica_suframa'], 9, STR_PAD_LEFT));
             					}
 
-            					if ( !empty($dInfDoc['cnf_eletronica_data_prevista']) &amp;&amp; $dInfDoc['cnf_eletronica_data_prevista'] != '---' ){ 
-            						$infNFe-&gt;addChild('dPrev', $dInfDoc['cnf_eletronica_data_prevista']);
+            					if ( !empty($dInfDoc['cnf_eletronica_data_prevista']) && $dInfDoc['cnf_eletronica_data_prevista'] != '---' ){ 
+            						$infNFe->addChild('dPrev', $dInfDoc['cnf_eletronica_data_prevista']);
             					}
 
             					$unidadeTransporteNFe = $dInfDoc['CteInfNotaFiscalUnidadeTransporte'];
-            					if(count($unidadeTransporteNFe) &gt; 0) {
+            					if(count($unidadeTransporteNFe) > 0) {
             						foreach($unidadeTransporteNFe as $dInfUnidTranspNFe) {
-            							$infUnidTranspNFe = $infNFe-&gt;addChild('infUnidTransp');
+            							$infUnidTranspNFe = $infNFe->addChild('infUnidTransp');
 
-            							$infUnidTranspNFe-&gt;addChild('tpUnidTransp', $dInfUnidTranspNFe['cut_tipo_unidade_transportadora']);
-            							$infUnidTranspNFe-&gt;addChild('idUnidTransp', $dInfUnidTranspNFe['cut_identificacao_unidade_transportadora']);
+            							$infUnidTranspNFe->addChild('tpUnidTransp', $dInfUnidTranspNFe['cut_tipo_unidade_transportadora']);
+            							$infUnidTranspNFe->addChild('idUnidTransp', $dInfUnidTranspNFe['cut_identificacao_unidade_transportadora']);
 
             							$lacresUnidTranspNFe = $dInfUnidTranspNFe['CteInfNotaFiscalUnidadeTransporteLacre'];
 
-            							if(count($lacresUnidTranspNFe) &gt; 0) {
+            							if(count($lacresUnidTranspNFe) > 0) {
             								foreach($lacresUnidTranspNFe as $dLacUnidTranspNFe) {
-            									$lacUnidTranspNFe = $infUnidTranspNFe-&gt;addChild('lacUnidTransp');
+            									$lacUnidTranspNFe = $infUnidTranspNFe->addChild('lacUnidTransp');
 
-            									$lacUnidTranspNFe-&gt;addChild('nLacre', $dLacUnidTranspNFe['ctl_numero_lacre']);
+            									$lacUnidTranspNFe->addChild('nLacre', $dLacUnidTranspNFe['ctl_numero_lacre']);
             								}
             							}
 
             							$unidadesDeCargaTransNFe = $dInfUnidTranspNFe['CteInfNotaFiscalUnidadeCarga'];
 
-            							if(count($unidadesDeCargaTransNFe) &gt; 0) {
+            							if(count($unidadesDeCargaTransNFe) > 0) {
             								foreach($unidadesDeCargaTransNFe as $dInfUnidCargaTranspNFe) {
-            									$infUnidCargaTranspNFe = $infUnidTranspNFe-&gt;addChild('infUnidCarga');
+            									$infUnidCargaTranspNFe = $infUnidTranspNFe->addChild('infUnidCarga');
 
-            									$infUnidCargaTranspNFe-&gt;addChild('tpUnidCarga', $dInfUnidCargaTranspNFe['cuc_tipo_unidade_carga']);
-            									$infUnidCargaTranspNFe-&gt;addChild('idUnidCarga', $dInfUnidCargaTranspNFe['cuc_identificacao_unidade_carga']);
+            									$infUnidCargaTranspNFe->addChild('tpUnidCarga', $dInfUnidCargaTranspNFe['cuc_tipo_unidade_carga']);
+            									$infUnidCargaTranspNFe->addChild('idUnidCarga', $dInfUnidCargaTranspNFe['cuc_identificacao_unidade_carga']);
 
             									$lacresUnidCargaTranspNFe = $dInfUnidCargaTranspNFe['CteInfNotaFiscalUnidadeCargaLacre'];
 
-            									if(count($lacresUnidCargaTranspNFe) &gt; 0) {
+            									if(count($lacresUnidCargaTranspNFe) > 0) {
             										foreach($lacresUnidCargaTranspNFe as $dLacUnidCargaTranspNFe) {
-            											$lacUnidCargaTranspNFe = $infUnidCargaTranspNFe-&gt;addChild('lacUnidCarga');
+            											$lacUnidCargaTranspNFe = $infUnidCargaTranspNFe->addChild('lacUnidCarga');
 
-            											$lacUnidCargaTranspNFe-&gt;addChild('nLacre', $dLacUnidCargaTranspNFe['ccl_numero_lacre']);
+            											$lacUnidCargaTranspNFe->addChild('nLacre', $dLacUnidCargaTranspNFe['ccl_numero_lacre']);
             										}
             									}
 
-            									$infUnidCargaTranspNFe-&gt;addChild('qtdRat', $dInfUnidCargaTranspNFe['cuc_qtd_rateado']);
+            									$infUnidCargaTranspNFe->addChild('qtdRat', $dInfUnidCargaTranspNFe['cuc_qtd_rateado']);
             								}
             							}
             						}
@@ -1016,84 +1016,84 @@ class MyLegacyClass {
             			}
             	
             	foreach($config['seg'] as $dSeg) {
-            		$seg = $infCTeNorm-&gt;addChild('seg');
+            		$seg = $infCTeNorm->addChild('seg');
             		 
-            		$seg-&gt;addChild('respSeg', $dSeg['cns_responsavel_seguro']/*'4'*/);
+            		$seg->addChild('respSeg', $dSeg['cns_responsavel_seguro']/*'4'*/);
             		 
-            		if($this-&gt;cleaner($dSeg['cns_nome_seguradora'])!="") {
-            			$seg-&gt;addChild('xSeg', $dSeg['cns_nome_seguradora']/*'Zurich'*/);
+            		if($this->cleaner($dSeg['cns_nome_seguradora'])!="") {
+            			$seg->addChild('xSeg', $dSeg['cns_nome_seguradora']/*'Zurich'*/);
             		}
 
-            		if($this-&gt;cleaner($dSeg['cns_numero_apolice'])!="") {
-            			$seg-&gt;addChild('nApol', $dSeg['cns_numero_apolice']);
+            		if($this->cleaner($dSeg['cns_numero_apolice'])!="") {
+            			$seg->addChild('nApol', $dSeg['cns_numero_apolice']);
             		}
             		 
-            		if($this-&gt;cleaner($dSeg['cns_numero_averbacao'])!="") {
-            			$seg-&gt;addChild('nAver', str_pad($dSeg['cns_numero_averbacao'], 20, STR_PAD_LEFT));
+            		if($this->cleaner($dSeg['cns_numero_averbacao'])!="") {
+            			$seg->addChild('nAver', str_pad($dSeg['cns_numero_averbacao'], 20, STR_PAD_LEFT));
             		}
             		// Padr\E3o da carga \E9 13,2
-            		if($this-&gt;cleaner($dSeg['cns_valor_carga_efeito_averbacao'])!="" &amp;&amp; $dSeg['cns_valor_carga_efeito_averbacao'] != '000') {
-            			$seg-&gt;addChild('vCarga', $dSeg['cns_valor_carga_efeito_averbacao']/*'47000.00'*/);
+            		if($this->cleaner($dSeg['cns_valor_carga_efeito_averbacao'])!="" && $dSeg['cns_valor_carga_efeito_averbacao'] != '000') {
+            			$seg->addChild('vCarga', $dSeg['cns_valor_carga_efeito_averbacao']/*'47000.00'*/);
             		}
             	}
 
 
-            	$infModal = $infCTeNorm-&gt;addChild('xs:infModal', $config['infModal']['xs:any']-&gt;asXML());
-            	$infModal-&gt;addAttribute('versaoModal', $config['infModal']['versaoModal']);
+            	$infModal = $infCTeNorm->addChild('xs:infModal', $config['infModal']['xs:any']->asXML());
+            	$infModal->addAttribute('versaoModal', $config['infModal']['versaoModal']);
 
             	foreach($config['peri'] as $dPeri) {
-            		$peri = $infCTeNorm-&gt;addChild('peri');
+            		$peri = $infCTeNorm->addChild('peri');
 
-            		$peri-&gt;addChild('nONU', $dPeri['cno_numero_onu']);
-            		$peri-&gt;addChild('xNomeAE', $dPeri['cno_nome_apropriado_embarque_produto']);
-            		$peri-&gt;addChild('xClaRisco', $dPeri['cno_classe_subclasse']);
-            		$peri-&gt;addChild('grEmb', $dPeri['cno_grupo_embarque']);
-            		$peri-&gt;addChild('qTotProd', $dPeri['cno_quantidade_total_produto']);
-            		$peri-&gt;addChild('qVolTipo', $dPeri['cno_quantidade_tipo_volume']);
-            		$peri-&gt;addChild('pontoFulgor', $dPeri['cno_ponto_fulgor']);
+            		$peri->addChild('nONU', $dPeri['cno_numero_onu']);
+            		$peri->addChild('xNomeAE', $dPeri['cno_nome_apropriado_embarque_produto']);
+            		$peri->addChild('xClaRisco', $dPeri['cno_classe_subclasse']);
+            		$peri->addChild('grEmb', $dPeri['cno_grupo_embarque']);
+            		$peri->addChild('qTotProd', $dPeri['cno_quantidade_total_produto']);
+            		$peri->addChild('qVolTipo', $dPeri['cno_quantidade_tipo_volume']);
+            		$peri->addChild('pontoFulgor', $dPeri['cno_ponto_fulgor']);
             	}
 
             	// Se existir carros novos \E9 obrigat\F3rio informar os campos abaixo
-            	if ( count($config['veicNovos']) &gt; 0 ) {
+            	if ( count($config['veicNovos']) > 0 ) {
             		foreach($config['veicNovos'] as $dVeicNovos) {
-            			$veicNovos = $infCTeNorm-&gt;addChild('veicNovos');
+            			$veicNovos = $infCTeNorm->addChild('veicNovos');
 
-            			$veicNovos-&gt;addChild('chassi', $dVeicNovos['cvt_chassi_veiculo']);
-            			$veicNovos-&gt;addChild('cCor', $dVeicNovos['cvt_cor_veiculo']);
-            			$veicNovos-&gt;addChild('xCor', $dVeicNovos['cvt_descricao_cor']);
-            			$veicNovos-&gt;addChild('cMod', $dVeicNovos['cvt_codigo_marca_modelo']);
-            			$veicNovos-&gt;addChild('vUnit', $dVeicNovos['cvt_valor_unitario_veiculo']);
-            			$veicNovos-&gt;addChild('vFrete', $dVeicNovos['cvt_frete_unitario']);
+            			$veicNovos->addChild('chassi', $dVeicNovos['cvt_chassi_veiculo']);
+            			$veicNovos->addChild('cCor', $dVeicNovos['cvt_cor_veiculo']);
+            			$veicNovos->addChild('xCor', $dVeicNovos['cvt_descricao_cor']);
+            			$veicNovos->addChild('cMod', $dVeicNovos['cvt_codigo_marca_modelo']);
+            			$veicNovos->addChild('vUnit', $dVeicNovos['cvt_valor_unitario_veiculo']);
+            			$veicNovos->addChild('vFrete', $dVeicNovos['cvt_frete_unitario']);
             		}
             	}
 
-            	$this-&gt;setXml($xml);
+            	$this->setXml($xml);
             }
 
             public function save($cte_id) {
             	try {
-            		$xml = $this-&gt;getXml();
+            		$xml = $this->getXml();
 
-            		$cteXml = CteXmlTable::getInstance()-&gt;findOneByCteId($cte_id);
+            		$cteXml = CteXmlTable::getInstance()->findOneByCteId($cte_id);
             		 
             		if(!$cteXml instanceof CteXml)
             		$cteXml = new CteXml();
             		 
-            		$cteXml-&gt;ctx_xml = $xml;
-            		$cteXml-&gt;cte_id = $cte_id;
-            		$cteXml-&gt;ctx_qem = 1;
+            		$cteXml->ctx_xml = $xml;
+            		$cteXml->cte_id = $cte_id;
+            		$cteXml->ctx_qem = 1;
             		 
-            		$cteXml-&gt;save();
+            		$cteXml->save();
 
             		return $this;
             	} catch(Exception $e) {
-            		exit($e-&gt;getMessage());
+            		exit($e->getMessage());
             	}
             }
           
 
             private function limpaEspacos($arranjo) {
-            	foreach($arranjo as $indice =&gt; $valor) {
+            	foreach($arranjo as $indice => $valor) {
             		if(!is_array($valor)) {
             			$arranjo[$indice] = trim($valor);
             		}
@@ -1129,9 +1129,9 @@ in this case is used a switch statement either a couple of if's .
 ```php
 class Compl {
 public function setCompl($config) {
-            	$xml = $this-&gt;getXml();
+            	$xml = $this->getXml();
 
-            	$compl = $xml-&gt;infCte-&gt;addChild('compl');
+            	$compl = $xml->infCte->addChild('compl');
 
             	$confComplPrimeiroBloco = array(
 					'xCaracAd', 
@@ -1140,134 +1140,134 @@ public function setCompl($config) {
 					);
 
 					foreach($confComplPrimeiroBloco as $node) {
-						$config[$node] = $this-&gt;cleaner($config[$node]);
+						$config[$node] = $this->cleaner($config[$node]);
 						if($config[$node]!="")
-						$compl-&gt;addChild($node, $config[$node]);
+						$compl->addChild($node, $config[$node]);
 					}
 
 					if($config['fluxo']['xOrig'] != "" || $config['fluxo']['pass'] != "") {
-						$fluxo = $compl-&gt;addChild('fluxo');
+						$fluxo = $compl->addChild('fluxo');
 					}
 
 					if(!empty($config['fluxo']['xOrig'])) {
-						$fluxo-&gt;addChild('xOrig', $config['fluxo']['xOrig']);
+						$fluxo->addChild('xOrig', $config['fluxo']['xOrig']);
 					}
 
-					if($config['fluxo']['pass'] != "" &amp;&amp; count($config['fluxo']['pass']) &gt; 0) {
+					if($config['fluxo']['pass'] != "" && count($config['fluxo']['pass']) > 0) {
 						foreach($config['fluxo']['pass'] as $pass) {
-							$xpass = $fluxo-&gt;addChild('pass');
+							$xpass = $fluxo->addChild('pass');
 
 							$nodesPass = array(
-						'xPass' =&gt; 'cdp_sigla_aeroporto_passagem',
-						'xDest' =&gt; 'cdp_sigla_aeroporto_destino',
-						'xRota' =&gt; 'cdp_codigo_rota_entrega'
+						'xPass' => 'cdp_sigla_aeroporto_passagem',
+						'xDest' => 'cdp_sigla_aeroporto_destino',
+						'xRota' => 'cdp_codigo_rota_entrega'
 						);
 							
-						foreach($nodesPass as $nodePass =&gt; $nodePassIndex) {
-							$pass[$nodePassIndex] = $this-&gt;cleaner($pass[$nodePassIndex]);
+						foreach($nodesPass as $nodePass => $nodePassIndex) {
+							$pass[$nodePassIndex] = $this->cleaner($pass[$nodePassIndex]);
 							if($pass[$nodePassIndex]!="")
-							$xpass-&gt;addChild($nodePass, $pass[$nodePassIndex]);
+							$xpass->addChild($nodePass, $pass[$nodePassIndex]);
 						}
 						}
 					}
 
 					if(count($config['Entrega'])) {
-						$Entrega = $compl-&gt;addChild('Entrega');
+						$Entrega = $compl->addChild('Entrega');
 
-						$config['Entrega']['tpPer'] = $this-&gt;cleaner($config['Entrega']['tpPer']);
+						$config['Entrega']['tpPer'] = $this->cleaner($config['Entrega']['tpPer']);
 
 						if($config['Entrega']['tpPer']=="")
 
 						switch($config['Entrega']['tpPer']) {
 							case '0' :
-								$semData = $Entrega-&gt;addChild('semData');
-								$semData-&gt;addChild('tpPer', $config['Entrega']['tpPer']);
+								$semData = $Entrega->addChild('semData');
+								$semData->addChild('tpPer', $config['Entrega']['tpPer']);
 								break;
 							case '1' :
 							case '2' :
 							case '3' :
-								$comData = $Entrega-&gt;addChild('comData');
-								$comData-&gt;addChild('tpPer', $config['Entrega']['tpPer']);
-								$config['Entrega']['dProg'] = $this-&gt;cleaner($config['Entrega']['dProg']);
+								$comData = $Entrega->addChild('comData');
+								$comData->addChild('tpPer', $config['Entrega']['tpPer']);
+								$config['Entrega']['dProg'] = $this->cleaner($config['Entrega']['dProg']);
 
 								if($config['Entrega']['dProg']!="")
-								$comData-&gt;addChild('tpPer', $config['Entrega']['dProg']);
+								$comData->addChild('tpPer', $config['Entrega']['dProg']);
 								
 								break;
 							case '4' :
-								$noPeriodo = $Entrega-&gt;addChild('noPeriodo');
-								$noPeriodo-&gt;addChild('tpPer', $config['Entrega']['tpPer']);
-								$config['Entrega']['dtIni'] = $this-&gt;cleaner($config['Entrega']['dtIni']);
+								$noPeriodo = $Entrega->addChild('noPeriodo');
+								$noPeriodo->addChild('tpPer', $config['Entrega']['tpPer']);
+								$config['Entrega']['dtIni'] = $this->cleaner($config['Entrega']['dtIni']);
 								if($config['Entrega']['dtIni']!="")
-								$noPeriodo-&gt;addChild('dtIni', $config['Entrega']['dtIni']);
+								$noPeriodo->addChild('dtIni', $config['Entrega']['dtIni']);
 								
-								$config['Entrega']['dtFim'] = $this-&gt;cleaner($config['Entrega']['dtFim']);
+								$config['Entrega']['dtFim'] = $this->cleaner($config['Entrega']['dtFim']);
 								if($config['Entrega']['dtFim']!="")
-								$noPeriodo-&gt;addChild('dtFim', $config['Entrega']['dtFim']);
+								$noPeriodo->addChild('dtFim', $config['Entrega']['dtFim']);
 								
 								break;
 						}
 
-						$config['Entrega']['tpHor'] = $this-&gt;cleaner($config['Entrega']['tpHor']);
+						$config['Entrega']['tpHor'] = $this->cleaner($config['Entrega']['tpHor']);
 
 						switch($config['Entrega']['tpHor']) {
 							case '0' :
-								$semHora = $Entrega-&gt;addChild('semHora');
-								$semHora-&gt;addChild('tpHor', $config['Entrega']['tpHor']);
+								$semHora = $Entrega->addChild('semHora');
+								$semHora->addChild('tpHor', $config['Entrega']['tpHor']);
 								break;
 							case '1' :
 							case '2' :
 							case '3' :
-								$comHora = $Entrega-&gt;addChild('comHora');
-								$comHora-&gt;addChild('tpHor', $config['Entrega']['tpHor']);
-								$config['Entrega']['hProg'] = $this-&gt;cleaner($config['Entrega']['hProg']);
+								$comHora = $Entrega->addChild('comHora');
+								$comHora->addChild('tpHor', $config['Entrega']['tpHor']);
+								$config['Entrega']['hProg'] = $this->cleaner($config['Entrega']['hProg']);
 								if($config['Entrega']['hProg']!="")
-								$comHora-&gt;addChild('tpHor', $config['Entrega']['hProg']);
+								$comHora->addChild('tpHor', $config['Entrega']['hProg']);
 								break;
 							case '4' :
-								$noInter = $Entrega-&gt;addChild('noInter');
-								$noInter-&gt;addChild('tpHor', $config['Entrega']['tpHor']);
-								$config['Entrega']['hIni'] = $this-&gt;cleaner($config['Entrega']['hIni']);
+								$noInter = $Entrega->addChild('noInter');
+								$noInter->addChild('tpHor', $config['Entrega']['tpHor']);
+								$config['Entrega']['hIni'] = $this->cleaner($config['Entrega']['hIni']);
 								if($config['Entrega']['hIni']!="")
-								$noInter-&gt;addChild('hIni', $config['Entrega']['hIni']);
-								$config['Entrega']['hFim'] = $this-&gt;cleaner($config['Entrega']['hFim']);
+								$noInter->addChild('hIni', $config['Entrega']['hIni']);
+								$config['Entrega']['hFim'] = $this->cleaner($config['Entrega']['hFim']);
 								if($config['Entrega']['hFim']!="")
-								$noInter-&gt;addChild('hFim', $config['Entrega']['hFim']);
+								$noInter->addChild('hFim', $config['Entrega']['hFim']);
 								break;
 						}
 					}
 
 					if ( !empty($config['xObs']) ){
-						$compl-&gt;addChild('xObs', $config['xObs']);
+						$compl->addChild('xObs', $config['xObs']);
 					}
 
-					if(isset($config['ObsCont']) &amp;&amp; count($config['ObsCont']) &gt; 0) {
+					if(isset($config['ObsCont']) && count($config['ObsCont']) > 0) {
 						foreach($config['ObsCont'] as $ObsCont) {
-							$xObsCont = $compl-&gt;addChild('ObsCont');
+							$xObsCont = $compl->addChild('ObsCont');
 
-							$ObsCont['coic_identificador'] = $this-&gt;cleaner($ObsCont['coic_identificador']);
+							$ObsCont['coic_identificador'] = $this->cleaner($ObsCont['coic_identificador']);
 							if($ObsCont['coic_identificador']!="")
-							$xObsCont-&gt;addChild('xCampo', $ObsCont['coic_identificador']);
-							$ObsCont['coic_obs'] = $this-&gt;cleaner($ObsCont['coic_obs']);
+							$xObsCont->addChild('xCampo', $ObsCont['coic_identificador']);
+							$ObsCont['coic_obs'] = $this->cleaner($ObsCont['coic_obs']);
 							if($ObsCont['coic_obs']!="")
-							$xObsCont-&gt;addChild('xTexto', $ObsCont['coic_obs']);
+							$xObsCont->addChild('xTexto', $ObsCont['coic_obs']);
 						}
 					}
 
-					if(isset($config['ObsFisco']) &amp;&amp; count($config['ObsFisco']) &gt; 0) {
+					if(isset($config['ObsFisco']) && count($config['ObsFisco']) > 0) {
 						foreach($config['ObsFisco'] as $ObsFisco) {
-							$xObsFisco = $compl-&gt;addChild('ObsFisco');
+							$xObsFisco = $compl->addChild('ObsFisco');
 
-							$ObsFisco['coif_identificador'] = $this-&gt;cleaner($ObsFisco['coif_identificador']);
+							$ObsFisco['coif_identificador'] = $this->cleaner($ObsFisco['coif_identificador']);
 							if($ObsFisco['coif_identificador']!="")
-							$xObsFisco-&gt;addChild('xCampo', $ObsFisco['coif_identificador']);
-							$ObsFisco['coif_obs'] = $this-&gt;cleaner($ObsFisco['coif_obs']);
+							$xObsFisco->addChild('xCampo', $ObsFisco['coif_identificador']);
+							$ObsFisco['coif_obs'] = $this->cleaner($ObsFisco['coif_obs']);
 							if($ObsFisco['coif_obs']!="")
-							$xObsFisco-&gt;addChild('xTexto', $ObsFisco['coif_obs']);
+							$xObsFisco->addChild('xTexto', $ObsFisco['coif_obs']);
 						}
 					}
 
-					$this-&gt;setXml($xml);
+					$this->setXml($xml);
 					//		}
             }
 
@@ -1291,7 +1291,7 @@ public function setIdeValues($config, $Cte) {
 
 public function setCompl($config) {
             	$newCode = new Compl();
-		$newCode-&gt;setCompl($config);
+		$newCode->setCompl($config);
 }
 
 public function setEmitValues($config) {
