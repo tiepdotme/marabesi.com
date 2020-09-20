@@ -4,6 +4,9 @@ require('./serviceWorkerHandler')
 require('simple-jekyll-search/dest/simple-jekyll-search')
 require('./disqus')
 
+const AnchorJS = require('anchor-js')
+const anchors = new AnchorJS();
+
 import '../_sass/tailwind.scss';
 import '../_sass/main.scss'
 
@@ -16,3 +19,5 @@ SimpleJekyllSearch({
   noResultsText: 'No results found 😞',
   success: function() {}
 })
+
+anchors.add();
