@@ -274,14 +274,12 @@ For the first time, the HoC is compared as a `container pattern` and not the
 `decorated component pattern`.
 
 {% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-explores the HoC in the new era of react hooks.
-
-{% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} has no
-definition statement, though the content is followed with HoC code examples.
+explores the HoC in the new era of react hooks. {% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} has no definition statement, though the content is followed with HoC
+code examples.
 
 ### Render Props / Render callback
 
-The render props or render callback pattern is used to render a given component
+The `render props` or `render callback pattern` is used to render a given component
 based on a function callback {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 {% cite post_five_ways_to_advanced_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 {% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
@@ -293,100 +291,89 @@ renders the prop. Eventhough {% cite post_how_to_master_advanced_react_design_pa
 using the children explicitly.
 
 Furthermore {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-states that the pattern render props and HoC are interchangeable.
-
-The term render callback is clearer in the intention
+states that the pattern render props and HoC are interchangeable. The term render callback is clearer in the intention
 of the pattern, but the term, render props got more adoption from the
 community {% cite post_react_patterns_render_callback --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}.
-
 On the other hand {% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %},
 states that there are discution between the effectiveness of the pattern.
 
-### Prop Collections and Getters
+<!-- ### Prop Collections and Getters
 
-{% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-
-
-### State Initializers
-
-{% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
 
 
 
-### State reducer
+<!-- ### State Initializers
 
-{% cite post_five_ways_to_advanced_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_react_state_reducer_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
 
 
 
-### Stateful
-
-{% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-
-
-### Stateless
-
-{% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-
-
-### Controlled Components
-
-{% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+<!-- ### State reducer
 
 {% cite post_five_ways_to_advanced_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
+{% cite post_react_state_reducer_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
 
 
-### Provider
+<!-- ### Stateful
+
+{% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
+
+
+
+<!-- ### Stateless
+
+{% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+
+{% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
+
+
+
+<!-- ### Controlled Components
 
 {% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
-{% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_provider_pattern_in_react_using_react_context_api --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_five_ways_to_advanced_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
 
 
 
-### Context
+### Provider / Context
 
-{% cite post_four_patterns_for_global_state_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+The provider pattern is used in libraries such as react-redux and react-router. The idea  behind the provider pattern is to avoid passing
+props for each component in the three, instead, the pattern makes,
+the prop available for all the tree that uses the provider regardless
+of the tree depth {% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}. The
+provider pattern is an aswer for the problem called `props-drilling` {% cite post_provider_pattern_in_react_using_react_context_api --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_8_no_flux_strategies_for_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}.
 
-{% cite post_provider_pattern_in_react_using_react_context_api --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+The provider pattern is often related to reactjs context {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} {% cite post_provider_pattern_in_react_using_react_context_api --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} as
+this is the the feature that comes out of the box with reactjs.
 
-{% cite post_angularjs_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_react_state_reducer_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
-
-{% cite post_8_no_flux_strategies_for_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-
+{% cite post_four_patterns_for_global_state_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} says that
+if the component needs to share more than two levels deep, the recommended approach is to use reactjs context. {% cite post_angularjs_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} uses
+the provider/context pattern to implement a translation engine.
 
 ### Hooks
 
-{% cite post_patterns_for_data_fetching_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+Hooks are the highlight feature introduced in reactjs 16.8, mainly
+focused in sharing logic between components and no class syntax, instead,
+a functional approach is the preferred way{% cite reactjs_hooks_release --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}{% cite post_react_hooks_design_patterns_creating_components_without_class --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}.
 
-{% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} depicts
+the difference between class components and functional components with
+hooks and th benefits of using it. {% cite post_patterns_for_data_fetching_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and {% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+compares fetching data between the class approach and the functional approach with hooks, on the other hand
+{% cite post_implementing_the_container_pattern_using_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} refactor
+the container pattern using the class style with hooks.
 
 {% cite post_the_facade_pattern_and_applying_to_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
-{% cite post_react_hooks_design_patterns_creating_components_without_class --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_implementing_the_container_pattern_using_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_discovering_patterns_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}  
+<!-- {% cite post_discovering_patterns_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} down   -->
 
 {% cite post_production_level_patterns_for_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
-{% cite post_friday_frontend_new_react_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+<!-- {% cite post_friday_frontend_new_react_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
 
 {% cite post_best_practices_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
@@ -400,47 +387,47 @@ states that there are discution between the effectiveness of the pattern.
 
 
 
-### Controller view
+<!-- ### Controller view
 
-{% cite post_the_reactjs_controller_view_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-
-
-### Adapter
-
-{% cite post_using_the_adapter_design_pattern_with_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_the_reactjs_controller_view_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
 
 
 
-### Dependency injection
+<!-- ### Adapter
 
-  {% cite post_dependency_injection --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-
-
-### Event listeners
-
-{% cite post_global_listener_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_using_the_adapter_design_pattern_with_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
 
 
 
-### Redux
+<!-- ### Dependency injection
+
+{% cite post_dependency_injection --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
+
+
+
+<!-- ### Event listeners
+
+{% cite post_global_listener_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
+
+
+
+<!-- ### Redux
 
 {% cite post_redux_design_patterns_reduxsauce --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
-{% cite post_getting_to_know_the_redux_Pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
+{% cite post_getting_to_know_the_redux_Pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}  -->
 
 
 
-### MVVM
+<!-- ### MVVM
 
-{% cite post_level_up_react_architecture --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
+{% cite post_level_up_react_architecture --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}  -->
 
 
 
-### BLoC
+<!-- ### BLoC
 
-{% cite post_bloc_pattern_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
+{% cite post_bloc_pattern_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}  -->
 
 
 
