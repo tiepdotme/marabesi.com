@@ -7,7 +7,7 @@ type: article
 published: true
 status: publish
 categories:
-- Books review
+- review
 tags:
 - book,
 - build,
@@ -33,6 +33,8 @@ tags:
 - integration,
 - production,
 - control
+redirect_from:
+  - /books%20review/2015/11/03/continuous-delivery.html
 ---
 
 As we know the software nowadays exists to support the business rules and I

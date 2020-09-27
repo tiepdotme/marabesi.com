@@ -7,8 +7,7 @@ type: article
 published: true
 status: publish
 categories:
-- Books review
-- Design Patterns
+- review
 tags:
 - collections,
 - decorator,
@@ -25,6 +24,8 @@ tags:
 - SPL,
 - state,
 - strategy
+redirect_from:
+  - /books%20review/design%20patterns/2015/02/20/head-first-design-patterns.html
 ---
 
 You can find the source code in the  already but also you can have a look at the

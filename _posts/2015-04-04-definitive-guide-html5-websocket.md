@@ -7,7 +7,7 @@ type: article
 published: true
 status: publish
 categories:
-- Books review
+- review
 tags:
 - WebSocket,
 - WebSockets,
@@ -29,7 +29,9 @@ tags:
 - chat,
 - sockets,
 - xmpp,
-- revew
+- review
+redirect_from:
+  - /books%20review/2015/04/04/definitive-guide-html5-websocket.html
 ---
 
 The book "The definitive guide to HTML5 WebSocket" is a short book with a great

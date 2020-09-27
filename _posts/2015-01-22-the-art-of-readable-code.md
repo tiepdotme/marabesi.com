@@ -7,7 +7,7 @@ type: article
 published: true
 status: publish
 categories:
-- Books review
+- review
 tags:
 - Code,
 - Readable,
@@ -28,6 +28,8 @@ tags:
 - Dustin Boswell,
 - Trevor Foucher,
 - The Art Of Readable Code
+redirect_from:
+  - /books%20review/2015/01/22/the-art-of-readable-code.html
 ---
 
 Have you ever wonder what was the best comment to write? Have you ever had

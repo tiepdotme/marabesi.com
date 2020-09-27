@@ -7,7 +7,7 @@ type: article
 published: true
 status: publish
 categories:
-- Books review
+- review
 tags:
 - TDD,
 - book,
@@ -24,6 +24,8 @@ tags:
 - software testing,
 - pettern,
 - tdd by example
+redirect_from:
+  - /books%20review/2015/01/26/tdd-by-example.html
 ---
 
 [![Cover of the book "TDD By Example"]({{ site.baseurl }}/images/posts/2015-01-26-tdd-by-example/cover.jpg)]({{ site.baseurl }}/images/posts/2015-01-26-tdd-by-example/cover.jpg)

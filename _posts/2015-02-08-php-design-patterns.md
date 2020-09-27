@@ -7,8 +7,7 @@ type: article
 published: true
 status: publish
 categories:
-- Books review
-- Design Patterns
+- review
 tags:
 - patterns,
 - PHP,
@@ -32,6 +31,8 @@ tags:
 - template,
 - uml,
 - gof
+redirect_from:
+  - /books%20review/design%20patterns/2015/02/08/php-design-patterns.html
 ---
 
 If you are starting with good practices in PHP I would like to recommend the
