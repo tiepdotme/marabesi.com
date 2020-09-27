@@ -225,9 +225,11 @@ const ProductListQuery = () =>
     render={RenderProductList}
   />;
 
+const style = { color: 'red' };
+
 export const RenderProductList = ({ error, props }) => {
   if (error) {
-    return (<div style={{ color: 'red' }}>{error.message}</div>);
+    return (<div style={style}>{error.message}</div>);
   }
 
   if (props) {

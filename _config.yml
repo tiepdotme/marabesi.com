@@ -51,5 +51,5 @@ exclude:
 
 plugins:
   - jekyll-sitemap
-  - "jekyll/scholar"
+  - jekyll/scholar
   - jekyll-figure

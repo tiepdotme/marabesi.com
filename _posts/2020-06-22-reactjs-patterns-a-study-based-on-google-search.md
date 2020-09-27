@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (WIP) ReactJs patterns - A study based on google search
+title: ReactJs patterns - A study based on google search
 date: 2020-06-22 01:06:05.000000000 -03:00
 image: /images/posts/2020-06-22-reactjs-patterns-a-study-based-on-google-search/cover.png
 type: article
@@ -9,7 +9,11 @@ status: published
 categories:
 - web
 tags:
+- React,
 - patterns,
+- pattern,
+- Pattern,
+- https,
 - reactjs,
 - search,
 - google,
@@ -18,7 +22,13 @@ tags:
 - react,
 - results,
 - web,
-- reactjs patterns
+- reactjs patterns,
+- component,
+- components,
+- Online,
+- hooks,
+- props,
+- render
 ---
 
 ReactJS is among one of the most used javascript library according to GitHub it is
@@ -39,7 +49,21 @@ conducted mining scientific bases, named: IEEE explorer, ACM digital library,
 science direct, springer link, scopus and engineering village), this post is
 a collection based on google search.
 
-Besides the questions to be answered in this post, the aim is also to be a source to access when in doubt of which reactjs pattern to learn first and also a guide to help beginners to have a picture of the patterns that developers most talk about. 
+Besides the questions to be answered in this post, the aim is also to be a source
+to access when in doubt of which reactjs pattern to learn first and also a guide
+to help beginners to have a picture of the patterns that developers most talk
+about.
+
+## Table of contents
+
+1. [Finding reactjs patterns articles](#finding-reactjs-patterns-articles)
+2. [Mining results](#mining-results)
+3. [Analyzing the results](#analyzing-the-results)
+4. [Discussion](#discussion)
+5. [Related work](#related-work)
+6. [Conclusion](#conclusion)
+7. [References](#references)
+8. [Appendix](#appendix)
 
 ## Finding reactjs patterns articles
 
@@ -120,12 +144,15 @@ to the word without s (singular form), resulting in "component"
 3. Different words used with common mean were normalized, for example, the higher order component
 is commonly used as HoC, the shorter version was used.
 
-The word cloud depicts the translation between the most cited patterns used in the dataset. The most cited pattern is Component, followed by props taking into consideration just a single word.
+The word cloud depicts the translation between the most cited patterns used in
+the dataset. The most cited pattern is Component, followed by props taking into
+consideration just a single word.
 
 
 ## Discussion
 
-This section dive deeper in the results depicted in the previous section, the first sub section focus on **Q1** and the second section focuses on **Q2**.
+This section dive deeper in the results depicted in the previous section, the
+first sub section focus on **Q1** and the second section focuses on **Q2**.
 
 ### Q1
 
@@ -359,6 +386,10 @@ the provider/context pattern to implement a translation engine.
 Hooks are the highlight feature introduced in reactjs 16.8, mainly
 focused in sharing logic between components and no class syntax, instead,
 a functional approach is the preferred way{% cite reactjs_hooks_release --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}{% cite post_react_hooks_design_patterns_creating_components_without_class --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}.
+{% cite post_best_practices_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} gives a
+introduction followed with reactjs hooks best practices, the material
+is recommended to any level of developer that wants to understand hooks,
+or for any developer that already knows hooks, it can be  a refresher. {% cite post_reusable_code_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} also states that hooks replace the mixins pattern for sharing code.
 
 {% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} depicts
 the difference between class components and functional components with
@@ -367,23 +398,30 @@ compares fetching data between the class approach and the functional approach wi
 {% cite post_implementing_the_container_pattern_using_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} refactor
 the container pattern using the class style with hooks.
 
-{% cite post_the_facade_pattern_and_applying_to_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+{% cite post_the_facade_pattern_and_applying_to_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} integrates
+the facade design pattern into a javascript implementation, and then
+combines the pattern with reactjs hooks. {% cite post_production_level_patterns_for_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} builds
+a todo app using hooks and uses a folder name called models to store
+custom hooks, and tries to relate this structure with the MVC pattern.
+
+{% cite post_react_hooks_rebirth_of_state_management --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and {% cite post_a_state_management_pattern_for_ionic_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+focus on the state management. {% cite post_react_hooks_rebirth_of_state_management --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} dives
+in mocking the redux implementation using hooks. The approach used
+is interesting for learning purposes. Therefore, the implementation
+for both authors are simplifications over a more complex implementation
+of redux. The benefits of implementing those state managements by hand
+comes with a drawback. Redux on the other hand is more complex, but
+it is a standard for state management, having a wide community that
+created different libraries to work with it (`redux-offline`).
+
+Finally, {% cite post_bloc_pattern_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} converts
+the BLoC pattern to be used with reactjs. The BLoC pattern was created
+to share code between flutter and angular dart.
+
 
 <!-- {% cite post_discovering_patterns_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} down   -->
 
-{% cite post_production_level_patterns_for_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
 <!-- {% cite post_friday_frontend_new_react_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} -->
-
-{% cite post_best_practices_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_react_hooks_rebirth_of_state_management --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_bloc_pattern_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-
-{% cite post_reusable_code_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} 
-
-{% cite post_a_state_management_pattern_for_ionic_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
 
 
@@ -411,11 +449,13 @@ the container pattern using the class style with hooks.
 
 
 
-<!-- ### Redux
+### Redux
 
-{% cite post_redux_design_patterns_reduxsauce --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+The redux pattern is a implementation of FLUX, the state management
+pattern created by Facebook to handle global state {% cite flux_facebook_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}{% cite post_getting_to_know_the_redux_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}.
+{% cite post_redux_design_patterns_reduxsauce --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} provides
+an introduction to redux and its main components, namely: Action, Reducer and Store.
 
-{% cite post_getting_to_know_the_redux_Pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}  -->
 
 
 
@@ -451,9 +491,10 @@ more experience are the ones less popular as well.
 
 {% bibliography --cited_in_order --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 
-
 ## Appendix
 
+This section presents extra resources created during the development of this
+content.
 
 ### Mined content
 
