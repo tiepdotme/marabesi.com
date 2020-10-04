@@ -189,11 +189,13 @@ renders it's corresponding sub component. That's it. {% cite post_react_componen
 the same definition as {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 and adds that, the container component is the place to connect to redux.
 
-The following code from {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} depicts
+The following code (adapted from {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}) depicts
 the container component using class component. {% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 also offers a code example.
 
 ```jsx
+import React, { useState, useEffect } from 'react'
+
 const CommentList = ({ comments }) => (
   <ul>
     {comments.map(comment => (
@@ -204,23 +206,17 @@ const CommentList = ({ comments }) => (
   </ul>
 );
 
-class CommentListContainer extends React.Component {
-  constructor() {
-    super()
-    this.state = { comments: [] }
-  }
+function CommentListContainer {
+  const [comments, setComments] = useState([]])
 
-  componentDidMount() {
-    $.ajax({
-      url: "/my-comments.json",
-      dataType: 'json',
-      success: comments =>
-        this.setState({comments: comments});
-    })
-  }
+  useEffect(() => {
+    fetch('/my-comments.json')
+      .then(response => response.json())
+      .then(comments => setComments(comments)
+  }, [])
 
   render() {
-    return <CommentList comments={this.state.comments} />
+    return <CommentList comments={comments} />
   }
 }
 ```
