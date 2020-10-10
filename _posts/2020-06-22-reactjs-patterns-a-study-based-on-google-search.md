@@ -33,7 +33,7 @@ tags:
 
 ReactJS is among one of the most used javascript library according to GitHub it is
 one of the mos popular started repository. Given its popularity it is expected
-that the communicty around it will start to develop techniques, guides and tutorials
+that the community around it will start to develop techniques, guides and tutorials
 around patterns.
 
 Inspired by the software systematic review literature paper
@@ -71,7 +71,7 @@ Google blocks the crawling on search, in this case the approach taken was
 the google custom search (https://stackoverflow.com/a/30041104/2258921). The custom
 search (https://developers.google.com/custom-search/v1/using_rest) API allow
 developers to use google search programatically, and works as google search,
-the difference is that this integration allow calls progammatically.
+the difference is that this integration allow calls programmatically.
 
 The first interaction with the API showed a particular behavior that this service
 has, as pointed by {% cite google_employee_search_results --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %},
@@ -170,9 +170,9 @@ best practices and design were found and are related to reactjs patterns.
 
 <!-- Code reuse, separate of concerns, readability, easy to maintain,-->
 As such, {% cite post_clean_code_dirty_code --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %},
-entitled "Clean Code vs. Dirty Code: React Best Practices", enumarates 14 sections
+entitled "Clean Code vs. Dirty Code: React Best Practices", enumerates 14 sections
 about best practices. Those sections are related to code standards, javascript
-features, naming variables and also about industry standard to follo when coding
+features, naming variables and also about industry standard to follow when coding
 like DRY.
 
 ## Related work
@@ -222,11 +222,11 @@ function CommentListContainer {
 ```
 
 {% cite post_implementing_the_container_pattern_using_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-elaborates on the container component with hooks along side with a todo list app that implements the pattern. Also the definition
+elaborates on the container component with hooks along side with a to-do list app that implements the pattern. Also the definition
 followed was the same as {% cite post_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}, it
 seems that there is a consensus that Jason Bonta defined the container component pattern
 and developers point to him. {% cite post_introduction_to_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-rates the cotainer component as a pattern that provides: separation of concerns, it
+rates the container component as a pattern that provides: separation of concerns, it
 is reusable and it is testable.
 
 {% cite post_the_react_redux_container_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} expands on
@@ -240,7 +240,7 @@ presentational components and other patterns.
 
 {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 gives his opinions on the conditional rendering pattern and also states that
-it is a narutal step for developers to separate logic from the actual return code (the code
+it is a natural step for developers to separate logic from the actual return code (the code
 given as example is a ternary if). As an alternative to the conditional
 rendering, the author suggests to use the JSX alternative with `&&`. {% cite post_react_conditional_rendering --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 expands on the JSX alternatives for conditional rendering.
@@ -253,7 +253,7 @@ share the same definition, the compound components are components that are disti
 the other, they make sense together only. Furthermore, {% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} mentions the HTML
 `select` and `option` as an example of compound components. {% cite post_seven_patterns_by_example --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} uses
 the compount component pattern to build a radio group component, which the user can select only one option
-between the avaialbe options.
+between the available options.
 
 ### Decorated component
 
@@ -290,7 +290,7 @@ the same camponent with added behavior, from {% cite post_react_patterns_react_a
 would be possible to receive A and then return B.
 
 Therefore, {% cite post_patterns_for_data_fetching_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-states that HoC is responsbile to fetch data and then propagate to child components. This definition is an addition
+states that HoC is responsible to fetch data and then propagate to child components. This definition is an addition
 to the previous agreed definition, but does not restrict the pattern to be used as data fetch only. {% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} adds that
 the HoC is used to fetch data and also split data fetching from data presentation.
 For the first time, the HoC is compared as a `container pattern` and not the 
@@ -310,7 +310,7 @@ based on a function callback {% cite post_react_patterns --file 2020-06-22-react
 {% cite post_introduction_to_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}, or
 as {% cite post_how_to_master_advanced_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} states,
 instead of rendering the children (which is as common technique in reactjs), this pattern
-renders the prop. Eventhough {% cite post_how_to_master_advanced_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} states that the render prop renders the prop, instead of the children, {% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %},{% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and {% cite  post_common_i18n_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} describes the render prop
+renders the prop. Even though {% cite post_how_to_master_advanced_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} states that the render prop renders the prop, instead of the children, {% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %},{% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and {% cite  post_common_i18n_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} describes the render prop
 using the children explicitly.
 
 Furthermore {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
@@ -318,7 +318,7 @@ states that the pattern render props and HoC are interchangeable. The term rende
 of the pattern, but the term, render props got more adoption from the
 community {% cite post_react_patterns_render_callback --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}.
 On the other hand {% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %},
-states that there are discution between the effectiveness of the pattern.
+states that there is discution between the effectiveness of the pattern.
 
 <!-- ### Prop Collections and Getters
 
@@ -367,11 +367,11 @@ The provider pattern is used in libraries such as react-redux and react-router. 
 props for each component in the three, instead, the pattern makes,
 the prop available for all the tree that uses the provider regardless
 of the tree depth {% cite post_advanced_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}. The
-provider pattern is an aswer for the problem called `props-drilling` {% cite post_provider_pattern_in_react_using_react_context_api --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
+provider pattern is an answer for the problem called `props-drilling` {% cite post_provider_pattern_in_react_using_react_context_api --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
 {% cite post_8_no_flux_strategies_for_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}.
 
 The provider pattern is often related to reactjs context {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} {% cite post_provider_pattern_in_react_using_react_context_api --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} as
-this is the the feature that comes out of the box with reactjs.
+this is the feature that comes out of the box with reactjs.
 
 {% cite post_four_patterns_for_global_state_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} says that
 if the component needs to share more than two levels deep, the recommended approach is to use reactjs context. {% cite post_angularjs_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} uses
@@ -390,14 +390,14 @@ or for any developer that already knows hooks, it can be  a refresher. {% cite p
 {% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} depicts
 the difference between class components and functional components with
 hooks and th benefits of using it. {% cite post_patterns_for_data_fetching_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and {% cite post_5_react_data_fetching --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
-compares fetching data between the class approach and the functional approach with hooks, on the other hand
+compares fetching data between the class approach and the functional approach with hooks, however
 {% cite post_implementing_the_container_pattern_using_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} refactor
 the container pattern using the class style with hooks.
 
 {% cite post_the_facade_pattern_and_applying_to_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} integrates
 the facade design pattern into a javascript implementation, and then
 combines the pattern with reactjs hooks. {% cite post_production_level_patterns_for_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} builds
-a todo app using hooks and uses a folder name called models to store
+a to-do app using hooks and uses a folder name called models to store
 custom hooks, and tries to relate this structure with the MVC pattern.
 
 {% cite post_react_hooks_rebirth_of_state_management --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} and {% cite post_a_state_management_pattern_for_ionic_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}
@@ -447,7 +447,7 @@ to share code between flutter and angular dart.
 
 ### Redux
 
-The redux pattern is a implementation of FLUX, the state management
+The redux pattern is an implementation of FLUX, the state management
 pattern created by Facebook to handle global state {% cite flux_facebook_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}{% cite post_getting_to_know_the_redux_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}.
 {% cite post_redux_design_patterns_reduxsauce --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} provides
 an introduction to redux and its main components, namely: Action, Reducer and Store.
@@ -507,7 +507,7 @@ On the Title column, the original title from the source was preserved and on the
 | Simple React Patterns \| Lucas Reis' Blog | {% cite post_simple_react_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} gives code snippets for different reactjs patterns, named as "everyday patterns", such as: container or view pattern (not to be confused by compound pattern), higher order component , render props and the provider pattern. |
 | Advanced Patterns in React | {% cite post_advanced_patterns_reactjs --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} dedicates the post to two specific reactjs patterns: higher order components  and render props. |
 | React.js in patterns | {% cite post_reactjs_in_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} the author starts by the communication flow that reactjs uses as a foundation as well as the children props, basically setting up a common ground, then the pattern higher order component is introduced. |
-| React Component Patterns - Level Up Coding | {% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} mentions for the first time in this list stateless and stateful components shows up, those patterns are often used to separate concerns between components. Besides that, the container, higher order component, render callback are presented. The author focus was to summarize his experience regarding those patterns. |
+| React Component Patterns - Level Up Coding | {% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} mentions for the first time in this list stateless and stateful components shows up, those patterns are often used to separate concerns between components. Besides that, the container, higher order component, render callback are presented. The author focus was to summarize his experience about those patterns. |
 | Evolving Patterns in React | {% cite post_evolving_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} starts with patterns that are considered to be simple, such as conditional rendering, passing down props ({% cite post_2019_reactjs_best_practices --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} also mentions the passing props), in the follow up the author mentions the destructuring pattern, which is a javascript functionality and not a reactjs pattern. |
 | React Conditional Rendering Patterns \| Building SPAs | {% cite post_react_conditional_rendering --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} focus on the rendering patterns used in reactjs. Those patterns are directly connected to JSX, as reactjs uses JSX to render the component. |
 | Patterns for Style Composition in React \| Jxnblk | {% cite post_patterns_style_composition --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} describes the patterns the he used to keep things organized, the goal as mentioned was to (but not limited to): create a well defined visual design, increase maintainability of visual styles and create reusable components. For that, the author used: stateless components (which is also discussed by {% cite post_react_component_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}), styles module, style functions, npm modules, base component and higher order components. Those patterns listed, were used focused on the visual part. |
@@ -519,7 +519,7 @@ On the Title column, the original title from the source was preserved and on the
 | The Facade pattern and applying it to React Hooks | {% cite post_the_facade_pattern_and_applying_to_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}  explores the idea of the facade pattern and the hooks pattern, mixing those together to abstract the third parties libraries to the application. The main idea of the author is to explore the facade with reactjs hooks. |
 | React hooks design patterns and creating components without class | {% cite post_react_hooks_design_patterns_creating_components_without_class --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} gives a brief explanation about the hooks, its functional approach and a comparison between class components and functional components.  The author states that the reactjs patterns known by the class standard are shifting to hooks in a functional approach, and reactjs hooks is the future of react. |
 | Common i18n patterns in React — LinguiJS documentation | {% cite  post_common_i18n_patterns_in_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} is all about i18n in reactjs. Due the different ways to render a translation string, the examples given uses the component approach and the render prop. |
-| Implementing the Container Pattern using React Hooks | {% cite post_implementing_the_container_pattern_using_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} implements the container pattern using hooks, a todo-app like is uses as an example for the usage of the container pattern. Besides that, the interesting part is that the author uses class components and functional components in the code examples. |
+| Implementing the Container Pattern using React Hooks | {% cite post_implementing_the_container_pattern_using_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} implements the container pattern using hooks, a to-do app like is used as an example for the usage of the container pattern. Besides that, the interesting part is that the author uses class components and functional components in the code examples. |
 | Introduction to React Design Patterns | {% cite post_introduction_to_react_design_patterns --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} explores the container pattern and render props, also the flux pattern is introduced in the talk. |
 | How advanced React patterns changed with hooks | {% cite post_how_advanced_react_patterns_changed_with_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
 | Four patterns for global state with React hooks: Context or Redux | {% cite post_four_patterns_for_global_state_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} shares his thoughts on global states in reactjs components, in the following order: prop passing, context and redux. Which for global state context and redux are popular solutions, therefore, passing props is a local state and not a global solution for that. |
@@ -528,7 +528,7 @@ On the Title column, the original title from the source was preserved and on the
 | The ReactJS Controller View Pattern | The controller view pattern introduced by {% cite post_the_reactjs_controller_view_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} is used to delegates the responsibility of handling the state change to a single component. |
 | Seven patterns by example: The many ways to `type="radio"` in React | {% cite post_seven_patterns_by_example --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} focuses on the radios input type and based on the HTML input, the author starts to compose the reactjs patterns around it. |
 | The React + Redux Container Pattern | {% cite post_the_react_redux_container_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} |
-| React Component Types: A complete Overview - RWieruch | The complete guide of a reactjs component by {% cite post_react_component_types_a_complete_overview --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} goes from the create react class style (the first approach of the library), using mixins as a way to share code between components, ES6 classes and higher order components. In the second part the the functional approach is introduced (as this is the latests and recommended way to write reactjs code). All in all, the complete guide shows the reactjs evolution through time and how new javascript features improved the library style of code and gave different approaches to solve common problems. |
+| React Component Types: A complete Overview - RWieruch | The complete guide of a reactjs component by {% cite post_react_component_types_a_complete_overview --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} goes from the create react class style (the first approach of the library), using mixins as a way to share code between components, ES6 classes and higher order components. In the second part the functional approach is introduced (as this is the latest and recommended way to write reactjs code). All in all, the complete guide shows the reactjs evolution through time and how new javascript features improved the library style of code and gave different approaches to solve common problems. |
 | Production-Level Patterns for React Hooks \| FullStack Labs | {% cite post_production_level_patterns_for_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} introduces the idea of effects instead of life cycle events (as reactjs used to be before hooks), in his approach the to-do app is used to re-factor the code from a class component to a functional component that uses hooks to share logic and separate concerns. |
 | A Model View Controller Pattern for React - Test Double \| Our Blog | {% cite post_a_model_view_controller_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} uses the same idea as {% cite post_production_level_patterns_for_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} to use MVC in reactjs. The difference here is that {% cite post_a_model_view_controller_pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} goes in detail about why MVC. |
 | Provider Pattern in React using React Context API | {% cite post_provider_pattern_in_react_using_react_context_api --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} gives an introduction to the provider pattern. The author explains the concept of the provider pattern and why it exists (prop-drilling). |
@@ -544,10 +544,10 @@ On the Title column, the original title from the source was preserved and on the
 | Best Practices With React Hooks — Smashing Magazine | {% cite post_best_practices_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} dives into the details of reactjs hooks,  for a beginner point of view and also for an intermediate developer that already knows hooks but wants to level up the understanding of the subject (section "hooks best practices"). |
 | 15 React Best Practices You Need to Follow in 2020 | {% cite post_15_react_best_practices_you_need_to_follow_in_2019 --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} gathered 15 best practices that reactjs developers should follow, therefore, in those practices no specific pattern was mentioned. |
 | React Patterns - Render Callback \| Lenny's Blog | {% cite post_react_patterns_render_callback --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} presents the callback render as an alternative to render props, which has the same intent, the difference relies in the callback itself. Whereas the render props renders a given prop, the callback renders a function that is invoked before rendering. |
-| Redux design patterns & Reduxsauce | {% cite post_redux_design_patterns_reduxsauce --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} is a source around the redux and reduxsauce and how the author used the flux pattern implementation. |
+| Redux design patterns & Redux sauce | {% cite post_redux_design_patterns_reduxsauce --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} is a source around the redux and redux sauce and how the author used the flux pattern implementation. |
 | React Hooks, the rebirth of State Management and beyond. | {% cite post_react_hooks_rebirth_of_state_management --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} presents his experiments with reactjs hooks its usage with state management. |
 | 8 no-Flux strategies for React component communication | {% cite post_8_no_flux_strategies_for_react --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} shows 8 different strategies to communicate data between reactjs. Even though the alternative claims to be an alternative to flux (the implementation most known is redux). Those alternatives are: props, instance methods, callback functions, event bubbling, parent component, observer pattern, global variables and context. |
-| BLoC Pattern with React Hooks — magarcia | {% cite post_bloc_pattern_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} BLoC stands for Business Logic Component. The focus of BLoC is to remain environment and platform independent, use exclusively observables and also contains business logic. The pattern was created to support angular dart and and flutter, but the author suggests that it can be applicable to reactjs as well. |
+| BLoC Pattern with React Hooks — magarcia | {% cite post_bloc_pattern_with_react_hooks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} BLoC stands for Business Logic Component. The focus of BLoC is to remain environment and platform independent, use exclusively observables and also contains business logic. The pattern was created to support angular dart and flutter, but the author suggests that it can be applicable to reactjs as well. |
 | Getting to Know the Redux Pattern \| DotNetCurry | {% cite post_getting_to_know_the_redux_Pattern --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %}  offers an approach to the redux pattern introducing the flux (which is the pattern definition - one way data flow) and also exposes a few examples in how to use it as a pure library (no reactjs). The content presented is a base to developers that want to understand how redux works and where it come from. |
 | Clean Code vs. Dirty Code: React Best Practices - American ... | {% cite post_clean_code_dirty_code --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} introduces the idea behind clean code and also its counter parts "dirty code". The content is a set of best practices guide instead of a clear pattern implementation. |
 | ReactJS - GeeksforGeeks | {% cite post_geeks_for_geeks --file 2020-06-22-reactjs-patterns-a-study-based-on-google-search %} is a material created for beginners, it gives the foundation of reactjs, how it works, what it is, the naming and conventions. The material is recommended as a first approach to the reactjs ecosystem. |

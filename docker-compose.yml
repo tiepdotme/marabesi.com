@@ -19,5 +19,5 @@ services:
       - ./:/srv/jekyll
       - ./vendor:/usr/local/bundle
     ports:
-      - 4000:4000
-      - 35729:35729
+      - 4000-4100:4000
+      - 35729-36729:35729

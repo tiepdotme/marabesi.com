@@ -31,9 +31,14 @@ tags:
 - matheus marabesi
 ---
 
-Marabesi is addicted to software development in general. As a hobby he likes
-to play with Raspberry PI and dive into the IoT world. Besides that  he's an
-aspiring researcher focused on software testing and gamification.
+Marabesi is addicted to software development in general, due to that,
+two books came out as a passion for sharing, one focuses on the PHP certification
+and the other, focused on Laravel, a framework to build web applications. As a
+hobby he likes to play with Raspberry PI and to dive into the IoT world.
+Besides that  he's an aspiring researcher focused on software testing and
+gamification. Testable, is a gamified tool that aims to improve the unit test
+teaching, trying to change the boring perception that developers have
+in learning how to test their code.
 
 ## Academic background
 
