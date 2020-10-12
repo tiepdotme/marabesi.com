@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Agenda - Conferences, Meetups and Workshops
+title: Conferences
 permalink: /calendar
 date: 2017-05-26 10:29:49.000000000 -03:00
 type: page

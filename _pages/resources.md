@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Resources - A collection of resources about software development
+title: software development
 date: 2016-12-23 01:06:05.000000000 -03:00
 type: post
 published: true
