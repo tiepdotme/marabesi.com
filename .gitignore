@@ -16,3 +16,5 @@ main-bundle.css
 .jekyll-cache/
 cypress/videos
 cypress/screenshots
+cypress.json
+.env
