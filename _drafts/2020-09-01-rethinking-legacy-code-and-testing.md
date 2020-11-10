@@ -30,7 +30,7 @@ Though, those are rather technical and focused only on the fact that
 the messy code was already there. This post is a reflection on my thinking
 and experience since those posts.
 
-## Companies and the dead lines
+## Companies and dead lines
 
 Often, programmers are againt the clock to meet dead lines that usually
 are not set by them, the dead line is given by management and there is no
