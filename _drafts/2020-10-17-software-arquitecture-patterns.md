@@ -23,7 +23,9 @@ tags:
 This is a short post on the book Software architecture patterns by Mark Richards,
 published by O'Reilly. The book catalogs five architectural styles: Layered,
 Event-Driven, Microkernel, Microservices and Space-Based. For each of them
-the author goes through six aspects and rank them, named:
+the author goes through six aspects and rank them
+{% cite software_architectural_patterns --file 2020-10-17-software-arquitecture-patterns %}, that collects a broader
+named:
 
 - Overall agility
 - Ease of deployment
@@ -35,13 +37,16 @@ the author goes through six aspects and rank them, named:
 The book covers in high level scenarios for each pattern to be used and also
 diagrams that helps the reader to understand the details. Therefore, the book
 does't have code examples or concrete implementations, which might open the
-definition to different implementations.
+definition to different implementations. Furthermore, for building up this material
+I used heavily the content provided by the original author. For each arquitectural
+style I used the original definition, and in addition to that, I merged my
+thouthgs on each one of them.
 
 ## Layered
 
 Components within the layered architecture pattern are organized
 into horizontal layers, each layer performing a specific role within
-the application. Popular frameworks for any language that uses the MVC as
+the application. Popular frameworks for any language that uses the MVC (3 layers) as
 a foundation usually are bound to the layered architecture.
 
 One of the powerful features of the layered architecture pattern is
@@ -49,7 +54,17 @@ the separation of concerns among components.
 
 The layers of isolation concept means that changes made in one
 layer of the architecture generally don’t impact or affect components
-in other layers
+in other layers, which in the MVC style follows this definitions. The
+view is the layer that display data and receives the user interaction,
+the controller handles the data from the view, and the model intereacts
+with the database.
+
+Web frameworks that follows this approach:
+
+- Laravel
+- CakePHP
+- Codeigniter
+
 
 ## Event-driven
 

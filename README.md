@@ -13,12 +13,22 @@ as [docker-compode](https://docs.docker.com/compose/install).
 As a pre-configuration step (in linux), the number of watchers must be increased, as explained
 [here](https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers)
 
-This repository provides a docker compose file to serve the website with docker
-using a single command:
+
+The docker setup comes with two options to expose the blog ports, and they are
+as follows:
+
+```
+BLOG_PORT=4000
+BLOG_DEBUG=35729
+```
+
+The snippet above should be placed in a `.env` file in the root of the repository.
+Once the command has been finished, the website will be available on localhost
+port 4000.
+
+Once the file has been created, the following command is used to set up the
+local environment:
 
 ```
 docker-compose up
 ```
-
-Once the command has been finished, the website will be available on localhost
-port 4000.
