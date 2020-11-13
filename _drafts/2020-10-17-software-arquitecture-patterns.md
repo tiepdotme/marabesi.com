@@ -65,7 +65,6 @@ Web frameworks that follows this approach:
 - CakePHP
 - Codeigniter
 
-
 ## Event-driven
 
 The event-driven architecture pattern is a popular distributed

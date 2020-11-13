@@ -208,7 +208,6 @@ On the other hand, sometimes it is possible that a scenario of blocking any type
 of inheritance is imposed. For this the final classes were there, declaring a 
 class as final, it is not possible to extend it.
 
-
 ```php
 <?php
 

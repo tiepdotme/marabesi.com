@@ -10,14 +10,18 @@ categories:
 - web
 tags:
 - lambda,
+- Lambda,
 - data,
 - aws,
+- AWS,
 - user,
 - export,
 - request,
 - time,
 - scalability,
 - web,
+- application,
+- PHP
 ---
 
 Lambda has been a hot topic for a while, the proposal is hold in three main

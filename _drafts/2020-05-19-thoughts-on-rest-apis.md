@@ -28,7 +28,12 @@ thoughts of APIs distributed by companies.
 
 ## Definitions
 
-##
+
+
+## tricky parts
+
+The first tricky part that I can mention is the design of resources, often
+new developers start with something that usually is not a resource candidate.
 
 
 {% bibliography --cited_in_order --file 2020-05-19-thoughts-on-rest-apis %}
