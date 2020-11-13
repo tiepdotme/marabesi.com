@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>Tips for writting docker files</title>
+    <meta name="description"
+      content="Docker has revolutionized how developers build and deploy applications.Docker has support for different programming languages and runs natively on linux,as o...">
+
+    <link rel="canonical" href="https://marabesi.com/devops/2020/05/15/tips-for-writting-docker-files.html">
+    <link rel="alternate" type="application/rss+xml" title="Marabesi"
+      href="https://marabesi.com/feed.xml">
+
+    <meta property="og:title" content="Tips for writting docker files" />
+    <meta property="og:site_name" content="marabesi.com" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://marabesi.com/devops/2020/05/15/tips-for-writting-docker-files.html" />
+    <meta property="og:image"
+      content="https://marabesi.com/images/posts/2020-05-15-tips-for-writting-docker-files/cover.png" />
+    <meta property="og:description"
+      content="Docker has revolutionized how developers build and deploy applications.Docker has support for different programming languages and runs natively on linux,as o..." />
+
+    <meta property="fb:app_id" content="536384943068161" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@MatheusMarabesi">
+    <meta name="twitter:title" content="Tips for writting docker files">
+    <meta name="twitter:description"
+      content="Docker has revolutionized how developers build and deploy applications.Docker has support for different programming languages and runs natively on linux,as o...">
+    <meta name="twitter:creator" content="@MatheusMarabesi">
+    <meta name="twitter:image:src"
+      content="https://marabesi.com/images/posts/2020-05-15-tips-for-writting-docker-files/cover.png">
+
+    <meta name="keywords" content="docker,Docker,image,user,build,root,network,setup,compose,container,files,program" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+
+    <link href="/assets/main-bundle.css" rel="stylesheet" />
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#3f51b5">
+
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Marabesi">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Marabesi">
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="/images/manifest/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/manifest/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="/images/manifest/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/manifest/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/manifest/icon-192x192.png">
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/manifest/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+  </head>
+
+  <body class="font-sans overflow-x-hidden">
+    <button class="update-button w-full text-white bg-marabesi-purple p-5 m-auto fixed pin-b z-50 hidden focus:outline-none font-bold">Update found, click to update</button>
+
+    <div class="menu-wrapper flex fixed w-full bg-white z-50">
+      <nav class="top-menu hidden md:flex justify-start container lg:justify-center md:m-auto md:pt-2 md:pb-2">
+        <a href="/" class="hidden md:block">
+          <img class="logo w-18 p-1" data-src="/images/logo.png" width="100" alt="marabesi.com logo - two m's and one dot" title="marabesi.com logo - two m's and one dot" />
+        </a>
+
+        <ul id="menu-list" class="container-menu hidden flex-col pl-5 md:flex md:pl-0 md:flex-row md:m-auto lg:m-0">
+          
+           
+            <li class="item pt-2 pb-2 md:p-2">
+              <a class="item-link no-underline" href="/talks">
+                Talks
+              </a>
+            </li>
+          
+          
+           
+            <li class="item pt-2 pb-2 md:p-2">
+              <a class="item-link no-underline" href="/about">
+                About
+              </a>
+            </li>
+          
+          
+           
+            <li class="item pt-2 pb-2 md:p-2">
+              <a class="item-link no-underline" href="/newbie-guide">
+                Dev guide
+              </a>
+            </li>
+          
+          
+           
+            <li class="item pt-2 pb-2 md:p-2">
+              <a class="item-link no-underline" href="/resources">
+                software development
+              </a>
+            </li>
+          
+          
+           
+            <li class="item pt-2 pb-2 md:p-2">
+              <a class="item-link no-underline" href="/tests/">
+                Tests
+              </a>
+            </li>
+          
+          
+           
+            <li class="item pt-2 pb-2 md:p-2">
+              <a class="item-link no-underline" href="/calendar">
+                Conferences
+              </a>
+            </li>
+          
+          
+        </ul>
+      </nav>
+
+      <div class="w-full flex items-center h-12 pl-2 bg-white md:hidden">
+        <svg id="menu" class="cursor-pointer w-10 h-10 p-2 text-marabesi-pink fill-current" xmlns="http://www.w3.org/2000/svg"
+          x="0px" y="0px" width="50" height="50" viewBox="0 0 24 24">
+          <path
+            style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"
+            d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"
+            font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible"></path>
+        </svg>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-center p-5">
+      <input type="text" id="search-input" placeholder="search" aria-label="search" class="focus:outline-none border border-marabesi-purple text-marabesi-purple w-full p-3 mb-2 container mt-20 lg:mt-12">
+      <ul id="results-container"></ul>
+    </div>
+
+    <div class="shell-content">
+      <div class="banner-highlight">
+        <p class="font-normal text-lg py-4 md:text-3xl lg:text-4xl">
+          <span class="apostrophe">‘‘</span>
+          Code should be easy to understand.
+          <span class="apostrophe">’’</span>
+        </p>
+        <p class="author text-xs">Dustin Boswell and Trevor Foucher - The Art Of Readable Code</p>
+      </div>
+
+        <div class="page-content container flex flex-col p-5 m-auto">
+  <h1>Tips for writting docker files</h1>
+
+  <main class="mb-5">
+    <p>Docker has revolutionized how developers build and deploy applications.
+Docker has support for different programming languages and runs natively on linux,
+as opposed to virtual machines that mimics an entire operational system,
+docker containers run on linux namespaces, removing the overhead
+that virtual machines have, for example, the boot time. The virtual machine
+needs time to boot, while docker is a service that starts in the operational
+system.</p>
+
+<p>As opposed to the official best practices <a class="citation" href="#best_practices_docker_hub">[1]</a> on writting docker files,
+the goal here is to share tips on approaches in how to write the docker files, this is not a
+beginners guide in how docker works or how to use it.</p>
+
+<h2 id="docker-images-and-services">Docker images and services</h2>
+
+<p>In this section, the focus is to go through the tips around building
+a docker image and the docker compose services.</p>
+
+<h3 id="1-make-the-basic-setup-with-standard-image">1. Make the basic setup with standard image</h3>
+
+<p>Starting to build docker images requires steps and previous knowledge on the
+docker platform and ad least to understand a few commands such as RUN, COPY and
+FROM. Based on those commands, the generated image can be big or small, it depends.</p>
+
+<p>Docker hub offers ready to use images without the need to build one, and they are
+classified as (from the biggest to the smallest): standard image, slim and alphine.</p>
+
+<p>Dockerfile with standard image:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM node:12 <span class="c"># &lt;--- standard image, and also the bigger compared to the next two version</span>
+
+WORKDIR /var/www/app
+
+COPY package<span class="k">*</span>.json ./
+
+COPY <span class="nb">.</span> <span class="nb">.</span>
+
+RUN npm <span class="nb">install</span> <span class="o">&amp;&amp;</span> npm run build
+
+EXPOSE 5000
+
+CMD npm run serve
+</code></pre></div></div>
+
+<p>Dockerfile with slim image:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM node:12-slim <span class="c"># &lt;--- slim image, smaller, but also has less dependencies installed by default</span>
+
+WORKDIR /var/www/app
+
+COPY package<span class="k">*</span>.json ./
+
+COPY <span class="nb">.</span> <span class="nb">.</span>
+
+RUN npm <span class="nb">install</span> <span class="o">&amp;&amp;</span> npm run build
+
+EXPOSE 5000
+
+CMD npm run serve
+</code></pre></div></div>
+
+<p>Dockerfile with alphine image:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM node:12-slim <span class="c"># &lt;--- slim image, the smallest, but also it has some drawbacks such as missing needed dependencies by the code</span>
+
+WORKDIR /var/www/app
+
+COPY package<span class="k">*</span>.json ./
+
+COPY <span class="nb">.</span> <span class="nb">.</span>
+
+RUN npm <span class="nb">install</span> <span class="o">&amp;&amp;</span> npm run build
+
+EXPOSE 5000
+
+CMD npm run serve
+</code></pre></div></div>
+
+<p>Usually the setup using the basic image is faster as it comes with almost everything
+to run the program. on the other side though, the alphine version has almost
+nothing to run the program, it has just the core, nothing else. Which in many 
+cases will make the program to not run, depending on the dependencies.</p>
+
+<h3 id="2-the-root-user">2. The root user</h3>
+
+<p>The root user is the default user in which the container runs, which makes
+easier the process to set up permissions to access files or to setup configurations.
+Usually this is a bad practice to, the container should not run with the root
+user due security issues <a class="citation" href="#best_practices_nodejs_dockercon">[2]</a>.</p>
+
+<p>Though for the process to set up the docker image this can be a bit harder,
+given the fact that setting up a different user with less permission can
+difficult the image setup.</p>
+
+<p>If no user is given (as for example, the last 3 dockerfiles shown in the previous section),
+docker will build it using <code class="language-plaintext highlighter-rouge">root</code>, which of course has security issues. To fix this issue
+docker offers the flag <code class="language-plaintext highlighter-rouge">USER</code>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM node:12-slim
+
+USER node <span class="c"># &lt;!--- specify the user for docker to build and run the image</span>
+
+WORKDIR /var/www/app
+
+COPY package<span class="k">*</span>.json ./
+
+COPY <span class="nb">.</span> <span class="nb">.</span>
+
+RUN npm <span class="nb">install</span> <span class="o">&amp;&amp;</span> npm run build
+
+EXPOSE 5000
+
+CMD npm run serve
+</code></pre></div></div>
+
+<p>This tip relies on the same approach as the previous one, first, make it work
+with the root user, then start to trick around permissions with a specific user.</p>
+
+<h3 id="3-separate-concerns-avoid-building-different-services-into-one-image">3. Separate concerns, avoid building different services into one image</h3>
+
+<p>As a best practice the recommended way to build containers is: one container equals
+to one process. Which can avoid problems when it comes to managing them.</p>
+
+<h3 id="4-setup-docker-file-first-and-then-move-to-docker-compose-if-needed">4. setup docker file first, and then move to docker compose (if needed)</h3>
+
+<p>Usually, docker compose is the next step when building services to use with docker,
+though developers tend to skip the first step which is to understand how the
+image works and then move on to compose.</p>
+
+<h3 id="5-networking-and-sharing-hosts">5. Networking and sharing hosts</h3>
+
+<p>Docker creates its own network interface, which in turn containers communicate
+between each other. Therefore, there are scenarios in which this behavior
+is not desired. For example, a database. As the database holds state (the data)
+usually it is used an external provider (RDS, mongodb atlas etc).</p>
+
+<p>By default the container can’t access external ports, which in turn will
+block the database connection. There are two possible options for that, using
+a <code class="language-plaintext highlighter-rouge">network</code> flag or using the <code class="language-plaintext highlighter-rouge">add-host</code> flag.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># using --network flag</span>
+docker run <span class="nt">--rm</span> <span class="nt">--network</span><span class="o">=</span>host nginx
+</code></pre></div></div>
+
+<p>There is a side effect using the network flag, which will ignore the docker
+network created automatically by docker and the container will run as if
+it were in the host. Impacting the port that the application run and therefore
+prevents the possibility of blue-green
+deployments <a class="citation" href="#docker_blue_green_no_down_time">[3]</a>,
+which requires two instances of the same app running, each on its specific port.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">add-host</code> gives the flexibility needed to overcome the port issue. The
+flag maps a specific host to a IP, the following example maps the localhost
+to be the host.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># using --add-host flag</span>
+docker run <span class="nt">--rm</span> <span class="nt">--add-host</span><span class="o">=</span>localhost:192.168.1.102 nginx
+</code></pre></div></div>
+
+<h2 id="docker-compose">Docker compose</h2>
+
+<p>This section focus on the docker compose only.</p>
+
+<h3 id="6-different-docker-compose-files-for-different-environments">6. Different docker compose files for different environments</h3>
+
+<p>Docker compose files are used to compose the container orchestration, therefore
+sometimes it is needed to use different behavior based on the environment
+that the application is one. For example, in development mode, the database
+container might be needed, but in production it might not be the case.</p>
+
+<p>For that, it is possible to create different docker compose files for each
+environment. For example, for development, staging and production we might have:</p>
+
+<ul>
+  <li>development: <code class="language-plaintext highlighter-rouge">docker-compose-dev.yml</code></li>
+  <li>staging and production: <code class="language-plaintext highlighter-rouge">docker-compose-deploy.yml</code></li>
+</ul>
+
+<p>It is also possible to share code among each docker file, which might make
+sense to create a <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> as the base for the two files previously
+mentioned.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="best_practices_docker_hub">[1]DockerHub, “Best practices for writing Dockerfiles” [Online]. Available at: <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices" target="_blank">https://docs.docker.com/develop/develop-images/dockerfile_best-practices</a>. [Accessed: 23-May-2020]</span></li>
+<li><span id="best_practices_nodejs_dockercon">[2]B. Fisher, “Docker and Node.js Best Practices from Bret Fisher at DockerCon,” 2019 [Online]. Available at: <a href="http://www.youtube.com/watch?v=Zgx0o8QjJk4" target="_blank">http://www.youtube.com/watch?v=Zgx0o8QjJk4</a>. [Accessed: 23-May-2020]</span></li>
+<li><span id="docker_blue_green_no_down_time">[3]Marcus, “How to do Zero Downtime Deployments of Docker Containers,” 2019 [Online]. Available at: <a href="https://coderbook.com/@marcus/how-to-do-zero-downtime-deployments-of-docker-containers" target="_blank">https://coderbook.com/@marcus/how-to-do-zero-downtime-deployments-of-docker-containers</a>. [Accessed: 2020-Jun-11AD]</span></li></ol>
+
+  </main>
+
+  
+
+<style>
+#share-buttons {display: flex; justify-content: center; align-items: center;}
+#share-buttons > div {
+    position: relative;
+    text-align: left; 
+    height: 36px; 
+    width: 32px; 
+    float: left; 
+    text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #f12f46; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+<div id="share-buttons" class="mb-5">
+    <span>Share this on</span>
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=https://marabesi.com/devops/2020/05/15/tips-for-writting-docker-files.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('https://twitter.com/intent/tweet?text=https://marabesi.com/devops/2020/05/15/tips-for-writting-docker-files.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://marabesi.com/devops/2020/05/15/tips-for-writting-docker-files.html&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+</div>
+
+  <div id="disqus_thread"></div>
+</div>
+
+
+      <div class="footer">
+        <div class="footer-details">
+          Designed by @tamyitokazo
+        </div>
+      </div>
+    </div>
+
+    
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-58623708-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    
+
+    <script async src="/assets/main-bundle.js"></script>
+  </body>
+</html>
